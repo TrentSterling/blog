@@ -18,7 +18,18 @@ Hello again! This is the first post on my freshly launched DevBlog, where I'll b
 - Expect to see a lot of content around game development, network programming, VR optimization, and the occasional post about my indie game projects.
 - You might notice some gaps as I backport old blog posts, but I’ll be keeping it real with a fresh perspective on each one.
 
+
+My URL: {{ site.url }}
+My Base URL: {{ site.baseurl }}
+
 ![My Awesome Bird]({{ site.baseurl }}{{ page.image }})
+
+![My Awesome Bird]({{ page.image }})
+
+
+![My Awesome Bird](/assets/img/bird.png)
+
+
 
 Do you like my bird? It's one of my favorite images, symbolizing freedom in game design and development.
 
