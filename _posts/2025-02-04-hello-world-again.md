@@ -16,7 +16,6 @@ Hello again! This is the first post on my freshly launched DevBlog, where I'll b
 
 - I'm transitioning from WordPress to Jekyll, which will allow for more control over the design, performance, and simplicity of the site.
 - Expect to see a lot of content around game development, network programming, VR optimization, and the occasional post about my indie game projects.
-- You might notice some gaps as I backport old blog posts, but I’ll be keeping it real with a fresh perspective on each one.
 
 
 My URL: {{ site.url }}
