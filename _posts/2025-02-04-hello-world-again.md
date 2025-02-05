@@ -1,15 +1,17 @@
 ---
 title: "Hello World! - Starting Fresh with Jekyll"
 date: 2025-02-04
-categories: [misc]
 tags: [intro, jekyll, static-sites, migration]
 description: "Consolidating everything into GitHub Pages with Jekyll—moving away from WordPress, Surge, and Wintersmith."
-image: "/assets/img/bird.png"
+image: "/assets/img/pixel_fart.jpg"
 ---
 
-# Hello World! Welcome to My New DevBlog
 
-Hey, Trent here. This is my first post on my freshly launched DevBlog. I’m transitioning away from WordPress and Surge/Wintersmith and moving everything to GitHub Pages using Jekyll.
+![image of a pixel fart](/assets/img/pixel_fart.jpg)
+
+---
+
+Hey, Trent here. This is the first post on my freshly launched DevBlog. I’m transitioning away from WordPress and Surge/Wintersmith and moving everything to GitHub Pages using Jekyll.
 
 ---
 ## Why Jekyll?
