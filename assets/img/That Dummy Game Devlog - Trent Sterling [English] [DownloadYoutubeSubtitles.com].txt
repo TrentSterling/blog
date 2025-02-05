@@ -1,0 +1,348 @@
+okay what we're gonna do
+
+here is we're going to look at a game
+the I
+
+didn't really finish as you can see here
+theres
+
+ingame script in which is really nice
+
+hope we will actually use any party that
+
+his CIA load level and the has blocking
+so here's the frame rate high
+
+in the interface is still usable even
+we're loading level
+
+the
+
+game is physics Triveni uses the name
+physics engine here you can see me
+
+toddling
+
+different view layers for stuff like fog
+in my 10
+
+the lighting is retraced and baked into
+the map data
+
+how you can see me messing with
+
+the basically legislators for things
+like hue and saturation and there's a
+
+color eyes filter for you can make the
+game have with the CP er dreamlike stay
+
+Ambler the image you can mess with the
+brightness and contrast
+
+to make some areas have no color have
+some areas with colors just really
+
+extreme
+
+we can switch the cue and have trend of
+the bizarro land
+
+trendy color d tiles themselves from the
+tile sets
+
+%uh that script based however
+
+the objects the actual entities with
+physics and stuff they don't have to be
+
+locked to a grid
+
+there's multiple layers or so
+
+foreground layer in the background layer
+in a fog later
+
+there's just all these different layers
+
+the you can mess around with when you
+draw or
+
+with detail sheets as soon as you change
+tools
+
+it refills speech geometry or not the
+geometry but
+
+the at the physics data sometimes easier
+to hate it when you turn off all the
+
+layers
+
+all the year for the falls in the
+lighting and stuff
+
+there's multiple
+
+grab the directions the you can press a
+button
+
+an oil change the direction grab these
+going as you can see the engine can
+
+handle
+
+the a lot of shapes just so many
+
+different physics objects can be in your
+world
+
+even with recording the frame rate stays
+a sixty
+
+ok
+
+he replace a fan and you can see the TE
+objects react to it physically
+
+%ah basically you put objects in front
+of a fan of course I'll kinda float
+
+their get pushed her shot up you can use
+that for elevators and stuff like that
+
+leaf and
+
+shoots small projectiles so that you can
+kinda see
+
+that it's happening other you know
+
+trend I guess like the air his solution
+by
+
+on a spawn a player in the editor
+
+while the editors goin' you can edit
+live while you're playing
+
+a course on a you know resetting
+positions and doing stuff like that can
+
+it can be kind of interesting but a
+right now you see the player animation
+
+isn't working
+
+that's just a problem with this build it
+actually he actually has a
+
+a running jumping being hurt animation
+
+basically animations for all the
+different states
+
+in this bill done not actually sure why
+it's been a long time since I've looked
+
+at this code base and just going back
+over the scam
+
+just to show what it was because I never
+got finished
+
+it's unfortunate that I didn't show it
+
+but there's actually an object editor
+where if you were to say if you were to
+
+click on one of these objects
+
+boxer coroner something you can actually
+talk votes physics honor of you can
+
+control its ex-wife position
+
+you can control all the parameters an
+object has including its mass in its
+
+material
+
+and when he change stuff like its
+material it'll change the sound it makes
+
+like when your player lands on it or
+there's occlusion
+
+this game was what I would consider my
+most finished game
+
+unfortunately it just didn't get
+finished the
+
+there's still a lot of artwork that was
+requires there's we need
+
+a level designer Ford you know
+
+someone come up with a story in all that
+
+you'd see I added a blood effect and you
+can see it actually sustains the tiles
+
+it won't stain the dynamic moving
+objects than any other static walls and
+
+stuff for the blood particles that can
+be stained
+
+here we can see changing grab these
+direction the players feat school
+
+basically point
+
+you know whatever direction gravity is
+going
+
+you can see more the blood and stuff as
+a jump around and get hurt
+
+there's a you fall too far in your gonna
+get heard
+
+kind of thing like that
+
+you can grab anything
+
+with the mouse here I've accidentally
+
+grad myself flung myself so far into a
+wall that I died so I had to delete
+
+myself create a new
+
+player and everything goes back to
+normal
+
+spikes and stuff like that already have
+logic for
+
+when he touches you die others basically
+there's a function run when you collider
+
+on Clyde it anything more you put your
+logic
+
+here were setting up a turret a
+
+colliding with his bullets course causes
+pain
+
+there's blood everywhere now birdie to
+reduce its earned fires right now this
+
+is a static turret meaning he can't to
+come over
+
+but you can also have turrets that have
+physics
+
+the you can knock over kinda like portal
+you'll notice it looks kinda like the
+
+one from Portal
+
+right now about spawn a missile which
+has a star pathfinding and would
+
+normally come after me
+
+but unfortunately in this build that
+breaks again that was a game-breaking
+
+Burberry there
+
+and that's something that would
+obviously need to be fixed
+
+that's pretty much all there is to this
+game
+
+I mean it it looks like it could be a
+good game it's a good engine
+
+as it is now it's a good tech demo
+there's a lot of affects there's just so
+
+much work that went into it
+
+but it's not really a game it's not
+anywhere near finished game
+
+there's no stories there's no
+
+characters is just our guy and a bunch
+of obstacles
+
+that's not really enough to call it a
+game yet this game is done flash
+
+I use Unity dow um
+
+I might finish this game because it was
+just so close to completion
+
+but truthfully I probably won't be going
+back to flasher ActionScript
+
+if I do we make this game I might make
+it in unity
+
+but I might not make it as advanced
+unfortunately
+
+because while unity does have some very
+fancy 3d stuff in
+
+lighting and all that its as for
+
+as two-dimensional games go it's just so
+it's just not on par it's it's just
+
+can't keep up
+
+I couldn't make what I made herein flash
+I could make that immunity
+
+the even if I had like 10 times the
+
+time this is this what we have here
+
+is sixty four days into the process so
+basically the
+
+two months of work and this is the game
+that came out a bit
+
+in unity it would take much much longer
+to get something
+
+similar you'd have hardware acceleration
+which would be nice
+
+but I really doubt that you could have
+the same kind of look and feel
+
+without I mean 8 on Nov work
+
+so anyways that's the that down a game
+
+call it that dummy because we never
+actually came up with the
+
+name for the game so yeah that dumb
+again
+
+for
+
+
