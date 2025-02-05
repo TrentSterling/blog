@@ -1,9 +1,8 @@
 ---
 title: "Hello World! - Starting Fresh with Jekyll"
-date: 2025-02-04 00:00:00 -0800
+date: 2025-02-04
 categories: [misc]
 tags: [intro, jekyll, static-sites, migration]
-author: Trent Sterling
 description: "Consolidating everything into GitHub Pages with Jekyll—moving away from WordPress, Surge, and Wintersmith."
 image: "/assets/img/bird.png"
 ---
@@ -39,8 +38,11 @@ Here’s what’s coming:
 
 I've been meaning to update this blog for a very long time. Discord is where I've been sharing my progress with friends and devs. If you're a cool dev-type person, consider joining. We've got a very active group of developers with some seriously cool skill sets. There's a heavy focus on Multiplayer and VR systems, but the Discord also explores other kinds of development too. Whether you're into game dev, networking, or even AI (LLMs+art) and hardware (like Arduino, esp8266/32), we've got a place for you!
 
- [Discord Link Here](https://discord.gg/0hyoWZyM6y7kkFCN)
+_Discord Link Here:_ | [https://discord.gg/0hyoWZyM6y7kkFCN](https://discord.gg/0hyoWZyM6y7kkFCN) |
 
 ---
-
-Author: {{page.author}}
+{% comment %}
+I can write in markdown comments and not have it show up on the site!
+#Author: {{page.author}}
+#Author: {{site.author}}
+{% endcomment %}
