@@ -45,3 +45,18 @@ I also use this blog to backport content from my **[old blog](http://old.trentst
 Feel free to reach out or join my **[Discord](https://discord.gg/0hyoWZyM6y7kkFCN)** community to chat about anything from coding to game design!
 
 ---
+👾 **COOL DEVS ONLY: Join Trent's Cool Developer Spot!** 🎮🥽
+
+Want to collaborate with **top-tier game devs**? This is your spot. We've been going strong since **2015**, and we’re a community of **seriously skilled devs**, including **successful studios**, indie creators, and professionals **making bank**.
+
+We cover everything from **multiplayer**, **VR**, **Unity**, and **game mechanics** to **AI art** and **LLM discussions**—and we’ve got **hardware** talk like **ESP8266/32**, **Arduino**, and more.
+
+💥 **Exclusive perks:**
+- 🔥 Connect with **industry pros** and learn from the best
+- 🤖 Deep dives into **AI** and **game tech**
+- 🎮 **Game dev collaboration**, feedback, and **early testing**
+- 🦾 **Hardware enthusiasts** welcome!
+
+Level up your game dev skills, get inspired, and share your progress with like-minded creators.
+
+👉 **Join us:** [Discord Invite](https://discord.gg/0hyoWZyM6y7kkFCN)

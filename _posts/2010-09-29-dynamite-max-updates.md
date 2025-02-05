@@ -8,7 +8,7 @@ image: "assets/img/dynamitemaxintro.jpg"
 ---
 
 
-<iframe width="640" height="480" src="//www.youtube.com/embed/9jyXvl8VUQA" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
+<iframe width="840" height="480" src="//www.youtube.com/embed/9jyXvl8VUQA" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
 
 
 
