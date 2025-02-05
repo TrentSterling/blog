@@ -14,9 +14,9 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: TrontDev # the main title
+title: Tront Dev # the main title
 
-tagline: gamedev yo # it will display as the subtitle
+tagline: Design. Develop. Dominate. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   My blog about gamedev and cool VR shit and hardware n shit.

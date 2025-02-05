@@ -7,9 +7,6 @@ description: "An update on my zombie-themed multiplayer project, and how I'm usi
 image: "/assets/img/ZombiesGame.jpg"
 ---
 
-# “Guys, Girls, and Guns: How to Survive the Zombie Apocalypse in Style!”
-
-Published by [TrentSterling](../author/trentsterling/index.html "TrentSterling") on July 27, 2016
 
 ![ZombiesGame](/assets/img/ZombiesGame.jpg)
 
