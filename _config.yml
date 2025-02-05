@@ -25,6 +25,10 @@ description: >- # used by seo meta and the atom feed
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://blog.tront.xyz/"
 
+author:
+  name: Tront
+  url: https://trentsterling.com/
+
 github:
   username: TrentSterling # change to your GitHub username
 
@@ -38,6 +42,7 @@ social:
   email: trentsterling@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
+    - https://tront.xyz/ # change to your Twitter homepage
     - https://twitter.com/Trent_Sterling # change to your Twitter homepage
     - https://github.com/TrentSterling # change to your GitHub homepage
     # Uncomment below to add more social links
@@ -88,7 +93,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: dark # [light | dark]
+theme_mode:  # [light | dark]
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
