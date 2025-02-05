@@ -7,9 +7,14 @@ description: "Dynamite Max is a 3D Flash game developed using Papervision3D and 
 image: "assets/img/dynamitemaxintro.jpg"
 ---
 
-# Dynamite Max Updates
 
 <iframe width="640" height="480" src="//www.youtube.com/embed/9jyXvl8VUQA" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
+
+
+
+> I've added additional summary here in 2025!
+{: .prompt-tip }
+
 
 ## About Dynamite Max
 

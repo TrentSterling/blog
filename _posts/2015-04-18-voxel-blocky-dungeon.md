@@ -7,7 +7,6 @@ description: "Returning to Blocky Dungeon with new 3D voxel features and rapid r
 image: "assets/img/2015-04-18_03-20-02.jpg"
 ---
 
-# Voxel Blocky Dungeon
 
 
 No! The multiplayer archer game isn’t dead yet! But we have bigger and better fish to fry! Fancier fish with 3D voxels!
