@@ -8,7 +8,8 @@ image: "assets/img/2015-06-14_16-34-46.png"
 ---
 
 
-<iframe width="840" height="480" src="//www.youtube.com/embed/_NpiSot1c-g" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
+
+<iframe class="responsive-embed" src="//www.youtube.com/embed/_NpiSot1c-g" frameborder="0" allowfullscreen></iframe>
 
 
 > I've linked a video/vlog that wasn't originally linked to this devlog!

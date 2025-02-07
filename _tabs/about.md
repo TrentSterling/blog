@@ -7,9 +7,7 @@ order: 4
 > Trent Sterling, or Tront, is a game developer with a decade of experience in the industry. He specializes in Unity, C#, and VR development.
 {: .prompt-tip }
 
-
 Welcome! I’m **Trent Sterling**, a game developer with over a decade of experience. I specialize in Unity, C#, multiplayer networking, VR optimization, and procedural generation, but I’m versatile across many development areas.
-
 
 ## My Focus Areas
 
@@ -40,9 +38,9 @@ While my main focus is game development, I’ve had my hands in many other areas
 
 This blog is a way for me to share everything I’m working on, my thoughts on game development, tutorials, and behind-the-scenes looks at the projects I’m developing. It's a place to document my journey, share knowledge, and hopefully help others in the game development community.
 
-I also use this blog to backport content from my **[old blog](http://old.trentsterling.com/)** and share insights that are useful for indie developers, especially those working with **multiplayer networking**, **VR**, and **game optimization**. Expect deep dives, tips, and advice based on my decade of experience.
+I also use this blog to backport content from my **[old blog](http://old.trentsterling.com/){:target="_blank"}** and share insights that are useful for indie developers, especially those working with **multiplayer networking**, **VR**, and **game optimization**. Expect deep dives, tips, and advice based on my decade of experience.
 
-Feel free to reach out or join my **[Discord](https://discord.gg/0hyoWZyM6y7kkFCN)** community to chat about anything from coding to game design!
+Feel free to reach out or join my **[Discord](https://discord.gg/0hyoWZyM6y7kkFCN){:target="_blank"}** community to chat about anything from coding to game design!
 
 ---
 👾 **COOL DEVS ONLY: Join Trent's Cool Developer Spot!** 🎮🥽
@@ -59,8 +57,8 @@ We cover everything from **multiplayer**, **VR**, **Unity**, and **game mechanic
 
 Level up your game dev skills, get inspired, and share your progress with like-minded creators.
 
-👉 **Join us:** [Discord Invite](https://discord.gg/0hyoWZyM6y7kkFCN)
+👉 **Join us:** [Discord Invite](https://discord.gg/0hyoWZyM6y7kkFCN){:target="_blank"}
 
 ---
 
-🔗 **[Check out my Linktree](https://tront.xyz/)** for all my projects, social links, and more!
+🔗 **[Check out my Linktree](https://tront.xyz/){:target="_blank"}** for all my projects, social links, and more!
