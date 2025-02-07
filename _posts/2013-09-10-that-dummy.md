@@ -8,7 +8,8 @@ image: "/assets/img/lightrays.png"
 ---
 
 
-<iframe width="840" height="480" src="//www.youtube.com/embed/vVkjyptJG_0" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
+
+<iframe class="responsive-embed" src="//www.youtube.com/embed/vVkjyptJG_0" frameborder="0" allowfullscreen></iframe>
 
 
 

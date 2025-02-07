@@ -7,6 +7,16 @@ description: "An update on my endless runner game, Dash Till Dawn, developed in 
 image: "/assets/img/2015-07-19_23-22-05.png"
 ---
 
+
+
+
+<iframe class="responsive-embed" src="//www.youtube.com/embed/NBHL7rwasqg" frameborder="0" allowfullscreen></iframe>
+
+
+> Appended a video to this post in 2025!
+{: .prompt-tip }
+
+
 *Dash Till Dawn* is a one-button endless runner game developed in collaboration with 2DGameDev (Dave) ([Twitch](http://www.twitch.tv/2dgamedev)).
 
 In this project, Dave was responsible for the pixel art, while I handled the programming. The game features simple mechanics: press a button to jump and avoid obstacles. The goal is to keep running as far as possible, dodging cars, debris, and zombies, while avoiding falling off the screen.

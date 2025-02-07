@@ -17,6 +17,16 @@ layout: compress
   {% include head.html %}
 
   <body>
+
+<style>
+  .responsive-embed {
+    width: 100%;
+    max-width: 840px; /* Max width for large screens */
+    height: auto;
+    aspect-ratio: 16/9; /* Ensures the aspect ratio stays consistent */
+  }
+</style>
+
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">
