@@ -60,3 +60,7 @@ We cover everything from **multiplayer**, **VR**, **Unity**, and **game mechanic
 Level up your game dev skills, get inspired, and share your progress with like-minded creators.
 
 👉 **Join us:** [Discord Invite](https://discord.gg/0hyoWZyM6y7kkFCN)
+
+---
+
+🔗 **[Check out my Linktree](https://tront.xyz/)** for all my projects, social links, and more!
