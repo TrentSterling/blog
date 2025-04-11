@@ -7,7 +7,7 @@ description: "A game project inspired by The Sims, Diner Dash, and Black and Whi
 image: "/assets/img/yRyskp.jpg"
 ---
 
-<iframe class="responsive-embed" src="//www.youtube.com/embed/CnQKxeq4tdY" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/CnQKxeq4tdY" frameborder="0" allowfullscreen></iframe>
 
 > I've detailed the development text a bit more in 2025! This project is still WIP/pending.
 {: .prompt-tip }

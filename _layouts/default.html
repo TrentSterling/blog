@@ -767,6 +767,8 @@ layout: compress
   .responsive-embed { /* ... embed styles ... */ }
   .responsive-embed iframe, .responsive-embed object, .responsive-embed embed,  .responsive-embed video { /* ... embed styles ... */ }
 
+
+
 </style>
 <!-- **** END: CONSOLIDATED + Tighter Layout Fix **** -->
   
@@ -925,6 +927,125 @@ layout: compress
     }
   
   
+  
+  
+  
+  
+  
+  
+  /* --- Simpler Embed Styling (No Aspect Ratio) --- */
+  .responsive-embed {
+    margin: 0;
+    padding: 0;
+    height: 30rem;
+  }
+
+  .responsive-embed iframe,
+  .responsive-embed object,
+  .responsive-embed embed,
+  .responsive-embed video {
+    margin: 0;
+    padding: 0;
+    height: 30rem;
+  }
+  
+  
+  
+
+  /* ========================= */
+  /* === Responsive Embed (16:9 Aspect Ratio) === */
+  .responsive-embed {
+    position: relative;    /* Context for the iframe */
+    overflow: hidden;      /* Hide overflow */
+    width: 100%;           /* Use container width */
+    padding-top: 56.25%;   /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+    margin-bottom: 1rem;   /* Space below (scales with font) */
+    height: 0;             /* Prevents potential double height issues */
+  }
+
+  .responsive-embed iframe,
+  .responsive-embed object,
+  .responsive-embed embed,
+  .responsive-embed video {
+    position: absolute;    /* Position within the container */
+    top: 0;
+    left: 0;
+    width: 100%;           /* Fill container width */
+    height: 100%;          /* Fill container height (determined by padding-top) */
+    border: 0;             /* Remove default border */
+  }
+  /* ========================= */
+
+
+  
+  
+  
+  
+  
+    /* ========================= */
+  /* === Responsive Embed (16:9 Aspect Ratio) === */
+  .responsive-embed {
+    position: relative;    /* Crucial: Establishes positioning context for iframe */
+    overflow: hidden;      /* Good practice: Hides anything spilling out */
+    width: 100%;           /* Takes the full width of its container */
+    padding-top: 56.25%;   /* The aspect ratio magic: 9 / 16 = 0.5625 */
+    margin-bottom: 1rem;   /* Optional spacing below */
+    height: 0;             /* Prevents potential layout shifts/double height */
+    background-color: transparent; /* Make sure parent has no background */
+  }
+
+  .responsive-embed iframe,
+  .responsive-embed object,
+  .responsive-embed embed,
+  .responsive-embed video {
+    position: absolute;    /* Crucial: Positions relative to the parent */
+    top: 0;                /* Crucial: Aligns to the top of the parent */
+    left: 0;               /* Crucial: Aligns to the left of the parent */
+    width: 100%;           /* Crucial: Fills the parent's width */
+    height: 100%;          /* Crucial: Fills the parent's height (created by padding) */
+    border: 0;             /* Removes default iframe border */
+  }
+  /* ========================= */
+  
+    /* ========================= */
+  /* === Responsive Embed (16:9 Aspect Ratio) === */
+  .responsive-embed {
+    position: relative;    /* Crucial: Establishes positioning context for iframe */
+    overflow: hidden;      /* Good practice: Hides anything spilling out */
+    width: 100%;           /* Takes the full width of its container */
+    padding-top: 56.25%;   /* The aspect ratio magic: 9 / 16 = 0.5625 */
+    margin-bottom: 1rem;   /* Optional spacing below */
+    height: 0;             /* Prevents potential layout shifts/double height */
+    background-color: transparent; /* Make sure parent has no background */
+  }
+
+  .responsive-embed iframe,
+  .responsive-embed object,
+  .responsive-embed embed,
+  .responsive-embed video {
+    position: absolute;    /* Crucial: Positions relative to the parent */
+    top: 0;                /* Crucial: Aligns to the top of the parent */
+    left: 0;               /* Crucial: Aligns to the left of the parent */
+    width: 100%;           /* Crucial: Fills the parent's width */
+    height: 100%;          /* Crucial: Fills the parent's height (created by padding) */
+    border: 0;             /* Removes default iframe border */
+  }
+  /* ========================= */
+  
+    /* ========================= */
+  /* === Direct Iframe Aspect Ratio Styling === */
+  /* Target all iframes - you might want to make this more specific */
+  /* e.g., iframe[src*="youtube.com"], iframe[src*="vimeo.com"] */
+  iframe {
+    display: block;         /* Ensure it behaves like a block */
+    width: 100%;            /* Take full container width */
+    max-width: 100%;        /* Prevent exceeding container width */
+    height: auto;           /* Let aspect-ratio determine height */
+    aspect-ratio: 16 / 9;   /* THE MAGIC: Force 16:9 aspect ratio */
+    border: 0;              /* Remove default border */
+    margin-bottom: 1rem;    /* Keep the spacing below */
+  }
+  /* ========================= */
   
   
 

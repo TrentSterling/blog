@@ -10,7 +10,7 @@ image: "/assets/img/2015-07-19_23-22-05.png"
 
 
 
-<iframe class="responsive-embed" src="//www.youtube.com/embed/NBHL7rwasqg" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/NBHL7rwasqg" frameborder="0" allowfullscreen></iframe>
 
 
 > Appended a video to this post in 2025!
