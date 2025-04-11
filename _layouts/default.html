@@ -20,16 +20,936 @@ layout: compress
 <meta http-equiv="Expires" content="0">
 
   <body>
-
+  
+  
+  
 <style>
-  .responsive-embed {
-    width: 100%;
-    max-width: 840px; /* Max width for large screens */
-    height: auto;
-    aspect-ratio: 16/9; /* Ensures the aspect ratio stays consistent */
-  }
-</style>
 
+  :root {
+    --min-font-size: 14px;   /* Smallest size (e.g., mobile/small desktop) */
+    --max-font-size: 35px;   /* LARGEST size (e.g., 4K+) - TUNE THIS! */
+
+    /* Define the scaling rate */
+    --scaler-factor: 0.5vw; /* TUNE THIS RATE (e.g., 0.5vw, 1.0vw) */
+
+    /* Define a base pixel value */
+    --scaler-base-px: 14px; /* TUNE THIS BASE OFFSET */
+
+    /* The clamp function - uses the factors above */
+    font-size: clamp(
+      var(--min-font-size),
+      calc(var(--scaler-base-px) + var(--scaler-factor)),
+      var(--max-font-size)
+    );
+  }
+
+  /* --- LET MAIN CONTENT CONTAINER BE WIDE --- */
+  #main-wrapper > .container {
+    max-width: none; /* Remove constraints */
+    width: 90%;   
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+</style>
+  
+  
+  
+  <!-- **** START: Fluid Scaling + Sidebar Internal EM Scaling Fix **** -->
+<style>
+  /* --- FLUID ROOT FONT SIZE using clamp() --- */
+  html {
+    --min-font-size: 16px;
+    --max-font-size: 30px;   /* <<< TUNE MAX FONT */
+    --scaler-factor: 0.8vw; /* <<< TUNE SCALING RATE */
+    --scaler-base-px: 14px; /* <<< TUNE BASE OFFSET */
+
+    font-size: clamp(
+      var(--min-font-size),
+      calc(var(--scaler-base-px) + var(--scaler-factor)),
+      var(--max-font-size)
+    );
+  }
+
+  /* --- LET MAIN CONTENT CONTAINER BE WIDE --- */
+  #main-wrapper > .container {
+    max-width: none; /* Remove constraints */
+    width: 90%;      /* <<< SET DESIRED PERCENTAGE WIDTH */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- SIDEBAR INTERNAL LAYOUT ADJUSTMENTS (using EM to scale with fluid font) --- */
+
+  /* Overall sidebar padding might be okay, but we can adjust if needed */
+  /* #sidebar { padding: 1em; } */
+
+  /* Profile area spacing */
+  #sidebar .profile-wrapper {
+    /* Adjust top/bottom margins using EM */
+    margin-top: 1.5em;    /* Was likely fixed px or larger rem before */
+    margin-bottom: 1.5em;
+    /* Adjust padding if needed */
+    padding-left: 1.5em; /* Example */
+    padding-right: 1em;  /* Example */
+  }
+
+  /* Avatar/Logo size */
+  #sidebar #avatar {
+    /* Control size using EM */
+    width: 6em;    /* Adjust multiplier (e.g., 5em, 7em) */
+    height: 6em;   /* Keep it square */
+    /* Ensure box-shadow scales reasonably (optional) */
+    box-shadow: var(--avatar-border-color) 0 0 0 0.15em; /* Use EM for border */
+  }
+  /* Ensure image fills the scaled avatar container */
+   #sidebar #avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Make sure image covers the area */
+   }
+
+
+  /* Site Title size and spacing */
+  #sidebar .site-title {
+    /* Use EM for font size relative to sidebar's inherited font-size */
+    font-size: 1.5em;    /* Adjust multiplier (e.g., 1.4em, 1.6em) */
+    line-height: 1.2;    /* Keep line height tight */
+    margin-top: 0.75em;  /* Adjust spacing relative to font size */
+    margin-bottom: 0.25em;
+  }
+
+  /* Site Subtitle size and spacing */
+  #sidebar .site-subtitle {
+    font-size: 0.85em;   /* Adjust multiplier */
+    margin-top: 0.2em;   /* Adjust spacing */
+  }
+
+  /* Navigation links - adjust padding and maybe icon margin */
+  #sidebar .nav-item {
+    /* Reset padding slightly if needed */
+     padding-left: 1em;
+     padding-right: 1em;
+  }
+   #sidebar .nav-link {
+     padding-top: 0.4em;
+     padding-bottom: 0.4em;
+   }
+  #sidebar .nav-link i {
+    margin-right: 1em; /* Adjust icon spacing */
+    /* font-size: 0.9em; /* Adjust icon size itself if needed */
+  }
+  #sidebar .nav-link span {
+     font-size: 0.85em; /* Adjust nav text size relative to base */
+  }
+
+  /* Bottom icons container spacing */
+   #sidebar .sidebar-bottom {
+      padding-left: 1.25em; /* Adjust */
+      padding-right: 1em;   /* Adjust */
+      margin-bottom: 1em; /* Adjust */
+   }
+
+  /* Bottom icons size & spacing */
+  #sidebar .sidebar-bottom a,
+  #sidebar .sidebar-bottom #mode-toggle {
+     width: 1.6em;   /* Adjust icon button size */
+     height: 1.6em;  /* Adjust icon button size */
+     margin-right: 0.5em; /* Adjust spacing between icons */
+  }
+   #sidebar .sidebar-bottom .icon-border {
+      /* Adjust the little dot separator size/margin */
+      width: 0.2em;
+      height: 0.2em;
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+   }
+
+
+  /* --- Fix for embedded content --- */
+  .responsive-embed {
+    position: relative; overflow: hidden; width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    margin-bottom: 1rem; /* This margin now scales */
+  }
+  .responsive-embed iframe, .responsive-embed object,
+  .responsive-embed embed,  .responsive-embed video {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+
+</style>
+<!-- **** END: Fluid Scaling + Sidebar Internal EM Scaling Fix **** -->
+  
+  <!-- **** START: Fluid Scaling + Refined Sidebar & Panel Fixes **** -->
+<style>
+  /* --- FLUID ROOT FONT SIZE using clamp() --- */
+  html {
+    --min-font-size: 16px;
+    --max-font-size: 30px;   /* <<< TUNE MAX FONT */
+    --scaler-factor: 0.8vw; /* <<< TUNE SCALING RATE */
+    --scaler-base-px: 14px; /* <<< TUNE BASE OFFSET */
+
+    font-size: clamp(
+      var(--min-font-size),
+      calc(var(--scaler-base-px) + var(--scaler-factor)),
+      var(--max-font-size)
+    );
+  }
+
+  /* --- LET MAIN CONTENT CONTAINER BE WIDE --- */
+  #main-wrapper > .container {
+    max-width: none; /* Remove constraints */
+    width: 95%;      /* Use percentage width */
+    margin-left: auto;
+    margin-right: auto;
+     /* Optional: Add back a large REM max-width if lines get truly excessive */
+     /* max-width: 120rem; */
+  }
+
+  /* --- SIDEBAR INTERNAL LAYOUT ADJUSTMENTS (using EM to scale with fluid font) --- */
+
+  #sidebar .profile-wrapper {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em; /* Tune */
+    padding-right: 1em;  /* Tune */
+  }
+
+  #sidebar #avatar {
+    width: 5.5em;    /* << TUNE Avatar size */
+    height: 5.5em;   /* << TUNE Avatar size */
+    box-shadow: var(--avatar-border-color) 0 0 0 0.1em; /* Thinner border scaled */
+  }
+   #sidebar #avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  #sidebar .site-title {
+    font-size: 1.6em;    /* << TUNE Title size */
+    line-height: 1.2;
+    margin-top: 0.6em;  /* << TUNE Title spacing */
+    margin-bottom: 0.2em;
+  }
+  #sidebar .site-subtitle { font-size: 0.8em; margin-top: 0.2em; } /* << TUNE Subtitle */
+
+  /* NAV LINK FIXES */
+  #sidebar .nav-item {
+     padding-left: 0.8em;  /* Reduce overall padding */
+     padding-right: 0.8em;
+  }
+   #sidebar .nav-link {
+     padding-top: 0.5em;    /* Adjust vertical padding */
+     padding-bottom: 0.5em;
+     padding-left: 0.75em;  /* Adjust left padding for highlight */
+     padding-right: 0.75em; /* Adjust right padding for highlight */
+     /* Ensure flex alignment */
+     display: flex;
+     align-items: center;
+   }
+  #sidebar .nav-link i {
+    margin-right: 0.75em; /* << REDUCE space between icon and text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    /* font-size: 1em; /* Keep icon size relative to nav link font */
+  }
+  #sidebar .nav-link span {
+     font-size: 0.9em; /* << TUNE Nav text size */
+     /* Optional: Prevent text from wrapping aggressively */
+     /* white-space: nowrap; */
+  }
+
+  /* Bottom icons container spacing */
+   #sidebar .sidebar-bottom {
+      padding-left: 1em;
+      padding-right: 1em;
+      margin-bottom: 1em;
+   }
+  /* Bottom icons size & spacing */
+  #sidebar .sidebar-bottom a, #sidebar .sidebar-bottom #mode-toggle {
+     width: 1.5em;   /* << TUNE icon button size */
+     height: 1.5em;
+     margin-right: 0.4em; /* << TUNE spacing between icons */
+  }
+   #sidebar .sidebar-bottom .icon-border { width: 0.15em; height: 0.15em; margin-left: 0.2em; margin-right: 0.2em; }
+
+
+  /* --- RIGHT PANEL POSITIONING FIX (for wider screens) --- */
+  @media (min-width: 1400px) { /* Start adjusting maybe at XXL */
+      #main-wrapper > .container {
+          /* Optionally slightly reduce width % if needed */
+          /* width: 90%; */
+      }
+      main.col-xl-9 {
+          /* Explicitly define column width, leave more room */
+          flex: 0 0 auto;
+          width: 72%; /* Example: Give it less than the default 9/12ths */
+      }
+      aside#panel-wrapper.col-xl-3 {
+          /* Ensure it takes remaining space or specific width */
+          flex: 0 0 auto;
+          width: 25%; /* Example: Give it slightly more relative space */
+          /* Or add margin to push it right */
+          /* margin-left: 3%; */
+      }
+  }
+   @media (min-width: 1920px) { /* Further adjust for very wide screens */
+      main.col-xl-9 {
+          width: 70%; /* Even less relative width for main content */
+      }
+       aside#panel-wrapper.col-xl-3 {
+          width: 28%; /* Give panel more room */
+          /* margin-left: 2%; */
+       }
+    }
+
+
+  /* --- Fix for embedded content --- */
+  .responsive-embed {
+    position: relative; overflow: hidden; width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    margin-bottom: 1rem; /* This margin now scales */
+  }
+  .responsive-embed iframe, .responsive-embed object,
+  .responsive-embed embed,  .responsive-embed video {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+
+</style>
+<!-- **** END: Fluid Scaling + Refined Sidebar & Panel Fixes **** -->
+  
+  
+  
+  
+  
+  
+  
+  <!-- **** START: CONSOLIDATED + FINAL NAV FIX v4 (Correct LI Padding Removal) **** -->
+<style>
+  /* --- FLUID ROOT FONT SIZE --- */
+  html {
+    --min-font-size: 16px;
+    --max-font-size: 30px;   /* Tune */
+    --scaler-factor: 0.8vw; /* Tune */
+    --scaler-base-px: 14px; /* Tune */
+    font-size: clamp(var(--min-font-size), calc(var(--scaler-base-px) + var(--scaler-factor)), var(--max-font-size));
+  }
+
+  /* --- CONTAINER WIDTH --- */
+  #main-wrapper > .container {
+    max-width: none;
+    width: 98%; /* Wider */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- SIDEBAR - Inherits fluid font size --- */
+
+  /* ========================= */
+  /* === SIDEBAR NAV FIX (Zero LI Padding, Pad Link Instead) === */
+
+  /* Keep padding on the overall UL nav block for group indent */
+  #sidebar ul.nav {
+      padding-left: 0.8em;
+      padding-right: 0.8em;
+      list-style: none;
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  /* *** CRITICAL FIX: Override theme's LI padding *** */
+  #sidebar .nav-item {
+     padding-left: 0 !important;  /* Override theme default */
+     padding-right: 0 !important; /* Override theme default */
+     margin: 0;
+     margin-bottom: 0.2em;
+     width: 100%;
+     display: block; /* Ensure it behaves */
+  }
+  /* Also override the media query version */
+  @media (min-width: 1650px) {
+      #sidebar ul li.nav-item {
+          padding-left: 0 !important; /* Override theme widescreen padding */
+          padding-right: 0 !important;/* Override theme widescreen padding */
+      }
+  }
+
+  /* Style the link: Apply padding HERE for highlight area */
+   #sidebar .nav-link {
+     display: flex;
+     align-items: center;
+     width: 100%;
+     /* Padding here controls highlight size & internal spacing */
+     padding: 0.6em 1em;   /* <<< TUNE Padding (Top/Bottom Left/Right) */
+     line-height: 1.3;
+     text-decoration: none !important;
+     border-radius: 0.5em;
+     box-sizing: border-box;
+     color: var(--sidebar-muted-color);
+   }
+   #sidebar .nav-item:hover > .nav-link,
+   #sidebar .nav-item.active > .nav-link {
+      background-color: var(--sidebar-hover-bg);
+      color: var(--sidebar-active-color);
+   }
+
+  /* Icon styling: Add margin ONLY for spacing */
+  #sidebar .nav-link i {
+    flex-shrink: 0;
+    margin: 0 0.8em 0 0;  /* <<< TUNE Right margin ONLY */
+    font-size: 1em;
+    line-height: 1;
+    width: auto;
+    text-align: center;
+    color: inherit;
+  }
+
+  /* Text styling: Let it fill remaining space */
+  #sidebar .nav-link span {
+     font-size: 0.9em;   /* TUNE */
+     line-height: 1;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     flex-grow: 1;
+     min-width: 0;
+  }
+  /* ========================= */
+
+
+  /* --- Other Sidebar Elements (Tune EM values) --- */
+   #sidebar .profile-wrapper { margin-top: 1.5em; margin-bottom: 1.5em; padding-left: 1.2em; padding-right: 1em; }
+   #sidebar #avatar { width: 5.5em; height: 5.5em; box-shadow: var(--avatar-border-color) 0 0 0 0.1em; }
+   #sidebar #avatar img { width: 100%; height: 100%; object-fit: cover; }
+   #sidebar .site-title { font-size: 1.6em; line-height: 1.2; margin-top: 0.6em; margin-bottom: 0.2em; }
+   #sidebar .site-subtitle { font-size: 0.8em; margin-top: 0.2em; }
+   #sidebar .sidebar-bottom { padding-left: 1em; padding-right: 1em; margin-bottom: 1em; }
+   #sidebar .sidebar-bottom a, #sidebar .sidebar-bottom #mode-toggle { width: 1.5em; height: 1.5em; margin-right: 0.4em; }
+   #sidebar .sidebar-bottom .icon-border { width: 0.15em; height: 0.15em; margin-left: 0.2em; margin-right: 0.2em; }
+
+
+  /* --- RIGHT PANEL POSITIONING FIX (Aggressive) --- */
+  @media (min-width: 1400px) {
+      main.col-xl-9 { flex: 0 0 auto; width: 68%; }
+      aside#panel-wrapper.col-xl-3 { flex: 0 0 auto; width: 30%; margin-left: 2%; }
+  }
+   @media (min-width: 1920px) {
+      main.col-xl-9 { width: 65%; }
+      aside#panel-wrapper.col-xl-3 { width: 32%; margin-left: 3%; }
+   }
+     @media (min-width: 2400px) {
+      main.col-xl-9 { width: 62%; }
+      aside#panel-wrapper.col-xl-3 { width: 34%; margin-left: 4%; }
+    }
+
+
+  /* --- Fix for embedded content --- */
+  .responsive-embed { /* ... embed styles ... */ }
+  .responsive-embed iframe, .responsive-embed object, .responsive-embed embed,  .responsive-embed video { /* ... embed styles ... */ }
+
+</style>
+<!-- **** END: CONSOLIDATED + FINAL NAV FIX v4 (Correct LI Padding Removal) **** -->
+  
+  
+  
+  
+  
+  <!-- **** START: CONSOLIDATED + SIMPLER Sidebar Nav Fix **** -->
+<style>
+  /* --- FLUID ROOT FONT SIZE --- */
+  html {
+    --min-font-size: 16px;
+    --max-font-size: 30px;   /* Tune */
+    --scaler-factor: 0.8vw; /* Tune */
+    --scaler-base-px: 14px; /* Tune */
+    font-size: clamp(var(--min-font-size), calc(var(--scaler-base-px) + var(--scaler-factor)), var(--max-font-size));
+  }
+
+  /* --- CONTAINER WIDTH --- */
+  #main-wrapper > .container {
+    max-width: none;
+    width: 98%; /* Wider */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- SIDEBAR - Inherits fluid font size --- */
+
+  /* ========================= */
+  /* === SIDEBAR NAV FIX (Simpler Approach) === */
+  /* Remove padding from list item */
+  #sidebar .nav-item {
+     padding: 0;
+     margin-bottom: 0.2em; /* Space between items */
+  }
+
+  /* Style the link: Control height via line-height & padding */
+   #sidebar .nav-link {
+     display: block; /* Back to block level */
+     width: 100%;
+     padding: 0.4em 1em; /* TUNE Padding (Top/Bottom Left/Right) */
+     line-height: 1.5;  /* TUNE Line height - helps vertical centering */
+     text-decoration: none !important;
+     border-radius: 0.5em;
+     box-sizing: border-box;
+     color: var(--sidebar-muted-color);
+   }
+   /* Apply hover/active styles */
+   #sidebar .nav-item:hover > .nav-link,
+   #sidebar .nav-item.active > .nav-link {
+      background-color: var(--sidebar-hover-bg);
+      color: var(--sidebar-active-color);
+   }
+
+  /* Icon styling: Make size relative, control spacing */
+  #sidebar .nav-link i {
+    /* Size relative to the link's font size */
+    font-size: 1.1em;  /* <<< TUNE Icon size relative to text */
+    /* Vertical alignment fix */
+    vertical-align: middle; /* Try middle or baseline */
+    margin-right: 0.6em; /* <<< TUNE Space between icon and text */
+    /* Give icon consistent space */
+    width: 1.2em;
+    display: inline-block; /* Needed for width and alignment */
+    text-align: center;
+    color: inherit; /* Inherit color from link */
+  }
+
+  /* Text styling within the link */
+  #sidebar .nav-link span {
+     font-size: 0.9em;   /* <<< TUNE Nav text size relative to link */
+     vertical-align: middle; /* Align with icon */
+  }
+  /* ========================= */
+
+
+  /* --- Other Sidebar Elements (Tune EM values) --- */
+   #sidebar .profile-wrapper { margin-top: 1.5em; margin-bottom: 1.5em; padding-left: 1.2em; padding-right: 1em; }
+   #sidebar #avatar { width: 5.5em; height: 5.5em; box-shadow: var(--avatar-border-color) 0 0 0 0.1em; }
+   #sidebar #avatar img { width: 100%; height: 100%; object-fit: cover; }
+   #sidebar .site-title { font-size: 1.6em; line-height: 1.2; margin-top: 0.6em; margin-bottom: 0.2em; }
+   #sidebar .site-subtitle { font-size: 0.8em; margin-top: 0.2em; }
+   #sidebar .sidebar-bottom { padding-left: 1em; padding-right: 1em; margin-bottom: 1em; }
+   #sidebar .sidebar-bottom a, #sidebar .sidebar-bottom #mode-toggle { width: 1.5em; height: 1.5em; margin-right: 0.4em; }
+   #sidebar .sidebar-bottom .icon-border { width: 0.15em; height: 0.15em; margin-left: 0.2em; margin-right: 0.2em; }
+
+
+  /* --- RIGHT PANEL POSITIONING FIX (Aggressive) --- */
+  @media (min-width: 1400px) {
+      main.col-xl-9 { flex: 0 0 auto; width: 68%; }
+      aside#panel-wrapper.col-xl-3 { flex: 0 0 auto; width: 30%; margin-left: 2%; }
+  }
+   @media (min-width: 1920px) {
+      main.col-xl-9 { width: 65%; }
+      aside#panel-wrapper.col-xl-3 { width: 32%; margin-left: 3%; }
+   }
+     @media (min-width: 2400px) {
+      main.col-xl-9 { width: 62%; }
+      aside#panel-wrapper.col-xl-3 { width: 34%; margin-left: 4%; }
+    }
+
+
+  /* --- Fix for embedded content --- */
+  .responsive-embed { /* ... embed styles ... */ }
+  .responsive-embed iframe, .responsive-embed object, .responsive-embed embed,  .responsive-embed video { /* ... embed styles ... */ }
+
+</style>
+<!-- **** END: CONSOLIDATED + SIMPLER Sidebar Nav Fix **** -->
+
+
+
+
+
+<!-- **** START: CONSOLIDATED + NAV TEXT VISIBILITY RESTORE **** -->
+<style>
+  /* --- FLUID ROOT FONT SIZE --- */
+  html {
+    --min-font-size: 16px;
+    --max-font-size: 30px;   /* Tune */
+    --scaler-factor: 0.8vw; /* Tune */
+    --scaler-base-px: 14px; /* Tune */
+    font-size: clamp(var(--min-font-size), calc(var(--scaler-base-px) + var(--scaler-factor)), var(--max-font-size));
+  }
+
+  /* --- CONTAINER WIDTH --- */
+  #main-wrapper > .container {
+    max-width: none;
+    width: 98%; /* Wider */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- SIDEBAR - Inherits fluid font size --- */
+
+  /* ========================= */
+  /* === SIDEBAR NAV FIX (Bring Back Text) === */
+  #sidebar ul.nav {
+      padding-left: 0.8em;
+      padding-right: 0.8em;
+      list-style: none;
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box;
+  }
+  #sidebar .nav-item {
+     padding: 0;
+     margin: 0;
+     margin-bottom: 0.2em;
+     width: 100%;
+  }
+  /* Style the link: Flexbox */
+   #sidebar .nav-link {
+     display: flex;
+     align-items: center; /* Vertical center */
+     width: 100%;
+     padding: 0.6em 1em;   /* <<< TUNE Padding */
+     line-height: 1.3;     /* May need adjustment */
+     text-decoration: none !important;
+     border-radius: 0.5em;
+     box-sizing: border-box;
+     color: var(--sidebar-muted-color);
+   }
+   #sidebar .nav-item:hover > .nav-link,
+   #sidebar .nav-item.active > .nav-link {
+      background-color: var(--sidebar-hover-bg);
+      color: var(--sidebar-active-color);
+   }
+
+  /* Icon styling: Basic spacing */
+  #sidebar .nav-link i {
+    flex-shrink: 0;      /* Don't shrink icon */
+    margin-right: 0.8em;  /* <<< TUNE Space after icon */
+    font-size: 1em;       /* Icon size relative to link */
+    line-height: 1;
+    text-align: center;
+    color: inherit;
+  }
+
+  /* Text styling: ENSURE IT'S VISIBLE */
+  #sidebar .nav-link span {
+     /* REMOVED flex-grow, min-width, overflow, text-overflow */
+     font-size: 0.9em;   /* <<< TUNE Nav text size */
+     line-height: 1;
+     white-space: nowrap; /* Keep on one line */
+     display: inline; /* Make sure it renders */
+  }
+  /* ========================= */
+
+
+  /* --- Other Sidebar Elements (Tune EM values) --- */
+   #sidebar .profile-wrapper { margin-top: 1.5em; margin-bottom: 1.5em; padding-left: 1.2em; padding-right: 1em; }
+   #sidebar #avatar { width: 5.5em; height: 5.5em; box-shadow: var(--avatar-border-color) 0 0 0 0.1em; }
+   #sidebar #avatar img { width: 100%; height: 100%; object-fit: cover; }
+   #sidebar .site-title { font-size: 1.6em; line-height: 1.2; margin-top: 0.6em; margin-bottom: 0.2em; }
+   #sidebar .site-subtitle { font-size: 0.8em; margin-top: 0.2em; }
+   #sidebar .sidebar-bottom { padding-left: 1em; padding-right: 1em; margin-bottom: 1em; }
+   #sidebar .sidebar-bottom a, #sidebar .sidebar-bottom #mode-toggle { width: 1.5em; height: 1.5em; margin-right: 0.4em; }
+   #sidebar .sidebar-bottom .icon-border { width: 0.15em; height: 0.15em; margin-left: 0.2em; margin-right: 0.2em; }
+
+
+  /* --- RIGHT PANEL POSITIONING FIX (Aggressive) --- */
+  @media (min-width: 1400px) {
+      main.col-xl-9 { flex: 0 0 auto; width: 68%; }
+      aside#panel-wrapper.col-xl-3 { flex: 0 0 auto; width: 30%; margin-left: 2%; }
+  }
+   @media (min-width: 1920px) {
+      main.col-xl-9 { width: 65%; }
+      aside#panel-wrapper.col-xl-3 { width: 32%; margin-left: 3%; }
+   }
+     @media (min-width: 2400px) {
+      main.col-xl-9 { width: 62%; }
+      aside#panel-wrapper.col-xl-3 { width: 34%; margin-left: 4%; }
+    }
+
+
+  /* --- Fix for embedded content --- */
+  .responsive-embed { /* ... embed styles ... */ }
+  .responsive-embed iframe, .responsive-embed object, .responsive-embed embed,  .responsive-embed video { /* ... embed styles ... */ }
+
+</style>
+<!-- **** END: CONSOLIDATED + NAV TEXT VISIBILITY RESTORE **** -->
+
+
+
+  
+  
+  
+  
+  
+  <!-- **** START: CONSOLIDATED + Tighter Layout Fix **** -->
+<style>
+  /* --- FLUID ROOT FONT SIZE --- */
+  html {
+    --min-font-size: 16px;
+    --max-font-size: 30px;   /* Tune */
+    --scaler-factor: 0.8vw; /* Tune */
+    --scaler-base-px: 14px; /* Tune */
+    font-size: clamp(var(--min-font-size), calc(var(--scaler-base-px) + var(--scaler-factor)), var(--max-font-size));
+  }
+
+  /* --- CONTAINER WIDTH (Make sure it's box-sizing correctly) --- */
+  #main-wrapper > .container {
+    max-width: none;
+    width: 98%; /* Keep it wide */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box; /* Ensure padding is included if any */
+    padding-left: 0.5rem;  /* Minimal container padding */
+    padding-right: 0.5rem; /* Minimal container padding */
+  }
+
+  /* --- Reduce Padding on Main Content Column --- */
+  main[aria-label="Main Content"] {
+    padding-left: 0.5rem !important;  /* Minimal padding */
+    padding-right: 0.5rem !important; /* Minimal padding */
+  }
+  /* Override Bootstrap's specific padding if needed */
+   @media (min-width: 768px) { /* md breakpoint */
+      main.px-md-4 {
+          padding-left: 0.5rem !important;
+          padding-right: 0.5rem !important;
+      }
+   }
+
+
+  /* --- SIDEBAR - Inherits fluid font size --- */
+  /* ========================= */
+  /* === SIDEBAR NAV STYLES (Keep as is) === */
+  #sidebar ul.nav { padding-left: 0.8em; padding-right: 0.8em; list-style: none; margin: 0; width: 100%; box-sizing: border-box; }
+  #sidebar .nav-item { padding: 0; margin: 0; margin-bottom: 0.2em; width: 100%; display: block; }
+  #sidebar .nav-link { display: flex; align-items: center; width: 100%; padding: 0.6em 1em; line-height: 1.3; text-decoration: none !important; border-radius: 0.5em; box-sizing: border-box; color: var(--sidebar-muted-color); }
+  #sidebar .nav-item:hover > .nav-link, #sidebar .nav-item.active > .nav-link { background-color: var(--sidebar-hover-bg); color: var(--sidebar-active-color); }
+  #sidebar .nav-link i { flex-shrink: 0; margin: 0 0.8em 0 0; font-size: 1em; line-height: 1; width: auto; text-align: center; color: inherit; }
+  #sidebar .nav-link span { font-size: 0.9em; line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-grow: 1; min-width: 0; }
+  /* ========================= */
+
+  /* --- Other Sidebar Elements (Tune EM values if needed) --- */
+   #sidebar .profile-wrapper { margin-top: 1.5em; margin-bottom: 1.5em; padding-left: 1.2em; padding-right: 1em; }
+   #sidebar #avatar { width: 5.5em; height: 5.5em; box-shadow: var(--avatar-border-color) 0 0 0 0.1em; }
+   #sidebar #avatar img { width: 100%; height: 100%; object-fit: cover; }
+   #sidebar .site-title { font-size: 1.6em; line-height: 1.2; margin-top: 0.6em; margin-bottom: 0.2em; }
+   #sidebar .site-subtitle { font-size: 0.8em; margin-top: 0.2em; }
+   #sidebar .sidebar-bottom { padding-left: 1em; padding-right: 1em; margin-bottom: 1em; }
+   #sidebar .sidebar-bottom a, #sidebar .sidebar-bottom #mode-toggle { width: 1.5em; height: 1.5em; margin-right: 0.4em; }
+   #sidebar .sidebar-bottom .icon-border { width: 0.15em; height: 0.15em; margin-left: 0.2em; margin-right: 0.2em; }
+
+
+  /* --- RIGHT PANEL POSITIONING FIX (SLIMMER PANEL, MAX MAIN) --- */
+  /* Applies only when panel is visible (XL breakpoint and up by default) */
+  @media (min-width: 1200px) { /* Bootstrap XL breakpoint */
+      main.col-xl-9 {
+          flex: 0 0 auto;
+          width: 80%; /* <<< Give main content MORE space */
+          padding-right: 1rem !important; /* Add slight gap to panel */
+      }
+      aside#panel-wrapper.col-xl-3 {
+          flex: 0 0 auto;
+          width: 20%; /* <<< Make panel NARROWER */
+          margin-left: 0; /* Remove explicit left margin */
+          padding-left: 0.5rem !important; /* Reduce panel's left padding */
+          padding-right: 0 !important; /* Push panel content right */
+      }
+       /* Try nudging search trigger slightly right */
+       #topbar #search-trigger {
+          /* position: relative; */ /* Might be needed */
+          /* right: -1em; */ /* Adjust value */
+       }
+  }
+   @media (min-width: 1650px) { /* Further tuning if needed */
+      main.col-xl-9 {
+          width: 82%; /* Even more for main */
+      }
+       aside#panel-wrapper.col-xl-3 {
+          width: 18%; /* Even less for panel */
+       }
+    }
+
+
+  /* --- Fix for embedded content --- */
+  .responsive-embed { /* ... embed styles ... */ }
+  .responsive-embed iframe, .responsive-embed object, .responsive-embed embed,  .responsive-embed video { /* ... embed styles ... */ }
+
+</style>
+<!-- **** END: CONSOLIDATED + Tighter Layout Fix **** -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- **** START: CONSOLIDATED + Tighter Layout + Search Corner Fix **** -->
+<style>
+  /* --- FLUID ROOT FONT SIZE --- */
+  html {
+    --min-font-size: 16px;
+    --max-font-size: 30px;   /* Tune */
+    --scaler-factor: 0.8vw; /* Tune */
+    --scaler-base-px: 14px; /* Tune */
+    font-size: clamp(var(--min-font-size), calc(var(--scaler-base-px) + var(--scaler-factor)), var(--max-font-size));
+  }
+
+  /* --- CONTAINER WIDTH --- */
+  #main-wrapper > .container {
+    max-width: none;
+    width: 100%; /* Wider */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* --- Reduce Padding on Main Content Column --- */
+  main[aria-label="Main Content"] { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+   @media (min-width: 768px) { main.px-md-4 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } }
+
+
+  /* --- SIDEBAR STYLES (Keep as is) --- */
+  #sidebar ul.nav { padding-left: 0.8em; padding-right: 0.8em; list-style: none; margin: 0; width: 100%; box-sizing: border-box; }
+  #sidebar .nav-item { padding: 0; margin: 0; margin-bottom: 0.2em; width: 100%; display: block; }
+  #sidebar .nav-link { display: flex; align-items: center; width: 100%; padding: 0.6em 1em; line-height: 1.3; text-decoration: none !important; border-radius: 0.5em; box-sizing: border-box; color: var(--sidebar-muted-color); }
+  #sidebar .nav-item:hover > .nav-link, #sidebar .nav-item.active > .nav-link { background-color: var(--sidebar-hover-bg); color: var(--sidebar-active-color); }
+  #sidebar .nav-link i { flex-shrink: 0; margin: 0 0.8em 0 0; font-size: 1em; line-height: 1; width: auto; text-align: center; color: inherit; }
+  #sidebar .nav-link span { font-size: 0.9em; line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-grow: 1; min-width: 0; }
+  /* ... other sidebar element styles ... */
+   #sidebar .profile-wrapper { margin-top: 1.5em; margin-bottom: 1.5em; padding-left: 1.2em; padding-right: 1em; }
+   #sidebar #avatar { width: 5.5em; height: 5.5em; box-shadow: var(--avatar-border-color) 0 0 0 0.1em; }
+   #sidebar #avatar img { width: 100%; height: 100%; object-fit: cover; }
+   #sidebar .site-title { font-size: 1.6em; line-height: 1.2; margin-top: 0.6em; margin-bottom: 0.2em; }
+   #sidebar .site-subtitle { font-size: 0.8em; margin-top: 0.2em; }
+   #sidebar .sidebar-bottom { padding-left: 1em; padding-right: 1em; margin-bottom: 1em; }
+   #sidebar .sidebar-bottom a, #sidebar .sidebar-bottom #mode-toggle { width: 1.5em; height: 1.5em; margin-right: 0.4em; }
+   #sidebar .sidebar-bottom .icon-border { width: 0.15em; height: 0.15em; margin-left: 0.2em; margin-right: 0.2em; }
+
+
+  /* --- RIGHT PANEL POSITIONING FIX --- */
+  @media (min-width: 1200px) { /* XL breakpoint */
+      main.col-xl-9 { flex: 0 0 auto; width: 80%; padding-right: 1rem !important; }
+      aside#panel-wrapper.col-xl-3 { flex: 0 0 auto; width: 20%; margin-left: auto; padding-left: 0.5rem !important; padding-right: 0 !important; }
+  }
+   @media (min-width: 1650px) {
+      main.col-xl-9 { width: 62%;
+    margin-left: auto;
+	}
+      aside#panel-wrapper.col-xl-3 { width: 18%; }
+   }
+
+
+  /* ========================= */
+  /* === TOP BAR / SEARCH FIX === */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #topbar-wrapper {
+  
+    margin-right: 0;
+    margin-left: 2.5%;
+  
+  }
+  
+  
+  
+  
+  #topbar {
+  
+  
+    /* Remove default padding that pushes search away from edge */
+    padding-right: 0.5rem !important; /* Reduce drastically, or set to 0 */
+    /* Ensure items can get close to the edge */
+    justify-content: space-between; /* Keep this */
+  }
+
+  /* Target the search element itself */
+  #search {
+    /* Remove any right margin if it exists */
+    margin-right: 0 !important;
+    /* Optional: Make it slightly wider if needed */
+    /* max-width: 250px; */
+  }
+
+  /* Ensure cancel button doesn't add extra space when hidden */
+  #search-cancel {
+      margin-left: 0.25rem; /* Minimal space when visible */
+  }
+  /* ========================= */
+
+
+  /* --- Fix for embedded content --- */
+  .responsive-embed { /* ... embed styles ... */ }
+  .responsive-embed iframe, .responsive-embed object, .responsive-embed embed,  .responsive-embed video { /* ... embed styles ... */ }
+  
+  
+  
+  
+  
+  .px-1 {
+  
+    /* width: 20%;  Wider */
+    padding-right: 1.25rem !important;
+    padding-left: 1.25rem !important;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  #tail-wrapper {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  #sidebar {
+        width: 12rem;
+    }
+  
+  
+  
+  
+
+</style>
+<!-- **** END: CONSOLIDATED + Tighter Layout + Search Corner Fix **** -->
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
     {% include sidebar.html lang=lang %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">
