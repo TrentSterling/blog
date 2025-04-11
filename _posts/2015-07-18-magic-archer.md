@@ -26,7 +26,7 @@ The biggest success was starting to stream daily development on Twitch ([http://
     *   Fancy lighting.
     *   Robust networking (prediction, interpolation, handling lag smoothly).
     *   Settings window to change player name and clothing color (synced over network).
-    *   Plans for an in-game level editor (editable while playing).
+    *   A fully functional **in-game level editor** allowing level modification *while playing* online! This was a huge part of the fun and chaos.
 *   **Dedicated Server:** Had a server running 24/7, allowing people to jump in and test.
 
 ![Early Multiplayer Screenshot](/assets/img/2014-11-06_20-45-01.png)
