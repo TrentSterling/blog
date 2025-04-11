@@ -9,7 +9,7 @@ image: "/assets/img/lightrays.png"
 
 
 
-<iframe class="responsive-embed" src="//www.youtube.com/embed/vVkjyptJG_0" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/vVkjyptJG_0" frameborder="0" allowfullscreen></iframe>
 
 
 

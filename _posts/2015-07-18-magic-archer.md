@@ -7,7 +7,7 @@ description: "A devlog discussing the early development of a multiplayer platfor
 image: "/assets/img/2014-11-18_22-39-28.png" # Using an image from the vlog/post
 ---
 
-<iframe class="responsive-embed" src="//www.youtube.com/embed/IP3tRx5HkTg" frameborder="0" allowfullscreen></iframe>
+<iframe src="//www.youtube.com/embed/IP3tRx5HkTg" frameborder="0" allowfullscreen></iframe>
 
 > I've detailed the development text a bit more in 2025, integrating details from the original Week 1 blog post and the vlog itself.
 {: .prompt-tip }
