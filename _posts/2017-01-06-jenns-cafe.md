@@ -30,7 +30,13 @@ While the game lacks depth in its current state, there is still a fun building e
 ---
 
 ![lRDd9Xh](assets/img/KQnkFb.jpg)
+
+---
+
 ![lRDd9Xh](assets/img/KzCEMw.gif)
+
+---
+
 ![lRDd9Xh](assets/img/Z3sGfG.gif)
 
 
