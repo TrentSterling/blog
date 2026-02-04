@@ -8,14 +8,14 @@ description: "It's PI Day! Here's a link to 7DaySpaceJam - a space simulation ga
 
 It's PI Day!
 
+![GIF, YO!](/assets/img/spaceyo.gif)
+
 So here's a link to this crazy space game I did.
 
-## The Game
-
-**7DaySpaceJam** - A space simulation game created as part of a 7-day challenge/bet.
-
-Made this as a personal challenge to see how much of a space game I could build in just one week. Features galactic exploration, ship systems, and the vastness of space.
+[![SPACE, YO!](/assets/img/spacesnap.jpg)](/assets/img/spacesnap.jpg)
 
 **Play it:** [https://trent.itch.io/7dayspacejam](https://trent.itch.io/7dayspacejam)
+
+[![MOAR SPACE, YO!](/assets/img/spaceshot2.jpg)](/assets/img/spaceshot2.jpg)
 
 Pretty neat huh?

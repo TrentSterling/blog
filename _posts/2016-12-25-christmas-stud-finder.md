@@ -6,16 +6,54 @@ tags: [nodemcu, esp8266, iot, electronics]
 description: "Building a DIY stud finder with NodeMCU that sounds like a geiger counter."
 ---
 
-More NodeMCU magic! A stud finder. It sounds like a geiger counter.
+More NodeMCU magic! A stud finder. It sounds like a geiger counter. I added an antenna to explain electromagnetic waves / interference to my wife. It was fun sticking it to my tongue and pretending it hurts.
 
-## The Project
+[![NodeMCU Stud Finder](/assets/img/tongue.jpg)](/assets/img/tongue.jpg)
 
-Added an antenna to explain electromagnetic waves and interference to my wife. It was fun sticking it to my tongue and pretending it hurts.
+Read more to see code snippets and whatnot.
 
-## Tech
+Well you must be a curious type. Here ya go.
 
-- NodeMCU chip
-- Custom antenna
-- Geiger counter-like audio feedback
+```javascript
+let isOn = false;
+const interval = 0;
+var count = 0;
 
-The ESP8266's analog pin can detect changes in electromagnetic fields when you add an antenna. As you move near metal (like studs behind drywall, or wiring), the readings change. Map those readings to audio frequency and you've got a DIY stud finder that clicks faster near metal - just like a geiger counter!
+function main()
+{
+    function toggleLights()
+    {
+        isOn = !isOn;
+        digitalWrite(D2, isOn);
+        digitalWrite(D3, isOn);
+        digitalWrite(D4, isOn);
+    }
+
+    setInterval(() =>
+    {
+        count++;
+
+        analogInput = Math.round(analogRead() * 10000);
+        if (count > 200)
+        {
+            count = 0;
+            console.log(analogInput);
+        }
+
+        if (analogInput > 100)
+        {
+            isOn = false;
+        }
+        else
+        {
+            isOn = true;
+        }
+        digitalWrite(D2, isOn);
+        digitalWrite(D3, isOn);
+        digitalWrite(D4, isOn);
+
+    }, interval);
+}
+```
+
+It's not very good, but we aren't super advanced yet.
