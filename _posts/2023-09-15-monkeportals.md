@@ -2,25 +2,36 @@
 title: "MonkePortals"
 date: 2023-09-15
 categories: [devblog]
-tags: [unity, vr, quest, voxel, gorilla-tag]
-description: "VR voxel game with portals - Gorilla Tag inspired movement."
+tags: [unity, vr, quest, multiplayer, gorilla-tag, portals]
+description: "VR multiplayer game - Gorilla Tag movement meets Portal physics."
+image: "/assets/img/blog/monke_slide.jpg"
 ---
 
-**MonkePortals** is my ongoing VR project. Think Gorilla Tag movement meets voxel building meets portal mechanics.
+![MonkePortals](/assets/img/blog/monke_slide.jpg){: .align-center }
 
-The core idea: you're a monkey (or monkey-like creature) swinging through procedural voxel worlds, using portals to navigate and manipulate the environment.
+**MONKE PORTALS** - Reject humanity. Master momentum.
 
-## What's Working
+[monke.tront.xyz](https://monke.tront.xyz/)
 
-- Gorilla Tag style arm-based locomotion (no joystick movement, pure arm swinging)
-- Voxel terrain generation
-- Portal gun mechanics
-- Quest standalone performance (this was HARD)
+You're a hyper-intelligent primate test subject with portal-generating gloves. Swing through test chambers, shoot portals, preserve momentum, don't die.
 
-## What's Not Done
+## Core Features
 
-- Multiplayer (using FishNet, need to optimize for Quest)
-- Level editor
-- Actual game loop beyond "swing around and place portals"
+- **Arm-based locomotion** - No joysticks, no teleport gimmicks. Pure arm-swinging movement like Gorilla Tag.
+- **Physics-based portals** - Momentum is preserved. Fling yourself across the map.
+- **Multiplayer modes** - Tag, infection, and more
+- **Test chamber trials** - Laboratory setting with puzzles and challenges
+- **Cosmetic customization** - Look fresh while you fling
+- **High-skill ceiling** - Speedrunners welcome
 
-Still actively working on this one. It's the project that keeps pulling me back.
+## Tech
+
+Ruthlessly optimized for Quest standalone. Targeting 120Hz with aggressive culling and efficient portal rendering. This was the hardest part - portals that render "through" to another location are expensive, especially on mobile VR hardware.
+
+Using FishNet for multiplayer netcode. The same transport work from FishNet-EOS-Native applies here.
+
+## Status
+
+Active development. The core loop is solid - the "just one more run" feeling is there. Adding more content and polish.
+
+Join the [Discord](https://discord.gg/0hyoWZyM6y7kkFCN) if you want to playtest.
