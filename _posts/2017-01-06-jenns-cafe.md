@@ -13,15 +13,15 @@ image: "/assets/img/yRyskp.jpg"
 {: .prompt-tip }
 
 
-![lRDd9Xh](assets/img/yRyskp.jpg)
+[![Jenn's Cafe](/assets/img/yRyskp.jpg)](/assets/img/yRyskp.jpg)
 
 I started working on a game for my wife, Jennifer, inspired by a mix of *The Sims*, *Diner Dash*, and *Black and White*. The goal was to create something fun and personalized, but as development went on, I found myself getting caught up in the level editor and the customization options.
 
-![lRDd9Xh](assets/img/DZ1nsPwW4AEB7gE.jpg)
+[![Restaurant View](/assets/img/DZ1nsPwW4AEB7gE.jpg)](/assets/img/DZ1nsPwW4AEB7gE.jpg)
 
 *Jenn’s Cafe* is a simulation and management game that gives players the ability to design and build their own restaurant. The customization is central to the experience, allowing players to freely place and stack objects, creating a highly personalized environment, much like *The Sims* and *Diner Dash*. There’s a level editor inspired by *Sims 3/4*, with an array of props and decorations that players can freely place within the space.
 
-![lRDd9Xh](assets/img/stacking.gif)
+![Stacking Objects](/assets/img/stacking.gif)
 
 The game includes a save system, so players can preserve their restaurant layout and even track in-game currency, but due to incomplete systems, the progression mechanics aren't functioning. A key feature—the customer AI—was never completed, so the core gameplay loop of feeding customers and managing the restaurant doesn't exist yet. As a result, players can’t really progress, and the in-game finances don’t work as intended.
 
@@ -29,15 +29,15 @@ While the game lacks depth in its current state, there is still a fun building e
 
 ---
 
-![lRDd9Xh](assets/img/KQnkFb.jpg)
+[![Kitchen View](/assets/img/KQnkFb.jpg)](/assets/img/KQnkFb.jpg)
 
 ---
 
-![lRDd9Xh](assets/img/KzCEMw.gif)
+![Level Editor](/assets/img/KzCEMw.gif)
 
 ---
 
-![lRDd9Xh](assets/img/Z3sGfG.gif)
+![Customer View](/assets/img/Z3sGfG.gif)
 
 
 
