@@ -4,7 +4,10 @@ date: 2026-02-02
 categories: [devblog]
 tags: [unity, fishnet, eos, multiplayer, networking, open-source]
 description: "Released my EOS transport for FishNet - direct SDK integration, no middleware."
+image: "/assets/img/blog/fishnet-eos-native.png"
 ---
+
+![FishNet-EOS-Native](/assets/img/blog/fishnet-eos-native.png){: .align-center }
 
 Just shipped **FishNet-EOS-Native v1.0**!
 
