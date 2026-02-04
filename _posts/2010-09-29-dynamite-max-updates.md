@@ -4,7 +4,7 @@ date: 2010-09-29
 categories: [DevBlog]
 tags: [Dynamite Max]
 description: "Dynamite Max is a 3D Flash game developed using Papervision3D and Box2D, featuring physics-driven puzzles, explosive gameplay, and an XML-powered level editor."
-image: "assets/img/dynamitemaxintro.jpg"
+image: "/assets/img/dynamitemaxintro.jpg"
 ---
 
 

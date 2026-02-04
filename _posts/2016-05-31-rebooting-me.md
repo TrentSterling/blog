@@ -4,7 +4,10 @@ date: 2016-05-31
 categories: [devblog]
 tags: [3d, multiplayer, photon, unity, streaming]
 description: "A reflection on consistency, audience building, and coming back after months away from streaming."
+image: "/assets/img/2016-05-31_19-12-01.jpg"
 ---
+
+[![Rebooting](/assets/img/2016-05-31_19-12-01.jpg)](/assets/img/2016-05-31_19-12-01.jpg)
 
 ## The Problem
 

@@ -4,7 +4,10 @@ date: 2016-12-15
 categories: [devblog]
 tags: [nodejs, static-sites, markdown, wintersmith]
 description: "Migrating from Wordpress to static site generation with Wintersmith and Markdown."
+image: "/assets/img/8266.jpg"
 ---
+
+[![NodeMCU Chip](/assets/img/8266.jpg)](/assets/img/8266.jpg)
 
 I've been dabbling in a lot of NodeJS lately. Everything from robots, wifi toasters, a twitch overlay, and a discord bot.
 
