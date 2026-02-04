@@ -4,6 +4,7 @@ date: 2011-04-19
 categories: [devblog]
 tags: [tutorial, ActiveTuts]
 description: "Published my first video tutorial on blend modes for ActiveTuts+."
+image: "/assets/img/blog/blendmodes.png"
 ---
 
 ![BOOM!](/assets/img/blog/blendmodes.png){: .align-left }

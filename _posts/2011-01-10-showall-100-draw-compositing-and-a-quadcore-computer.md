@@ -4,6 +4,7 @@ date: 2011-01-10
 categories: [devblog]
 tags: [effects, garbage collection, lighting, Memory Leak, Papervision3D, performance, programming]
 description: "Deep dive into Flash CPU usage, draw calls, and performance testing with multiple cores."
+image: "/assets/img/blog/editor_framerate.png"
 ---
 
 After a little debate in FGL chat about framerate (30 looking choppy and 60 being smooth), I went and looked back on an earlier version of my engine. At that point I had lighting implemented, and was able to have around 500 triangles with a rock solid 60fps. The old engine wasn't too optimized, and wasn't built for garbage collection, so I went in a new direction.

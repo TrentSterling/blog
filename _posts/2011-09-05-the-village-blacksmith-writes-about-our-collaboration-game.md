@@ -4,6 +4,7 @@ date: 2011-09-05
 categories: [devblog]
 tags: [collaboration, indie]
 description: "TVB wrote about our collaboration project - check it out!"
+image: "/assets/img/blog/devscreenshot-4.jpg"
 ---
 
 ![DevScreenshot-4](/assets/img/blog/devscreenshot-4.jpg){: .align-right }

@@ -4,6 +4,7 @@ date: 2010-10-31
 categories: [devblog]
 tags: [Dynamite Max, FGL]
 description: "Reading about finishing games and getting a second wind on my project."
+image: "/assets/img/blog/timewasted.png"
 ---
 
 Just read an article suggested by the guys in FGL chat.

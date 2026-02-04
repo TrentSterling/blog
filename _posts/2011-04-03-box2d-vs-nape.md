@@ -4,6 +4,7 @@ date: 2011-04-03
 categories: [devblog]
 tags: [Box2d, Nape, physics]
 description: "Comparing Box2D and Nape physics engines - speed vs accuracy trade-offs."
+image: "/assets/img/blog/smooth.png"
 ---
 
 This is my short comparison between Box2D and Nape. I've used Box2D AS3, and then Box2D Alchemy for a year or so. I've spent a lot of time hacking through it, so I feel that I'm qualified to make this comparison. The thing you need to ask yourself is this: "Do I want more speed/performance, or do I want accuracy in my physics simulations?"

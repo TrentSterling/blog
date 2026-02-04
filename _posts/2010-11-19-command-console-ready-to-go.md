@@ -4,6 +4,7 @@ date: 2010-11-19
 categories: [devblog]
 tags: [Dynamite Max, console]
 description: "Added a fully functional command console to my game."
+image: "/assets/img/blog/console_tests.jpg"
 ---
 
 Been working hard on my game. Recently broke the renderer, but hey, at least I have a fully functional console now!

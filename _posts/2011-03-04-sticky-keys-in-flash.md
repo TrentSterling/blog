@@ -4,6 +4,7 @@ date: 2011-03-04
 categories: [devblog]
 tags: [Flash, bugs, performance]
 description: "Diagnosing and fixing the sticky keys bug in Flash games on Internet Explorer."
+image: "/assets/img/blog/stickykeys.jpg"
 ---
 
 ![Sticky!](/assets/img/blog/stickykeys.jpg){: .align-center }

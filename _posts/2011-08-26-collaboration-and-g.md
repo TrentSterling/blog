@@ -4,6 +4,7 @@ date: 2011-08-26
 categories: [devblog]
 tags: [collaboration, Google+, Nape]
 description: "Collaborating with The Village Blacksmith on a nameless game project."
+image: "/assets/img/blog/badguys.png"
 ---
 
 So what have I been doing lately? Other than working on my overcomplicated game that I fear will never get finished, I've been collaborating with [The Village Blacksmith](http://www.thevillageblacksmith.net/) on a nameless game that he started.

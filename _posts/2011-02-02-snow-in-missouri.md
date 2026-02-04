@@ -4,6 +4,7 @@ date: 2011-02-02
 categories: [devblog]
 tags: [life]
 description: "Snowed in during the biggest snowstorm I've ever seen."
+image: "/assets/img/blog/fluffy.jpg"
 ---
 
 This is by far the most snow I've ever seen in my life. I know for some people up north it's nothing, but I'm from Oklahoma, where all we get is tornados.

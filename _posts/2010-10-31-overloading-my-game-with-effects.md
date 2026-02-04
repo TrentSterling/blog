@@ -4,6 +4,7 @@ date: 2010-10-31T22:19:43
 categories: [devblog]
 tags: [3D, blendmodes, Dynamite Max, FGL, Papervision3D]
 description: "Exploring performance issues with lighting and effects in Papervision3D."
+image: "/assets/img/blog/performance_issues.png"
 ---
 
 So now that I'm pushing hard to get my game out, I've run into some issues. I've had to cut a lot of features to get the game out ASAP, and this has helped for the most part. But there are some features which are pretty much finished, but not truly optimized. Here's an image of my game with bloom, lighting, and other effects applied.

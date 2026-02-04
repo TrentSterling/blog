@@ -4,6 +4,7 @@ date: 2010-12-23
 categories: [devblog]
 tags: [UI]
 description: "Discovered Razor Components - a lightweight and sexy AS3 UI library."
+image: "/assets/img/blog/razorcomps.png"
 ---
 
 I generally use [minimalcomps](http://minimalcomps.com/) for all my UI needs, and I've been tempted to look towards [ASwing](http://www.aswing.org/), but that's a bit bloated...

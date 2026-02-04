@@ -4,6 +4,7 @@ date: 2011-03-28
 categories: [devblog]
 tags: [Box2d, Nape, physics]
 description: "Switching from Box2D to Nape for phenomenal physics performance in Flash."
+image: "/assets/img/blog/napephysics.png"
 ---
 
 ## Goodbye Box2D, hello Nape!

@@ -4,6 +4,7 @@ date: 2010-11-02
 categories: [devblog]
 tags: [Dynamite Max]
 description: "Playing around with character skins and adding enemies."
+image: "/assets/img/blog/masterchieflol.png"
 ---
 
 So today I was playing around and making some new skins for my enemies and my main character, when I decided to do this...

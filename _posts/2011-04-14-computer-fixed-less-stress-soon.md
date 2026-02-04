@@ -4,6 +4,7 @@ date: 2011-04-14
 categories: [devblog]
 tags: [hardware, life]
 description: "Recovering from a hard drive failure and learning the importance of backups."
+image: "/assets/img/blog/frankenbox1.jpg"
 ---
 
 My computer decided to kill itself 2 weeks ago, which was a very bad time for it to die, seeing as my only source of income was a video tutorial I was working on. Directly after my recording; before I was able to start editing, my computer blue screened. After rebooting, I wasn't able to get into XP, or even safe mode. After a bout of quiet sobbing, I tore apart my machine, testing each component. Some short testing confirmed that my hard drive was definitely the cause, so I grabbed my mom's machine, and plugged in my corrupted SATA drive. It was at this point that I noticed that my moms machine didn't have enough power connectors to set up my drive, so I had to put her machine on my desk, and run cables from each tower to my poor little drive. After getting power from my machine, and communication through my moms machine, I was ready to see if any of my data could be saved.

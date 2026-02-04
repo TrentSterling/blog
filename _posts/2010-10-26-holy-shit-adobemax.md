@@ -4,6 +4,7 @@ date: 2010-10-26
 categories: [devblog]
 tags: [AdobeMax, Alternativa, Molehill, Papervision3D]
 description: "Adobe announces Molehill - hardware accelerated 3D coming to Flash."
+image: "/assets/img/blog/adobe.jpg"
 ---
 
 ![Adobe Logo](/assets/img/blog/adobe.jpg){: .align-right }
