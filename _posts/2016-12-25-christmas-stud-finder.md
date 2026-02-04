@@ -4,6 +4,7 @@ date: 2016-12-25
 categories: [devblog, hardware]
 tags: [nodemcu, esp8266, iot, electronics]
 description: "Building a DIY stud finder with NodeMCU that sounds like a geiger counter."
+image: "/assets/img/tongue.jpg"
 ---
 
 More NodeMCU magic! A stud finder. It sounds like a geiger counter. I added an antenna to explain electromagnetic waves / interference to my wife. It was fun sticking it to my tongue and pretending it hurts.
