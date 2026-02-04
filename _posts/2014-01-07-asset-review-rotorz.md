@@ -4,6 +4,7 @@ date: 2014-01-07
 categories: [devblog]
 tags: [unity, 2.5d, 3d, cubes, playmaker, tiles]
 description: "Review of Rotorz Tile System ($55) - the 'Photoshop of level editors' for Unity tile-mapped games."
+image: "/assets/img/rotorz-maxresdefault.jpg"
 ---
 
 I'm doing a short bit of writing about the assets I've purchased in the Unity Asset Store.
@@ -11,6 +12,8 @@ I'm doing a short bit of writing about the assets I've purchased in the Unity As
 Today we're comparing tilemappers. I've only had YouTube videos and other reviews to go with, so I waited a while before finally purchasing...
 
 ## Rotorz Tile System - $55
+
+[![Rotorz Tile System](/assets/img/rotorz-maxresdefault.jpg)](/assets/img/rotorz-maxresdefault.jpg)
 
 - Asset Store: [https://www.assetstore.unity3d.com/#/content/3344](https://www.assetstore.unity3d.com/#/content/3344)
 - Developer: [http://rotorz.com/](http://rotorz.com/)
