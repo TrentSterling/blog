@@ -4,6 +4,7 @@ date: 2010-11-20
 categories: [devblog]
 tags: [Away3D, Away3DLite, Papervision3D]
 description: "Memory leak in Papervision forces me to consider switching to Away3D."
+image: "/assets/img/blog/well-now-thats-not-gonna-be-very-good-for-business.jpg"
 ---
 
 So I started to notice a little bit of a performance drop, and I could swear I smelled memory leak. I've been using an older version of FlashDevelop, and noticed that the newer versions came with a memory profiler! Awesome!

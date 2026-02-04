@@ -4,6 +4,7 @@ date: 2010-11-07
 categories: [devblog]
 tags: [Papervision3D, UI, performance]
 description: "Using minimalcomps for UI and adding real-time performance monitoring."
+image: "/assets/img/blog/performancemonitor.png"
 ---
 
 ![Monitoring performance!](/assets/img/blog/performancemonitor.png){: .align-center }

@@ -4,6 +4,7 @@ date: 2010-12-03
 categories: [devblog]
 tags: [3D, Away3DLite, effects, lighting]
 description: "A strange bug turns into a happy accident - motion blur effect in Away3DLite."
+image: "/assets/img/blog/shading_planes.jpg"
 ---
 
 ![Shading planes. Faking depth since.... forever.](/assets/img/blog/shading_planes.jpg){: .align-center }

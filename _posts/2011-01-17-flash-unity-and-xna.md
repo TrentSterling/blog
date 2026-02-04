@@ -4,6 +4,7 @@ date: 2011-01-17
 categories: [devblog]
 tags: [Flash, Unity, XNA]
 description: "Comparing game development platforms - Flash for casual games, Unity for 3D, and XNA for Xbox."
+image: "/assets/img/blog/adobe-flash-logo.jpg"
 ---
 
 ![Flash Logo](/assets/img/blog/adobe-flash-logo.jpg){: .align-center }

@@ -4,6 +4,7 @@ date: 2011-01-02T03:51:51
 categories: [devblog]
 tags: [GMod]
 description: "New year's resolutions and plans for daily development posts."
+image: "/assets/img/blog/new-years-resolution-funny-2011.jpg"
 ---
 
 Hey! Its 2011! Looking back on 2010 all I can see is **failure**. I didn't get any of my game projects off the ground, and my engine is still in development. But hey, at least my house didn't catch fire... (*looks around cautiously for any spontaneous fires*)

@@ -4,6 +4,7 @@ date: 2011-09-17
 categories: [devblog]
 tags: [lighting, Ogmo, level design]
 description: "Updated lighting system hooked up to levers and circuitry."
+image: "/assets/img/blog/enemylevel.png"
 ---
 
 ![Enemy Level](/assets/img/blog/enemylevel.png){: .align-right }

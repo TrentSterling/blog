@@ -4,6 +4,7 @@ date: 2010-11-02T23:18:05
 categories: [devblog]
 tags: [3D, Away3D, Molehill, Papervision3D]
 description: "Pondering the future of Papervision3D with Molehill on the horizon."
+image: "/assets/img/blog/papervision3d.png"
 ---
 
 ![The fall of Papervision?](/assets/img/blog/papervision3d.png){: .align-right }

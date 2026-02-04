@@ -4,6 +4,7 @@ date: 2011-08-17T07:57:11
 categories: [devblog]
 tags: [Dynamite Max, FlashPunk, Nape, performance, physics]
 description: "Stranded in Oklahoma with car troubles, apartment fires, and rapid game prototyping."
+image: "/assets/img/blog/speedometer.jpg"
 ---
 
 ![At least the 7 hour drive was fun.](/assets/img/blog/speedometer.jpg){: .align-center }

@@ -4,6 +4,7 @@ date: 2010-12-21
 categories: [devblog]
 tags: [3D, indie, Papervision3D, UI]
 description: "Appreciation for the indie game development community and a preview of my level editor."
+image: "/assets/img/blog/6.jpg"
 ---
 
 OK, maybe it's from lack of sleep... Maybe it's because I've stayed up all night and morning reading from various indie development blogs. Whatever the reason, I gotta say that the indie game world is one amazing place.

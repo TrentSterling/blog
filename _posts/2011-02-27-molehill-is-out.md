@@ -4,6 +4,7 @@ date: 2011-02-27
 categories: [devblog]
 tags: [Away3D, Molehill, performance]
 description: "Adobe Molehill releases with hardware 3D acceleration - 80,000 triangles at 0% CPU usage!"
+image: "/assets/img/blog/monster.png"
 ---
 
 So I was watching the FGS feed, blowing my internet cap just to see what was going on, and they announced it. I knew the names of many developers watching along with me when Molehill was announced. To my amazement, molehill demos popped up left and right, and the good ol' boys at Away3D did a simultaneous release. Long story short, I'm rendering 80,000 triangles with ease, full screen, and 0% CPU usage. It's an excellent day to be a flash programmer! Here's some Away3D screenshots for ya.

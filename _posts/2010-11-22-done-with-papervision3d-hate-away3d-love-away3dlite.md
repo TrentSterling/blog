@@ -4,6 +4,7 @@ date: 2010-11-22
 categories: [devblog]
 tags: [Away3D, Away3DLite, BasicRenderer, FastRenderer, Papervision3D, useFloatZSort, zSorting]
 description: "After frustration with Papervision and Away3D, I found Away3DLite to be the perfect solution."
+image: "/assets/img/blog/companion_cubes.jpg"
 ---
 
 Ok, so the last 2-3 posts were pretty hate filled because a papervision bug almost threw my game in the toilet. People say how much better and similar Away3D is to Papervision, because it's a 'branch' or derivative. But the only similarity you're likely to see these days is the painter's algorithm. That's where the similarities stop. There are several reasons I don't like Away3D. First of all, if feels **bloated**. Secondly, you have to create an object to pass parameters in the constructor of every object. Come on. **Strongly typed variables or GTFO**.

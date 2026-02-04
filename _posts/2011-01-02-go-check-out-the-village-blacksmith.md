@@ -4,6 +4,7 @@ date: 2011-01-02
 categories: [devblog]
 tags: [indie]
 description: "Andrew Sandifer just made his first development blog post."
+image: "/assets/img/blog/tvb.png"
 ---
 
 ![TVB](/assets/img/blog/tvb.png){: .align-right }

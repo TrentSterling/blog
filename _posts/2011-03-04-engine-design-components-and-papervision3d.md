@@ -4,6 +4,7 @@ date: 2011-03-04
 categories: [devblog]
 tags: [components, design, Papervision3D]
 description: "Implementing a component-based entity system with FlashPunk-inspired architecture."
+image: "/assets/img/blog/drawing.png"
 ---
 
 So I just got finished implementing components to replace my inheritance based entity system. Getting used to factories and pooling has been a bit of a battle, but I feel as though I'm ready to start actual game production. My engine has fake lighting, which adds another draw call, and it slows things down a bit. Typically you can get away with 1000-1500 triangles in a Papervision3D scene without worrying about the CPU melting, but I've limited my game scenes to around 500 triangles, which is 250 quads or 40-ish cubes.

@@ -4,6 +4,7 @@ date: 2011-01-03
 categories: [devblog]
 tags: [effects, Papervision3D]
 description: "Adding a film grain effect to my zombie shooter for that gritty Left4Dead feel."
+image: "/assets/img/blog/filmgrain.png"
 ---
 
 First of all, I think I'm done with daily blogging. It's too stressful, and I still post pretty often, so don't worry. It becomes a problem when I have to post every day though and all I can come up with is lolcats. I'll try posting some development related things soon. I'll also be cleaning up the blog again at TVBs suggestion.

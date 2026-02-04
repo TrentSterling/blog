@@ -4,6 +4,7 @@ date: 2010-12-10
 categories: [devblog]
 tags: [Away3D, Away3DLite, Papervision3D]
 description: "After extensive testing, Papervision3D still proves to be faster."
+image: "/assets/img/blog/funny-polar-bear-pic-img121.jpg"
 ---
 
 ...Away3DLite was a fun detour, but I'm gonna go ahead and drop it and go back to my old system. I've tracked down my memory leak when using Papervision, so I'm getting back on that boat (I'll probably switch again when molehill shows up).
