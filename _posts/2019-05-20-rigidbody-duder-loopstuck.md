@@ -2,8 +2,9 @@
 title: "RigidbodyDuder & LoopStuck"
 date: 2019-05-20
 categories: [devblog]
-tags: [unity, physics, puzzle]
+tags: [unity, physics, puzzle, game-jam]
 description: "2019 experiments with physics characters and time loops."
+image: "/assets/img/blog/loopstuck-1.jpg"
 ---
 
 More Discord-era projects that never got proper blog posts.
@@ -16,6 +17,16 @@ It was janky as hell but also hilarious. The character would flop around like a 
 
 ## LoopStuck
 
+![LoopStuck](/assets/img/blog/loopstuck-1.jpg){: .align-center }
+
+An INCOMPLETE game for workingclassduck's gamejam. Ran out of time and probably won't finish it.
+
+[Play it on itch.io](https://trent.itch.io/loopstuck)
+
 Time loop puzzle game concept. You'd repeat the same short time period over and over, learning patterns and solving puzzles. Think Outer Wilds but way smaller scope.
+
+![LoopStuck Screenshot](/assets/img/blog/loopstuck-2.png){: .align-center }
+
+![LoopStuck Screenshot](/assets/img/blog/loopstuck-3.png){: .align-center }
 
 Never finished it but the core loop (heh) was fun to prototype.
