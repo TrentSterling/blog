@@ -4,6 +4,7 @@ date: 2010-10-30
 categories: [devblog]
 tags: [Fallout, Flash, GMod, MMO, VaultScript]
 description: "Blog redesign and thoughts on making a Fallout-inspired Flash MMO."
+image: "/assets/img/blog/vaultscript.jpg"
 ---
 
 Gonna pretty up the blog soon. It's too bland.

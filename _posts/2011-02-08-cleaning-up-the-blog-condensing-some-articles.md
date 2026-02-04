@@ -4,6 +4,7 @@ date: 2011-02-08
 categories: [devblog]
 tags: [meta]
 description: "Blog maintenance - condensing 70 articles down to 30."
+image: "/assets/img/blog/editor_framerate.png"
 ---
 
 Doing some general maintenance tonight. Took a lot of the short and meaningless blog posts down, and I'm grouping some topics together into single posts. Gotta get this place lookin' **classy**.

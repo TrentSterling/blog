@@ -4,6 +4,7 @@ date: 2011-08-17T11:49:12
 categories: [devblog]
 tags: [speedcoding, timelapse, Cube2D]
 description: "Time-lapse videos of building my Cube2D engine."
+image: "/assets/img/blog/companion_cubes.jpg"
 ---
 
 I don't really like having posts littered with videos, but since I uploaded so many recently, I figured I'd throw it all in one post. If you'd like to look at the playlist on Youtube, you can find that here:
