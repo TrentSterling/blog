@@ -4,7 +4,10 @@ date: 2026-02-02
 categories: [devblog]
 tags: [chrome-extension, javascript, youtube, tools]
 description: "Released a Chrome extension for better YouTube playback speed control."
+image: "/assets/img/blog/speedslap.png"
 ---
+
+![SpeedSlap](/assets/img/blog/speedslap.png){: .align-center }
 
 Shipped a little Chrome extension: **SpeedSlap**
 
