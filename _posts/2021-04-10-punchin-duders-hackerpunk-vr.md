@@ -2,8 +2,9 @@
 title: "Punchin' Duders & HackerPunk VR"
 date: 2021-04-10
 categories: [devblog]
-tags: [unity, vr, quest, combat]
+tags: [unity, vr, quest, combat, cyberpunk]
 description: "2021 VR experiments - punching things and hacking things."
+image: "/assets/img/blog/hackerpunk.png"
 ---
 
 Got really into VR dev in 2021. Quest 2 was out, standalone VR was finally viable, and I wanted to make stuff for it.
@@ -15,6 +16,8 @@ VR boxing/brawler thing. You punch dudes. They fall down. Simple satisfying game
 Physics-based combat is SO satisfying in VR. There's nothing quite like connecting a solid punch and watching an enemy ragdoll.
 
 ## HackerPunk VR
+
+![HackerPunk VR](/assets/img/blog/hackerpunk.png){: .align-center }
 
 Cyberpunk hacking game in VR. You'd jack into systems, navigate virtual spaces, avoid ICE, that kind of thing.
 

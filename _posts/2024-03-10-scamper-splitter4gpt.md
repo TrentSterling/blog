@@ -4,17 +4,22 @@ date: 2024-03-10
 categories: [devblog]
 tags: [unity, ai, tools, multiplayer]
 description: "2024 projects - a multiplayer game and an AI tool."
+image: "/assets/img/blog/scamper.jpg"
 ---
 
 2024 brought two very different projects.
 
 ## Scamper
 
+![Scamper](/assets/img/blog/scamper.jpg){: .align-center }
+
 Multiplayer game project. Fast-paced, competitive, something about scampering around? The details are in my Discord somewhere. This one's still in development, carrying over into 2025.
 
 Netcode is always the hard part. Using FishNet which has been solid, but syncing fast movement across the network is an eternal struggle.
 
 ## Splitter4GPT
+
+![Splitter4GPT](/assets/img/blog/splitter4gpt.png){: .align-center }
 
 A utility tool for working with GPT/LLM context windows. When you have large codebases or documents that exceed token limits, this helps split them intelligently.
 

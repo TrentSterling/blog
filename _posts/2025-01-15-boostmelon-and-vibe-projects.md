@@ -4,11 +4,14 @@ date: 2025-01-15
 categories: [devblog]
 tags: [unity, multiplayer, ai, experiments]
 description: "Early 2025 - AI-assisted rapid prototyping goes brrrr."
+image: "/assets/img/blog/boostmelon.jpg"
 ---
 
 2025 started with a bang. Or more accurately, with a LOT of rapid prototypes.
 
 ## BoostMelon
+
+![BoostMelon](/assets/img/blog/boostmelon.jpg){: .align-center }
 
 Multiplayer racing game. Boost pads, melons (don't ask), chaos. Using FishNet for netcode because at this point I've built enough multiplayer stuff to know what works.
 
