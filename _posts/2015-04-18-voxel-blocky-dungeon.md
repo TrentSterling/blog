@@ -4,7 +4,7 @@ date: 2015-07-19
 categories: [DevBlog, Projects]
 tags: [3D, Blocky Dungeon, Qubicle, Unity, Voxel]
 description: "Returning to Blocky Dungeon with new 3D voxel features and rapid release plans. Updates and future content ahead!"
-image: "assets/img/2015-04-18_03-20-02.jpg"
+image: "/assets/img/2015-04-18_03-20-02.jpg"
 ---
 
 
@@ -17,10 +17,10 @@ No! The multiplayer archer game isn’t dead yet! But we have bigger and better 
 **2015-04-18_03-20-02**
 
 {% endcomment %}
-![2015-04-18_03-20-02](assets/img/2015-04-18_03-20-02.jpg)
+![2015-04-18_03-20-02](/assets/img/2015-04-18_03-20-02.jpg)
 That’s right! We’re going back to Blocky Dungeon. However, as you can tell, we’re also going outside a bit!
 
-![2015-04-16_00-47-00](assets/img/2015-04-16_00-47-00.jpg)
+![2015-04-16_00-47-00](/assets/img/2015-04-16_00-47-00.jpg)
 The game is very much inspired by 3D Dot Game Heroes and has been put on a bit of a rapid release schedule – with plans for future versions with more content. For now, I just wanted to make sure any blog visitors knew I wasn’t dead!
 
 

@@ -4,7 +4,7 @@ date: 2015-07-19
 categories: [DevBlog]
 tags: [Bacon Game Jam, Game Jam, Unity, Vlog]
 description: "BUTTLOADS! A game made in 48 hours for Bacon Game Jam 09. Inspired by Motherlode, featuring digging, upgrades, and chaotic physics."
-image: "assets/img/2015-06-14_16-34-46.png"
+image: "/assets/img/2015-06-14_16-34-46.png"
 ---
 
 
@@ -39,10 +39,10 @@ My artist got sick, so I used some art from viewers. After the jam, I planned to
 
 ## Screenshots:
 
-[![2015-06-12_17-32-56](../assets/img/2015-06-14_16-34-46.png)](../assets/img/2015-06-14_16-34-46.png)
-[![2015-06-12_17-32-56](../assets/img/2015-06-12_17-32-56.png)](../assets/img/2015-06-12_17-32-56.png)
-[![2015-06-14_16-32-21](../assets/img/2015-06-14_16-32-21.png)](../assets/img/2015-06-14_16-32-21.png)
-[![2015-06-14_16-34-46](../assets/img/2015-06-14_16-34-46.png)](../assets/img/2015-06-14_16-34-46.png)
-[![2015-06-15_03-42-08](../assets/img/2015-06-15_03-42-08.png)](../assets/img/2015-06-15_03-42-08.png)
-[![2015-06-15_04-41-13](../assets/img/2015-06-15_04-41-13.png)](../assets/img/2015-06-15_04-41-13.png)
+[![2015-06-12_17-32-56](/assets/img/2015-06-14_16-34-46.png)](/assets/img/2015-06-14_16-34-46.png)
+[![2015-06-12_17-32-56](/assets/img/2015-06-12_17-32-56.png)](/assets/img/2015-06-12_17-32-56.png)
+[![2015-06-14_16-32-21](/assets/img/2015-06-14_16-32-21.png)](/assets/img/2015-06-14_16-32-21.png)
+[![2015-06-14_16-34-46](/assets/img/2015-06-14_16-34-46.png)](/assets/img/2015-06-14_16-34-46.png)
+[![2015-06-15_03-42-08](/assets/img/2015-06-15_03-42-08.png)](/assets/img/2015-06-15_03-42-08.png)
+[![2015-06-15_04-41-13](/assets/img/2015-06-15_04-41-13.png)](/assets/img/2015-06-15_04-41-13.png)
 
