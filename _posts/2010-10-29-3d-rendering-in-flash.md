@@ -4,6 +4,7 @@ date: 2010-10-29
 categories: [devblog]
 tags: [3d, flash, papervision3d, away3d, alternativa, nd3d, performance]
 description: "Exploring different 3D rendering engines for Flash - Papervision3D, Away3DLite, Alternativa, and ND3D."
+image: "/assets/img/blog/papervision3d.png"
 ---
 
 Been playing around with different rendering engines. Each has their own set of features, and I'm not sure what I want to use.

@@ -4,6 +4,7 @@ date: 2011-04-26
 categories: [devblog]
 tags: [physics, Molehill, 3D]
 description: "Discovered BulletFlash - an alchemy port of Bullet Physics for Flash."
+image: "/assets/img/blog/molehill.jpg"
 ---
 
 {% include youtube.html id="RVGCI6uXRiM" %}
