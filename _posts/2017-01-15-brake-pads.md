@@ -1,0 +1,11 @@
+---
+title: "Brake Pads"
+date: 2017-01-15
+categories: [personal]
+tags: [automotive, life]
+description: "Got the brake pads replaced. Thoughts on hydraulics and vacuum motors."
+---
+
+Got the brake pads replaced on my car today. Got me thinking about hydraulics and vacuum motors.
+
+Nothing more to report. Just wanted to let you guys know I will be able to stop my 3500lb death box.
