@@ -4,7 +4,7 @@ date: 2011-08-17T11:43:13
 categories: [devblog]
 tags: [FlashPunk, Nape, Papervision3D, haXe]
 description: "Trying haXe, adopting a kitten named Flexo, car troubles, and engine development progress."
-image: "/assets/img/blog/haxe.png"
+image: "/assets/img/blog/explosionp.png"
 ---
 
 As I'm always looking for better ways to do things, I remembered a few points deltaluca had brought up about using haXe over AS3. There is a haXe port of FlashPunk, and Nape is constructed with haXe, so I looked at moving to haXe myself. After reading a tutorial I was able to get a working Hello World.
