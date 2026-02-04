@@ -4,6 +4,7 @@ date: 2014-01-07
 categories: [devblog]
 tags: [unity, voxel, 3d, asset, review, qubicle]
 description: "Review of Qubicle Constructor ($80) and Qubicle Unite ($25) - voxel tools for Unity game development."
+image: "/assets/img/constructor.jpg"
 ---
 
 I'm doing a short bit of writing about the assets I've purchased in the Unity Asset Store.
@@ -13,6 +14,8 @@ I'm doing a short bit of writing about the assets I've purchased in the Unity As
 First on the list: 2 fun voxel tools from the friendly guys at [MindDesk](http://www.qubicle-constructor.com/).
 
 ## Qubicle Constructor - $80
+
+[![Qubicle Constructor](/assets/img/constructor.jpg)](/assets/img/constructor.jpg)
 
 Link to developer: [http://www.qubicle-constructor.com/](http://www.qubicle-constructor.com/)
 
@@ -27,6 +30,9 @@ I'll give Qubicle Constructor **4/5 stars**. Even with the bugs.
 **Conclusion: Worth every penny... Assuming you love voxels like I do.**
 
 ## Qubicle Unite - $25
+
+[![Qubicle Unite - Look how optimized he is!](/assets/img/unite.jpg)](/assets/img/unite.jpg)
+_Look how optimized he is! Where's all the polygons at?_
 
 Now, Unite is a tool built for Unity, to import Qubicle Constructor files as a mesh. There's an optimization pass, and the resulting files are small and typically low poly. As long as you avoid too many smooth edges, Unite imported models will perform quite nicely. Keeping the art cartoony and boxy is key.
 
