@@ -21,6 +21,8 @@ Physics-based combat is SO satisfying in VR. There's nothing quite like connecti
 
 Cyberpunk hacking game in VR. You'd jack into systems, navigate virtual spaces, avoid ICE, that kind of thing.
 
+{% include youtube.html id="k1BcMzdztUM" %}
+
 The aesthetic was cool - lots of neon grids and data streams. Gameplay needed more work but the vibe was there.
 
 Both were Quest-focused since I wanted that standalone freedom. Tetherless VR is the way.
