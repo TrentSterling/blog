@@ -4,6 +4,7 @@ date: 2010-12-02
 categories: [devblog]
 tags: [away3dlite, dynamite-max, memory-leak, papervision3d, performance, flash]
 description: "Switching from Papervision3D to Away3DLite - rebuilding the engine and dealing with memory issues."
+image: "/assets/img/better_performance_lower_memory_shits_working.jpg"
 ---
 
 Engine was stripped down, rebuilt using Away3DLite. Now I have to turn it back into a game.

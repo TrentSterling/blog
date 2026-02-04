@@ -4,6 +4,7 @@ date: 2016-12-26
 categories: [devblog, hardware]
 tags: [iot, esp8266, nodemcu, robotics]
 description: "Reflections on IoT exploration and the journey from wifi toasters to robotics."
+image: "/assets/img/woodencore.jpg"
 ---
 
 IoT is the Wild West. Standards and frameworks are being developed by big companies - and adoption will determine the winner.

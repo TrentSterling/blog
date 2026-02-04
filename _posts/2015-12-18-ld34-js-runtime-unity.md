@@ -4,6 +4,7 @@ date: 2015-12-18
 categories: [devblog, projects]
 tags: [3d, csharp, console, programming, scripting, unity]
 description: "Ludum Dare 34 entry where I added multiplayer AND modding support to a game jam project. Scope creep at its finest."
+image: "/assets/img/ingamescripting.jpg"
 ---
 
 Started this project during Ludum Dare 34. Was supposed to be a fairly simple game. Streamed the development from start to finish on Twitch.

@@ -4,6 +4,7 @@ date: 2017-03-14
 categories: [devblog, projects]
 tags: [unity, space, game-jam]
 description: "It's PI Day! Here's a link to 7DaySpaceJam - a space simulation game created as part of a 7-day challenge."
+image: "/assets/img/spaceyo.gif"
 ---
 
 It's PI Day!
