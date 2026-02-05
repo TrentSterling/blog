@@ -2,7 +2,7 @@
 title: "New Years Game Jam Challenge"
 date: 2013-12-26
 categories: [DevBlog]
-tags: [Unity]
+tags: [2.5D, 3D, Art, Effects, Game Jam, Indie, Jam, Lighting, Particles, Platformer, Qubicle, Unity, Voxel]
 description: "weirdsoniccontrathing  +Andrew Sandifer challenged me and +Yuuki Rus (https://plus.google.com/10451"
 image: "/assets/img/blog/wp/weirdsoniccontrathing.gif"
 ---

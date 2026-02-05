@@ -2,7 +2,7 @@
 title: "Voxel RPG Art"
 date: 2013-11-18
 categories: [DevBlog]
-tags: [Unity]
+tags: [2.5D, 3D, Art, Blocky Dungeon, Indie, Qubicle, RPG, Unity, Voxel]
 description: "Me and my artist Yuuki (http://yuukirusdemon.deviantart.com/gallery/) have been hitting the artwork hard, trying to determine whether or not we want..."
 image: "/assets/img/blog/wp/voxelitems.jpg"
 ---

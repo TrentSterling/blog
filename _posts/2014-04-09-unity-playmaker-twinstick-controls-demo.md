@@ -2,7 +2,7 @@
 title: "Unity PlayMaker TwinStick Controls Demo"
 date: 2014-04-09
 categories: [DevBlog]
-tags: [Unity]
+tags: [2.5D, 3D, Indie, PlayMaker, Unity, Voxel]
 description: "This is a simple twin stick shooter setup for PlayMaker. I’m hoping to get a bunch of these prototype game mechanics into  a set of tutorials. I’m..."
 image: "/assets/img/icon.jpg"
 ---

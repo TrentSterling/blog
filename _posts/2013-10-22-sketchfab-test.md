@@ -2,7 +2,7 @@
 title: "SketchFab Test"
 date: 2013-10-22
 categories: [DevBlog]
-tags: [Unity]
+tags: [3D, Art, Indie, Qubicle, Unity, Voxel]
 description: "Embedded Content  Just posting a test of this fancy SketchFab model viewer. I’ve see"
 image: "/assets/img/icon.jpg"
 ---

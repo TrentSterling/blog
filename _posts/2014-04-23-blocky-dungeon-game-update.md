@@ -2,7 +2,7 @@
 title: "Blocky Dungeon Game Update"
 date: 2014-04-23
 categories: [DevBlog]
-tags: [Unity]
+tags: [2.5D, 3D, Art, Blocky Dungeon, Indie, Lighting, PlayMaker, Qubicle, Unity, Voxel]
 description: "dungeonman  Blocky Dungeon seems like a name that would have been taken by now, but it looks like my prototype post is getting enough SEO to be a top..."
 image: "/assets/img/blog/wp/dungeonman.jpg"
 ---
