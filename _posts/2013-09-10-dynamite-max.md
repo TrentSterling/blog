@@ -2,7 +2,7 @@
 title: "Dynamite Max"
 date: 2013-09-10
 categories: [DevBlog]
-tags: [Unity]
+tags: [3D, Dynamite Max, Flash, Physics, Unity]
 description: "newmax  This was a 3D Flash game before 3D was cool. Papervision and Away3D were the kings of 3D in flash, before Stage3D came around. This means we..."
 image: "/assets/img/blog/wp/newmax.png"
 ---

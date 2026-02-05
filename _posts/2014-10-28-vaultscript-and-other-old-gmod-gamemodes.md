@@ -2,7 +2,7 @@
 title: "VaultScript and other old GMod gamemodes"
 date: 2014-10-28
 categories: [DevBlog]
-tags: [Unity]
+tags: [GMod, Programming, VaultScript]
 description: "I had an old friend on steam recently ask about my old Garry’s Mod lua scripts. He asked if I still had them. This wasn’t the first time he had asked..."
 image: "/assets/img/icon.jpg"
 ---

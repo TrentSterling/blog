@@ -2,7 +2,7 @@
 title: "Game Dev Vlog #5"
 date: 2014-12-15
 categories: [DevBlog]
-tags: [Unity]
+tags: [Ld31, Ludum Dare, Unity, Vlog]
 description: "{% include youtube.html id='Cwgr0tiM3OQ' %}  Here’s vlog 5 And a link to my LD31 entry ..."
 image: "/assets/img/icon.jpg"
 ---

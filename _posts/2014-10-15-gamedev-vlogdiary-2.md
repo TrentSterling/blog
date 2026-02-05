@@ -2,7 +2,7 @@
 title: "GameDev Vlog/Diary #2"
 date: 2014-10-15
 categories: [DevBlog]
-tags: [Unity]
+tags: [Vlog]
 description: "{% include youtube.html id='qHfz6rU4GYA' %}  Trent Sterling is my name. I am a game developer. I make games. I also play games. Sometimes I upload..."
 image: "/assets/img/icon.jpg"
 ---

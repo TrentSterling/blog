@@ -2,7 +2,7 @@
 title: "Game Dev Vlog #4"
 date: 2014-11-29
 categories: [DevBlog]
-tags: [Unity]
+tags: [Vlog]
 description: "{% include youtube.html id='IP3tRx5HkTg' %}  Pushing this video onto the site a little late. I need to find a way to synchronize all my social media..."
 image: "/assets/img/icon.jpg"
 ---
