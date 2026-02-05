@@ -2,7 +2,7 @@
 title: "BoostMelon & The Vibe Project Explosion"
 date: 2025-01-15
 categories: [devblog]
-tags: [unity, multiplayer, ai, experiments]
+tags: [AI, Experiments, Multiplayer, Unity]
 description: "Early 2025 - AI-assisted rapid prototyping goes brrrr."
 image: "/assets/img/blog/boostmelon.jpg"
 ---

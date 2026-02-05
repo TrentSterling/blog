@@ -2,7 +2,7 @@
 title: "Computer fixed, less stress soon"
 date: 2011-04-14
 categories: [devblog]
-tags: [hardware, life]
+tags: [Hardware, Life]
 description: "Recovering from a hard drive failure and learning the importance of backups."
 image: "/assets/img/blog/frankenbox1.jpg"
 ---

@@ -2,7 +2,7 @@
 title: "Overloading my game with effects"
 date: 2010-10-31T22:19:43
 categories: [devblog]
-tags: [3D, blendmodes, Dynamite Max, FGL, Papervision3D]
+tags: [3D, Dynamite Max, FGL, Papervision3D]
 description: "Exploring performance issues with lighting and effects in Papervision3D."
 image: "/assets/img/blog/performance_issues.png"
 ---

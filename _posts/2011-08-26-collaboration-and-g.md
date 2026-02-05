@@ -2,7 +2,7 @@
 title: "Collaboration and G+"
 date: 2011-08-26
 categories: [devblog]
-tags: [collaboration, Google+, Nape]
+tags: [Collaboration, Google+, Nape]
 description: "Collaborating with The Village Blacksmith on a nameless game project."
 image: "/assets/img/blog/badguys.png"
 ---

@@ -2,7 +2,7 @@
 title: "Level Editor UI - It's getting there..."
 date: 2011-01-02T04:56:54
 categories: [devblog]
-tags: [minimalcomps, UI]
+tags: [MinimalComps, UI]
 description: "Progress on my level editor UI with real-time parameter editing."
 image: "/assets/img/blog/ui-colors.png"
 ---

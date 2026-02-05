@@ -2,7 +2,7 @@
 title: "New UI. Performance monitoring. Papervision changes on the fly."
 date: 2010-11-07
 categories: [devblog]
-tags: [Papervision3D, UI, performance]
+tags: [Papervision3D, Performance, UI]
 description: "Using minimalcomps for UI and adding real-time performance monitoring."
 image: "/assets/img/blog/performancemonitor.png"
 ---

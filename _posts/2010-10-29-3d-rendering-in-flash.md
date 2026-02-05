@@ -2,7 +2,7 @@
 title: "3D Rendering in Flash"
 date: 2010-10-29
 categories: [devblog]
-tags: [3d, flash, papervision3d, away3d, alternativa, nd3d, performance]
+tags: [3D, Alternativa, Away3D, Flash, ND3D, Papervision3D, Performance]
 description: "Exploring different 3D rendering engines for Flash - Papervision3D, Away3DLite, Alternativa, and ND3D."
 ---
 

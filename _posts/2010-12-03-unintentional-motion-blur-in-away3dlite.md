@@ -2,7 +2,7 @@
 title: "Unintentional motion-blur in Away3DLite"
 date: 2010-12-03
 categories: [devblog]
-tags: [3D, Away3DLite, effects, lighting]
+tags: [3D, Away3DLite, Effects, Lighting]
 description: "A strange bug turns into a happy accident - motion blur effect in Away3DLite."
 image: "/assets/img/blog/shading_planes.jpg"
 ---

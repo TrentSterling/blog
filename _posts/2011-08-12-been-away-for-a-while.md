@@ -2,7 +2,7 @@
 title: "Been away for a while"
 date: 2011-08-12
 categories: [devblog]
-tags: [life]
+tags: [Life]
 description: "Quick update - been out of state with no internet."
 ---
 

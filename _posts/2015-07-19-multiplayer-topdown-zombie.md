@@ -2,7 +2,7 @@
 title: "Multiplayer Topdown Zombie Shooter"
 date: 2015-07-19
 categories: [devblog, projects]
-tags: [3d, art, unity, photon, multiplayer]
+tags: [3D, Art, Multiplayer, Photon, Unity]
 description: "A Photon networked topdown twin-stick shooter for PC, Android, and Amazon FireTV."
 image: "/assets/img/ZombiesGame.jpg"
 ---

@@ -2,7 +2,7 @@
 title: "Engine design, components, and Papervision3D"
 date: 2011-03-04
 categories: [devblog]
-tags: [components, design, Papervision3D]
+tags: [Design, Papervision3D]
 description: "Implementing a component-based entity system with FlashPunk-inspired architecture."
 image: "/assets/img/blog/drawing.png"
 ---

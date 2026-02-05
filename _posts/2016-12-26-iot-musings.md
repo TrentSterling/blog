@@ -2,7 +2,7 @@
 title: "Musings on the Internet of Things"
 date: 2016-12-26
 categories: [devblog, hardware]
-tags: [iot, esp8266, nodemcu, robotics]
+tags: [ESP8266, IoT, NodeMCU, Robotics]
 description: "Reflections on IoT exploration and the journey from wifi toasters to robotics."
 image: "/assets/img/woodencore.jpg"
 ---

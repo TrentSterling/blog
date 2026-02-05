@@ -2,7 +2,7 @@
 title: "Command console ready to go!"
 date: 2010-11-19
 categories: [devblog]
-tags: [Dynamite Max, console]
+tags: [Dynamite Max]
 description: "Added a fully functional command console to my game."
 image: "/assets/img/blog/console_tests.jpg"
 ---

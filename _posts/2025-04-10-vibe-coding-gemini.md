@@ -1,7 +1,7 @@
 ---
 title: "Vibe Coding: Rapid Game Prototyping with Gemini 2.5 (Even if I Hate It)"
 date: 2025-04-10
-tags: [AI, Gemini, Prototyping, GameDev, JavaScript, ThreeJS, Unity, ComputeShaders]
+tags: [AI, ComputeShaders, GameDev, Gemini, JavaScript, Prototyping, ThreeJS, Unity]
 description: "Exploring rapid game prototyping using Gemini 2.5 via 'Vibe Coding' in JavaScript, despite hating the process, and discussing AI's role in Unity development."
 image: "/assets/img/vibecoding.png" # Keep the main featured image as the vibecoding meme
 ---

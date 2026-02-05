@@ -2,7 +2,7 @@
 title: "Brake Pads"
 date: 2017-01-15
 categories: [personal]
-tags: [automotive, life]
+tags: [Life, automotive]
 description: "Got the brake pads replaced. Thoughts on hydraulics and vacuum motors."
 image: "/assets/img/dirtyhands.jpg"
 ---

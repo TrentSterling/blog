@@ -2,7 +2,7 @@
 title: "Dash Till Dawn: An Endless Runner Adventure"
 date: 2015-07-19
 categories: [devblog, projects]
-tags: [2d, art, pixel-art, Unity]
+tags: [2D, Art, Pixel Art, Unity]
 description: "An update on my endless runner game, Dash Till Dawn, developed in collaboration with 2DGameDev (Dave)."
 image: "/assets/img/2015-07-19_23-22-05.png"
 ---

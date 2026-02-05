@@ -2,7 +2,7 @@
 title: "MonkePortals"
 date: 2023-09-15
 categories: [devblog]
-tags: [unity, vr, quest, multiplayer, gorilla-tag, portals]
+tags: [Gorilla Tag, Multiplayer, Portals, Quest, Unity, VR]
 description: "VR multiplayer game - Gorilla Tag movement meets Portal physics."
 image: "/assets/img/blog/monke_slide.jpg"
 ---

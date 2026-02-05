@@ -2,7 +2,7 @@
 title: "Cleaning up the blog, condensing some articles"
 date: 2011-02-08
 categories: [devblog]
-tags: [meta]
+tags: [Meta]
 description: "Blog maintenance - condensing 70 articles down to 30."
 ---
 

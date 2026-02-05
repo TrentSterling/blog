@@ -2,7 +2,7 @@
 title: "Molehill is OUT!"
 date: 2011-02-27
 categories: [devblog]
-tags: [Away3D, Molehill, performance]
+tags: [Away3D, Molehill, Performance]
 description: "Adobe Molehill releases with hardware 3D acceleration - 80,000 triangles at 0% CPU usage!"
 image: "/assets/img/blog/monster.png"
 ---

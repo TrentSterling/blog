@@ -2,7 +2,7 @@
 title: "Attempting Daily Posts, Color Pickers, and Other Stuff"
 date: 2010-12-31
 categories: [devblog]
-tags: [color-picker, minimalcomps, ui, flash]
+tags: [Flash, MinimalComps, UI, color-picker]
 description: "New Year's Eve 2010 - attempting daily blog posts and working on color picker UI with minimalcomps."
 image: "/assets/img/colorpickerui.png"
 ---

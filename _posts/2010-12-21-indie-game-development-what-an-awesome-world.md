@@ -2,7 +2,7 @@
 title: "Indie game development - What an awesome world!"
 date: 2010-12-21
 categories: [devblog]
-tags: [3D, indie, Papervision3D, UI]
+tags: [3D, Indie, Papervision3D, UI]
 description: "Appreciation for the indie game development community and a preview of my level editor."
 image: "/assets/img/blog/6.jpg"
 ---

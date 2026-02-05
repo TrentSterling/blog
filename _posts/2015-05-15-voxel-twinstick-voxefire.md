@@ -2,7 +2,7 @@
 title: "Voxel Mobile Twinstick Shooter (VoxeFire)"
 date: 2015-05-15
 categories: [devblog, projects]
-tags: [3d, unity, voxel, firetv]
+tags: [3D, FireTV, Unity, Voxel]
 description: "VoxeFire - a voxel-powered twin-stick shooter with destructible environments, built for Amazon FireTV."
 image: "/assets/img/2015-05-15_02-29-22.png"
 ---

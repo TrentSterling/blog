@@ -2,7 +2,7 @@
 title: "Thomas Was A Clone"
 date: 2015-07-18
 categories: [DevBlog, Projects]
-tags: [Unity, Platformer, Indie, Prototype, Minimalist]
+tags: [Indie, Minimalist, Platformer, Prototype, Unity]
 description: "A minimalist platformer inspired by Thomas Was Alone. This Unity project explores movement, physics, and level design with simple geometric shapes. Streamed development on Twitch with viewer donations supporting Amplify suite tools."
 image: "/assets/img/2015-02-03_19-21-55.png"
 ---

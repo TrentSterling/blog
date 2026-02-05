@@ -2,7 +2,7 @@
 title: "Quick and dirty film grain effect"
 date: 2011-01-03
 categories: [devblog]
-tags: [effects, Papervision3D]
+tags: [Effects, Papervision3D]
 description: "Adding a film grain effect to my zombie shooter for that gritty Left4Dead feel."
 image: "/assets/img/blog/filmgrain.png"
 ---

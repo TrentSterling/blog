@@ -2,7 +2,7 @@
 title: "Bullet Physics and Molehill - 3D Physics in Flash"
 date: 2011-04-26
 categories: [devblog]
-tags: [physics, Molehill, 3D]
+tags: [3D, Molehill, Physics]
 description: "Discovered BulletFlash - an alchemy port of Bullet Physics for Flash."
 image: "/assets/img/blog/bulletflash-yt.jpg"
 ---

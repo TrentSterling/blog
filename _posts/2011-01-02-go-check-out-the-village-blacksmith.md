@@ -2,7 +2,7 @@
 title: "Go check out The Village Blacksmith"
 date: 2011-01-02
 categories: [devblog]
-tags: [indie]
+tags: [Indie]
 description: "Andrew Sandifer just made his first development blog post."
 image: "/assets/img/blog/tvb.png"
 ---

@@ -2,7 +2,7 @@
 title: "C# Gentle Formatter - Stop Stripping My Blank Lines"
 date: 2026-02-02
 categories: [devblog]
-tags: [vscode, csharp, formatter, tools, open-source]
+tags: [CSharp, Formatter, Open Source, Tools, VS Code]
 description: "VS Code extension that formats C# without destroying blank line indentation."
 image: "/assets/img/blog/csharp-gentle-formatter.png"
 ---

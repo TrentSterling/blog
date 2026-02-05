@@ -2,7 +2,7 @@
 title: "ConfigJoint Based Climbing Prototype"
 date: 2025-09-15
 categories: [devblog]
-tags: [unity, physics, procedural-animation, prototype]
+tags: [Physics, Procedural Animation, Prototype, Unity]
 description: "Physics-based climbing using Unity's ConfigJoint system."
 image: "/assets/img/blog/configjoint-climbing.jpg"
 ---

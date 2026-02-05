@@ -2,7 +2,7 @@
 title: "Cube2D SpeedCoding"
 date: 2011-08-17T11:49:12
 categories: [devblog]
-tags: [speedcoding, timelapse, Cube2D]
+tags: [Cube2D, speedcoding, timelapse]
 description: "Time-lapse videos of building my Cube2D engine."
 image: "/assets/img/blog/cube2d-yt.jpg"
 ---
