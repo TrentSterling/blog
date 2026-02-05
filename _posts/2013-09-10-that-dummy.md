@@ -2,7 +2,7 @@
 title: "That Dummy - A FlashPunk Collaboration"
 date: 2013-09-10
 categories: [DevBlog, Projects]
-tags: [Puzzle, Platformer, FlashPunk, Indie, Physics, GameDev]
+tags: [FlashPunk, GameDev, Indie, Physics, Platformer, Puzzle]
 description: "A puzzle platformer collaboration using FlashPunk and Nape, featuring physics-based gameplay, dynamic lighting, and ingame scripting."
 image: "/assets/img/lightrays.png"
 ---

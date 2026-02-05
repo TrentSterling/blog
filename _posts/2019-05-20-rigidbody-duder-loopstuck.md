@@ -2,7 +2,7 @@
 title: "RigidbodyDuder & LoopStuck"
 date: 2019-05-20
 categories: [devblog]
-tags: [unity, physics, puzzle, game-jam]
+tags: [Game Jam, Physics, Puzzle, Unity]
 description: "2019 experiments with physics characters and time loops."
 image: "/assets/img/blog/loopstuck-1.jpg"
 ---

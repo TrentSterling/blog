@@ -2,7 +2,7 @@
 title: "Asset Review: Qubicle Constructor and Unite"
 date: 2014-01-07
 categories: [devblog]
-tags: [unity, voxel, 3d, asset, review, qubicle]
+tags: [3D, Qubicle, Unity, Voxel]
 description: "Review of Qubicle Constructor ($80) and Qubicle Unite ($25) - voxel tools for Unity game development."
 image: "/assets/img/constructor.jpg"
 ---

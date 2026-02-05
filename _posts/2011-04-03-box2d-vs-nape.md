@@ -2,7 +2,7 @@
 title: "Box2D VS Nape"
 date: 2011-04-03
 categories: [devblog]
-tags: [Box2d, Nape, physics]
+tags: [Box2D, Nape, Physics]
 description: "Comparing Box2D and Nape physics engines - speed vs accuracy trade-offs."
 image: "/assets/img/blog/smooth.png"
 ---

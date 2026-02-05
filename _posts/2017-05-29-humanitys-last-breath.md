@@ -2,7 +2,7 @@
 title: "Humanity's Last Breath"
 date: 2017-05-29
 categories: [devblog]
-tags: [unity, game-jam, divejam, submarine, underwater]
+tags: [Game Jam, Underwater, Unity, submarine]
 description: "A deep sea submarine adventure made for DIVEJAM 2017."
 image: "/assets/img/blog/hlb-gif.gif"
 ---

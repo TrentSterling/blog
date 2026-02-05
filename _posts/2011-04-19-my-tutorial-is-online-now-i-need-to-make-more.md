@@ -2,7 +2,7 @@
 title: "My tutorial is online! Now I need to make more."
 date: 2011-04-19
 categories: [devblog]
-tags: [tutorial, ActiveTuts]
+tags: [ActiveTuts, Tutorial]
 description: "Published my first video tutorial on blend modes for ActiveTuts+."
 image: "/assets/img/blog/blendmodes.png"
 ---

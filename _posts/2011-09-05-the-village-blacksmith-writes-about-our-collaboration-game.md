@@ -2,7 +2,7 @@
 title: "The Village Blacksmith writes about our collaboration game"
 date: 2011-09-05
 categories: [devblog]
-tags: [collaboration, indie]
+tags: [Collaboration, Indie]
 description: "TVB wrote about our collaboration project - check it out!"
 image: "/assets/img/blog/devscreenshot-4.jpg"
 ---

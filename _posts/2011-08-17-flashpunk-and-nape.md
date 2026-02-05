@@ -2,7 +2,7 @@
 title: "FlashPunk and Nape"
 date: 2011-08-17T07:57:11
 categories: [devblog]
-tags: [Dynamite Max, FlashPunk, Nape, performance, physics]
+tags: [Dynamite Max, FlashPunk, Nape, Performance, Physics]
 description: "Stranded in Oklahoma with car troubles, apartment fires, and rapid game prototyping."
 image: "/assets/img/blog/speedometer.jpg"
 ---

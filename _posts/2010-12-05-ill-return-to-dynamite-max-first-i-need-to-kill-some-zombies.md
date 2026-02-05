@@ -2,7 +2,7 @@
 title: "I'll return to Dynamite Max. First, I need to kill some ZOMBIES."
 date: 2010-12-05
 categories: [devblog]
-tags: [Away3DLite, Dynamite Max, zombies]
+tags: [Away3DLite, Dynamite Max, Zombies]
 description: "Shelving Dynamite Max temporarily to make a simpler zombie shooter."
 image: "/assets/img/blog/let_there_be_light.jpg"
 ---

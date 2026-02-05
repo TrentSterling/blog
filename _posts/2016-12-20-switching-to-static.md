@@ -2,7 +2,7 @@
 title: "Switching to Static Sites Made in Markdown"
 date: 2016-12-20
 categories: [devblog]
-tags: [nodejs, static-sites, markdown, wintersmith]
+tags: [Markdown, NodeJS, Static Sites, Wintersmith]
 description: "A brief note on the Wintersmith + Surge setup for static blog hosting."
 ---
 

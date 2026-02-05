@@ -2,7 +2,7 @@
 title: "ShowAll, 100%, draw, compositing, and a quadcore computer"
 date: 2011-01-10
 categories: [devblog]
-tags: [effects, garbage collection, lighting, Memory Leak, Papervision3D, performance, programming]
+tags: [Effects, Lighting, Papervision3D, Performance, Programming]
 description: "Deep dive into Flash CPU usage, draw calls, and performance testing with multiple cores."
 image: "/assets/img/blog/editor_framerate.png"
 ---

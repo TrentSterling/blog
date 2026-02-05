@@ -2,7 +2,7 @@
 title: "SpeedSlap v1.2 - YouTube Speed Control"
 date: 2026-02-02
 categories: [devblog]
-tags: [chrome-extension, javascript, youtube, tools]
+tags: [Chrome Extension, JavaScript, Tools, YouTube]
 description: "Released a Chrome extension for better YouTube playback speed control."
 image: "/assets/img/blog/speedslap.png"
 ---

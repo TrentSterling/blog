@@ -2,7 +2,7 @@
 title: "Bacon Game Jam 09 - BUTTLOADS!"
 date: 2015-07-19
 categories: [DevBlog]
-tags: [Bacon Game Jam, Game Jam, Unity, Vlog]
+tags: [Game Jam, Unity, Vlog]
 description: "BUTTLOADS! A game made in 48 hours for Bacon Game Jam 09. Inspired by Motherlode, featuring digging, upgrades, and chaotic physics."
 image: "/assets/img/2015-06-14_16-34-46.png"
 ---

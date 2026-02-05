@@ -2,7 +2,7 @@
 title: "Snow in Missouri. Car isn't going anywhere soon."
 date: 2011-02-02
 categories: [devblog]
-tags: [life]
+tags: [Life]
 description: "Snowed in during the biggest snowstorm I've ever seen."
 image: "/assets/img/blog/fluffy.jpg"
 ---

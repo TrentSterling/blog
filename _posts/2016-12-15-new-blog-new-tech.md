@@ -2,7 +2,7 @@
 title: "New Blog, New Technology"
 date: 2016-12-15
 categories: [devblog]
-tags: [nodejs, static-sites, markdown, wintersmith]
+tags: [Markdown, NodeJS, Static Sites, Wintersmith]
 description: "Migrating from Wordpress to static site generation with Wintersmith and Markdown."
 image: "/assets/img/8266.jpg"
 ---

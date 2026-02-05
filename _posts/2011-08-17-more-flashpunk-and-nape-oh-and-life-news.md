@@ -2,7 +2,7 @@
 title: "More FlashPunk and Nape.. Oh, and life news!"
 date: 2011-08-17T11:43:13
 categories: [devblog]
-tags: [FlashPunk, Nape, Papervision3D, haXe]
+tags: [FlashPunk, HaXe, Nape, Papervision3D]
 description: "Trying haXe, adopting a kitten named Flexo, car troubles, and engine development progress."
 image: "/assets/img/blog/explosionp.png"
 ---

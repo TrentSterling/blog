@@ -2,7 +2,7 @@
 title: "Nape Physics Engine"
 date: 2011-03-28
 categories: [devblog]
-tags: [Box2d, Nape, physics]
+tags: [Box2D, Nape, Physics]
 description: "Switching from Box2D to Nape for phenomenal physics performance in Flash."
 image: "/assets/img/blog/napephysics.png"
 ---

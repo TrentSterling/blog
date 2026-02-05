@@ -2,7 +2,7 @@
 title: "Punchin' Duders & HackerPunk VR"
 date: 2021-04-10
 categories: [devblog]
-tags: [unity, vr, quest, combat, cyberpunk]
+tags: [Combat, Cyberpunk, Quest, Unity, VR]
 description: "2021 VR experiments - punching things and hacking things."
 image: "/assets/img/blog/hackerpunk.png"
 ---

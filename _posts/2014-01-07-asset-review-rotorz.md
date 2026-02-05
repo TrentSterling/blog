@@ -2,7 +2,7 @@
 title: "Asset Review: Rotorz Tile System"
 date: 2014-01-07
 categories: [devblog]
-tags: [unity, 2.5d, 3d, cubes, playmaker, tiles]
+tags: [2.5D, 3D, PlayMaker, Unity, Voxel, tiles]
 description: "Review of Rotorz Tile System ($55) - the 'Photoshop of level editors' for Unity tile-mapped games."
 image: "/assets/img/rotorz-maxresdefault.jpg"
 ---

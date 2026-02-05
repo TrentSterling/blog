@@ -2,7 +2,7 @@
 title: "Guys, Girls, and Guns: How to Survive the Zombie Apocalypse in Style!"
 date: 2016-07-27
 categories: [devblog, projects]
-tags: [zombies, game-development, multiplayer, accountability]
+tags: [GameDev, Multiplayer, Zombies]
 description: "An update on my zombie-themed multiplayer project, and how I'm using public documentation to stay motivated."
 image: "/assets/img/ZombiesGame.jpg"
 ---

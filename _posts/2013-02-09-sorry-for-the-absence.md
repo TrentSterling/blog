@@ -2,7 +2,7 @@
 title: "Sorry for the absence!"
 date: 2013-02-09
 categories: [devblog]
-tags: [Unity, UDK, The Dummy Game]
+tags: [The Dummy Game, UDK, Unity]
 description: "Back from a long absence with Unity and UDK prototypes."
 image: "/assets/img/blog/crazylightbloomfog.png"
 ---

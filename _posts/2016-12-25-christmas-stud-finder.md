@@ -2,7 +2,7 @@
 title: "Christmas Stud Findings"
 date: 2016-12-25
 categories: [devblog, hardware]
-tags: [nodemcu, esp8266, iot, electronics]
+tags: [ESP8266, Electronics, IoT, NodeMCU]
 description: "Building a DIY stud finder with NodeMCU that sounds like a geiger counter."
 image: "/assets/img/tongue.jpg"
 ---

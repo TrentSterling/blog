@@ -2,7 +2,7 @@
 title: "MQTT IoT Experiments"
 date: 2016-12-30
 categories: [devblog, hardware]
-tags: [iot, esp8266, nodemcu, mqtt, javascript, espruino]
+tags: [ESP8266, IoT, JavaScript, NodeMCU, espruino, mqtt]
 description: "ESP8266/MQTT experiments with WiFi, HTTP servers, network scanning, and doorbell notifications."
 ---
 

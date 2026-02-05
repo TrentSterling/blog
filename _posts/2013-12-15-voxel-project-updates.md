@@ -2,7 +2,7 @@
 title: "Voxel Project Updates"
 date: 2013-12-15
 categories: [DevBlog]
-tags: [2.5D, 3D, Android, Art, Batching, Indie, Mobile, Qubicle, Unity, Voxel]
+tags: [2.5D, 3D, Android, Art, Indie, Mobile, Qubicle, Unity, Voxel]
 description: "I’ve been posting to G+, Facebook, and Twitter with some short snippets and screenshots. It’s probably good to mirror that content here, even if it’s..."
 image: "/assets/img/blog/wp/isometriclook.png"
 ---

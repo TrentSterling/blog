@@ -2,7 +2,7 @@
 title: "Rebooting ME"
 date: 2016-05-31
 categories: [devblog]
-tags: [3d, multiplayer, photon, unity, streaming]
+tags: [3D, Multiplayer, Photon, Streaming, Unity]
 description: "A reflection on consistency, audience building, and coming back after months away from streaming."
 image: "/assets/img/2016-05-31_19-12-01.jpg"
 ---

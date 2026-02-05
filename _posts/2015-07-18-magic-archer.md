@@ -2,7 +2,7 @@
 title: "Multiplayer Magic Archer"
 date: 2014-11-18 # Date of vlog recording/post
 categories: [DevBlog, Projects]
-tags: [Unity, Multiplayer, Platformer, GameDev, Twitch, Devlog, NGUI, Unity4, 12Games12Weeks]
+tags: [12 Games 12 Weeks, Devlog, GameDev, Multiplayer, NGUI, Platformer, Twitch, Unity]
 description: "A devlog discussing the early development of a multiplayer platformer in Unity 4, the impact of Twitch streaming, the '12 Games in 12 Weeks' challenge, and challenges with UI systems and engine updates."
 image: "/assets/img/2014-11-18_22-39-28.png" # Using an image from the vlog/post
 ---

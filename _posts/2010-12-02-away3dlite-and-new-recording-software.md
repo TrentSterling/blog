@@ -2,7 +2,7 @@
 title: "Away3DLite and New Recording Software"
 date: 2010-12-02
 categories: [devblog]
-tags: [away3dlite, dynamite-max, memory-leak, papervision3d, performance, flash]
+tags: [Away3DLite, Dynamite Max, Flash, Papervision3D, Performance]
 description: "Switching from Papervision3D to Away3DLite - rebuilding the engine and dealing with memory issues."
 image: "/assets/img/better_performance_lower_memory_shits_working.jpg"
 ---

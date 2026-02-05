@@ -2,7 +2,7 @@
 title: "Modeling Video"
 date: 2013-04-02
 categories: [devblog]
-tags: [3D, modeling, Unity]
+tags: [3D, Modeling, Unity]
 description: "Time-lapse of making a spaceship model in Blender for Unity."
 image: "/assets/img/blog/modeling-video-yt.jpg"
 ---

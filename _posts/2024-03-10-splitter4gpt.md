@@ -2,7 +2,7 @@
 title: "Splitter4GPT"
 date: 2024-03-10
 categories: [devblog]
-tags: [ai, tools, python]
+tags: [AI, Python, Tools]
 description: "A utility tool for splitting large codebases for LLM context windows."
 image: "/assets/img/blog/splitter4gpt-banner.png"
 ---

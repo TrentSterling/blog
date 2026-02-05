@@ -2,7 +2,7 @@
 title: "Heist And Jam & Death Island"
 date: 2020-08-15
 categories: [devblog]
-tags: [unity, multiplayer, game-jam, survival, horror]
+tags: [Game Jam, Horror, Multiplayer, Survival, Unity]
 description: "2020 projects - pandemic era game dev."
 image: "/assets/img/blog/heist-1.gif"
 ---
