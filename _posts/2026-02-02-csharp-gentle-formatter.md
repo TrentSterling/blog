@@ -11,7 +11,7 @@ image: "/assets/img/blog/csharp-gentle-formatter.png"
 
 Made a VS Code extension because every other C# formatter pissed me off.
 
-[GitHub](https://github.com/TrentSterling/csharp-gentle-formatter) | [v1.0.0 Release](https://github.com/TrentSterling/csharp-gentle-formatter/releases/tag/v1.0.0)
+[Landing Page](https://tront.xyz/csharp-gentle-formatter/) | [GitHub](https://github.com/TrentSterling/csharp-gentle-formatter) | [v1.0.0 Release](https://github.com/TrentSterling/csharp-gentle-formatter/releases/tag/v1.0.0)
 
 ## The Problem
 
