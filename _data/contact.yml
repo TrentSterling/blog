@@ -1,5 +1,10 @@
 #  The contact options.
 
+- type: home
+  icon: "fas fa-home"
+  noblank: false
+  url: 'https://tront.xyz/'
+
 - type: github
   icon: "fab fa-github"
   noblank: false

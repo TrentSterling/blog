@@ -11,7 +11,7 @@ image: "/assets/img/blog/speedslap.png"
 
 Shipped a little Chrome extension: **SpeedSlap**
 
-[GitHub](https://github.com/TrentSterling/speedslap) | [Landing Page](https://tront.xyz/speedslap/)
+[GitHub](https://github.com/TrentSterling/speedslap) | [Landing Page](https://tront.xyz/speedslap/) | [v1.2 Release](https://github.com/TrentSterling/speedslap/releases/tag/v1.2)
 
 ## The Problem
 
