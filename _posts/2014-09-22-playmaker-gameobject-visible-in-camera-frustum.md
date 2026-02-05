@@ -2,14 +2,16 @@
 title: "PlayMaker: GameObject Visible In Camera Frustum"
 date: 2014-09-22
 categories: [DevBlog]
-tags: [Unity]
-description: "(/assets/img/blog/wp/zUFyofz.gif)  GameObject.renderer.isVisible doesn’t work when an object casts dynamic shadows. This makes the..."
-image: "/assets/img/icon.jpg"
+tags: [Unity, PlayMaker]
+description: "GameObject.renderer.isVisible doesn't work when an object casts dynamic shadows. This makes the GameObjectIsVisible action useless."
+image: "/assets/img/blog/wp/zUFyofz.gif"
 ---
+
+{% include youtube.html id="ROID1JI3FIs" %}
 
 ![](/assets/img/blog/wp/zUFyofz.gif)
 
-GameObject.renderer.isVisible doesn’t work when an object casts dynamic shadows. This makes the GameObjectIsVisible action useless in any application with shadows enabled.
+GameObject.renderer.isVisible doesn't work when an object casts dynamic shadows. This makes the GameObjectIsVisible action useless in any application with shadows enabled.
 
 Here’s a replacement action that test’s if the object’s renderer bounds are within the Main camera’s frustum planes.
 
