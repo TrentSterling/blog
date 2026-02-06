@@ -47,9 +47,7 @@ The toy lets you interactively explore two core concepts:
 
 ### 1. The Double-Slit Experiment: Wave? Particle? Yes.
 
-<!-- Your Double-Slit GIF/Video HTML embed will go here -->
-<!-- Example: <img src="/assets/img/double-slit-demo.gif" alt="Double-Slit Simulation Demo" style="max-width:100%; display:block; margin:auto;"> -->
-*<center>(Double-Slit Simulation visualization will be here!)</center>*
+[![Double-Slit Simulation](https://tront.xyz/img/quantum_refraction.png)](https://tront.xyz/quantumvibes)
 
 The classic that gives everyone an existential crisis. My sim lets you:
 
@@ -62,9 +60,7 @@ The classic that gives everyone an existential crisis. My sim lets you:
 
 ### 2. Feynman's Path Integral Explorer: Taking ALL The Roads
 
-<!-- Your Path Integral GIF/Video HTML embed will go here -->
-<!-- Example: <img src="/assets/img/path-integral-demo.gif" alt="Path Integral Simulation Demo" style="max-width:100%; display:block; margin:auto;"> -->
-*<center>(Path Integral Simulation visualization will be here!)</center>*
+[![Path Integral Explorer](https://tront.xyz/img/quantum_refraction.png)](https://tront.xyz/quantumvibes)
 
 This is where that Veritasium video really shines through in the project. You set start (A) and end (B) points. The sim then draws a zillion random paths between them. The ones closest to the "path of least action" (usually the straightest) are emphasized. It's wild to see the classical path emerge from the quantum fuzz.
 
