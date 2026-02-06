@@ -38,7 +38,7 @@ While my main focus is game development, I’ve had my hands in many other areas
 
 This blog is a way for me to share everything I’m working on, my thoughts on game development, tutorials, and behind-the-scenes looks at the projects I’m developing. It's a place to document my journey, share knowledge, and hopefully help others in the game development community.
 
-I also use this blog to backport content from my **[old blog](http://old.trentsterling.com/){:target="_blank"}** and share insights that are useful for indie developers, especially those working with **multiplayer networking**, **VR**, and **game optimization**. Expect deep dives, tips, and advice based on my decade of experience.
+I also use this blog to backport content from my old blog (originally at trentsterling.com, now archived) and share insights that are useful for indie developers, especially those working with **multiplayer networking**, **VR**, and **game optimization**. Expect deep dives, tips, and advice based on my decade of experience.
 
 Feel free to reach out or join my **[Discord](https://discord.gg/0hyoWZyM6y7kkFCN){:target="_blank"}** community to chat about anything from coding to game design!
 
