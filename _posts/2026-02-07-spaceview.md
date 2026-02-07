@@ -4,7 +4,9 @@ date: 2026-02-07
 categories: [devblog]
 tags: [Rust, egui, Disk Space, Visualization, Treemap, Open Source]
 description: "I built a SpaceMonger-inspired disk space visualizer from scratch in Rust with egui. Squarified treemaps, smooth camera, and a 3.6 MB binary."
-image: "/assets/img/blog/spaceview.png"
+image:
+  path: /assets/img/blog/spaceview.png
+  alt: SpaceView scanning a C: drive with squarified treemap visualization
 ---
 
 ![SpaceView](/assets/img/blog/spaceview.png){: .align-center }
@@ -92,6 +94,14 @@ git clone https://github.com/TrentSterling/SpaceView.git
 cd SpaceView
 cargo build --release
 ```
+
+## v0.5.2: App Icon + About Dialog
+
+The latest version adds a proper app icon (visible in the taskbar, title bar, and the .exe itself) and an About dialog with the icon and my face.
+
+![SpaceView About Dialog](/assets/img/blog/spaceview-about.png){: .align-center }
+
+The icon is generated from a Python script that rasterizes the treemap SVG design into a 256x256 PNG and a multi-size .ico. The .ico gets embedded into the Windows .exe at build time via `winresource`. The About dialog lazy-loads the textures on first open using the `image` crate.
 
 ## What's Next
 
