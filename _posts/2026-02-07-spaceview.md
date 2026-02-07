@@ -6,7 +6,7 @@ tags: [Rust, egui, Disk Space, Visualization, Treemap, Open Source]
 description: "I built a SpaceMonger-inspired disk space visualizer from scratch in Rust with egui. Squarified treemaps, smooth camera, and a 3.6 MB binary."
 image:
   path: /assets/img/blog/spaceview.png
-  alt: SpaceView scanning a C: drive with squarified treemap visualization
+  alt: "SpaceView scanning a drive with squarified treemap visualization"
 ---
 
 ![SpaceView](/assets/img/blog/spaceview.png){: .align-center }
