@@ -9,6 +9,9 @@ image: "/assets/img/blog/fishnet-eos-native.png"
 
 ![FishNet-EOS-Native](/assets/img/blog/fishnet-eos-native.png){: .align-center }
 
+> **Update (Feb 7, 2026):** This project has evolved into [EOS-Native](/posts/eos-native-i-built-a-standalone-multiplayer-framework-for-unity/); a complete standalone multiplayer framework that owns the full networking stack. FishNet-EOS-Native still exists as a transport layer that depends on EOS-Native, but the real action is in the standalone package now.
+{: .prompt-info }
+
 Just shipped **FishNet-EOS-Native v1.0**!
 
 [GitHub Repo](https://github.com/TrentSterling/FishNet-EOS-Native) | [v1.0.0 Release](https://github.com/TrentSterling/FishNet-EOS-Native/releases/tag/v1.0.0) | [Full Docs](https://tront.xyz/FishNet-EOS-Native/)
