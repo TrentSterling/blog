@@ -25,11 +25,11 @@ That's it. It's a disk space visualizer. It does one thing and does it well.
 
 ## The Interesting Part: Screen-Space Rendering
 
-The original SpaceMonger (I have the source code) does something clever: it lays out children in **screen pixels**, not world coordinates. This means headers are always exactly 16 pixels tall, padding is always 2 pixels, and borders are always 1 pixel — regardless of zoom level.
+The original SpaceMonger (I have the source code) does something clever: it lays out children in **screen pixels**, not world coordinates. This means headers are always exactly 16 pixels tall, padding is always 2 pixels, and borders are always 1 pixel, regardless of zoom level.
 
 Most treemap viewers compute everything in world-space, which means when you zoom in, the proportional headers and padding either become enormous or disappear. SpaceMonger avoids this entirely.
 
-SpaceView does the same thing. The world-space layout is approximate — it's only used for camera decisions (what to expand, what to prune, where the camera bounds are). The actual rendering runs `treemap::layout()` at each recursive level in screen coordinates.
+SpaceView does the same thing. The world-space layout is approximate. It's only used for camera decisions (what to expand, what to prune, where the camera bounds are). The actual rendering runs `treemap::layout()` at each recursive level in screen coordinates.
 
 ```
 render_node(node, screen_rect):
@@ -47,7 +47,7 @@ Headers are drawn *after* children, so they're never obscured. All text uses cli
 
 ## Camera System
 
-The camera is continuous — center + zoom, no navigation stack. Zoom is clamped between 1x (can't zoom past root) and 5000x (prevents floating point overflow at extreme magnification). The center is clamped so the viewport never leaves the treemap bounds.
+The camera is continuous: center + zoom, no navigation stack. Zoom is clamped between 1x (can't zoom past root) and 5000x (prevents floating point overflow at extreme magnification). The center is clamped so the viewport never leaves the treemap bounds.
 
 The clamping was the v0.5.1 fix. Before that, you could double-click a tiny deeply-nested folder and zoom to 100,000x, which caused coordinate overflow and the entire view would go blank. The fix was straightforward: clamp the zoom, clamp the center, do it after every camera mutation.
 
@@ -77,7 +77,7 @@ During camera animations, the expand budget increases from 8 to 32 nodes per fra
 
 ## Tech Decisions
 
-**Why Rust?** I wanted to learn it. Disk space visualization is a good fit — file I/O heavy, needs to be fast, benefits from strong typing.
+**Why Rust?** I wanted to learn it. Disk space visualization is a good fit. File I/O heavy, needs to be fast, benefits from strong typing.
 
 **Why egui?** Immediate mode is perfect for this. The treemap is redrawn every frame from the layout tree. No retained widget state to manage. egui's painter API (`rect_filled`, `text`, `with_clip_rect`) maps cleanly to the rendering model.
 
@@ -85,7 +85,7 @@ During camera animations, the expand budget increases from 8 to 32 nodes per fra
 
 ## Install
 
-Download `spaceview.exe` from the [latest release](https://github.com/TrentSterling/SpaceView/releases/latest). No installation needed — just run it.
+Download `spaceview.exe` from the [latest release](https://github.com/TrentSterling/SpaceView/releases/latest). No installation needed. Just run it.
 
 Or build from source:
 
