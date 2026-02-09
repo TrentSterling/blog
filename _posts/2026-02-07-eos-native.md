@@ -98,6 +98,7 @@ Add `EOS_DISABLE` to your scripting defines if you need to strip EOS from compil
 - Multi-transport crossplay (EOS + Steam side by side)
 - Spectator mode
 - Dedicated server support
+- [TrontCloud](https://tront.xyz/trontcloud/) integration; optional persistent backend for stats, leaderboards, and achievements that survive beyond a single play session
 
 The FishNet transport (`FishNet-EOS-Native`) still exists and still works. It depends on this package for the EOS SDK and lobby/voice/social managers. But if you're starting fresh and don't need FishNet's abstractions, EOS-Native gives you the full stack with less overhead.
 
