@@ -3,7 +3,7 @@ title: "TrontCloud - a self-hosted game backend you actually control"
 date: 2026-02-08
 categories: [Projects, Tools]
 tags: [go, backend, multiplayer, gamedev, unity]
-description: "Self-hosted PlayFab/LootLocker alternative built in Go. Single binary, 109 endpoints, three-tier auth, Unity SDK."
+description: "Self-hosted PlayFab/LootLocker alternative built in Go. Single binary, 116 endpoints, three-tier auth, Unity SDK."
 image: "/assets/img/blog/trontcloud.png"
 ---
 
@@ -34,10 +34,11 @@ TrontCloud is a game backend written in Go with PostgreSQL. It compiles to a sin
 - **Drop Tables** - weighted random loot with optional auto-grant to inventory
 - **Messages** - player inbox with unread count, mark read, delete
 - **Events** - analytics tracking (single or batch up to 1000), summary aggregation with filters
+- **IP Bans** - per-IP and CIDR subnet bans with whitelist protection for server IPs
 - **Title Data** - server-side key-value config store (JSONB values)
 - **Friends, Groups, Trades, Bans, News, Seasons, Feature Flags, Bundles, Experiments, Triggers, Scheduled Tasks, Cloud Files** - the full spread
 
-109 endpoints total. 20 auto-migrated database tables. Everything runs from that one binary.
+116 endpoints total. 21 auto-migrated database tables. Everything runs from that one binary.
 
 ## Three-Tier Auth
 
@@ -79,7 +80,7 @@ TrontCloud.GuestLogin(SystemInfo.deviceUniqueIdentifier,
 TrontCloud.GetStats(stats => Debug.Log(stats));  // uses session player automatically
 ```
 
-350+ public methods covering all 109 endpoints, with both callback and async/await variants. Client-mode methods automatically use the logged-in player's ID so you don't have to pass it around everywhere.
+350+ public methods covering all 116 endpoints, with both callback and async/await variants. Client-mode methods automatically use the logged-in player's ID so you don't have to pass it around everywhere.
 
 ## Security Decisions
 
@@ -91,6 +92,7 @@ A few things I made sure to get right from the start:
 - **Body size limits** - requests are capped so nobody can POST a gigabyte of JSON at you
 - **Server timeouts** - read, write, and idle timeouts configured on the HTTP server. Slowloris attacks hit the timeout wall and get dropped
 - **Session expiry** - tokens expire after 24 hours. A background scheduler cleans up expired sessions and inventory every 5 minutes
+- **IP bans** - per-IP and CIDR subnet bans with whitelist protection; bans block new connections only, never kill existing sessions (learned from Ducky's PlayFab disaster where banning an IP accidentally banned the login server)
 
 Nothing groundbreaking here; just the basics done correctly. Which is more than some production backends manage.
 
