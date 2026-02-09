@@ -7,6 +7,8 @@ description: "Self-hosted PlayFab/LootLocker alternative built in Go. Single bin
 image: "/assets/img/blog/trontcloud.png"
 ---
 
+![TrontCloud](/assets/img/blog/trontcloud.png){: .align-center }
+
 ## The Problem With Existing Game Backends
 
 Every game backend service works roughly the same way: you get a client SDK, it ships with an API key baked in, and your game makes calls directly to their cloud. PlayFab, LootLocker, AccelByte; they all do this.
