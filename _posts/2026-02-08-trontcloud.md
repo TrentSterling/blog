@@ -9,7 +9,7 @@ image:
   alt: TrontCloud admin dashboard
 ---
 
-## the problem with existing game backends
+## The Problem With Existing Game Backends
 
 Every game backend service works roughly the same way: you get a client SDK, it ships with an API key baked in, and your game makes calls directly to their cloud. PlayFab, LootLocker, AccelByte; they all do this.
 
@@ -19,7 +19,7 @@ The standard answer is "use server-side validation." Run your own server that pr
 
 That's why I built TrontCloud. If I have to do the server work anyway, I might as well own the whole stack.
 
-## what it does
+## What It Does
 
 TrontCloud is a game backend written in Go with PostgreSQL. It compiles to a single binary. No Docker required for the app itself (though I use Docker for Postgres locally). The feature set covers what you'd expect from PlayFab or LootLocker:
 
@@ -39,7 +39,7 @@ TrontCloud is a game backend written in Go with PostgreSQL. It compiles to a sin
 
 109 endpoints total. 20 auto-migrated database tables. Everything runs from that one binary.
 
-## three-tier auth
+## Three-Tier Auth
 
 This is the part I'm most happy with. Instead of one API key that does everything, TrontCloud has three authentication levels:
 
@@ -51,7 +51,7 @@ This is the part I'm most happy with. Instead of one API key that does everythin
 
 The practical result: your shipped game binary contains zero secrets. The client knows the server URL and a title ID; that's it. Even if someone decompiles everything, they can only do what a logged-in player can do through their own session.
 
-## the admin dashboard
+## The Admin Dashboard
 
 I didn't want to build a separate React app for admin. The entire admin dashboard is embedded HTML served directly from the Go binary. Hit `/admin` in your browser and you get a full management interface with 14 tabs organized into a grouped sidebar: Core (players, stats, leaderboards), Economy (currencies, inventory, store), Progress (achievements, progressions, drops), and System (title data, messages, events, auth).
 
@@ -60,7 +60,7 @@ The top of the page shows 12 stat cards; uptime, total requests, player count, a
 ![TrontCloud admin dashboard](/assets/img/blog/trontcloud_admin.png)
 _the embedded admin dashboard; 14 tabs, no separate build step_
 
-## the Unity SDK
+## The Unity SDK
 
 The SDK is a UPM package you install via git URL. Zero external dependencies; it uses `UnityWebRequest` and `JsonUtility` only. Works on Unity 2021.3+.
 
@@ -81,7 +81,7 @@ TrontCloud.GetStats(stats => Debug.Log(stats));  // uses session player automati
 
 329 public methods covering all 109 endpoints, with both callback and async/await variants. Client-mode methods automatically use the logged-in player's ID so you don't have to pass it around everywhere.
 
-## security decisions
+## Security Decisions
 
 A few things I made sure to get right from the start:
 
@@ -94,7 +94,7 @@ A few things I made sure to get right from the start:
 
 Nothing groundbreaking here; just the basics done correctly. Which is more than some production backends manage.
 
-## what's next
+## What's Next
 
 The immediate plan is deploying to a $5/month VPS. The whole thing is a single binary plus a Postgres instance; it should run comfortably on minimal hardware.
 
