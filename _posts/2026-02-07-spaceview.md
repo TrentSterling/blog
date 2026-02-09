@@ -5,11 +5,11 @@ categories: [devblog]
 tags: [Rust, egui, Disk Space, Visualization, Treemap, Open Source]
 description: "I built a SpaceMonger-inspired disk space visualizer from scratch in Rust with egui. Squarified treemaps, smooth camera, and a 3.6 MB binary."
 image:
-  path: /assets/img/blog/spaceview.png
-  alt: "SpaceView scanning a drive with squarified treemap visualization"
+  path: /assets/img/blog/spaceview-og.png
+  alt: "SpaceView - Disk Space Visualizer in Rust"
 ---
 
-![SpaceView](/assets/img/blog/spaceview.png){: .align-center }
+![SpaceView](/assets/img/blog/spaceview-og.png){: .align-center }
 
 I've always loved [SpaceMonger](https://en.wikipedia.org/wiki/SpaceMonger). You open it, point it at a drive, and immediately see where all your space went. Big rectangles = big files. No graphs, no pie charts, no loading bars that take 20 minutes. Just a treemap.
 
