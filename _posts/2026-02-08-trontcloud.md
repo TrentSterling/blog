@@ -4,9 +4,7 @@ date: 2026-02-08
 categories: [Projects, Tools]
 tags: [go, backend, multiplayer, gamedev, unity]
 description: "Self-hosted PlayFab/LootLocker alternative built in Go. Single binary, 109 endpoints, three-tier auth, Unity SDK."
-image:
-  path: /assets/img/blog/trontcloud_admin.png
-  alt: TrontCloud admin dashboard
+image: "/assets/img/blog/trontcloud.png"
 ---
 
 ## The Problem With Existing Game Backends
