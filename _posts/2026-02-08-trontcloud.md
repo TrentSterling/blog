@@ -79,7 +79,7 @@ TrontCloud.GuestLogin(SystemInfo.deviceUniqueIdentifier,
 TrontCloud.GetStats(stats => Debug.Log(stats));  // uses session player automatically
 ```
 
-329 public methods covering all 109 endpoints, with both callback and async/await variants. Client-mode methods automatically use the logged-in player's ID so you don't have to pass it around everywhere.
+350+ public methods covering all 109 endpoints, with both callback and async/await variants. Client-mode methods automatically use the logged-in player's ID so you don't have to pass it around everywhere.
 
 ## Security Decisions
 
