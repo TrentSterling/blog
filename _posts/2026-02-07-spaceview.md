@@ -3,13 +3,13 @@ title: "SpaceView: A SpaceMonger Clone in Rust"
 date: 2026-02-07
 categories: [devblog]
 tags: [Rust, egui, Disk Space, Visualization, Treemap, Open Source]
-description: "I built a SpaceMonger-inspired disk space visualizer from scratch in Rust with egui. Squarified treemaps, smooth camera, and a 3.6 MB binary."
+description: "I built a SpaceMonger-inspired disk space visualizer from scratch in Rust with egui. Squarified treemaps, live scanning, extension filtering, duplicate detection, and a 3.6 MB binary."
 image:
-  path: /assets/img/blog/spaceview-og.png
+  path: /assets/img/blog/spaceview-neon.png
   alt: "SpaceView - Disk Space Visualizer in Rust"
 ---
 
-![SpaceView](/assets/img/blog/spaceview-og.png){: .align-center }
+![SpaceView scanning a drive](/assets/img/blog/spaceview-neon.png){: .align-center }
 
 I've always loved [SpaceMonger](https://en.wikipedia.org/wiki/SpaceMonger). You open it, point it at a drive, and immediately see where all your space went. Big rectangles = big files. No graphs, no pie charts, no loading bars that take 20 minutes. Just a treemap.
 
@@ -21,7 +21,29 @@ SpaceMonger was discontinued years ago. WinDirStat is slow. TreeSize is fine but
 
 SpaceView scans a drive or folder and renders a [squarified treemap](https://www.win.tue.nl/~vanwijk/stm.pdf) where every rectangle's area is proportional to its size. Scroll to zoom, double-click to dive into a folder, right-click to zoom back out. Drag to pan. Breadcrumbs show where you are.
 
-That's it. It's a disk space visualizer. It does one thing and does it well.
+It does one thing and does it well.
+
+![SpaceView full drive scan](/assets/img/blog/spaceview-ocean.png){: .align-center }
+
+## Features (v0.11.0)
+
+The app has grown a lot since the first release. Here's what it does now.
+
+- **Live scan visualization.** The treemap builds progressively as files are discovered. No blank screen while scanning. Pause, resume, cancel anytime.
+- **5 view modes.** Map (treemap), List (sortable directory browser), Top Files (1000 largest), Types (extension treemap), Duplicates.
+- **Drive picker.** Visual drive cards on the welcome screen with capacity bars. Click a drive to scan. No more typing paths.
+- **Extension breakdown panel.** Side panel listing every file type by size. Click an extension to highlight matching files in the treemap. Everything else dims.
+- **3 color modes.** Color by depth, file age (log-scale heatmap), or file extension. 3 themes: Rainbow, Neon, Ocean. Dark/light mode.
+- **Duplicate detection.** Background tiered hashing (size, partial hash, full hash). Results sorted by wasted space.
+- **Right-click context menu.** Open in Explorer, Copy Path, Delete to Recycle Bin. Works in all views.
+- **Rich tooltips.** Hover any block for name, size, percentage, file count, full path.
+- **Cushion shading.** 3D edge shadows on file blocks for visual depth.
+- **Search/filter.** Filters across List, Top Files, Duplicates, and the extension panel.
+- **Free space block.** See free vs used space. Toggle on/off.
+- **Drag and drop.** Drop a folder to scan it.
+- **Tiny binary.** 3.6 MB standalone .exe. No installer, no dependencies.
+
+![SpaceView Types view](/assets/img/blog/spaceview-types.png){: .align-center }
 
 ## The Interesting Part: Screen-Space Rendering
 
@@ -51,19 +73,23 @@ The camera is continuous: center + zoom, no navigation stack. Zoom is clamped be
 
 The clamping was the v0.5.1 fix. Before that, you could double-click a tiny deeply-nested folder and zoom to 100,000x, which caused coordinate overflow and the entire view would go blank. The fix was straightforward: clamp the zoom, clamp the center, do it after every camera mutation.
 
-```rust
-fn clamp_center(&mut self, viewport: egui::Rect) {
-    let wr = self.world_rect;
-    clamp_point(&mut self.target_center, self.target_zoom, viewport, wr);
-    clamp_point(&mut self.center, self.zoom, viewport, wr);
-}
-```
-
 ## Lazy Level-of-Detail
 
 SpaceView doesn't expand the entire directory tree at once. It starts with just the root children, then lazily expands directories that are large enough on screen (> 80px) and prunes ones that are off-screen or tiny.
 
 During camera animations, the expand budget increases from 8 to 32 nodes per frame so the view fills in quickly as you zoom. During idle, it drops back to 8 to save CPU.
+
+## Live Scanning
+
+The scanner runs on a separate thread and sends partial tree snapshots via an mpsc channel after each top-level directory completes. The UI drains these every frame, keeping only the newest, and rebuilds the layout. You can zoom, pan, and hover while scanning.
+
+When switching drives, old trees are moved to a background thread for deallocation. Dropping millions of FileNode allocations on the main thread would freeze the UI. Deferred drops fix that.
+
+## Extension Filtering
+
+The extension breakdown panel shows every file type sorted by total size. Click `.dll` and the treemap instantly dims everything except DLL files. The dimming uses `gamma_multiply(0.25)` on non-matching file blocks. Directory headers and bodies stay untouched since they're containers.
+
+The extension list itself supports search filtering and virtual scrolling for performance.
 
 ## The Numbers
 
@@ -73,7 +99,7 @@ During camera animations, the expand budget increases from 8 to 32 nodes per fra
 | Language | Rust (edition 2021) |
 | UI framework | egui 0.31 |
 | Source files | 6 |
-| Lines of code | ~1,200 |
+| Lines of code | ~2,500 |
 
 ## Tech Decisions
 
@@ -95,20 +121,11 @@ cd SpaceView
 cargo build --release
 ```
 
-## v0.5.2: App Icon + About Dialog
-
-The latest version adds a proper app icon (visible in the taskbar, title bar, and the .exe itself) and an About dialog with the icon and my face.
-
-![SpaceView About Dialog](/assets/img/blog/spaceview-about.png){: .align-center }
-
-The icon is generated from a Python script that rasterizes the treemap SVG design into a 256x256 PNG and a multi-size .ico. The .ico gets embedded into the Windows .exe at build time via `winresource`. The About dialog lazy-loads the textures on first open using the `image` crate.
-
 ## What's Next
 
-- File type coloring (by extension)
-- Right-click context menu (open in explorer, delete)
-- Scan caching / incremental updates
-- Linux / macOS support (egui already supports it, just needs testing)
-- File count display in headers
+- Advanced filter/search (SpaceSniffer-style syntax)
+- Filesystem watcher for live updates
+- Export/save scans
+- Linux/macOS support (egui already supports it, just needs testing)
 
 The source is on [GitHub](https://github.com/TrentSterling/SpaceView). MIT licensed.
