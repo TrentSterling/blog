@@ -9,6 +9,8 @@ image:
   alt: "CraftMine — a vibe-coded Minecraft clone running in the browser"
 ---
 
+![CraftMine — a vibe-coded Minecraft clone running in the browser](/assets/img/blog/craftmine.png){: .shadow }
+
 I wanted to see how far vibe coding could push a single HTML file. The answer: pretty far. CraftMine is a complete Minecraft-style voxel game — procedural terrain, caves, biomes, mobs, weapons, day/night cycle, weather — all in 6,820 lines of JavaScript with zero build tools. The only external dependency is Three.js from a CDN.
 
 [**Play it now →**](https://tront.xyz/craftmine/)
