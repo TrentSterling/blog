@@ -9,7 +9,7 @@ image:
   alt: "CraftMine — a vibe-coded Minecraft clone running in the browser"
 ---
 
-![CraftMine — a vibe-coded Minecraft clone running in the browser](/assets/img/blog/craftmine.png){: .shadow }
+![CraftMine — snowy biome with trees](/assets/img/blog/craftmine.png){: .shadow }
 
 I wanted to see how far vibe coding could push a single HTML file. The answer: pretty far. CraftMine is a complete Minecraft-style voxel game — procedural terrain, caves, biomes, mobs, weapons, day/night cycle, weather — all in 6,820 lines of JavaScript with zero build tools. The only external dependency is Three.js from a CDN.
 
@@ -23,6 +23,8 @@ I wanted to see how far vibe coding could push a single HTML file. The answer: p
 - **5 biomes** — plains, desert, snow, forest, ocean
 - **16×16×128 chunks** with web worker mesh generation
 - **1 file**, 0 build steps, ~350KB
+
+![CraftMine — mountain landscape with snowy peaks](/assets/img/blog/craftmine-mountains.png){: .shadow }
 
 ## World generation
 
@@ -53,6 +55,8 @@ The 36 mobs fall into four tiers:
 **Bosses** (4+): Hydra (120 HP, multi-headed, ranged), Dragon (200 HP, flying, ranged), and the Titan — 300 HP, 5× scale, 15 damage per hit, causes earthquakes. Good luck.
 
 Hostile mobs spawn at night (the 0.75–0.25 time window). During the day you mostly get passive animals with the occasional spider or slime.
+
+![CraftMine — flying over snowy mountains](/assets/img/blog/craftmine-landscape.png){: .shadow }
 
 ## The arsenal
 
