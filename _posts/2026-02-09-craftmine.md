@@ -99,4 +99,3 @@ No `npm install`. No webpack. No React. Just a `<script type="module">` tag, Thr
 
 **[tront.xyz/craftmine](https://tront.xyz/craftmine/)** — click to start, WASD to move, mouse to look, scroll to switch weapons, C for creative mode, ESC to pause.
 
-**Source:** [GitHub](https://github.com/TrentSterling/CraftMine)
