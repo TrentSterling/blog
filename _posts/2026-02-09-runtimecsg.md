@@ -11,7 +11,7 @@ image:
 
 ![RuntimeCSG editor demo](/assets/img/blog/runtimecsg-demo.gif){: .align-center }
 
-**[Landing Page](https://tront.xyz/runtimecsg/)** | **[GitHub](https://github.com/TrentSterling/runtimecsg)** (private)
+**[Landing Page](https://tront.xyz/runtimecsg/)**
 
 ## The Problem
 
@@ -28,6 +28,8 @@ You add a `CSGModel` component to a GameObject, then add child `CSGBrush` compon
 Move a brush, the mesh updates. Delete a brush, mesh updates. Change an operation from additive to subtractive, mesh updates. Everything is live.
 
 ![RuntimeCSG in the Unity editor](/assets/img/blog/runtimecsg-editor.png){: .align-center }
+
+![RuntimeCSG editor mockup](/assets/img/blog/runtimecsg-mockup.png){: .align-center }
 
 ## The BSP Dead End
 
@@ -98,6 +100,8 @@ Floats only appear at the final mesh output stage where Unity requires them.
 The world is divided into a grid of chunks. Each chunk independently collects the brushes that overlap it, runs the CSG engine, and builds a mesh. Only dirty chunks rebuild when something changes.
 
 Each chunk gets its own `GameObject` with a `MeshFilter`, `MeshRenderer`, and `MeshCollider`. Physics just works.
+
+![RuntimeCSG full scene view](/assets/img/blog/runtimecsg-full.png){: .align-center }
 
 ## Runtime API
 
