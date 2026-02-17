@@ -11,7 +11,7 @@ image:
 
 ![Notesdash](/assets/img/blog/notesdash.png){: .align-center }
 
-**[Landing Page](https://tront.xyz/notesdash/)** | **[GitHub](https://github.com/TrentSterling/notesdash)** (private)
+**[Landing Page](https://tront.xyz/notesdash/)**
 
 ## The Problem
 
