@@ -13,7 +13,7 @@ image:
 
 I built [SpaceView](https://github.com/TrentSterling/SpaceView) in about a day. A 1,200-line Rust + egui disk space visualizer with squarified treemaps, a smooth camera, lazy LOD, color themes, and a 3.6 MB binary. The whole thing was pair-programmed with [Claude Code](https://claude.ai/claude-code).
 
-This post isn't about SpaceView's architecture (that's [the other post](/posts/spaceview/)). This is about the workflow. What does it actually look like to build a real app with an AI pair programmer?
+This post isn't about SpaceView's architecture (that's [the other post](/blog/posts/spaceview/)). This is about the workflow. What does it actually look like to build a real app with an AI pair programmer?
 
 ## The Setup
 
