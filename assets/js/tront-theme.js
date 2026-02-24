@@ -63,6 +63,19 @@
     btn.setAttribute('aria-label', entry.label + ' theme');
   }
 
+  function updateNavbarBtn(entry) {
+    var btn = document.getElementById('tront-theme-btn');
+    if (!btn) return;
+
+    var icon = btn.querySelector('i');
+    if (icon) icon.className = entry.icon;
+
+    var label = btn.querySelector('.theme-label');
+    if (label) label.textContent = ' ' + entry.label;
+
+    btn.setAttribute('aria-label', entry.label + ' theme');
+  }
+
   function notifyGiscus() {
     window.postMessage({ id: Theme.ID }, '*');
   }
@@ -91,20 +104,23 @@
 
     applyTheme(next);
     updateButton(next);
+    updateNavbarBtn(next);
     notifyGiscus();
   };
 
   // --- Set initial button state once DOM is ready ---
   function initButton() {
     var id = localStorage.getItem(STORAGE_KEY);
+    var entry;
     if (id) {
-      updateButton(THEMES[getIndex(id)]);
+      entry = THEMES[getIndex(id)];
     } else {
       // No saved theme — detect current state and show it
       var mode = document.documentElement.getAttribute(MODE_ATTR);
-      var idx = mode === 'dark' ? 1 : 0;
-      updateButton(THEMES[idx]);
+      entry = THEMES[mode === 'dark' ? 1 : 0];
     }
+    updateButton(entry);
+    updateNavbarBtn(entry);
   }
 
   if (document.readyState === 'loading') {

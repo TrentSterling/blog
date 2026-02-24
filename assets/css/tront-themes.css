@@ -373,3 +373,93 @@ html[data-theme="tront-ember"] #theme-picker #mode-toggle {
 html[data-theme="tront-ember"] #theme-picker #mode-toggle:hover {
   box-shadow: 0 0 16px rgba(249, 115, 22, 0.25);
 }
+
+
+/* ============================================================
+   Navbar Theme Button — per-theme overrides
+   ============================================================ */
+
+/* Light mode navbar */
+html[data-mode="light"] #magic-navbar-container {
+  background-color: rgba(245, 245, 248, 0.75);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+html[data-mode="light"] #magic-navbar-container .nav-link {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #555;
+}
+html[data-mode="light"] #magic-navbar-container .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #222;
+}
+html[data-mode="light"] #magic-navbar-container .nav-link.active {
+  color: #fff;
+}
+
+/* Cyan navbar */
+html[data-theme="tront-cyan"] #magic-navbar-container {
+  background-color: rgba(6, 12, 20, 0.75);
+  border-bottom-color: rgba(0, 240, 255, 0.15);
+}
+html[data-theme="tront-cyan"] #magic-navbar-container .nav-link {
+  background-color: rgba(0, 240, 255, 0.06);
+  border-color: rgba(0, 240, 255, 0.12);
+}
+html[data-theme="tront-cyan"] #magic-navbar-container .nav-link:hover {
+  background-color: rgba(0, 240, 255, 0.12);
+  border-color: rgba(0, 240, 255, 0.25);
+}
+html[data-theme="tront-cyan"] #magic-navbar-container #tront-theme-btn {
+  color: #00f0ff;
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.12);
+}
+html[data-theme="tront-cyan"] #magic-navbar-container #tront-theme-btn:hover {
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.3);
+}
+
+/* Purple navbar */
+html[data-theme="tront-purple"] #magic-navbar-container {
+  background-color: rgba(10, 8, 18, 0.75);
+  border-bottom-color: rgba(168, 85, 247, 0.15);
+}
+html[data-theme="tront-purple"] #magic-navbar-container .nav-link {
+  background-color: rgba(168, 85, 247, 0.06);
+  border-color: rgba(168, 85, 247, 0.12);
+}
+html[data-theme="tront-purple"] #magic-navbar-container .nav-link:hover {
+  background-color: rgba(168, 85, 247, 0.12);
+  border-color: rgba(168, 85, 247, 0.25);
+}
+html[data-theme="tront-purple"] #magic-navbar-container #tront-theme-btn {
+  color: #a855f7;
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.12);
+}
+html[data-theme="tront-purple"] #magic-navbar-container #tront-theme-btn:hover {
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.3);
+}
+
+/* Ember navbar */
+html[data-theme="tront-ember"] #magic-navbar-container {
+  background-color: rgba(14, 8, 4, 0.75);
+  border-bottom-color: rgba(249, 115, 22, 0.15);
+}
+html[data-theme="tront-ember"] #magic-navbar-container .nav-link {
+  background-color: rgba(249, 115, 22, 0.06);
+  border-color: rgba(249, 115, 22, 0.12);
+}
+html[data-theme="tront-ember"] #magic-navbar-container .nav-link:hover {
+  background-color: rgba(249, 115, 22, 0.12);
+  border-color: rgba(249, 115, 22, 0.25);
+}
+html[data-theme="tront-ember"] #magic-navbar-container #tront-theme-btn {
+  color: #f97316;
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.12);
+}
+html[data-theme="tront-ember"] #magic-navbar-container #tront-theme-btn:hover {
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.3);
+}
