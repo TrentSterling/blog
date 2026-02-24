@@ -1,0 +1,96 @@
+---
+layout: page
+title: "404"
+permalink: /404.html
+---
+
+<style>
+  .error-container {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  .error-code {
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--tront-accent, #a855f7), var(--tront-accent-secondary, #6366f1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+  }
+  .error-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color, #ccc);
+  }
+  .error-message {
+    font-size: 1rem;
+    color: var(--text-muted-color, #868686);
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .error-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .error-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: 1px solid var(--main-border-color, rgba(255, 255, 255, 0.1));
+    color: var(--text-color, #afb0b1);
+    background: var(--card-bg, #1e1e1e);
+  }
+  .error-actions a:hover {
+    border-color: var(--tront-accent, #a855f7);
+    box-shadow: 0 0 16px var(--tront-accent-glow, rgba(168, 85, 247, 0.3));
+    color: var(--heading-color, #fff);
+  }
+  .error-actions a.primary {
+    background: var(--tront-accent, #a855f7);
+    color: #fff;
+    border-color: transparent;
+  }
+  .error-actions a.primary:hover {
+    box-shadow: 0 0 20px var(--tront-accent-glow, rgba(168, 85, 247, 0.5));
+  }
+  .error-glitch {
+    font-family: 'Courier New', monospace;
+    color: var(--text-muted-color, #555);
+    font-size: 0.8rem;
+    margin-top: 2.5rem;
+    opacity: 0.6;
+  }
+</style>
+
+<div class="error-container">
+  <div class="error-code">404</div>
+  <div class="error-title">Page Not Found</div>
+  <div class="error-message">
+    The page you're looking for doesn't exist, was moved, or was consumed by a voxel engine.
+  </div>
+  <div class="error-actions">
+    <a href="/blog/" class="primary">
+      <i class="fas fa-home"></i> Blog Home
+    </a>
+    <a href="https://tront.xyz/">
+      <i class="fas fa-globe"></i> tront.xyz
+    </a>
+    <a href="https://tront.xyz/discord/">
+      <i class="fab fa-discord"></i> Discord
+    </a>
+  </div>
+  <div class="error-glitch">// ERR_VOXEL_NOT_FOUND: chunk unloaded at requested coordinates</div>
+</div>
