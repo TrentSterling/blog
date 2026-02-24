@@ -61,7 +61,7 @@ These were all quick experiments, built fast to test mechanics, not to be polish
 *   **VibeCar**
     *   Play it here: [`tront.xyz/vibecar/`](https://tront.xyz/vibecar/){:target="_blank"}
     *   **Idea:** Raycast vehicle physics sim with live tuning.
-    *   **Result:** A surprisingly capable arcade style car simulation using Three.js for visuals and Cannon.js for the physics backend. It uses a raycast based approach for the wheels and suspension. The cool part is the live tuning panel allowing you to adjust dozens of parameters on the fly – things like car mass, engine force, suspension strength/damping/travel, wheel radius, track width, grip factors, steering angle/speed, and damping. It even tries to auto flip if stuck upside down, has manual flip (F key), a handbrake, basic speed/slip display, and I threw in some ramps and trees to crash into.
+    *   **Result:** A surprisingly capable arcade style car simulation using Three.js for visuals and Cannon.js for the physics backend. It uses a raycast based approach for the wheels and suspension. The cool part is the live tuning panel allowing you to adjust dozens of parameters on the fly - things like car mass, engine force, suspension strength/damping/travel, wheel radius, track width, grip factors, steering angle/speed, and damping. It even tries to auto flip if stuck upside down, has manual flip (F key), a handbrake, basic speed/slip display, and I threw in some ramps and trees to crash into.
     *   **Tech:** Vanilla JS, Three.js, Cannon.js physics, Raycast vehicle controller, extensive live tuning UI.
     *   **Shots:** Probably took around 15-20 shots to get the physics integration, tuning panel, and extra features working reasonably well.
 
@@ -124,7 +124,7 @@ It acted like a pair programmer that knew compute shaders, HLSL, and Unity graph
 
 So, yeah. Even if "vibe coding" feels janky sometimes, AI like Gemini 2.5 *is* a powerful accelerator for early stage prototyping. Especially for solo devs or small teams just wanting to see if an idea has legs quickly. I could try out core mechanics in JS, a language I avoid, far faster than setting up equivalent projects from scratch, even in Unity where I'm comfortable. Getting something like the threaded A* visualizer (VibeStar), the SVO ray bouncer (VibeBounce), or even the live tunable car physics (VibeCar) running purely through prompts in a browser environment is pretty **nuts**.
 
-It's not replacing developers or deep engine work. But it's definitely changing how fast you can slap together a proof of concept. It lets you focus more on the core game idea and less on the initial boilerplate, even if you have to wrestle the AI into shape. In regular development (like Unity), it's less "vibe" and more "augmentation" – handling the tedious bits and providing expert knowledge on demand.
+It's not replacing developers or deep engine work. But it's definitely changing how fast you can slap together a proof of concept. It lets you focus more on the core game idea and less on the initial boilerplate, even if you have to wrestle the AI into shape. In regular development (like Unity), it's less "vibe" and more "augmentation" - handling the tedious bits and providing expert knowledge on demand.
 
 Curious if anyone else has had similar experiences fighting with, but ultimately getting results from, these tools. Let me know your thoughts.
 

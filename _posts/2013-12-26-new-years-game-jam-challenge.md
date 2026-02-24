@@ -21,6 +21,6 @@ Right now I have something like 14 hours of footage, and none of it seems intere
 
 I should mention that the game is some kind of mix between Sonic, Contra, and generic robots.
 
-Update: Still need to fix UI. I haven’t eaten all day and I’m tired. Here’s another gif – with sexy dance added bonus!
+Update: Still need to fix UI. I haven’t eaten all day and I’m tired. Here’s another gif - with sexy dance added bonus!
 
 ![bouncy](/assets/img/blog/wp/bouncy.gif)

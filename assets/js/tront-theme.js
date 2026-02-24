@@ -92,7 +92,7 @@
     if (currentId) {
       currentIdx = getIndex(currentId);
     } else {
-      // First click — detect what Chirpy set
+      // First click - detect what Chirpy set
       var mode = document.documentElement.getAttribute(MODE_ATTR);
       currentIdx = mode === 'dark' ? 1 : 0;
     }
@@ -113,7 +113,7 @@
     if (id) {
       entry = THEMES[getIndex(id)];
     } else {
-      // No saved theme — detect current state and show it
+      // No saved theme - detect current state and show it
       var mode = document.documentElement.getAttribute(MODE_ATTR);
       entry = THEMES[mode === 'dark' ? 1 : 0];
     }

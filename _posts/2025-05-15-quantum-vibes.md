@@ -9,7 +9,7 @@ image: "/assets/img/QUANTUM_REFRACTION.png"
 
 So, yeah. Quantum mechanics. It's one of those things that always tickles the back of your brain if you're a dev, right? You think you kinda get it. Double-slit, Schrödinger's cat, all that jazz. But then, every once in a while, something just re-scrambles your eggs in the best possible way.
 
-For me, recently, it was a damn good [**Veritasium video about really trusting quantum mechanics**](https://www.youtube.com/watch?v=qJZ1Ez28C-A){:target="_blank" rel="noopener noreferrer"}. I'd *known* about Feynman's path integrals – the idea that a particle takes *every possible path* simultaneously. But seeing it visualized so clearly... it wasn't just an abstract concept anymore. It was like, "Oh. OH. Light is literally exploring *all the goddamn paths*." That hit different.
+For me, recently, it was a damn good [**Veritasium video about really trusting quantum mechanics**](https://www.youtube.com/watch?v=qJZ1Ez28C-A){:target="_blank" rel="noopener noreferrer"}. I'd *known* about Feynman's path integrals - the idea that a particle takes *every possible path* simultaneously. But seeing it visualized so clearly... it wasn't just an abstract concept anymore. It was like, "Oh. OH. Light is literally exploring *all the goddamn paths*." That hit different.
 
 <div style="text-align: center; margin: 1.5em 0;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qJZ1Ez28C-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -17,7 +17,7 @@ For me, recently, it was a damn good [**Veritasium video about really trusting q
 <em><small>The Veritasium video's visualization of Feynman's "Infinite Paths" was a key inspiration.</small></em>
 </div>
 
-And when my brain breaks like that, I gotta build. So, **QuantumVibes** was born – a quick, dirty, browser-based interactive toy to poke at this weirdness. Popped into existence around early May 2025 after some chats and that video rattling around in my skull.
+And when my brain breaks like that, I gotta build. So, **QuantumVibes** was born - a quick, dirty, browser-based interactive toy to poke at this weirdness. Popped into existence around early May 2025 after some chats and that video rattling around in my skull.
 
 **[>>> Play QuantumVibes In Your Browser! <<<](https://tront.xyz/quantumvibes/){:target="_blank" rel="noopener noreferrer"}**
 
@@ -26,14 +26,14 @@ And when my brain breaks like that, I gotta build. So, **QuantumVibes** was born
 <center>
   <img src="/assets/img/QUANTUM_REFRACTION.png" alt="QuantumVibes - Abstract Visualization of Quantum Wave Interference and Particle Paths" style="max-width: 700px; margin-top: 1em; margin-bottom: 0.5em; border: 1px solid #555; padding: 3px; background-color: #111;">
   <br>
-  <em>My own attempt to visualize the beautiful weirdness – the core of QuantumVibes.</em>
+  <em>My own attempt to visualize the beautiful weirdness - the core of QuantumVibes.</em>
 </center>
 
 ---
 
 ## The "Vibecoding" Process: Yelling at a Robot Until Physics Happens
 
-Now, how do you make a quantum sim on a whim when your main jam is C# and Unity, but you want this sucker on the web? You "vibecode" it. You sit down with an AI – Gemini, in this case – and you start prompting. And prompting. And occasionally cursing.
+Now, how do you make a quantum sim on a whim when your main jam is C# and Unity, but you want this sucker on the web? You "vibecode" it. You sit down with an AI - Gemini, in this case - and you start prompting. And prompting. And occasionally cursing.
 
 Let's be real: the effort was probably **1% me and 99% the robot**. I did some HTML nudging, but the JavaScript core? That was a collaborative hallucination. Took around **30 solid "shots"** (prompt iterations) to get something resembling the vision. And yeah, once Web Workers got involved for performance, I had to nuke the AI's context and start a fresh chat. It gets... *confused*. Standard procedure for anything non-trivial.
 
@@ -74,7 +74,7 @@ This was a quick, fun, slightly unhinged experiment. Mobile might be janky, accu
 
 ## Join the Discussion
 
-Wanna talk gamedev, AI coding, weird physics, or share cool stuff? Hit up the Discord – it's an active crew of devs working on all sorts of interesting projects (multiplayer, VR, AI, hardware, and more).
+Wanna talk gamedev, AI coding, weird physics, or share cool stuff? Hit up the Discord - it's an active crew of devs working on all sorts of interesting projects (multiplayer, VR, AI, hardware, and more).
 
 [**>>> Join the TrontDev Discord Server <<<**](https://tront.xyz/discord/){:target="_blank" rel="noopener noreferrer"}
 

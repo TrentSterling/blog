@@ -34,7 +34,7 @@ Pathfinding is working well with the grid-based level editor. Since the editor i
 
 ### Optimizing Batching for Performance
 I tackled batching today and set up an automated script that integrates with my in-game level editor.
-So far, I’ve managed to keep the entire scene under **three draw calls**—under ten even with lighting!
+So far, I’ve managed to keep the entire scene under **three draw calls**-under ten even with lighting!
 
 ![Batching Progress](/assets/img/batchingbeautiful.gif)
 

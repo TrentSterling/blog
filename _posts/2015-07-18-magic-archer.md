@@ -38,7 +38,7 @@ The biggest success was starting to stream daily development on Twitch ([http://
 Of course, it wasn't all smooth sailing:
 *   **Multiplayer Scope Creep:** Adding multiplayer took about 4 days initially, immediately putting the 12-week challenge schedule in jeopardy.
 *   **Unity 4.6 Beta Disaster:** Ignoring the beta warnings for the lovely new 4.6 UI system bit me hard. **I SHOULD HAVE LISTENED!** A web player update broke *everything* built with the 4.6 beta UI. My Bacon Jam entry, "Super Turbo Ship Puncher 3", became totally busted everywhere it was hosted.
-*   **Painful Downgrade:** Downgrading projects from 4.6 beta wasn't clean – scenes were lost, though prefabs/scripts remained. Fixing the Archer game after downgrading back to Unity 4.5 took an entire day. This also meant switching from the broken 4.6 UI to NGUI.
+*   **Painful Downgrade:** Downgrading projects from 4.6 beta wasn't clean - scenes were lost, though prefabs/scripts remained. Fixing the Archer game after downgrading back to Unity 4.5 took an entire day. This also meant switching from the broken 4.6 UI to NGUI.
 *   **NGUI Limitations:** NGUI had nice features (like colored chat text!) and decent skins, but its event system felt like a step back from 4.6's potential. A key frustration was the inability to pass arguments to button click handlers easily.
 *   **The 12-Week Challenge Dilemma:** By day 8-11, I was way behind schedule for the challenge but had a project viewers were actively enjoying and participating in. A poll asking viewers whether to stick with this game or move on resulted in a tie! I ultimately decided to continue with the multiplayer archer game as long as the viewers were engaged, effectively pausing the strict challenge rules.
 

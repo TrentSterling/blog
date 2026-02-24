@@ -21,5 +21,5 @@ Inspiration is drawn from more retro styled games, while we plan to have some pr
 
 ![hatersgonnahate](/assets/img/blog/wp/hatersgonnahate.gif)
 
-I’ll be sure to post more as things progress. There’s a lot of images just sitting on my desktop from development – but they’re not what I’d call “post ready”.
+I’ll be sure to post more as things progress. There’s a lot of images just sitting on my desktop from development - but they’re not what I’d call “post ready”.
 # MORE SOON!

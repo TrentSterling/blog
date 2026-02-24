@@ -4,7 +4,7 @@
  * Two-attribute system:
  *   data-mode="dark" (Chirpy base) + data-theme="tront-*" (accent overrides)
  *
- * Loaded AFTER Chirpy gem CSS — wins by cascade order.
+ * Loaded AFTER Chirpy gem CSS - wins by cascade order.
  */
 
 
@@ -83,7 +83,7 @@ html[data-mode="light"] #theme-picker #mode-toggle:hover {
 
 
 /* ============================================================
-   TRONT Cyan — EOS-Native style (#00f0ff cyan + #FF5733 orange)
+   TRONT Cyan - EOS-Native style (#00f0ff cyan + #FF5733 orange)
    ============================================================ */
 
 html[data-theme="tront-cyan"] {
@@ -143,7 +143,7 @@ html[data-theme="tront-cyan"] {
 
 
 /* ============================================================
-   TRONT Purple — SnapScan style (#a855f7 purple + #6366f1 indigo)
+   TRONT Purple - SnapScan style (#a855f7 purple + #6366f1 indigo)
    ============================================================ */
 
 html[data-theme="tront-purple"] {
@@ -203,7 +203,7 @@ html[data-theme="tront-purple"] {
 
 
 /* ============================================================
-   TRONT Ember — Dark burnt orange (#f97316 orange + #dc2626 red)
+   TRONT Ember - Dark burnt orange (#f97316 orange + #dc2626 red)
    ============================================================ */
 
 html[data-theme="tront-ember"] {
@@ -376,7 +376,7 @@ html[data-theme="tront-ember"] #theme-picker #mode-toggle:hover {
 
 
 /* ============================================================
-   Navbar Theme Button — per-theme overrides
+   Navbar Theme Button - per-theme overrides
    ============================================================ */
 
 /* Light mode navbar */
