@@ -2,7 +2,7 @@
  * TRONT Custom Themes for Chirpy Blog
  *
  * Two-attribute system:
- *   data-mode="dark" (Chirpy base) + data-theme="tront-cyan|tront-purple" (accent overrides)
+ *   data-mode="dark" (Chirpy base) + data-theme="tront-*" (accent overrides)
  *
  * Loaded AFTER Chirpy gem CSS — wins by cascade order.
  */
@@ -32,7 +32,7 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
   outline: none;
 }
 
@@ -83,30 +83,18 @@ html[data-mode="light"] #theme-picker #mode-toggle:hover {
 
 
 /* ============================================================
-   Navbar Logo — ensure smooth animation in all themes
-   ============================================================ */
-
-#magic-navbar-container .logo-image {
-  will-change: transform;
-}
-
-
-/* ============================================================
    TRONT Cyan — EOS-Native style (#00f0ff cyan + #FF5733 orange)
    ============================================================ */
 
 html[data-theme="tront-cyan"] {
-  /* Custom properties for navbar integration */
   --tront-accent: #00f0ff;
   --tront-accent-glow: rgba(0, 240, 255, 0.5);
   --tront-accent-secondary: #FF5733;
 
-  /* Framework */
   --main-bg: #0a0e14;
   --mask-bg: rgb(20 30 40);
   --main-border-color: rgba(0, 240, 255, 0.15);
 
-  /* Text & Links */
   --link-color: #00f0ff;
   --link-underline-color: rgba(0, 240, 255, 0.3);
   --heading-color: #e0f7ff;
@@ -114,7 +102,6 @@ html[data-theme="tront-cyan"] {
   --text-muted-color: #6a8da8;
   --label-color: #8ab4d0;
 
-  /* Sidebar */
   --sidebar-bg: #060a10;
   --sidebar-border-color: rgba(0, 240, 255, 0.1);
   --sidebar-active-color: #00f0ff;
@@ -125,36 +112,29 @@ html[data-theme="tront-cyan"] {
   --site-subtitle-color: #6a8da8;
   --avatar-border-color: rgba(0, 240, 255, 0.6);
 
-  /* Topbar */
   --topbar-bg: rgba(10, 14, 20, 0.8);
   --search-border-color: rgba(0, 240, 255, 0.2);
   --input-focus-border-color: #00f0ff;
 
-  /* Cards */
   --card-bg: rgba(10, 18, 28, 0.9);
   --card-header-bg: rgba(0, 240, 255, 0.05);
   --card-hover-bg: rgba(0, 240, 255, 0.1);
   --card-shadow: 0 4px 20px rgba(0, 240, 255, 0.08), 0 0 0 1px rgba(0, 240, 255, 0.1);
 
-  /* Tags & Categories */
   --tag-border: rgba(0, 240, 255, 0.25);
   --tag-hover: rgba(0, 240, 255, 0.15);
   --categories-border: rgba(0, 240, 255, 0.12);
   --categories-hover-bg: rgba(0, 240, 255, 0.12);
 
-  /* TOC */
   --toc-highlight: #00f0ff;
 
-  /* Buttons */
   --button-bg: rgba(0, 240, 255, 0.06);
   --btn-border-color: rgba(0, 240, 255, 0.2);
 
-  /* Code */
   --highlight-bg-color: #060c14;
   --inline-code-bg: rgba(0, 240, 255, 0.08);
   --highlighter-rouge-color: #7fdbff;
 
-  /* Prompts */
   --prompt-tip-bg: rgba(0, 240, 255, 0.1);
   --prompt-tip-icon-color: #00f0ff;
   --prompt-info-bg: rgba(0, 140, 255, 0.15);
@@ -167,17 +147,14 @@ html[data-theme="tront-cyan"] {
    ============================================================ */
 
 html[data-theme="tront-purple"] {
-  /* Custom properties for navbar integration */
   --tront-accent: #a855f7;
   --tront-accent-glow: rgba(168, 85, 247, 0.5);
   --tront-accent-secondary: #6366f1;
 
-  /* Framework */
   --main-bg: #0d0a14;
   --mask-bg: rgb(30 20 40);
   --main-border-color: rgba(168, 85, 247, 0.15);
 
-  /* Text & Links */
   --link-color: #c084fc;
   --link-underline-color: rgba(168, 85, 247, 0.3);
   --heading-color: #f0e0ff;
@@ -185,7 +162,6 @@ html[data-theme="tront-purple"] {
   --text-muted-color: #8a6da8;
   --label-color: #b494d0;
 
-  /* Sidebar */
   --sidebar-bg: #08060e;
   --sidebar-border-color: rgba(168, 85, 247, 0.1);
   --sidebar-active-color: #c084fc;
@@ -196,36 +172,29 @@ html[data-theme="tront-purple"] {
   --site-subtitle-color: #8a6da8;
   --avatar-border-color: rgba(168, 85, 247, 0.6);
 
-  /* Topbar */
   --topbar-bg: rgba(13, 10, 20, 0.8);
   --search-border-color: rgba(168, 85, 247, 0.2);
   --input-focus-border-color: #a855f7;
 
-  /* Cards */
   --card-bg: rgba(16, 10, 28, 0.9);
   --card-header-bg: rgba(168, 85, 247, 0.05);
   --card-hover-bg: rgba(168, 85, 247, 0.1);
   --card-shadow: 0 4px 20px rgba(168, 85, 247, 0.08), 0 0 0 1px rgba(168, 85, 247, 0.1);
 
-  /* Tags & Categories */
   --tag-border: rgba(168, 85, 247, 0.25);
   --tag-hover: rgba(168, 85, 247, 0.15);
   --categories-border: rgba(168, 85, 247, 0.12);
   --categories-hover-bg: rgba(168, 85, 247, 0.12);
 
-  /* TOC */
   --toc-highlight: #c084fc;
 
-  /* Buttons */
   --button-bg: rgba(168, 85, 247, 0.06);
   --btn-border-color: rgba(168, 85, 247, 0.2);
 
-  /* Code */
   --highlight-bg-color: #0a060e;
   --inline-code-bg: rgba(168, 85, 247, 0.08);
   --highlighter-rouge-color: #d8b4fe;
 
-  /* Prompts */
   --prompt-tip-bg: rgba(168, 85, 247, 0.1);
   --prompt-tip-icon-color: #a855f7;
   --prompt-info-bg: rgba(99, 102, 241, 0.15);
@@ -234,11 +203,76 @@ html[data-theme="tront-purple"] {
 
 
 /* ============================================================
-   Shared TRONT Effects (apply to both themes)
+   TRONT Ember — Dark burnt orange (#f97316 orange + #dc2626 red)
+   ============================================================ */
+
+html[data-theme="tront-ember"] {
+  --tront-accent: #f97316;
+  --tront-accent-glow: rgba(249, 115, 22, 0.5);
+  --tront-accent-secondary: #dc2626;
+
+  --main-bg: #110a04;
+  --mask-bg: rgb(30 18 8);
+  --main-border-color: rgba(249, 115, 22, 0.15);
+
+  --link-color: #fb923c;
+  --link-underline-color: rgba(249, 115, 22, 0.3);
+  --heading-color: #fff1e0;
+  --text-color: #d4b898;
+  --text-muted-color: #a07850;
+  --label-color: #c49a70;
+
+  --sidebar-bg: #0c0704;
+  --sidebar-border-color: rgba(249, 115, 22, 0.1);
+  --sidebar-active-color: #fb923c;
+  --sidebar-hover-bg: rgba(249, 115, 22, 0.08);
+  --sidebar-btn-bg: rgba(249, 115, 22, 0.06);
+  --sidebar-btn-color: #f97316;
+  --site-title-color: #fb923c;
+  --site-subtitle-color: #a07850;
+  --avatar-border-color: rgba(249, 115, 22, 0.6);
+
+  --topbar-bg: rgba(17, 10, 4, 0.8);
+  --search-border-color: rgba(249, 115, 22, 0.2);
+  --input-focus-border-color: #f97316;
+
+  --card-bg: rgba(20, 12, 6, 0.9);
+  --card-header-bg: rgba(249, 115, 22, 0.05);
+  --card-hover-bg: rgba(249, 115, 22, 0.1);
+  --card-shadow: 0 4px 20px rgba(249, 115, 22, 0.08), 0 0 0 1px rgba(249, 115, 22, 0.1);
+
+  --tag-border: rgba(249, 115, 22, 0.25);
+  --tag-hover: rgba(249, 115, 22, 0.15);
+  --categories-border: rgba(249, 115, 22, 0.12);
+  --categories-hover-bg: rgba(249, 115, 22, 0.12);
+
+  --toc-highlight: #fb923c;
+
+  --button-bg: rgba(249, 115, 22, 0.06);
+  --btn-border-color: rgba(249, 115, 22, 0.2);
+
+  --highlight-bg-color: #0e0804;
+  --inline-code-bg: rgba(249, 115, 22, 0.08);
+  --highlighter-rouge-color: #fdba74;
+
+  --prompt-tip-bg: rgba(249, 115, 22, 0.1);
+  --prompt-tip-icon-color: #f97316;
+  --prompt-info-bg: rgba(220, 38, 38, 0.12);
+  --prompt-info-icon-color: #ef4444;
+  --prompt-warning-bg: rgba(249, 115, 22, 0.2);
+  --prompt-warning-icon-color: #f97316;
+  --prompt-danger-bg: rgba(220, 38, 38, 0.2);
+  --prompt-danger-icon-color: #dc2626;
+}
+
+
+/* ============================================================
+   Shared TRONT Effects (apply to all custom themes)
    ============================================================ */
 
 html[data-theme="tront-cyan"],
-html[data-theme="tront-purple"] {
+html[data-theme="tront-purple"],
+html[data-theme="tront-ember"] {
 
   /* --- Glowing Avatar --- */
   #sidebar #avatar > img {
@@ -310,29 +344,32 @@ html[data-theme="tront-purple"] {
     border-left-color: var(--tront-accent) !important;
   }
 
-  /* --- Theme picker glow --- */
+  /* --- Theme picker accent --- */
   #theme-picker #mode-toggle {
     border-color: var(--tront-accent) !important;
     color: var(--tront-accent) !important;
-    box-shadow: 0 0 10px rgba(var(--tront-accent), 0.15);
   }
   #theme-picker #mode-toggle i {
     text-shadow: 0 0 8px var(--tront-accent-glow);
   }
 }
 
-/* Cyan picker glow */
+/* Per-theme picker glow (can't use var in rgba, so hardcode) */
 html[data-theme="tront-cyan"] #theme-picker #mode-toggle {
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.12);
 }
 html[data-theme="tront-cyan"] #theme-picker #mode-toggle:hover {
   box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
 }
-
-/* Purple picker glow */
 html[data-theme="tront-purple"] #theme-picker #mode-toggle {
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.12);
 }
 html[data-theme="tront-purple"] #theme-picker #mode-toggle:hover {
   box-shadow: 0 0 16px rgba(168, 85, 247, 0.25);
+}
+html[data-theme="tront-ember"] #theme-picker #mode-toggle {
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.12);
+}
+html[data-theme="tront-ember"] #theme-picker #mode-toggle:hover {
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.25);
 }
