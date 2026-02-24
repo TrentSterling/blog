@@ -414,9 +414,10 @@ html[data-theme="tront-cyan"] #magic-navbar-container .nav-link:hover {
   border-color: rgba(0, 240, 255, 0.25);
 }
 html[data-theme="tront-cyan"] #magic-navbar-container .nav-link.active {
-  color: #fff;
-  background-color: #00c8d6;
-  border-color: #00c8d6;
+  color: #00f0ff;
+  background-color: rgba(0, 240, 255, 0.1);
+  border-color: #00f0ff;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
 }
 html[data-theme="tront-cyan"] #magic-navbar-container #tront-theme-btn {
   color: #00f0ff;
@@ -441,9 +442,10 @@ html[data-theme="tront-purple"] #magic-navbar-container .nav-link:hover {
   border-color: rgba(168, 85, 247, 0.25);
 }
 html[data-theme="tront-purple"] #magic-navbar-container .nav-link.active {
-  color: #fff;
-  background-color: #a855f7;
+  color: #c084fc;
+  background-color: rgba(168, 85, 247, 0.1);
   border-color: #a855f7;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
 }
 html[data-theme="tront-purple"] #magic-navbar-container #tront-theme-btn {
   color: #a855f7;
@@ -468,9 +470,10 @@ html[data-theme="tront-ember"] #magic-navbar-container .nav-link:hover {
   border-color: rgba(249, 115, 22, 0.25);
 }
 html[data-theme="tront-ember"] #magic-navbar-container .nav-link.active {
-  color: #fff;
-  background-color: #e86a10;
-  border-color: #e86a10;
+  color: #fb923c;
+  background-color: rgba(249, 115, 22, 0.1);
+  border-color: #f97316;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.2);
 }
 html[data-theme="tront-ember"] #magic-navbar-container #tront-theme-btn {
   color: #f97316;
