@@ -4,8 +4,8 @@
  * Overrides Theme.flip() to cycle: Light → Dark → TRONT Cyan → TRONT Purple
  *
  * Two-attribute system:
- *   data-mode  = Chirpy's "dark" or absent (light)
- *   data-theme = "tront-cyan" | "tront-purple" or absent (stock)
+ *   data-mode  = "light" | "dark"
+ *   data-theme = "tront-cyan" | "tront-purple" | absent (stock)
  *
  * Loaded synchronously after theme.min.js to prevent flash.
  */
@@ -16,10 +16,10 @@
   var THEME_ATTR = 'data-theme';
 
   var THEMES = [
-    { id: 'light',        mode: null,   theme: null,           icon: 'fas fa-sun',             label: 'Light' },
-    { id: 'dark',         mode: 'dark', theme: null,           icon: 'fas fa-moon',            label: 'Dark' },
-    { id: 'tront-cyan',   mode: 'dark', theme: 'tront-cyan',  icon: 'fas fa-bolt',            label: 'TRONT Cyan' },
-    { id: 'tront-purple', mode: 'dark', theme: 'tront-purple', icon: 'fas fa-magic',           label: 'TRONT Purple' }
+    { id: 'light',        mode: 'light', theme: null,           icon: 'fas fa-sun',   label: 'Light' },
+    { id: 'dark',         mode: 'dark',  theme: null,           icon: 'fas fa-moon',  label: 'Dark' },
+    { id: 'tront-cyan',   mode: 'dark',  theme: 'tront-cyan',  icon: 'fas fa-bolt',  label: 'Cyan' },
+    { id: 'tront-purple', mode: 'dark',  theme: 'tront-purple', icon: 'fas fa-magic', label: 'Purple' }
   ];
 
   function getIndex(id) {
@@ -32,37 +32,34 @@
   function applyTheme(entry) {
     var html = document.documentElement;
 
-    // Set data-mode
-    if (entry.mode) {
-      html.setAttribute(MODE_ATTR, entry.mode);
-    } else {
-      html.removeAttribute(MODE_ATTR);
-    }
+    // Always explicitly set data-mode (light or dark)
+    html.setAttribute(MODE_ATTR, entry.mode);
 
-    // Set data-theme
+    // Set or clear data-theme for TRONT accents
     if (entry.theme) {
       html.setAttribute(THEME_ATTR, entry.theme);
     } else {
       html.removeAttribute(THEME_ATTR);
     }
 
-    // Persist in both localStorage (durable) and sessionStorage (Chirpy compat)
+    // Persist in localStorage (durable) + sessionStorage (Chirpy compat)
     localStorage.setItem(STORAGE_KEY, entry.id);
-    if (entry.mode) {
-      sessionStorage.setItem('mode', entry.mode);
-    } else {
-      sessionStorage.removeItem('mode');
-    }
+    sessionStorage.setItem('mode', entry.mode);
   }
 
-  function updateIcon(entry) {
+  function updateButton(entry) {
     var btn = document.getElementById('mode-toggle');
     if (!btn) return;
+
+    // Update icon
     var icon = btn.querySelector('i');
-    if (!icon) return;
-    // Replace all fa- icon classes
-    icon.className = entry.icon;
-    btn.setAttribute('aria-label', entry.label);
+    if (icon) icon.className = entry.icon;
+
+    // Update label
+    var label = btn.querySelector('.theme-label');
+    if (label) label.textContent = entry.label;
+
+    btn.setAttribute('aria-label', entry.label + ' theme');
   }
 
   function notifyGiscus() {
@@ -72,15 +69,13 @@
   // --- Apply saved theme immediately (before paint) ---
   var savedId = localStorage.getItem(STORAGE_KEY);
   if (savedId) {
-    var idx = getIndex(savedId);
-    applyTheme(THEMES[idx]);
+    applyTheme(THEMES[getIndex(savedId)]);
   }
 
   // --- Override Theme.flip to cycle ---
   Theme.flip = function () {
     var currentId = localStorage.getItem(STORAGE_KEY);
 
-    // Determine current index
     var currentIdx;
     if (currentId) {
       currentIdx = getIndex(currentId);
@@ -90,27 +85,30 @@
       currentIdx = mode === 'dark' ? 1 : 0;
     }
 
-    // Advance to next
     var nextIdx = (currentIdx + 1) % THEMES.length;
     var next = THEMES[nextIdx];
 
     applyTheme(next);
-    updateIcon(next);
+    updateButton(next);
     notifyGiscus();
   };
 
-  // --- Set initial icon once DOM is ready ---
-  function initIcon() {
-    var savedId2 = localStorage.getItem(STORAGE_KEY);
-    if (savedId2) {
-      updateIcon(THEMES[getIndex(savedId2)]);
+  // --- Set initial button state once DOM is ready ---
+  function initButton() {
+    var id = localStorage.getItem(STORAGE_KEY);
+    if (id) {
+      updateButton(THEMES[getIndex(id)]);
+    } else {
+      // No saved theme — detect current state and show it
+      var mode = document.documentElement.getAttribute(MODE_ATTR);
+      var idx = mode === 'dark' ? 1 : 0;
+      updateButton(THEMES[idx]);
     }
-    // else: Chirpy's default icon (fa-adjust) is fine for light/dark
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initIcon);
+    document.addEventListener('DOMContentLoaded', initButton);
   } else {
-    initIcon();
+    initButton();
   }
 })();

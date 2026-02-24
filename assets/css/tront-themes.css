@@ -7,6 +7,90 @@
  * Loaded AFTER Chirpy gem CSS — wins by cascade order.
  */
 
+
+/* ============================================================
+   Theme Picker Button (works in ALL themes)
+   ============================================================ */
+
+#theme-picker {
+  width: 100%;
+  padding: 0 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+#theme-picker #mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--main-border-color, rgba(255, 255, 255, 0.12));
+  border-radius: 10px;
+  background: var(--sidebar-btn-bg, #232328);
+  color: var(--sidebar-btn-color, #a0a0a0);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+#theme-picker #mode-toggle:hover {
+  background: var(--sidebar-hover-bg, #2a2a2f);
+  border-color: var(--tront-accent, rgba(255, 255, 255, 0.25));
+  color: var(--heading-color, #fff);
+}
+
+#theme-picker #mode-toggle i {
+  font-size: 1rem;
+  width: 1.2rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+#theme-picker .theme-label {
+  flex: 1;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#theme-picker .theme-next {
+  font-size: 0.7rem;
+  opacity: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s ease;
+  color: var(--text-muted-color, #868686);
+}
+
+#theme-picker #mode-toggle:hover .theme-next {
+  opacity: 1;
+}
+
+/* Light mode picker styling */
+html[data-mode="light"] #theme-picker #mode-toggle {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #555;
+}
+html[data-mode="light"] #theme-picker #mode-toggle:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+
+/* ============================================================
+   Navbar Logo — ensure smooth animation in all themes
+   ============================================================ */
+
+#magic-navbar-container .logo-image {
+  will-change: transform;
+}
+
+
 /* ============================================================
    TRONT Cyan — EOS-Native style (#00f0ff cyan + #FF5733 orange)
    ============================================================ */
@@ -226,9 +310,29 @@ html[data-theme="tront-purple"] {
     border-left-color: var(--tront-accent) !important;
   }
 
-  /* --- Mode toggle icon glow --- */
-  #mode-toggle i {
-    color: var(--tront-accent);
+  /* --- Theme picker glow --- */
+  #theme-picker #mode-toggle {
+    border-color: var(--tront-accent) !important;
+    color: var(--tront-accent) !important;
+    box-shadow: 0 0 10px rgba(var(--tront-accent), 0.15);
+  }
+  #theme-picker #mode-toggle i {
     text-shadow: 0 0 8px var(--tront-accent-glow);
   }
+}
+
+/* Cyan picker glow */
+html[data-theme="tront-cyan"] #theme-picker #mode-toggle {
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.12);
+}
+html[data-theme="tront-cyan"] #theme-picker #mode-toggle:hover {
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+}
+
+/* Purple picker glow */
+html[data-theme="tront-purple"] #theme-picker #mode-toggle {
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.12);
+}
+html[data-theme="tront-purple"] #theme-picker #mode-toggle:hover {
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.25);
 }
