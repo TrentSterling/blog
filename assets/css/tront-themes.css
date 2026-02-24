@@ -381,21 +381,23 @@ html[data-theme="tront-ember"] #theme-picker #mode-toggle:hover {
 
 /* Light mode navbar */
 html[data-mode="light"] #magic-navbar-container {
-  background-color: rgba(245, 245, 248, 0.75);
-  border-bottom-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(240, 240, 245, 0.85);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 html[data-mode="light"] #magic-navbar-container .nav-link {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.08);
-  color: #555;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #444;
 }
 html[data-mode="light"] #magic-navbar-container .nav-link:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 0, 0, 0.15);
-  color: #222;
+  background-color: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.2);
+  color: #111;
 }
 html[data-mode="light"] #magic-navbar-container .nav-link.active {
   color: #fff;
+  background-color: #a855f7;
+  border-color: #a855f7;
 }
 
 /* Cyan navbar */
@@ -410,6 +412,11 @@ html[data-theme="tront-cyan"] #magic-navbar-container .nav-link {
 html[data-theme="tront-cyan"] #magic-navbar-container .nav-link:hover {
   background-color: rgba(0, 240, 255, 0.12);
   border-color: rgba(0, 240, 255, 0.25);
+}
+html[data-theme="tront-cyan"] #magic-navbar-container .nav-link.active {
+  color: #fff;
+  background-color: #00c8d6;
+  border-color: #00c8d6;
 }
 html[data-theme="tront-cyan"] #magic-navbar-container #tront-theme-btn {
   color: #00f0ff;
@@ -433,6 +440,11 @@ html[data-theme="tront-purple"] #magic-navbar-container .nav-link:hover {
   background-color: rgba(168, 85, 247, 0.12);
   border-color: rgba(168, 85, 247, 0.25);
 }
+html[data-theme="tront-purple"] #magic-navbar-container .nav-link.active {
+  color: #fff;
+  background-color: #a855f7;
+  border-color: #a855f7;
+}
 html[data-theme="tront-purple"] #magic-navbar-container #tront-theme-btn {
   color: #a855f7;
   border-color: rgba(168, 85, 247, 0.3);
@@ -454,6 +466,11 @@ html[data-theme="tront-ember"] #magic-navbar-container .nav-link {
 html[data-theme="tront-ember"] #magic-navbar-container .nav-link:hover {
   background-color: rgba(249, 115, 22, 0.12);
   border-color: rgba(249, 115, 22, 0.25);
+}
+html[data-theme="tront-ember"] #magic-navbar-container .nav-link.active {
+  color: #fff;
+  background-color: #e86a10;
+  border-color: #e86a10;
 }
 html[data-theme="tront-ember"] #magic-navbar-container #tront-theme-btn {
   color: #f97316;
