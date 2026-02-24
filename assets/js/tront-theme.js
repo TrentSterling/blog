@@ -16,11 +16,11 @@
   var THEME_ATTR = 'data-theme';
 
   var THEMES = [
-    { id: 'light',        mode: 'light', theme: null,           icon: 'fas fa-sun',   label: 'Light' },
-    { id: 'dark',         mode: 'dark',  theme: null,           icon: 'fas fa-moon',  label: 'Dark' },
-    { id: 'tront-cyan',   mode: 'dark',  theme: 'tront-cyan',  icon: 'fas fa-bolt',  label: 'Cyan' },
-    { id: 'tront-purple', mode: 'dark',  theme: 'tront-purple', icon: 'fas fa-magic', label: 'Purple' },
-    { id: 'tront-ember',  mode: 'dark',  theme: 'tront-ember',  icon: 'fas fa-fire',  label: 'Ember' }
+    { id: 'light',        mode: 'light', theme: null,           icon: '☀️', label: 'Light' },
+    { id: 'dark',         mode: 'dark',  theme: null,           icon: '🌙', label: 'Dark' },
+    { id: 'tront-cyan',   mode: 'dark',  theme: 'tront-cyan',  icon: '⚡', label: 'Cyan' },
+    { id: 'tront-purple', mode: 'dark',  theme: 'tront-purple', icon: '✨', label: 'Purple' },
+    { id: 'tront-ember',  mode: 'dark',  theme: 'tront-ember',  icon: '🔥', label: 'Ember' }
   ];
 
   function getIndex(id) {
@@ -52,11 +52,9 @@
     var btn = document.getElementById('mode-toggle');
     if (!btn) return;
 
-    // Update icon
-    var icon = btn.querySelector('i');
-    if (icon) icon.className = entry.icon;
+    var icon = btn.querySelector('.theme-icon');
+    if (icon) icon.textContent = entry.icon;
 
-    // Update label
     var label = btn.querySelector('.theme-label');
     if (label) label.textContent = entry.label;
 
@@ -67,8 +65,8 @@
     var btn = document.getElementById('tront-theme-btn');
     if (!btn) return;
 
-    var icon = btn.querySelector('i');
-    if (icon) icon.className = entry.icon;
+    var icon = btn.querySelector('.theme-icon');
+    if (icon) icon.textContent = entry.icon;
 
     var label = btn.querySelector('.theme-label');
     if (label) label.textContent = ' ' + entry.label;
