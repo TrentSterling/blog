@@ -30,7 +30,7 @@ However, after adding lighting, I ran into some issues. Andrew had set up the pr
 
 [![neededitor](/assets/img/neededitor.jpg)](/assets/img/neededitor.jpg)
 
-The good thing about having everything running through Nape is that it was really easy to introduce new entities into the system. And once the editor was underway – the game was becoming what I wanted it to be. The problem is – Andrew wanted something else, and we slowly lost contact as development moved on. I kept focusing on the tech. Performance and effects.
+The good thing about having everything running through Nape is that it was really easy to introduce new entities into the system. And once the editor was underway - the game was becoming what I wanted it to be. The problem is - Andrew wanted something else, and we slowly lost contact as development moved on. I kept focusing on the tech. Performance and effects.
 
 [![manyobjects](/assets/img/manyobjects.jpg)](/assets/img/manyobjects.jpg)
 
@@ -47,16 +47,16 @@ This game just needed some dialogue and some enemies.
 [![sepiacolortest](/assets/img/sepiacolortest.png)](/assets/img/sepiacolortest.png)
 
 ## Artwork
-I decided it was a good time to add turrets as an enemy. I asked Andrew for a turret sprite – but he never got back to me. I opened Photoshop and drew a poor-quality sprite myself. I asked Andrew for a Rocket sprite, and never got a response. It was obvious to me that after taking over the project – Andrew no longer wanted to work on it. I added a 2nd tilesheet- some more of my own artwork, and was feeling pretty good about releasing this game on my own.
+I decided it was a good time to add turrets as an enemy. I asked Andrew for a turret sprite - but he never got back to me. I opened Photoshop and drew a poor-quality sprite myself. I asked Andrew for a Rocket sprite, and never got a response. It was obvious to me that after taking over the project - Andrew no longer wanted to work on it. I added a 2nd tilesheet- some more of my own artwork, and was feeling pretty good about releasing this game on my own.
 
 [![turret](/assets/img/turret.jpg)](/assets/img/turret.jpg)
 
 ## Bugs
-During gameplay – physics-driven characters aren’t always bug-free. I had gotten my character to what I considered perfect, but there was an occasional bug where if you walked against a wall and jumped, you didn’t jump as high as you should. I made sure the character had no friction. I frantically tried many different hacks, and then I talked to Deltaluca, the author of the Nape physics engine. He told me that it was a bug that couldn’t really be avoided without using Bruteforce collision detection. I tried bruteforce- and it worked! The bug was gone.
+During gameplay - physics-driven characters aren’t always bug-free. I had gotten my character to what I considered perfect, but there was an occasional bug where if you walked against a wall and jumped, you didn’t jump as high as you should. I made sure the character had no friction. I frantically tried many different hacks, and then I talked to Deltaluca, the author of the Nape physics engine. He told me that it was a bug that couldn’t really be avoided without using Bruteforce collision detection. I tried bruteforce- and it worked! The bug was gone.
 
-The problem with bruteforce collision, is that it is VERY slow. My performance was cut 90%. A perfectly smooth game was now jittery with too many active objects – and there was no simple way to make the objects sleep. Bruteforce kills the sleeping ability of rigidbodies.
+The problem with bruteforce collision, is that it is VERY slow. My performance was cut 90%. A perfectly smooth game was now jittery with too many active objects - and there was no simple way to make the objects sleep. Bruteforce kills the sleeping ability of rigidbodies.
 
-Now I asked Deltaluca what I could do, and he told me to switch to NewNape – a full rewrite of his physics engine. I had known about the newer version, but it was so radically different that I didn’t want to make the switch. Everything was different. Collision response, callbacks, masks, the new API was totally different. What could I do?
+Now I asked Deltaluca what I could do, and he told me to switch to NewNape - a full rewrite of his physics engine. I had known about the newer version, but it was so radically different that I didn’t want to make the switch. Everything was different. Collision response, callbacks, masks, the new API was totally different. What could I do?
 
 So I imported NewNape- and saw a few hundred errors. All my old code was going to need to be rewritten for this new physics engine. The game was highly coupled with OldNape.
 

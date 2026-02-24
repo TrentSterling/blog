@@ -23,7 +23,7 @@ I started working on a game for my wife, Jennifer, inspired by a mix of *The Sim
 
 ![Stacking Objects](/assets/img/stacking.gif)
 
-The game includes a save system, so players can preserve their restaurant layout and even track in-game currency, but due to incomplete systems, the progression mechanics aren't functioning. A key feature—the customer AI—was never completed, so the core gameplay loop of feeding customers and managing the restaurant doesn't exist yet. As a result, players can’t really progress, and the in-game finances don’t work as intended.
+The game includes a save system, so players can preserve their restaurant layout and even track in-game currency, but due to incomplete systems, the progression mechanics aren't functioning. A key feature-the customer AI-was never completed, so the core gameplay loop of feeding customers and managing the restaurant doesn't exist yet. As a result, players can’t really progress, and the in-game finances don’t work as intended.
 
 While the game lacks depth in its current state, there is still a fun building experience to be had. The focus was on giving players creative freedom, but I plan to revisit it when I feel ready to tackle the missing pieces, particularly the customer AI and financial systems. Once completed, *Jenn’s Cafe* could become a fully engaging restaurant management experience, and it’s something I look forward to finishing in the future.
 

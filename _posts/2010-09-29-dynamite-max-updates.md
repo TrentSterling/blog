@@ -38,7 +38,7 @@ One of the most unique aspects of Dynamite Max was its **fully in-game level edi
 - **Loading from XML:** On startup, the game would parse XML files to reconstruct levels dynamically, ensuring flexible level design.
 - **Sharing Levels:** Players could manually share their XML files, letting others load and play custom creations.
 
-This system, while simple by modern standards, was a clever workaround for web games of the time—no databases, no cloud storage, just raw XML magic.
+This system, while simple by modern standards, was a clever workaround for web games of the time-no databases, no cloud storage, just raw XML magic.
 
 ## Development Insights
 

@@ -10,7 +10,7 @@ image: "/assets/img/2015-02-03_19-21-55.png"
 
 ![2015-01-30_08-00-42](/assets/img/2015-01-30_08-00-42.png)
 
-A game heavily inspired by *Thomas Was Alone* – this unnamed Unity project will probably not see much further development. Despite its unfinished state, it served as excellent practice, particularly for lighting and design.
+A game heavily inspired by *Thomas Was Alone* - this unnamed Unity project will probably not see much further development. Despite its unfinished state, it served as excellent practice, particularly for lighting and design.
 
 I streamed the development of this game on Twitch in 2015, with viewer donations helping to fund the Amplify suite, including **Amplify Motion** and **Amplify Colors**. These tools allowed me to create some stunning visual effects and gave the game a polished, atmospheric look. I incorporated beautiful lighting setups, including volumetric 2D lights, which really made the environment pop.
 

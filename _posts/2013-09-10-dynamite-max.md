@@ -19,12 +19,12 @@ But I still wanted to make a game that looked good. I added fake lighting by sim
 500 box test!
 # Physics
 
-For physics, I used Box2D. Eventually I got wise and started using Nape for my physics, but by that time, Stage3D was rolling around – and Dynamite Max was circling the drain. It was hard to keep the framerate above 30FPS on a Quad-core computer. The explosion effects had a screen ripple using the DisplacementMapFilter in flash. Many of the effects were very CPU heavy.
+For physics, I used Box2D. Eventually I got wise and started using Nape for my physics, but by that time, Stage3D was rolling around - and Dynamite Max was circling the drain. It was hard to keep the framerate above 30FPS on a Quad-core computer. The explosion effects had a screen ripple using the DisplacementMapFilter in flash. Many of the effects were very CPU heavy.
 # Editor
 
-While it was playable – and the editor was actually quite advanced, it still felt like nothing more than a tech demo. I had textures, sound effects, level saving and loading, and had even integrated a system to share makes using GamerSafe. The editor had options for snapping to grid, scale, rotation, and all the physics was handled automatically. You could add joints and ropes in the editor to make bridges, and you could make trigger volumes to fire off functions. I had then moved on from inheritance to components. I made my components serializable. I used reflection to let my editor change objects in real time. Looking back on it – I was making a simplified Unity editor.
+While it was playable - and the editor was actually quite advanced, it still felt like nothing more than a tech demo. I had textures, sound effects, level saving and loading, and had even integrated a system to share makes using GamerSafe. The editor had options for snapping to grid, scale, rotation, and all the physics was handled automatically. You could add joints and ropes in the editor to make bridges, and you could make trigger volumes to fire off functions. I had then moved on from inheritance to components. I made my components serializable. I used reflection to let my editor change objects in real time. Looking back on it - I was making a simplified Unity editor.
 
-It was my baby for quite a long time. I’ve tried to reboot it a few times – once in flashpunk, skipping out on the 3d entirely, but I can never bring myself to finish it as the required quality of projects had really risen. When I first started the project – I was certain that I could find sponsorship, but as it stands – its far too unpolished to be anything. Just a dream.
+It was my baby for quite a long time. I’ve tried to reboot it a few times - once in flashpunk, skipping out on the 3d entirely, but I can never bring myself to finish it as the required quality of projects had really risen. When I first started the project - I was certain that I could find sponsorship, but as it stands - its far too unpolished to be anything. Just a dream.
 
 ![Pretend that this image is animated at 60FPS.](/assets/img/blog/wp/desktopmachine.jpg)
 # Incomplete, Moving on

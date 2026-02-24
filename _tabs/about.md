@@ -11,11 +11,11 @@ Welcome! I’m **Trent Sterling**, a game developer with over a decade of experi
 
 ## My Focus Areas
 
-- **Unity & C#** – Creating high-performance systems for gameplay, AI, and multiplayer.
-- **Shaders & Procedural Generation** – Designing dynamic worlds and custom shaders, particularly for VR.
-- **VR Optimization** – Ensuring smooth, immersive VR experiences at 120Hz+.
-- **Multiplayer Systems** – Building scalable cross-platform multiplayer with optimized network traffic, including crossplay between PC, Android, and Oculus Quest.
-- **NodeJS & Web Development** – Back into web dev with a focus on NodeJS, Phaser, and IoT integration.
+- **Unity & C#** - Creating high-performance systems for gameplay, AI, and multiplayer.
+- **Shaders & Procedural Generation** - Designing dynamic worlds and custom shaders, particularly for VR.
+- **VR Optimization** - Ensuring smooth, immersive VR experiences at 120Hz+.
+- **Multiplayer Systems** - Building scalable cross-platform multiplayer with optimized network traffic, including crossplay between PC, Android, and Oculus Quest.
+- **NodeJS & Web Development** - Back into web dev with a focus on NodeJS, Phaser, and IoT integration.
 
 ## My Background
 
@@ -29,10 +29,10 @@ I’ve also explored **machine learning**, **IoT**, and **home automation**, con
 
 While my main focus is game development, I’ve had my hands in many other areas over the years, including:
 
-- **Videography** – Creating devlogs, tutorials, and trailers.
-- **Web Design** – Building minimalist, user-friendly sites.
-- **3D Modeling** – Asset creation and optimization using Blender.
-- **Photoshop** – Graphics, textures, and visual assets for games.
+- **Videography** - Creating devlogs, tutorials, and trailers.
+- **Web Design** - Building minimalist, user-friendly sites.
+- **3D Modeling** - Asset creation and optimization using Blender.
+- **Photoshop** - Graphics, textures, and visual assets for games.
 
 ## Why This Blog?
 
@@ -47,7 +47,7 @@ Feel free to reach out or join my **[Discord](https://tront.xyz/discord/){:targe
 
 Want to collaborate with **top-tier game devs**? This is your spot. We've been going strong since **2015**, and we’re a community of **seriously skilled devs**, including **successful studios**, indie creators, and professionals **making bank**.
 
-We cover everything from **multiplayer**, **VR**, **Unity**, and **game mechanics** to **AI art** and **LLM discussions**—and we’ve got **hardware** talk like **ESP8266/32**, **Arduino**, and more.
+We cover everything from **multiplayer**, **VR**, **Unity**, and **game mechanics** to **AI art** and **LLM discussions**-and we’ve got **hardware** talk like **ESP8266/32**, **Arduino**, and more.
 
 💥 **Exclusive perks:**
 - 🔥 Connect with **industry pros** and learn from the best

@@ -51,11 +51,11 @@ Guhh…. Thats cute.
 
 ![vertexlightingunshaded](/assets/img/blog/wp/vertexlightingunshaded.jpg)
 
-I still need to factor in the dot product of the vertex normals – but infinite lights in the level editor is working! Processing each vertex takes a little time – so it’ll be a final step to saving a map.
+I still need to factor in the dot product of the vertex normals - but infinite lights in the level editor is working! Processing each vertex takes a little time - so it’ll be a final step to saving a map.
 
 This is my cheap way to get lighting on mobile without limiting the level editor. 0 extra draw calls here.
 
-My basic idea is to get around some of the limitations of Unity on mobile. I plan to have the level editor in the hands of the players, so I need to be able to light user-generated content.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[1]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[2]" />This would be fine if it wasn’t for Unity’s hard limits on lights/shaders. (Which are good to have really)<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[1]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[2]" />Unity doesn’t allow you to bake shadows at runtime – and that’d be too much for mobile anyway, so this is my compromise.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[4]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[5]" />Baking lighting to the vertex colors whenever you save a level. Its not fast enough to be used in real time, so the lighting is still static, but it lets users set up lit scenes with no negative performance impacts from the number of lights.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[7]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[8]" />In most cases I’d use something like a fancy deferred renderer, but we’re targeting mobile, so thats out of the question. And because the levels are user generated, this was the only way to bake lighting without driving the draw-calls through the roof.
+My basic idea is to get around some of the limitations of Unity on mobile. I plan to have the level editor in the hands of the players, so I need to be able to light user-generated content.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[1]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[2]" />This would be fine if it wasn’t for Unity’s hard limits on lights/shaders. (Which are good to have really)<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[1]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[2]" />Unity doesn’t allow you to bake shadows at runtime - and that’d be too much for mobile anyway, so this is my compromise.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[4]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[5]" />Baking lighting to the vertex colors whenever you save a level. Its not fast enough to be used in real time, so the lighting is still static, but it lets users set up lit scenes with no negative performance impacts from the number of lights.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[7]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[8]" />In most cases I’d use something like a fancy deferred renderer, but we’re targeting mobile, so thats out of the question. And because the levels are user generated, this was the only way to bake lighting without driving the draw-calls through the roof.
 
 Also, depending on performance tests, I’m seriously considering baking ambient occlusion data into the vertex colors too. <br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868520}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[1]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868520}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[2]" />Shoot about 30-100 random rays from each vertex, add up the hits, darken as we go. That way objects can self-shadow the environment a little. It surprises me how versatile vertex colors can be. For mobile- its pretty great.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868520}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[1]" />
  ![1403736_10152102776272905_1970376136_o](/assets/img/blog/wp/1403736_10152102776272905_1970376136_o.jpg)
@@ -82,7 +82,7 @@ Gives UV offsets for atlasing. It is now my hero. This built-in Unity function e
 
 Next step is to integrate the atlas system with my AssetPostProcessor. Then I can have models ready to batch and sharing materials directly on import!
 
-I’m finding a lot of the custom editor scripts I’ve been working on might come in handy for other people’s projects – but they’re extremely specialized right now. As an example, a lot of my texture stuff is hard coded to use uncompressed textures using Point filtering (to keep that voxel look)
+I’m finding a lot of the custom editor scripts I’ve been working on might come in handy for other people’s projects - but they’re extremely specialized right now. As an example, a lot of my texture stuff is hard coded to use uncompressed textures using Point filtering (to keep that voxel look)
 
 I might release a bit of my tools after they’ve been more generalized.
 
@@ -94,11 +94,11 @@ It actually looks better than a regular scene because I’ve added baked ambient
 
 The entire scene is just 1 draw call, which leaves plenty of room for players, powerups, and effects. I don’t plan to do much more optimization. Players and powerups probably won’t be batched, unless performance demands it.
 
-I also had a fun time getting uncompressed textures to look right on android. My batching was originally based on bits of code from the free “Draw Call Minimizer” package from the asset store – but it ended up spitting out non-power-of-two textures, which breaks everything.
+I also had a fun time getting uncompressed textures to look right on android. My batching was originally based on bits of code from the free “Draw Call Minimizer” package from the asset store - but it ended up spitting out non-power-of-two textures, which breaks everything.
 
-Ended up writing my own code that implements Unity’s methods, and it came out cleaner and simpler (but interestingly, not faster). Speed doesn’t matter for this though, because this optimization is done in the editor – not at runtime.
+Ended up writing my own code that implements Unity’s methods, and it came out cleaner and simpler (but interestingly, not faster). Speed doesn’t matter for this though, because this optimization is done in the editor - not at runtime.
 
-I’ll be sure to post something on my blog that goes into depth about it all. Getting a scene like this on mobile – with a runtime level editor? 1 draw-call for the entire scene, no matter how many lights?
+I’ll be sure to post something on my blog that goes into depth about it all. Getting a scene like this on mobile - with a runtime level editor? 1 draw-call for the entire scene, no matter how many lights?
 
 I think it’s pretty sweet.
 
@@ -108,6 +108,6 @@ Animated chunk lighting. Hoping I can optimize it for mobile a bit more. It’s 
 
 ![Screenshot_2013-12-15-04-07-42](/assets/img/blog/wp/Screenshot_2013-12-15-04-07-42.jpg)
 
-Testing on android. Baking takes less than a minute – including ambient occlusion, but I really want to try and speed it up a bit more.  I’d love for something with beefier hardware, or possibly an OUYA to give me an FPS average. I’m using a low-end tablet right now for testing.
+Testing on android. Baking takes less than a minute - including ambient occlusion, but I really want to try and speed it up a bit more.  I’d love for something with beefier hardware, or possibly an OUYA to give me an FPS average. I’m using a low-end tablet right now for testing.
 
 Frankly if I can keep the framerate above 30, I think it’ll be fine, but honestly 25 may end up my target for this device. I still don’t have any interactive objects in the scene yet.

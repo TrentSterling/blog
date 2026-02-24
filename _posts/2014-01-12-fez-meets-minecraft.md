@@ -23,4 +23,4 @@ EDIT: Half grid and off grid placements.
 
  
 
-**What? – Shut your mouth.<br style="color: #000000;" />it’s Art Crawl.<br style="color: #000000;" />– But I- But the mon- – Shh! – Shut your mouth.<br style="color: #000000;" />Shut your mouth.<br style="color: #000000;" />– But where did you- I said shut your mouth.<br style="color: #000000;" />it’s Art Crawl.**
+**What? - Shut your mouth.<br style="color: #000000;" />it’s Art Crawl.<br style="color: #000000;" />- But I- But the mon- - Shh! - Shut your mouth.<br style="color: #000000;" />Shut your mouth.<br style="color: #000000;" />- But where did you- I said shut your mouth.<br style="color: #000000;" />it’s Art Crawl.**

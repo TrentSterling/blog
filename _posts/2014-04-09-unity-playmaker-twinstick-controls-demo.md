@@ -17,4 +17,4 @@ I also have a bunch of custom PlayMaker actions that I’m hoping to release. I 
 
 Sorry there’s no sound in this. I skipped editing and uploaded it ‘raw’.
 
-**<br style="color: #000000;" />Come on, Harold, let’s get out of this ass parlor.<br style="color: #000000;" />– It stinks.**
+**<br style="color: #000000;" />Come on, Harold, let’s get out of this ass parlor.<br style="color: #000000;" />- It stinks.**

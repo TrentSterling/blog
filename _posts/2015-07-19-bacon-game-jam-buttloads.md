@@ -31,7 +31,7 @@ I streamed the entire development process on Twitch.
 
 ## About BUTTLOADS!
 
-BUTTLOADS! was heavily inspired by *Motherlode*—you dig, upgrade, and descend into chaos.
+BUTTLOADS! was heavily inspired by *Motherlode*-you dig, upgrade, and descend into chaos.
 
 The code was a mess, and I wasted a lot of time trying to get it working on Android. In the last six hours, I scrapped the Android port in favor of dynamic shadows and better controls.
 

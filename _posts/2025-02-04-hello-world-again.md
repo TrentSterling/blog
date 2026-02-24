@@ -2,7 +2,7 @@
 title: "Hello World! - Starting Fresh with Jekyll"
 date: 2025-02-04
 tags: [Intro, Jekyll, Migration, Static Sites]
-description: "Consolidating everything into GitHub Pages with Jekyll—moving away from WordPress, Surge, and Wintersmith."
+description: "Consolidating everything into GitHub Pages with Jekyll-moving away from WordPress, Surge, and Wintersmith."
 image: "/assets/img/pixel_fart.jpg"
 ---
 
