@@ -17,6 +17,6 @@ Public humiliation can be so motivational!!!
 ## Development Documentation (Accountability++;)
 
 - [Twitter (DAILY SCREENSHOTS AND VIDEO)](https://twitter.com/Trent_Sterling)
-- [Daily ChangeLog (DAILY LIST OF NEW IMPLEMENTED FEATURES)](https://discord.gg/mxb4w6B)
+- [Daily ChangeLog (DAILY LIST OF NEW IMPLEMENTED FEATURES)](https://tront.xyz/discord/)
 - [Trello (MY PLANS TO RULE THE WORLD)](https://trello.com/b/tpXcRNGt/zombie-waves-multiplayer)
 - [AFoolsDuty IndieDev Competition / Progress Chart](https://goo.gl/z2V1bz)

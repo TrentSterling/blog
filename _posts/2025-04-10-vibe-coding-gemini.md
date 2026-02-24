@@ -133,7 +133,7 @@ Curious if anyone else has had similar experiences fighting with, but ultimately
 
 Wanna chat more about this stuff? Found cool uses for AI in your dev work? Join my Discord:
 
-| [https://discord.gg/0hyoWZyM6y7kkFCN](https://discord.gg/0hyoWZyM6y7kkFCN){:target="_blank"} |
+| [https://tront.xyz/discord/](https://tront.xyz/discord/){:target="_blank"} |
 
 ---
 {% comment %}

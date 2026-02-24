@@ -34,4 +34,4 @@ Using FishNet for multiplayer netcode. The same transport work from FishNet-EOS-
 
 Active development. The core loop is solid - the "just one more run" feeling is there. Adding more content and polish.
 
-Join the [Discord](https://discord.gg/0hyoWZyM6y7kkFCN) if you want to playtest.
+Join the [Discord](https://tront.xyz/discord/) if you want to playtest.
