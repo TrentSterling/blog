@@ -19,7 +19,8 @@
     { id: 'light',        mode: 'light', theme: null,           icon: 'fas fa-sun',   label: 'Light' },
     { id: 'dark',         mode: 'dark',  theme: null,           icon: 'fas fa-moon',  label: 'Dark' },
     { id: 'tront-cyan',   mode: 'dark',  theme: 'tront-cyan',  icon: 'fas fa-bolt',  label: 'Cyan' },
-    { id: 'tront-purple', mode: 'dark',  theme: 'tront-purple', icon: 'fas fa-magic', label: 'Purple' }
+    { id: 'tront-purple', mode: 'dark',  theme: 'tront-purple', icon: 'fas fa-magic', label: 'Purple' },
+    { id: 'tront-ember',  mode: 'dark',  theme: 'tront-ember',  icon: 'fas fa-fire',  label: 'Ember' }
   ];
 
   function getIndex(id) {
