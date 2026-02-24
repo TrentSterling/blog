@@ -9,7 +9,7 @@ image: "/assets/img/blog/eos-native.png"
 
 ![EOS-Native](/assets/img/blog/eos-native.png){: .align-center }
 
-Five days ago I released [FishNet-EOS-Native](/posts/fishnet-eos-native-released/); a transport layer for FishNet that talks directly to the EOS SDK. Cool, works great, shipped it.
+Five days ago I released [FishNet-EOS-Native](/blog/posts/fishnet-eos-native-released/); a transport layer for FishNet that talks directly to the EOS SDK. Cool, works great, shipped it.
 
 Then I kept going.
 
