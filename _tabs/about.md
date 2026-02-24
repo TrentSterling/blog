@@ -40,7 +40,7 @@ This blog is a way for me to share everything I’m working on, my thoughts on g
 
 I also use this blog to backport content from my old blog (originally at trentsterling.com, now archived) and share insights that are useful for indie developers, especially those working with **multiplayer networking**, **VR**, and **game optimization**. Expect deep dives, tips, and advice based on my decade of experience.
 
-Feel free to reach out or join my **[Discord](https://discord.gg/0hyoWZyM6y7kkFCN){:target="_blank"}** community to chat about anything from coding to game design!
+Feel free to reach out or join my **[Discord](https://tront.xyz/discord/){:target="_blank"}** community to chat about anything from coding to game design!
 
 ---
 👾 **COOL DEVS ONLY: Join Trent's Cool Developer Spot!** 🎮🥽
@@ -57,7 +57,7 @@ We cover everything from **multiplayer**, **VR**, **Unity**, and **game mechanic
 
 Level up your game dev skills, get inspired, and share your progress with like-minded creators.
 
-👉 **Join us:** [Discord Invite](https://discord.gg/0hyoWZyM6y7kkFCN){:target="_blank"}
+👉 **Join us:** [Discord Invite](https://tront.xyz/discord/){:target="_blank"}
 
 ---
 

@@ -40,7 +40,7 @@ Here’s what’s coming:
 
 I've been meaning to update this blog for a very long time. Discord is where I've been sharing my progress with friends and devs. If you're a cool dev-type person, consider joining. We've got a very active group of developers with some seriously cool skill sets. There's a heavy focus on Multiplayer and VR systems, but the Discord also explores other kinds of development too. Whether you're into game dev, networking, or even AI (LLMs+art) and hardware (like Arduino, esp8266/32), we've got a place for you!
 
-_Discord Link Here:_ | [https://discord.gg/0hyoWZyM6y7kkFCN](https://discord.gg/0hyoWZyM6y7kkFCN){:target="_blank"} |
+_Discord Link Here:_ | [https://tront.xyz/discord/](https://tront.xyz/discord/){:target="_blank"} |
 
 
 ---

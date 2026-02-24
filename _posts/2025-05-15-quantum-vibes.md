@@ -76,7 +76,7 @@ This was a quick, fun, slightly unhinged experiment. Mobile might be janky, accu
 
 Wanna talk gamedev, AI coding, weird physics, or share cool stuff? Hit up the Discord – it's an active crew of devs working on all sorts of interesting projects (multiplayer, VR, AI, hardware, and more).
 
-[**>>> Join the TrontDev Discord Server <<<**](https://discord.gg/0hyoWZyM6y7kkFCN){:target="_blank" rel="noopener noreferrer"}
+[**>>> Join the TrontDev Discord Server <<<**](https://tront.xyz/discord/){:target="_blank" rel="noopener noreferrer"}
 
 ---
 *Keep it weird, folks.*

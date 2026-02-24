@@ -7,7 +7,7 @@ order: 5
 > Trent's Cool Developer Spot is one of the smartest game dev communities on Discord. Expect high-level discussions, collaboration, and technical deep dives.
 {: .prompt-tip }
 
-👉 **Join us:** [Discord Invite](https://discord.gg/0hyoWZyM6y7kkFCN)
+👉 **Join us:** [Discord Invite](https://tront.xyz/discord/)
 
 ---
 
@@ -33,7 +33,7 @@ We cover everything from **multiplayer**, **VR**, **Unity**, and **game mechanic
 
 🚀 **Level up your game dev skills, get inspired, and collaborate with the best!**
 
-👉 **Join Link:** [https://discord.gg/0hyoWZyM6y7kkFCN](https://discord.gg/0hyoWZyM6y7kkFCN)
+👉 **Join Link:** [https://tront.xyz/discord/](https://tront.xyz/discord/)
 
 ---
 
