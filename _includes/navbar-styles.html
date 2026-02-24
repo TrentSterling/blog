@@ -36,14 +36,18 @@
         border-radius: 10px;
         background-color: rgba(40, 40, 45, 0.7);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 0 0 0 transparent;
+        transform: perspective(1000px) rotateX(0deg) translateY(0px);
+        transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+        overflow: hidden;
     }
 
     #magic-navbar-container .nav-link:hover {
         color: #fff;
         background-color: rgba(50, 50, 55, 0.9);
         border-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 20px -5px var(--tront-accent-glow, rgba(200, 116, 232, 0.5));
+        transform: perspective(1000px) rotateX(10deg) translateY(-4px);
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25), 0 0 20px -5px var(--tront-accent-glow, rgba(200, 116, 232, 0.5));
     }
 
     #magic-navbar-container .logo-image {
