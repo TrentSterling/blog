@@ -6,12 +6,12 @@ tags: [Rust, egui, USB, Windows, WMI, Tool]
 description: "A neon-themed USB device monitor for Windows. Real-time connect/disconnect detection with a GUI, CLI mode, and persistent logging. Built in Rust with egui."
 image:
   path: /assets/img/blog/device-history.png
-  alt: "Device History v0.3.0 - Neon dark mode USB monitor"
+  alt: "Device History v0.3.1 - Neon dark mode USB monitor"
 ---
 
 ![Device History](/assets/img/blog/device-history.png){: .align-center }
 
-**[Download .exe](https://github.com/TrentSterling/device-history/releases/download/v0.3.0/device-history.exe)** | **[GitHub](https://github.com/TrentSterling/device-history)** | **[Landing Page](https://tront.xyz/device-history/)**
+**[Download .exe](https://github.com/TrentSterling/device-history/releases/download/v0.3.1/device-history.exe)** | **[GitHub](https://github.com/TrentSterling/device-history)** | **[Landing Page](https://tront.xyz/device-history/)**
 
 You know that moment when your VR headset drops out mid-session, or your game controller just vanishes, and you're staring at the screen wondering what the hell happened? I built Device History because I got tired of asking "WTF just disconnected?" and having no answer.
 
@@ -19,7 +19,7 @@ It's a single 5MB .exe. Download it, run it, done. No installer, no setup, no de
 
 ## The Problem
 
-I work with a lot of USB devices - VR headsets, Quest Link cables, Wacom tablets, game controllers, audio interfaces, keyboards, mice. Things disconnect randomly. Windows gives you a tiny toast notification that disappears in seconds, and the Event Viewer is a nightmare to dig through for USB events. I wanted something that just sits there, watches, and tells me exactly what happened.
+I work with a lot of USB devices - VR headsets, Quest Link cables, Wacom tablets, game controllers, audio interfaces, keyboards, mice. Things disconnect randomly. Something on my desk disconnects a few times a day — I'm not even sure which device it is yet. Could be my Wacom, could be this old USB HDD I've got. Windows gives you a tiny toast notification that disappears in seconds, and the Event Viewer is a nightmare to dig through for USB events. I wanted something that just sits there, watches, and tells me exactly what happened. Now I'll know.
 
 ## What It Does
 
@@ -58,11 +58,11 @@ If you don't want the GUI, run `device-history --cli` and get colored terminal o
 - **image** - loads the pirate face icon for the window/taskbar
 - **winresource** - embeds the .ico into the .exe at build time
 
-The architecture is dead simple: main thread runs egui, background thread runs the WMI poll loop, shared state protected by `Arc<Mutex<AppState>>`. No async, no channels, no complexity. The whole thing is one file.
+The architecture is dead simple: main thread runs egui, background thread runs the WMI poll loop, shared state protected by `Arc<Mutex<AppState>>`. No async, no channels, no complexity. The whole thing is one file. It also checks GitHub for new releases on startup — if there's a newer version, a clickable banner shows up in the header.
 
 ## Get It
 
-Grab the .exe from the [releases page](https://github.com/TrentSterling/device-history/releases/tag/v0.3.0) and run it. That's it.
+Grab the .exe from the [releases page](https://github.com/TrentSterling/device-history/releases/tag/v0.3.1) and run it. That's it.
 
 Or if you want to build from source:
 
