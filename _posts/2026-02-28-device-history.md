@@ -6,16 +6,16 @@ tags: [Rust, egui, USB, Windows, WMI, Tool]
 description: "A neon-themed USB device monitor for Windows. Real-time connect/disconnect detection with a GUI, CLI mode, and persistent logging. Built in Rust with egui."
 image:
   path: /assets/img/blog/device-history.png
-  alt: "Device History v0.3.1 - Neon dark mode USB monitor"
+  alt: "Device History v0.4.0 - Neon dark mode USB monitor"
 ---
 
 ![Device History](/assets/img/blog/device-history.png){: .align-center }
 
-**[Download .exe](https://github.com/TrentSterling/device-history/releases/download/v0.3.1/device-history.exe)** | **[GitHub](https://github.com/TrentSterling/device-history)** | **[Landing Page](https://tront.xyz/device-history/)**
+**[Download .exe](https://github.com/TrentSterling/device-history/releases/download/v0.4.0/device-history.exe)** | **[GitHub](https://github.com/TrentSterling/device-history)** | **[Landing Page](https://tront.xyz/device-history/)**
 
 You know that moment when your VR headset drops out mid-session, or your game controller just vanishes, and you're staring at the screen wondering what the hell happened? I built Device History because I got tired of asking "WTF just disconnected?" and having no answer.
 
-It's a single 5MB .exe. Download it, run it, done. No installer, no setup, no dependencies.
+It's a single 7MB .exe. Download it, run it, done. No installer, no setup, no dependencies. It lives in your system tray and watches silently.
 
 ## The Problem
 
@@ -45,6 +45,16 @@ I've been applying the tront.xyz aesthetic to my tools lately - deep dark backgr
 
 The theme picker sits in the header bar. Click and it switches instantly - the entire egui Visuals struct gets rebuilt with the new palette.
 
+## v0.4.0 — System Tray & Device Nicknames
+
+The biggest change in v0.4.0: clicking X doesn't quit the app, it hides to the system tray. A tiny icon sits in your taskbar tray, silently monitoring. Right-click for Show/Hide/Exit, or double-click to restore. It's the kind of tool that should always be running but never in the way.
+
+**Device nicknames** let you rename any device to something human. "USB Composite Device" is useless — "Quest 3 Link Cable" tells you exactly what just dropped. Nicknames are saved to a local prefs file and persist across restarts.
+
+The app also remembers every device it's ever seen in a **known devices** list with first-seen and last-seen timestamps. Over time you build a history of your entire USB ecosystem. There's also search/filter across events and devices, sorting by any column, and full preference persistence (theme, active tab, nicknames).
+
+Under the hood, the tray event handling runs on its own dedicated thread — completely independent of the GUI render loop. This matters because eframe (the Rust GUI framework) stops calling its update function when the window is hidden, which would normally mean tray clicks get ignored. The background thread polls tray events every 100ms and calls Win32 directly to restore the window.
+
 ## CLI Mode
 
 If you don't want the GUI, run `device-history --cli` and get colored terminal output with the same monitoring. Same WMI polling, same logging, just text in your terminal. Useful for piping into other tools or running in a tmux pane.
@@ -62,7 +72,7 @@ The architecture is dead simple: main thread runs egui, background thread runs t
 
 ## Get It
 
-Grab the .exe from the [releases page](https://github.com/TrentSterling/device-history/releases/tag/v0.3.1) and run it. That's it.
+Grab the .exe from the [releases page](https://github.com/TrentSterling/device-history/releases/tag/v0.4.0) and run it. That's it.
 
 Or if you want to build from source:
 
@@ -82,4 +92,4 @@ Windows only (WMI is a Windows API).
 
 ---
 
-This was a fun little self-contained build - the kind of tool that scratches a specific itch and does one thing well. Functional in an afternoon, styled in an evening. Sometimes the best tools are the simplest ones. Next time something disconnects, at least I'll know what it was.
+This was a fun little self-contained build — the kind of tool that scratches a specific itch and does one thing well. Functional in an afternoon, styled in an evening, system tray and nicknames added because I kept using it and wanted more. Sometimes the best tools are the simplest ones. Next time something disconnects, at least I'll know what it was — and I'll have named it something I can actually recognize.
