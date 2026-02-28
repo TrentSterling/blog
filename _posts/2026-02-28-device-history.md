@@ -11,9 +11,11 @@ image:
 
 ![Device History](/assets/img/blog/device-history.png){: .align-center }
 
-**[GitHub](https://github.com/TrentSterling/device-history)** | **[Landing Page](https://tront.xyz/device-history/)**
+**[Download .exe](https://github.com/TrentSterling/device-history/releases/download/v0.3.0/device-history.exe)** | **[GitHub](https://github.com/TrentSterling/device-history)** | **[Landing Page](https://tront.xyz/device-history/)**
 
 You know that moment when your VR headset drops out mid-session, or your game controller just vanishes, and you're staring at the screen wondering what the hell happened? I built Device History because I got tired of asking "WTF just disconnected?" and having no answer.
+
+It's a single 5MB .exe. Download it, run it, done. No installer, no setup, no dependencies.
 
 ## The Problem
 
@@ -56,9 +58,13 @@ If you don't want the GUI, run `device-history --cli` and get colored terminal o
 - **image** - loads the pirate face icon for the window/taskbar
 - **winresource** - embeds the .ico into the .exe at build time
 
-The architecture is simple: main thread runs egui, background thread runs the WMI poll loop, shared state protected by `Arc<Mutex<AppState>>`. No async, no channels, no complexity.
+The architecture is dead simple: main thread runs egui, background thread runs the WMI poll loop, shared state protected by `Arc<Mutex<AppState>>`. No async, no channels, no complexity. The whole thing is one file.
 
-## Building It
+## Get It
+
+Grab the .exe from the [releases page](https://github.com/TrentSterling/device-history/releases/tag/v0.3.0) and run it. That's it.
+
+Or if you want to build from source:
 
 ```bash
 git clone https://github.com/TrentSterling/device-history
@@ -66,14 +72,14 @@ cd device-history
 cargo build --release
 ```
 
-Or install directly:
+Or install via cargo:
 
 ```bash
 cargo install --git https://github.com/TrentSterling/device-history
 ```
 
-Windows only (WMI is a Windows API). Requires Rust toolchain.
+Windows only (WMI is a Windows API).
 
 ---
 
-This was a quick build - functional in an afternoon, styled in an evening. Sometimes the best tools are the simplest ones. Next time something disconnects, at least I'll know what it was.
+This was a fun little self-contained build - the kind of tool that scratches a specific itch and does one thing well. Functional in an afternoon, styled in an evening. Sometimes the best tools are the simplest ones. Next time something disconnects, at least I'll know what it was.
