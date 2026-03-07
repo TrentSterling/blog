@@ -3,13 +3,13 @@ title: "Device History: WTF Just Disconnected?"
 date: 2026-02-28
 categories: [devblog]
 tags: [Rust, Tauri, Svelte, USB, Windows, WMI, Tool]
-description: "Real-time USB device monitor for Windows. Glassmorphism UI with 3 themes, device database, storage info, and CLI mode. Built with Rust + Tauri v2 + Svelte 5."
+description: "Real-time USB device monitor for Windows. Glassmorphism UI with 4 themes, device database, storage info, and CLI mode. Built with Rust + Tauri v2 + Svelte 5."
 image:
   path: /assets/img/blog/device-history.png
-  alt: "Device History v0.8.2 - Glassmorphism USB monitor"
+  alt: "Device History v0.8.3 - Glassmorphism USB monitor"
 ---
 
-> **Update (v0.8.2):** Device History has been completely rewritten with Tauri v2 + Svelte 5. New glassmorphism UI, 3 themes (Neon/Dracula/Catppuccin Mocha), storage detail panels with capacity bars, and auto-updating version display. [Get the latest version.](https://tront.xyz/device-history/)
+> **Update (v0.8.3):** Device History has been completely rewritten with Tauri v2 + Svelte 5. New glassmorphism UI, 4 themes (Neon/Dracula/Catppuccin Mocha/Pastel), storage detail panels with capacity bars, taskbar flash + toast notifications on events, and auto-updating version display. [Get the latest version.](https://tront.xyz/device-history/)
 
 ![Device History - Monitor Tab](/assets/img/blog/device-history.png){: .align-center }
 
