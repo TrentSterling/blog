@@ -9,6 +9,8 @@ image:
   alt: "Device History v0.4.0 - Neon dark mode USB monitor"
 ---
 
+> **Update:** Device History has been rewritten with Tauri v2 + Svelte 5 and is now at v0.8.2. [Get the latest version.](https://tront.xyz/device-history/)
+
 ![Device History](/assets/img/blog/device-history.png){: .align-center }
 
 **[Download .exe](https://github.com/TrentSterling/device-history/releases/download/v0.4.0/device-history.exe)** | **[GitHub](https://github.com/TrentSterling/device-history)** | **[Landing Page](https://tront.xyz/device-history/)**
