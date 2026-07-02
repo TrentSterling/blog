@@ -2,7 +2,7 @@
 title: "PowerShell Manager — a system tray tool for arranging terminal windows into grids"
 date: 2026-02-28
 categories: [Projects, Tools]
-tags: [rust, egui, windows, terminal, desktop-app, system-tray, win32, open-source]
+tags: [Rust, egui, Windows, terminal, desktop-app, system-tray, win32, open-source]
 description: "A tiny Rust app that lives in your system tray and snaps PowerShell, Windows Terminal, and other terminals into grid layouts. Draggable weighted grids, 21 presets, headless CLI mode."
 ---
 
