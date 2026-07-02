@@ -2,7 +2,7 @@
 title: "HL2-Style Volumetric Light Beams in Three.js"
 date: 2026-02-05
 categories: [Projects, Experiments]
-tags: [three-js, webgl, shader, graphics]
+tags: [three-js, WebGL, shader, graphics]
 description: "A Three.js port of the fake volumetric lighting technique Valve used in Half-Life 2. Flat quads that look 3D using cylindrical billboarding and procedural noise."
 image:
   path: /assets/img/blog/volumetric_beam.png

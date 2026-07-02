@@ -2,7 +2,7 @@
 title: "TrontCloud - a self-hosted game backend you actually control"
 date: 2026-02-08
 categories: [Projects, Tools]
-tags: [go, backend, multiplayer, gamedev, unity]
+tags: [Go, backend, Multiplayer, GameDev, Unity]
 description: "Self-hosted PlayFab/LootLocker alternative built in Go. Single binary, 109 endpoints, three-tier auth, Unity SDK."
 image: "/assets/img/blog/trontcloud.png"
 ---

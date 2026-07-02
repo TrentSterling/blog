@@ -2,7 +2,7 @@
 title: "CraftMine: A 6,820-line vibe-coded Minecraft clone in one HTML file"
 date: 2026-02-09
 categories: [Projects, devblog]
-tags: [Three.js, JavaScript, voxel, vibe-coding, gamedev, WebGL, open-source, procedural-generation]
+tags: [Three.js, JavaScript, Voxel, vibe-coding, GameDev, WebGL, open-source, procedural-generation]
 description: "My nephews wanted Minecraft with guns. I pointed Claude at a blank HTML file and we vibe-coded a 6,820-line Minecraft clone with 46 blocks, 36 mobs, 19 weapons, multiplayer, and a BFG 9000."
 image:
   path: /assets/img/blog/craftmine.png
