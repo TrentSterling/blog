@@ -98,7 +98,7 @@ Nothing groundbreaking here; just the basics done correctly. Which is more than 
 
 The immediate plan is deploying to a $5/month VPS. The whole thing is a single binary plus a Postgres instance; it should run comfortably on minimal hardware.
 
-After that, integration with [EOS-Native](https://tront.xyz/EOS-Native/), my standalone multiplayer framework for Unity. TrontCloud would serve as the optional persistent backend; stats, leaderboards, and achievements that survive beyond a single play session. EOS-Native handles the real-time P2P networking, TrontCloud handles the between-session data.
+After that, integration with [EOS-Native](https://tront.xyz/eos-native/), my standalone multiplayer framework for Unity. TrontCloud would serve as the optional persistent backend; stats, leaderboards, and achievements that survive beyond a single play session. EOS-Native handles the real-time P2P networking, TrontCloud handles the between-session data.
 
 I'm also considering a matchmaking backend to complement EOS-Native's client-side matchmaking, and an anti-cheat verification layer where TrontCloud validates game state server-side.
 

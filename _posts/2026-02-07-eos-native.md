@@ -13,7 +13,7 @@ Five days ago I released [FishNet-EOS-Native](/blog/posts/fishnet-eos-native-rel
 
 Then I kept going.
 
-**[GitHub Repo](https://github.com/TrentSterling/EOS-Native)** | **[Documentation](https://tront.xyz/EOS-Native/)** (51 pages)
+**[GitHub Repo](https://github.com/TrentSterling/eos-native)** | **[Documentation](https://tront.xyz/eos-native/)** (51 pages)
 
 ## What Happened
 
@@ -82,7 +82,7 @@ All of this is free. No per-CCU fees, no middleware licenses. EOS is free; this 
 
 UPM git URL:
 ```
-https://github.com/TrentSterling/EOS-Native.git?path=Assets/com.tront.eos-native
+https://github.com/TrentSterling/eos-native.git?path=Assets/com.tront.eos-native
 ```
 
 Or just copy `Assets/com.tront.eos-native/` into your project's `Packages/` folder.
@@ -102,4 +102,4 @@ Add `EOS_DISABLE` to your scripting defines if you need to strip EOS from compil
 
 The FishNet transport (`FishNet-EOS-Native`) still exists and still works. It depends on this package for the EOS SDK and lobby/voice/social managers. But if you're starting fresh and don't need FishNet's abstractions, EOS-Native gives you the full stack with less overhead.
 
-[Docs are here](https://tront.xyz/EOS-Native/) - 51 pages covering setup, architecture, every feature, and API reference.
+[Docs are here](https://tront.xyz/eos-native/) - 51 pages covering setup, architecture, every feature, and API reference.

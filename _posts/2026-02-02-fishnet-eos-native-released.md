@@ -14,7 +14,7 @@ image: "/assets/img/blog/fishnet-eos-native.png"
 
 Just shipped **FishNet-EOS-Native v1.0**!
 
-[GitHub Repo](https://github.com/TrentSterling/FishNet-EOS-Native) | [v1.0.0 Release](https://github.com/TrentSterling/FishNet-EOS-Native/releases/tag/v1.0.0) | [Full Docs](https://tront.xyz/FishNet-EOS-Native/)
+[GitHub Repo](https://github.com/TrentSterling/fishnet-eos-native) | [v1.0.0 Release](https://github.com/TrentSterling/fishnet-eos-native/releases/tag/v1.0.0) | [Full Docs](https://tront.xyz/fishnet-eos-native/)
 
 ## What Is It?
 
