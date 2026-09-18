@@ -483,3 +483,66 @@ html[data-theme="tront-ember"] #magic-navbar-container #tront-theme-btn {
 html[data-theme="tront-ember"] #magic-navbar-container #tront-theme-btn:hover {
   box-shadow: 0 0 16px rgba(249, 115, 22, 0.3);
 }
+
+/* ───────── Search results (Chirpy override) ─────────
+   Chirpy lays results out as two 50% columns with post-sized h2 titles, which on
+   this fluid-font layout became two skinny stacks with a huge empty right side.
+   One centered column, card per result, title sized like a list entry. */
+#search-result-wrapper .content {
+    width: 100%;
+    max-width: 56rem;
+}
+#search-result-wrapper #search-results {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding-bottom: 4rem;
+}
+#search-result-wrapper #search-results > article {
+    width: 100% !important;
+    max-width: none;
+    margin: 0;
+    padding: 0.9rem 1.15rem !important;
+    background: var(--card-bg);
+    border: 1px solid var(--main-border-color);
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+#search-result-wrapper #search-results > article:hover {
+    background: var(--card-hover-bg);
+    border-color: var(--input-focus-border-color);
+}
+#search-result-wrapper #search-results > article header h2 {
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin: 0 0 0.3rem;
+}
+#search-result-wrapper #search-results > article header h2 a {
+    color: var(--heading-color);
+    text-decoration: none;
+    border: 0;
+}
+#search-result-wrapper #search-results > article header h2 a:hover {
+    color: var(--link-color);
+}
+#search-result-wrapper #search-results > article .post-meta {
+    font-size: 0.8rem;
+    gap: 0.2rem 1.25rem;
+    margin: 0 0 0.35rem !important;
+}
+#search-result-wrapper #search-results > article .post-meta > div {
+    margin: 0;
+}
+#search-result-wrapper #search-results > article p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text-muted-color);
+}
+#search-result-wrapper #search-results > p.mt-5 {
+    text-align: center;
+    width: 100%;
+}
