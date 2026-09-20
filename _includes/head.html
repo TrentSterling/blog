@@ -9,6 +9,18 @@
     content="width=device-width, user-scalable=no, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
   >
 
+  {%- comment -%}
+    Thin taxonomy and pagination pages stay on the site for people browsing, but
+    out of the search index. Search Console had 208 tag pages and 9 category
+    pages against 146 posts, nearly all "Crawled - currently not indexed": each
+    one is a heading plus a list of post links, so it has nothing of its own to
+    rank and it eats crawl budget the posts need. "follow" keeps link equity
+    flowing through them to the posts.
+  {%- endcomment -%}
+  {%- if page.layout == 'tag' or page.layout == 'category' or paginator.page > 1 -%}
+    <meta name="robots" content="noindex, follow">
+  {%- endif -%}
+
   {%- capture seo_tags -%}
     {% seo title=false %}
   {%- endcapture -%}
