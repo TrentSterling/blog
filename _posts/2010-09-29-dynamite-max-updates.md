@@ -6,6 +6,8 @@ tags: [Dynamite Max]
 description: "Dynamite Max: my 2009-2011 3D Flash game. Papervision3D then Away3DLite, Box2D then Nape, a 2.5D physics platformer with a real level editor. Video update from 2010."
 image: "/assets/img/dynamitemaxintro.jpg"
 ---
+
+
 <iframe src="//www.youtube.com/embed/9jyXvl8VUQA" frameborder="0" allowfullscreen></iframe>
 
 > Added in 2026. This post originally had only the video. The summary below is pulled from my own later posts, mainly the [2013 retrospective](/blog/posts/dynamite-max/), because an earlier AI-written summary here invented features the game never had.

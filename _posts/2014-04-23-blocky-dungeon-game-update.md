@@ -6,6 +6,7 @@ tags: [2.5D, 3D, Art, Blocky Dungeon, Indie, Lighting, PlayMaker, Qubicle, Unity
 description: "dungeonman  Blocky Dungeon seems like a name that would have been taken by now, but it looks like my prototype post is getting enough SEO to be a top..."
 image: "/assets/img/blog/wp/dungeonman.jpg"
 ---
+
 ![dungeonman](/assets/img/blog/wp/dungeonman.jpg)
 
 **Blocky Dungeon** seems like a name that would have been taken by now, but it looks like my prototype post is getting enough SEO to be a top result for the name. Google chose my game name for me!

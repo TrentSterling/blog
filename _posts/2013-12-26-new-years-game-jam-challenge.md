@@ -6,6 +6,7 @@ tags: [2.5D, 3D, Art, Effects, Game Jam, Indie, Lighting, Particles, Platformer,
 description: "weirdsoniccontrathing  +Andrew Sandifer challenged me and +Yuuki Rus (https://plus.google.com/10451"
 image: "/assets/img/blog/wp/weirdsoniccontrathing.gif"
 ---
+
 ![weirdsoniccontrathing](/assets/img/blog/wp/weirdsoniccontrathing.gif)
 
 +[Andrew Sandifer](https://plus.google.com/113965841856705384373) challenged me and +[Yuuki Rus ](https://plus.google.com/104512160836330627208/posts)to a Christmas Game Jam, which kinda turned into a New Years Game Jam, because that’s how stuff works.

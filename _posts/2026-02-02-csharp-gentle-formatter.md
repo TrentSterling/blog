@@ -6,6 +6,7 @@ tags: [CSharp, Formatter, open-source, Tools, VS Code]
 description: "VS Code extension that formats C# without destroying blank line indentation."
 image: "/assets/img/blog/csharp-gentle-formatter.png"
 ---
+
 ![C# Gentle Formatter](/assets/img/blog/csharp-gentle-formatter.png){: .align-center }
 
 Made a VS Code extension because every other C# formatter pissed me off.

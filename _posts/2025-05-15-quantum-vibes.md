@@ -6,6 +6,7 @@ tags: [AI, DoubleSlit, Feynman, GameDev, Gemini, HTML5, IndieDev, Interactive, J
 description: "How a Veritasium video about Path Integrals sparked the creation of QuantumVibes, my interactive Double-Slit and Feynman Path Integral simulator, vibecoded with AI."
 image: "/assets/img/QUANTUM_REFRACTION.png"
 ---
+
 So, yeah. Quantum mechanics. It's one of those things that always tickles the back of your brain if you're a dev, right? You think you kinda get it. Double-slit, Schrödinger's cat, all that jazz. But then, every once in a while, something just re-scrambles your eggs in the best possible way.
 
 For me, recently, it was a damn good [**Veritasium video about really trusting quantum mechanics**](https://www.youtube.com/watch?v=qJZ1Ez28C-A){:target="_blank" rel="noopener noreferrer"}. I'd *known* about Feynman's path integrals - the idea that a particle takes *every possible path* simultaneously. But seeing it visualized so clearly... it wasn't just an abstract concept anymore. It was like, "Oh. OH. Light is literally exploring *all the goddamn paths*." That hit different.

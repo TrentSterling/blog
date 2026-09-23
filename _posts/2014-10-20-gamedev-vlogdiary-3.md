@@ -6,6 +6,7 @@ tags: [Vlog]
 description: "{% include youtube.html id='0VGh415jfrc' %}     Play game:  https://bacongamejam.org/jams/bacongamejam-08/282/"
 image: "/assets/img/icon.jpg"
 ---
+
 {% include youtube.html id="0VGh415jfrc" %}
 
  

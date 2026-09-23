@@ -6,6 +6,7 @@ tags: [2D, Pixel Art, Unity, Vlog]
 description: "{% include youtube.html id='NBHL7rwasqg' %}  Another vlog This time it covered my collaboration zombie endless runner game."
 image: "/assets/img/icon.jpg"
 ---
+
 {% include youtube.html id="NBHL7rwasqg" %}
 
 Another vlog! This time it covered my collaboration zombie endless runner game.

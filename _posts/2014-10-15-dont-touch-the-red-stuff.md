@@ -6,6 +6,7 @@ tags: [Unity]
 description: "devscreen  This is a simple 1 day platformer I made to get back into the habit of daily programming. Ive been slacking and getting rusty lately, so..."
 image: "/assets/img/blog/wp/devscreen1.jpg"
 ---
+
 ![devscreen](/assets/img/blog/wp/devscreen1.jpg)
 
 This is a simple 1 day platformer I made to get back into the habit of daily programming. Ive been slacking and getting rusty lately, so I’ve started to dive back into programming without my PlayMaker parachute/crutch. I still like PlayMaker, but there’s some things that just need to be coded straight.

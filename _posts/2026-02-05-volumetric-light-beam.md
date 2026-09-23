@@ -8,6 +8,7 @@ image:
   path: /assets/img/blog/volumetric_beam.png
   alt: Colorful volumetric light beams rendered in Three.js
 ---
+
 Ever notice those dusty light cones in Half-Life 2? The ones streaming through windows in Ravenholm, or cutting through the fog in the canals? They look volumetric, like real light scattering through particles in the air.
 
 They're not. They're flat quads.

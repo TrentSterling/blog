@@ -6,6 +6,7 @@ tags: [Unity]
 description: "phone  Been doing some testing on a phone that was given by family. Its a Nokia Lumia 521. I’m guessing that it ranks fairly low on the performance..."
 image: "/assets/img/blog/wp/phone.png"
 ---
+
 ![phone](/assets/img/blog/wp/phone.png)
  Been doing some testing on a phone that was given by family. Its a Nokia Lumia 521. I’m guessing that it ranks fairly low on the performance spectrum, so I decided to try Unity’s free Windows Phone exporter. Getting set up was fairly simple. I already had VS2012 installed. All I had to do was set up the device as a developer device and I was able to push builds to the phone.
 

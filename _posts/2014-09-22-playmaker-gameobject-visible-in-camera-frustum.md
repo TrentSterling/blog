@@ -6,6 +6,7 @@ tags: [PlayMaker, Unity]
 description: "GameObject.renderer.isVisible doesn't work when an object casts dynamic shadows. This makes the GameObjectIsVisible action useless."
 image: "/assets/img/blog/wp/zUFyofz.gif"
 ---
+
 {% include youtube.html id="ROID1JI3FIs" %}
 
 ![](/assets/img/blog/wp/zUFyofz.gif)

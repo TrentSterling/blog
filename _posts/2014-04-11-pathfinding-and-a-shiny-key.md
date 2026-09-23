@@ -6,6 +6,7 @@ tags: [2.5D, 3D, Art, Blocky Dungeon, Indie, PlayMaker, Qubicle, Unity, Voxel]
 description: "shadertest  dungeonstuff  pits  animatedshit"
 image: "/assets/img/blog/wp/shadertest.gif"
 ---
+
 ![shadertest](/assets/img/blog/wp/shadertest.gif)
 
 ![dungeonstuff](/assets/img/blog/wp/dungeonstuff.jpg)

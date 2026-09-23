@@ -6,6 +6,7 @@ tags: [Game Jam, Space, Unity]
 description: "It's PI Day! Here's a link to 7DaySpaceJam - a space simulation game created as part of a 7-day challenge."
 image: "/assets/img/spaceyo.gif"
 ---
+
 It's PI Day!
 
 ![GIF, YO!](/assets/img/spaceyo.gif)

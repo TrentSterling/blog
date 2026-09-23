@@ -6,6 +6,7 @@ tags: [2.5D, 3D, Art, Indie, PlayMaker, Qubicle, Rotorz, Unity, Voxel]
 description: "rotorzplaymaker  Unity, Voxels, PlayMaker and Rotorz, Oh my I’m currently adding PlayMaker powered speech bubbles to my New Years Jam game. ..."
 image: "/assets/img/blog/wp/rotorzplaymaker.jpg"
 ---
+
 ![rotorzplaymaker](/assets/img/blog/wp/rotorzplaymaker.jpg)
  Unity, Voxels, PlayMaker and Rotorz, Oh my! I’m currently adding PlayMaker powered speech bubbles to my New Years Jam game.
 

@@ -6,6 +6,7 @@ tags: [2.5D, 3D, Indie, PlayMaker, Unity, Voxel]
 description: "This is a simple twin stick shooter setup for PlayMaker. I’m hoping to get a bunch of these prototype game mechanics into  a set of tutorials. I’m..."
 image: "/assets/img/icon.jpg"
 ---
+
 This is a simple twin stick shooter setup for PlayMaker. I’m hoping to get a bunch of these prototype game mechanics into
  a set of tutorials. I’m still working on the style of my channel, and it’s taking me a while to get things feeling ‘right’.
 

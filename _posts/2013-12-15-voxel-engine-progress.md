@@ -6,6 +6,7 @@ tags: [AI, Indie, Lighting, Mobile, Optimization, Unity, Voxel]
 description: "Updates on my voxel-based game engine, including batching, pathfinding, and lighting optimizations for mobile."
 image: "/assets/img/Screenshot_2013-12-15-04-07-42.jpg"
 ---
+
 # Voxel Engine Progress & Optimizations
 
 I've been posting updates on G+, Facebook, and Twitter, but it's probably a good idea to mirror some of that here, even if it’s just quick snippets and screenshots.

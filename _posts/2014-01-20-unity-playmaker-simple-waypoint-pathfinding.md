@@ -6,6 +6,7 @@ tags: [Pathfinding, PlayMaker, Unity]
 description: "The current set of PlayMaker pathfinding actions don’t work with the latest version of the A Pathfinding Project.  I’m making a simplfied version..."
 image: "/assets/img/icon.jpg"
 ---
+
 The current set of PlayMaker pathfinding actions don’t work with the latest version of the A* Pathfinding Project.
 
 I’m making a simplfied version that only returns which nodes to move to. Actually moving your physics/transform/character controller is up to you!

@@ -6,6 +6,7 @@ tags: [2D, Game Jam, Unity]
 description: "A game created in 48 hours for the BaconGameJam. The theme was “Millions Of Them”.  ---  Dodge through 100’s of enemies while picking up 1000’s of..."
 image: "/assets/img/blog/wp/2014-10-21_07-49-32.png"
 ---
+
 A game created in 48 hours for the #BaconGameJam. The theme was “Millions Of Them”.
 
 ---

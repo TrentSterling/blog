@@ -6,6 +6,7 @@ tags: [3D, Art, Indie, Qubicle, Unity, Voxel]
 description: "I’ve been working on a few different game projects- and seeing as cubes are often a recurring theme for me, I figured it was about time to take it to..."
 image: "/assets/img/blog/wp/voxelball.jpg"
 ---
+
 I’ve been working on a few different game projects- and seeing as cubes are often a recurring theme for me, I figured it was about time to take it to the next level.
 
 I’ve been testing a simple voxel renderer in Unity.

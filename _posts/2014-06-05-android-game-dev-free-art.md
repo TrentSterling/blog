@@ -6,6 +6,7 @@ tags: [2D, Android, Indie, PlayMaker, Unity]
 description: "Exploring Android game development with PlayMaker, free art assets, and performance optimizations."
 image: "/assets/img/icon.jpg"
 ---
+
 I know, I know. I haven’t been updating very regularly. Almost an entire game’s development has passed between my last update and this one.
 
 Things have been weird since my last update. My artist is in university, so he’s had to take a little break from the unpaid hours of whipping I’ve been putting him through. I was sorta losing my mind because it felt like I was unable to progress at all without more artwork, and I decided to try something new.
