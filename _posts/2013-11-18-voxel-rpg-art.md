@@ -1,12 +1,11 @@
 ---
 title: "Voxel RPG Art"
 date: 2013-11-18
-categories: [DevBlog]
+categories: [devblog]
 tags: [2.5D, 3D, Art, Blocky Dungeon, Indie, Qubicle, RPG, Unity, Voxel]
 description: "Me and my artist Yuuki (http://yuukirusdemon.deviantart.com/gallery/) have been hitting the artwork hard, trying to determine whether or not we want..."
 image: "/assets/img/blog/wp/voxelitems.jpg"
 ---
-
 Me and my artist Yuuki ([http://yuukirusdemon.deviantart.com/gallery/](http://yuukirusdemon.deviantart.com/gallery/)) have been hitting the artwork hard, trying to determine whether or not we want cartoony voxels, or a more realistic/detailed look.
 
 Adding a bit of noise makes a lot of the models look more ‘lived in’ and realistic. But the world of cube voxels doesn’t really lend itself to realism. Frankly I’m thinking about dropping textures almost completely and going with a more flat cartoony look, with some highlights to make things pop.![Random voxel art!](/assets/img/blog/wp/voxelitems.jpg)

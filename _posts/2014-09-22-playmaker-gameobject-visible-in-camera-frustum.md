@@ -1,12 +1,11 @@
 ---
 title: "PlayMaker: GameObject Visible In Camera Frustum"
 date: 2014-09-22
-categories: [DevBlog]
+categories: [devblog]
 tags: [PlayMaker, Unity]
 description: "GameObject.renderer.isVisible doesn't work when an object casts dynamic shadows. This makes the GameObjectIsVisible action useless."
 image: "/assets/img/blog/wp/zUFyofz.gif"
 ---
-
 {% include youtube.html id="ROID1JI3FIs" %}
 
 ![](/assets/img/blog/wp/zUFyofz.gif)

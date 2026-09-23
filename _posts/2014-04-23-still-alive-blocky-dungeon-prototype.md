@@ -1,12 +1,11 @@
 ---
 title: "Still Alive! Blocky Dungeon Prototype"
 date: 2014-04-23
-categories: [DevBlog]
+categories: [devblog]
 tags: [2.5D, 3D, Art, Blocky Dungeon, Effects, Indie, Lighting, PlayMaker, Qubicle, Shaders, Unity, Voxel]
 description: "Capture  blockyman  Still alive. Don’t have much to post today. Just trying to le"
 image: "/assets/img/blog/wp/Capture.jpg"
 ---
-
 ![Capture](/assets/img/blog/wp/Capture.jpg)
 
 ![blockyman](/assets/img/blog/wp/blockyman.jpg)[

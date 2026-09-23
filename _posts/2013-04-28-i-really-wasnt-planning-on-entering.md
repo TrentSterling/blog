@@ -1,12 +1,11 @@
 ---
 title: "I really wasn’t planning on entering. #LD48"
 date: 2013-04-28
-categories: [DevBlog]
+categories: [devblog]
 tags: [Unity]
 description: "2jetpackscreeny 2JETPACKLD26  I wasn’t really sure if I’d be making anything this weekend. I’ve spent most of m"
 image: "/assets/img/blog/wp/2jetpackscreeny.png"
 ---
-
 ![2jetpackscreeny](/assets/img/blog/wp/2jetpackscreeny.png) ![2JETPACK_LD_26](/assets/img/blog/wp/2JETPACK_LD_26.png)
 
 I wasn’t really sure if I’d be making anything this weekend. I’ve spent most of my time watching others on Twitch.

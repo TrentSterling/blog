@@ -1,12 +1,11 @@
 ---
 title: "Mini Dungeon Ludum Dare 29"
 date: 2014-04-27
-categories: [DevBlog]
+categories: [devblog]
 tags: [2.5D, 3D, Blocky Dungeon, Ludum Dare, PlayMaker, Qubicle, Unity, Voxel]
 description: "runningzomber  So me and Yuuki didn’t really want to kill our momentum, but I also thought it would be fun to give ourselves a little challenge. ..."
 image: "/assets/img/blog/wp/runningzomber.gif"
 ---
-
 ![runningzomber](/assets/img/blog/wp/runningzomber.gif)
 
 So me and Yuuki didn’t really want to kill our momentum, but I also thought it would be fun to give ourselves a little challenge.

@@ -1,12 +1,11 @@
 ---
 title: "Bear Party (Ludum Dare 33)"
 date: 2015-09-01
-categories: [DevBlog, Projects]
+categories: [devblog, Projects]
 tags: [Game Jam, Ludum Dare, Unity]
 description: "My Ludum Dare 33 entry where you play as a giant bear, smashing buses and eating children."
 image: "/assets/img/blog/2015-08-22_01-30-36.png"
 ---
-
 ![Bear Party Title](/assets/img/blog/2015-09-01_18-21-41.png)
 
 ![Bear Party Gameplay](/assets/img/blog/2015-08-22_01-30-36.png)

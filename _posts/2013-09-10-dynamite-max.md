@@ -1,12 +1,11 @@
 ---
 title: "Dynamite Max"
 date: 2013-09-10
-categories: [DevBlog]
+categories: [devblog]
 tags: [3D, Dynamite Max, Flash, Physics, Unity]
 description: "newmax  This was a 3D Flash game before 3D was cool. Papervision and Away3D were the kings of 3D in flash, before Stage3D came around. This means we..."
 image: "/assets/img/blog/wp/newmax.png"
 ---
-
 ![newmax](/assets/img/blog/wp/newmax.png)
 
 This was a 3D Flash game before 3D was cool. Papervision and Away3D were the kings of 3D in flash, before Stage3D came around. This means we faked 3D effects using the CPU. This method is extremely limited, which means we could only draw about 1000 triangles. Generally it would be best to keep things under 500.

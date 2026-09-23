@@ -1,14 +1,11 @@
 ---
 title: "Voxel Blocky Dungeon"
 date: 2015-07-19
-categories: [DevBlog, Projects]
+categories: [devblog, Projects]
 tags: [Unity]
 description: "Returning to Blocky Dungeon with new 3D voxel features and rapid release plans. Updates and future content ahead!"
 image: "/assets/img/2015-04-18_03-20-02.jpg"
 ---
-
-
-
 No! The multiplayer archer game isn’t dead yet! But we have bigger and better fish to fry! Fancier fish with 3D voxels!
 
 

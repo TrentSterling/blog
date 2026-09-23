@@ -2,11 +2,10 @@
 title: "FishNet-EOS-Native v1.0 Released!"
 date: 2026-02-02
 categories: [devblog]
-tags: [EOS, FishNet, Multiplayer, Networking, Open Source, Unity]
+tags: [EOS, FishNet, Multiplayer, Networking, open-source, Unity]
 description: "Released my EOS transport for FishNet - direct SDK integration, no middleware."
 image: "/assets/img/blog/fishnet-eos-native.png"
 ---
-
 ![FishNet-EOS-Native](/assets/img/blog/fishnet-eos-native.png){: .align-center }
 
 > **Update (Feb 7, 2026):** This project has evolved into [EOS-Native](/blog/posts/eos-native-i-built-a-standalone-multiplayer-framework-for-unity/); a complete standalone multiplayer framework that owns the full networking stack. FishNet-EOS-Native still exists as a transport layer that depends on EOS-Native, but the real action is in the standalone package now.

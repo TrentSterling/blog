@@ -4,7 +4,7 @@ require "fileutils"
 require "minitest/autorun"
 
 class UniquePostUrlsTest < Minitest::Test
-  def build_posts(permalinks)
+  def build_posts(permalinks, taxonomy = "")
     Dir.mktmpdir("jekyll-post-urls") do |source|
       FileUtils.mkdir_p(File.join(source, "_posts"))
       FileUtils.mkdir_p(File.join(source, "_plugins"))
@@ -12,7 +12,7 @@ class UniquePostUrlsTest < Minitest::Test
                    File.join(source, "_plugins", "unique_post_urls.rb"))
       permalinks.each_with_index do |permalink, index|
         File.write(File.join(source, "_posts", "2020-01-0#{index + 1}-article.md"),
-                   "---\ntitle: Article #{index}\npermalink: #{permalink}\n---\nArticle #{index}\n")
+                   "---\ntitle: Article #{index}\npermalink: #{permalink}\n#{taxonomy}---\nArticle #{index}\n")
       end
       config = Jekyll.configuration("source" => source, "destination" => File.join(source, "_site"),
                                     "config" => [], "quiet" => true)
@@ -35,5 +35,19 @@ class UniquePostUrlsTest < Minitest::Test
       assert_includes File.read(File.join(destination, "posts/article/index.html")), "Article 0"
       assert_includes File.read(File.join(destination, "posts/article-history/index.html")), "Article 1"
     end
+  end
+
+  def test_tag_spellings_that_slugify_to_one_url_abort
+    error = assert_raises(Jekyll::Errors::FatalException) do
+      build_posts(["/posts/article/"], "tags: [Three.js, three-js]\n")
+    end
+    assert_includes error.message, "tags/three-js"
+  end
+
+  def test_category_case_collisions_abort
+    error = assert_raises(Jekyll::Errors::FatalException) do
+      build_posts(["/posts/article/"], "categories: [DevBlog, devblog]\n")
+    end
+    assert_includes error.message, "categories/devblog"
   end
 end

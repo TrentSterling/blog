@@ -2,13 +2,12 @@
 title: "HL2-Style Volumetric Light Beams in Three.js"
 date: 2026-02-05
 categories: [Projects, Experiments]
-tags: [three-js, WebGL, shader, graphics]
+tags: [Three.js, WebGL, shader, graphics]
 description: "A Three.js port of the fake volumetric lighting technique Valve used in Half-Life 2. Flat quads that look 3D using cylindrical billboarding and procedural noise."
 image:
   path: /assets/img/blog/volumetric_beam.png
   alt: Colorful volumetric light beams rendered in Three.js
 ---
-
 Ever notice those dusty light cones in Half-Life 2? The ones streaming through windows in Ravenholm, or cutting through the fog in the canals? They look volumetric, like real light scattering through particles in the air.
 
 They're not. They're flat quads.

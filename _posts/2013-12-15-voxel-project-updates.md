@@ -1,12 +1,11 @@
 ---
 title: "Voxel Project Updates"
 date: 2013-12-15
-categories: [DevBlog]
+categories: [devblog]
 tags: [2.5D, 3D, Android, Art, Indie, Mobile, Qubicle, Unity, Voxel]
 description: "I’ve been posting to G+, Facebook, and Twitter with some short snippets and screenshots. It’s probably good to mirror that content here, even if it’s..."
 image: "/assets/img/blog/wp/isometriclook.png"
 ---
-
 I’ve been posting to G+, Facebook, and Twitter with some short snippets and screenshots. It’s probably good to mirror that content here, even if it’s not a ‘legit’ post.
 
 Things look kinda neat in isometric view!

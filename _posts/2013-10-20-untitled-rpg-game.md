@@ -1,12 +1,11 @@
 ---
 title: "Untitled RPG Game"
 date: 2013-10-20
-categories: [DevBlog]
+categories: [devblog]
 tags: [Art, Blocky Dungeon, Indie, Qubicle, Unity, Voxel]
 description: "First-game-preview  Cubes, swords, and a fancy tile system.  dongleland  The general idea here is still in it’s in"
 image: "/assets/img/blog/wp/First-game-preview.png"
 ---
-
 ![First-game-preview](/assets/img/blog/wp/First-game-preview.png)
 
 Cubes, swords, and a fancy tile system.

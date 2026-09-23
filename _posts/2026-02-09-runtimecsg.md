@@ -2,13 +2,12 @@
 title: "RuntimeCSG: Real-time Boolean Modeling for Unity"
 date: 2026-02-09
 categories: [Projects, devblog]
-tags: [Unity, C#, CSG, Boolean, Geometry, Level Design, Procedural Generation, Tools, UPM]
+tags: [Unity, C#, CSG, Boolean, Geometry, Level Design, procedural-generation, Tools, UPM]
 description: "A real-time constructive solid geometry package for Unity. Per-brush boolean operations, chunked meshing, runtime API, and 185 tests across 3 Unity versions. Here's how it works and why BSP trees were a dead end."
 image:
   path: /assets/img/blog/runtimecsg-demo.gif
   alt: "RuntimeCSG - Real-time CSG for Unity"
 ---
-
 ![RuntimeCSG editor demo](/assets/img/blog/runtimecsg-demo.gif){: .align-center }
 
 **[Landing Page](https://tront.xyz/runtimecsg/)**

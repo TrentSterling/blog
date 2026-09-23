@@ -1,12 +1,11 @@
 ---
 title: "Pathfinding and a Shiny Key"
 date: 2014-04-11
-categories: [DevBlog]
+categories: [devblog]
 tags: [2.5D, 3D, Art, Blocky Dungeon, Indie, PlayMaker, Qubicle, Unity, Voxel]
 description: "shadertest  dungeonstuff  pits  animatedshit"
 image: "/assets/img/blog/wp/shadertest.gif"
 ---
-
 ![shadertest](/assets/img/blog/wp/shadertest.gif)
 
 ![dungeonstuff](/assets/img/blog/wp/dungeonstuff.jpg)
