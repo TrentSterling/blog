@@ -1,5 +1,5 @@
 ---
-title: "About Trent Sterling"
+title: "About Trent Sterling (Tront)"
 icon: fas fa-info-circle
 order: 4
 ---
@@ -7,7 +7,9 @@ order: 4
 > Trent Sterling, or Tront, is a game developer with a decade of experience in the industry. He specializes in Unity, C#, and VR development.
 {: .prompt-tip }
 
-Welcome! I’m **Trent Sterling**, a game developer with over a decade of experience. I specialize in Unity, C#, multiplayer networking, VR optimization, and procedural generation, but I’m versatile across many development areas.
+Welcome! I’m **Trent Sterling**, known online as **Tront**, and I've made games since 2009. Since 2025 I've been the contract Network Programmer and Unity Generalist on [Project Demigod](https://store.steampowered.com/app/1646580/Project_Demigod/). I specialize in Unity, C#, multiplayer networking, VR optimization, and procedural generation.
+
+My current [games and project portfolio](https://tront.xyz/games/) and [public code](https://github.com/TrentSterling) cover multiplayer frameworks, VR, GPU experiments, browser games, and developer tools. On this blog, I've written about [my FishNet EOS transport](/blog/posts/fishnet-eos-native-released/) and [the EOS-Native framework](/blog/posts/eos-native/).
 
 ## My Focus Areas
 
