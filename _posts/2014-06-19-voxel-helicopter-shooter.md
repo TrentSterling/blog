@@ -1,7 +1,7 @@
 ---
 title: "Voxel Helicopter Shooter"
 date: 2014-06-19
-categories: [DevBlog]
+categories: [devblog]
 tags: [Unity]
 description: "This game was my last PlayMaker experiment before going back to pure C. Now that I’ve stopped using PlayMaker, I doubt that I’ll do anything more..."
 image: "/assets/img/blog/wp/2014-09-06_18-32-33.png"

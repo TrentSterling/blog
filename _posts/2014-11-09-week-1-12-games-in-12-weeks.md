@@ -1,7 +1,7 @@
 ---
 title: "Week 1: 12 Games in 12 Weeks"
 date: 2014-11-09
-categories: [DevBlog]
+categories: [devblog]
 tags: [Unity]
 description: "MFpRLkW  Wow, what a week  How to even begin? Well for starters, I guess I’ll mention that gamedev is hard. Scheduling is hard. Finishing stuff is..."
 image: "/assets/img/blog/wp/MFpRLkW.png"

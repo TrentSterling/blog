@@ -1,7 +1,7 @@
 ---
 title: "Android Game Dev and Free Art"
 date: 2014-06-05
-categories: [DevBlog, Projects]
+categories: [devblog, Projects]
 tags: [2D, Android, Indie, PlayMaker, Unity]
 description: "Exploring Android game development with PlayMaker, free art assets, and performance optimizations."
 image: "/assets/img/icon.jpg"

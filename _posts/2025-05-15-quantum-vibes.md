@@ -1,8 +1,8 @@
 ---
 title: "QuantumVibes: Vibecoding Quantum Mechanics After a Veritasium Epiphany"
 date: 2025-05-07
-categories: [DevBlog, Projects, Experiments, AI]
-tags: [AI, DoubleSlit, Feynman, GameDev, Gemini, HTML5, IndieDev, Interactive, JavaScript, LLM, PathIntegral, PhysicsVisualization, QuantumPhysics, QuantumVibes, Simulation, Veritasium, Vibe Coding, Visualization, WaveParticleDuality, WebWorker]
+categories: [devblog, Projects, Experiments, AI]
+tags: [AI, DoubleSlit, Feynman, GameDev, Gemini, HTML5, IndieDev, Interactive, JavaScript, LLM, PathIntegral, PhysicsVisualization, QuantumPhysics, QuantumVibes, Simulation, Veritasium, vibe-coding, Visualization, WaveParticleDuality, WebWorker]
 description: "How a Veritasium video about Path Integrals sparked the creation of QuantumVibes, my interactive Double-Slit and Feynman Path Integral simulator, vibecoded with AI."
 image: "/assets/img/QUANTUM_REFRACTION.png"
 ---

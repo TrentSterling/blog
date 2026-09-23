@@ -1,7 +1,7 @@
 ---
 title: "GameDev Vlog/Diary #1"
 date: 2014-09-28
-categories: [DevBlog]
+categories: [devblog]
 tags: [Vlog]
 description: "{% include youtube.html id='qFxcJcXj34' %}  Here’s my first Game Dev Vlog. Friend of mine is always looking for more streams/gamedev related content..."
 image: "/assets/img/icon.jpg"

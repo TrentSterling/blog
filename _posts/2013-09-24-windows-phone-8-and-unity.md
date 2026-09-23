@@ -1,7 +1,7 @@
 ---
 title: "Windows Phone 8 and Unity"
 date: 2013-09-24
-categories: [DevBlog]
+categories: [devblog]
 tags: [Unity]
 description: "phone  Been doing some testing on a phone that was given by family. Its a Nokia Lumia 521. I’m guessing that it ranks fairly low on the performance..."
 image: "/assets/img/blog/wp/phone.png"

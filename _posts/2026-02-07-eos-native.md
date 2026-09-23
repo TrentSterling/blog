@@ -2,7 +2,7 @@
 title: "EOS-Native: I Built a Standalone Multiplayer Framework for Unity"
 date: 2026-02-07
 categories: [devblog]
-tags: [EOS, Multiplayer, Networking, Open Source, Unity, P2P]
+tags: [EOS, Multiplayer, Networking, open-source, Unity, P2P]
 description: "What started as a FishNet transport turned into a full multiplayer networking framework. 80 managers, 46K lines, zero middleware."
 image: "/assets/img/blog/eos-native.png"
 ---

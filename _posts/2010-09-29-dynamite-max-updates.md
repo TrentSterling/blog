@@ -1,7 +1,7 @@
 ---
 title: "Dynamite Max Updates"
 date: 2010-09-29
-categories: [DevBlog]
+categories: [devblog]
 tags: [Dynamite Max]
 description: "Dynamite Max: my 2009-2011 3D Flash game. Papervision3D then Away3DLite, Box2D then Nape, a 2.5D physics platformer with a real level editor. Video update from 2010."
 image: "/assets/img/dynamitemaxintro.jpg"

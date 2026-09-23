@@ -4,12 +4,9 @@
 <!--
   Posts and real pages only, on purpose.
 
-  jekyll-sitemap used to list every generated tag, category and pagination page
-  too: 208 tag pages and 9 category pages against 146 posts, and Search Console
-  reported nearly all of them as "Crawled - currently not indexed". Those pages
-  are a heading plus a list of links, so Google crawls them, finds nothing worth
-  keeping, and spends crawl budget that should go to posts. They now carry
-  noindex,follow (see _includes/head.html) and are left out of this file.
+  Generated tag, category and pagination pages carry noindex,follow (see
+  _includes/head.html), so they are deliberately left out of this file.
+  A sitemap is a discovery signal, not a guarantee of indexing.
   jekyll-sitemap skips generating its own when this file exists.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -17,14 +14,18 @@
     <loc>{{ '/' | absolute_url }}</loc>
   </url>
   {%- for post in site.posts %}
+  {%- unless post.sitemap == false %}
   <url>
     <loc>{{ post.url | absolute_url }}</loc>
     <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
   </url>
+  {%- endunless %}
   {%- endfor %}
   {%- for tab in site.tabs %}
+  {%- unless tab.sitemap == false %}
   <url>
     <loc>{{ tab.url | absolute_url }}</loc>
   </url>
+  {%- endunless %}
   {%- endfor %}
 </urlset>

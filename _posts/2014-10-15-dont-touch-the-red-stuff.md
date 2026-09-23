@@ -1,7 +1,7 @@
 ---
 title: "Don’t Touch the Red Stuff!"
 date: 2014-10-15
-categories: [DevBlog]
+categories: [devblog]
 tags: [Unity]
 description: "devscreen  This is a simple 1 day platformer I made to get back into the habit of daily programming. Ive been slacking and getting rusty lately, so..."
 image: "/assets/img/blog/wp/devscreen1.jpg"

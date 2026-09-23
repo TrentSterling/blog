@@ -1,7 +1,7 @@
 ---
 title: "GameDev Vlog #7"
 date: 2015-07-10
-categories: [DevBlog]
+categories: [devblog]
 tags: [Vlog]
 description: "A video log detailing what I’ve been up to lately regarding game development. This video is about my adventures with UNet and making a multiplayer..."
 image: "/assets/img/icon.jpg"

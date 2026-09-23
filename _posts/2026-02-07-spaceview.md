@@ -2,7 +2,7 @@
 title: "SpaceView: A SpaceMonger Clone in Rust"
 date: 2026-02-07
 categories: [devblog]
-tags: [Rust, egui, Disk Space, Visualization, Treemap, Open Source]
+tags: [Rust, egui, Disk Space, Visualization, Treemap, open-source]
 description: "I built a SpaceMonger-inspired disk space visualizer from scratch in Rust with egui. Squarified treemaps, live scanning, extension filtering, duplicate detection, and a 3.6 MB binary."
 image:
   path: /assets/img/blog/spaceview-neon.png
