@@ -1,67 +1,118 @@
 ---
-title: "PowerShell Manager — a system tray tool for arranging terminal windows into grids"
+title: "PowerShell Manager: my terminal pile finally has a layout"
 date: 2026-02-28
+last_modified_at: 2026-09-24
 categories: [Projects, Tools]
-tags: [Rust, egui, Windows, terminal, desktop-app, system-tray, win32, open-source]
-description: "A tiny Rust app that lives in your system tray and snaps PowerShell, Windows Terminal, and other terminals into grid layouts. Draggable weighted grids, 21 presets, headless CLI mode."
+tags: [Rust, egui, Windows, terminal, desktop-app, system-tray, win32]
+description: "Why I built a window arranger, and how it grew into weighted grids, manual terminal ordering and a ColorMagic Theme Studio. Updated for PowerShellManager 0.4.1."
+image:
+  path: https://tront.xyz/powershellmanager/media/og.png
+  alt: PowerShell Manager with its colorful layout workspace
 ---
 
-## The Problem
+**Updated September 24, 2026:** the original tool has a much better UI now. This is
+an update to the same post, with current screenshots and a new Windows download.
 
-I run a lot of terminal windows. PowerShell sessions, Windows Terminal tabs, the occasional cmd. They pile up and overlap each other. Every time I want to see multiple terminals side by side I'm manually dragging and resizing windows, trying to eyeball equal spacing. Windows Snap helps for 2-4 windows but falls apart when you want a 2x3 grid or an asymmetric layout.
+## Too many terminals, too much dragging
 
-I wanted something that sits in the tray, detects all my terminal windows, and snaps them into a grid with one click.
+I run a lot of terminal windows. PowerShell sessions, Windows Terminal windows,
+the occasional cmd. They pile up and overlap. Every time I want to see several
+side by side, I end up dragging and resizing them, trying to eyeball the spacing.
+Windows Snap helps, but I want a 3-by-2 grid sometimes. Other times I want one big
+workspace and a few smaller ones beside it.
 
-## What It Does
+I wanted a tray app that finds the windows and puts them where I want with one
+click. That became PowerShell Manager.
 
-PowerShell Manager is a system tray app built in Rust with egui. You run the exe, it drops into your system tray. Right-click the icon for a menu of 21 built-in layout presets. Left-click opens a GUI with a visual preview, detected windows list, and settings.
+The layout stuff was the good part from the start. The old UI really needed work.
+After giving [Trontop](https://tront.xyz/trontop/) its theme studio and visual pass,
+I wanted the same treatment here. Keep the useful grid tools. Make the rest of it
+something I actually like looking at.
 
-It detects windows from 14 terminal types: PowerShell, pwsh, Windows Terminal, cmd, Alacritty, WezTerm, Hyper, mintty, ConEmu, Tabby, Terminus, Kitty, Rio, and conhost.
+[![PowerShell Manager in the Electric theme](https://tront.xyz/powershellmanager/media/electric-workspace.png)](https://tront.xyz/powershellmanager/media/electric-workspace.png)
+_The actual app UI. Detected terminal windows come from my desktop; their titles are anonymized._
 
-### Layout Modes
+## The order should be my choice
 
-**Preset mode** gives you 21 built-in layouts: grids from 1x2 to 4x4, column/row splits, left-right, top-bottom, main-side (one big pane + stacked side panes), and focus (75/25 split with stacked side).
+I had a terminal working on Avatar hand grips that I wanted in slot 1. There was
+no good way to say that. Activity ranking is useful sometimes, but I also want to
+pick up a window in the list and put it first.
 
-**Custom Grid mode** lets you set any column/row count from 1-8 and then drag dividers between cells to create weighted layouts. Want the left column to be twice as wide as the right? Drag the divider. The preview shows live percentage labels (e.g. "67%x50%") so you know exactly what you're getting.
+Now each row has a small drag handle. Move a terminal up or down, see its slot
+number, and hit **Apply layout**. Dragging switches to manual order, so activity
+ranking does not quietly put it somewhere else again. The preview shows which
+window is going into each cell.
 
-**Cell toggling** — click any cell in the preview to disable it. Disabled cells are skipped when arranging, so you can leave gaps for other apps.
+Pins got an audit too. Pinning one Windows Terminal used to match the executable,
+which made the other terminals look pinned as well. That was a bug. A pin now
+reserves one window. Conflicting pins return windows to the queue with a warning;
+they do not silently lose them. Slot numbers stay attached to the grid when other
+cells are disabled.
 
-### Headless CLI
+## Keep the layout tools
 
-For scripting and hotkeys:
+There are 21 presets: regular grids, columns, rows, left/right splits, and larger
+main panes with smaller side panes. Custom grids go up to 8 columns by 8 rows.
+Drag a divider to give one workspace more room. Click a cell to leave it empty.
+Save a grid when it feels right.
 
-```bash
-powershellmanager.exe --headless 2x3
-powershellmanager.exe --headless columns:4
-powershellmanager.exe --headless main-side:3
-powershellmanager.exe --headless focus:4
-```
+Choose Terminals for the focused list, or All windows for editors, browsers and
+other apps. Pick the display and gap. Nothing moves while you edit the preview;
+Apply does the actual arrangement. Ctrl+Alt+G and the tray's current-layout action
+use the current settings too.
 
-Arranges windows and exits immediately. No GUI, no tray, just snap and done.
+The window itself can be much smaller now, with the scaling control still there.
+The list has clearer alternating rows, aligned actions and readable window titles.
 
-## The Tray Restore Bug
+## It gets to be pretty too
 
-One interesting bug: eframe (the egui desktop framework) stops calling `update()` when the window is hidden via `ViewportCommand::Visible(false)`. This means if you hide the app to the tray, the event loop stops, and tray click events queue up but never get processed. The window becomes permanently invisible.
+My theme studio idea is inspired by Discord's theme system. I want more than a
+single accent color. I want to push the intensity, control the frost, change the
+font and keep the text readable while the background gets ridiculous.
 
-The fix was moving tray event polling to a dedicated background thread that runs independently of eframe's render loop. The thread polls `MenuEvent` and `TrayIconEvent` receivers every 100ms and calls Win32 `ShowWindow(SW_SHOW)` + `ShowWindow(SW_RESTORE)` + `BringWindowToTop` + `SetForegroundWindow` directly when the user clicks the tray icon. Then it calls `ctx.request_repaint()` to wake up the eframe loop. The main `update()` function detects the window is visible again via `IsWindowVisible` and resumes drawing.
+ColorMagic generates palettes. The four gradient pips are draggable. There are
+controls for intensity, direction, frost, tint, text contrast, outlines, fonts and
+scale. Undoing a palette roll keeps your other adjustments. Save a theme, export
+its JSON, or share it with Trontop.
 
-This is the same pattern I used in [Device History](https://github.com/TrentSterling/device-history) — it seems to be the canonical workaround for tray apps built on eframe.
+[![ColorMagic and the gradient editor](https://tront.xyz/powershellmanager/media/electric-studio.png)](https://tront.xyz/powershellmanager/media/electric-studio.png)
 
-## Tech Stack
+[![The Spectrum theme](https://tront.xyz/powershellmanager/media/spectrum-workspace.png)](https://tront.xyz/powershellmanager/media/spectrum-workspace.png)
 
-- **Rust** (edition 2021) — the whole thing is one binary, no runtime
-- **egui/eframe** — immediate-mode GUI for the popup window
-- **tray-icon** + **winit** — system tray icon and context menu
-- **windows crate** — Win32 APIs for window enumeration (`EnumWindows`), positioning (`SetWindowPos`), process identification (`K32GetModuleFileNameExW`)
-- **TOML** — config persistence (~/.powershellmanager/config.toml)
-- **clap** — CLI argument parsing for headless mode
+[![The Daylight theme](https://tront.xyz/powershellmanager/media/daylight-workspace.png)](https://tront.xyz/powershellmanager/media/daylight-workspace.png)
 
-The release binary is about 9 MB. No installer needed — just download and run.
+The four-square logo fits what the app does. It follows the theme in the app and
+tray, with a dark and bright edge to keep it visible. My face is still in About.
+
+## A pass over the bits that can go wrong
+
+Before this release, the audit covered individual pins, pin collisions, disabled
+slots, refreshes, actual drag controls, malformed layouts and the tray's settings.
+It also caught the overlapping list rows and a hidden-window repaint issue in
+this version of eframe.
+
+The automated native tests create their own hidden windows and check where the
+placement code puts them. UI tests drive the actual egui controls without sending
+input to my desktop. That is useful evidence, not a promise that every Windows
+application or monitor setup behaves the same. Some apps enforce minimum sizes
+or reject positioning because of permissions. Broader mixed-DPI and clean-machine
+checks remain open. [The audit receipt lists the scope.](https://github.com/TrentSterling/powershellmanager/blob/master/docs/RELEASE_AUDIT_0.4.1.md)
 
 ## Download
 
-Grab the latest release from GitHub:
+[**Get PowerShell Manager for Windows**](https://tront.xyz/powershellmanager/#download)
 
-- [**Download powershellmanager.exe**](https://github.com/TrentSterling/powershellmanager/releases/latest)
-- [**Source on GitHub**](https://github.com/TrentSterling/powershellmanager)
-- [**Landing page**](https://tront.xyz/powershellmanager/)
+Extract the ZIP and run `powershellmanager.exe`. Quit an older copy from its tray
+menu first. Normal mode has Apply enabled; `--preview` is deliberately read-only.
+The build is unsigned, so Windows may show an unknown-publisher warning.
+
+For scripts, `powershellmanager.exe --headless 3x2` applies a layout immediately
+and exits. That is a real window-moving action, not a dry run.
+
+The [source is public](https://github.com/TrentSterling/powershellmanager). It uses
+the same Apache 2.0 plus Commons Clause terms as Trontop: free personal and work
+use, keep the credits, with restrictions on selling products or services based
+substantially on it. That makes it source available, not OSI open source.
+[Read the full terms.](https://github.com/TrentSterling/powershellmanager/blob/master/LICENSE)
+
+[More screenshots and downloadable themes are on the product page.](https://tront.xyz/powershellmanager/)
