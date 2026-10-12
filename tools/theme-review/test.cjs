@@ -44,3 +44,11 @@ test('posts, metadata, sidebar content and layout body remain untouched', () => 
   const sidebar = dir => fs.readFileSync(path.join(dir, '_includes/sidebar.html'), 'utf8').replace(/  {% unless site.theme_mode %}[\s\S]*?  {% endunless %}\n/, '');
   assert.equal(sidebar(root), sidebar(baseline), 'only the obsolete duplicate theme control is removed');
 });
+
+test('lazy comments guard remains valid after HTML compression removes line breaks', () => {
+  const html = fs.readFileSync(path.join(root, '_includes/comments/giscus.html'), 'utf8')
+    .replace(/{%-?\s*comment\s*-?%}[\s\S]*?{%-?\s*endcomment\s*-?%}/g, '')
+    .replace(/{{[\s\S]*?}}/g, 'placeholder');
+  const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
+  assert.doesNotThrow(() => new vm.Script(script.replace(/\n/g, ' ')));
+});
