@@ -135,4 +135,4 @@ html[data-tront-theme-surface="blog"] .error-glitch { color: var(--te-muted); op
 
 /* Sticky contents labels and post-navigation labels switch ink with their grounds. */
 html[data-tront-theme-surface="blog"] #toc-bar { transition-property: top, transform; }
-html[data-tront-theme-surface="blog"] .post-navigation .btn::before { color: var(--te-muted); transition-property: transform, box-shadow; }
+html[data-tront-theme-surface="blog"] .post-navigation :is(.btn, .btn:hover)::before { color: var(--te-muted); transition-property: transform, box-shadow; }
