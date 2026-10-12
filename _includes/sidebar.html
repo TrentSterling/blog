@@ -40,16 +40,6 @@
     </ul>
   </nav>
 
-  {% unless site.theme_mode %}
-  <!-- Theme Picker -->
-  <div id="theme-picker">
-    <button type="button" id="mode-toggle" aria-label="Switch Theme">
-      <span class="theme-icon">🌙</span>
-      <span class="theme-label">Dark</span>
-      <span class="theme-next">Next</span>
-    </button>
-  </div>
-  {% endunless %}
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     {% for entry in site.data.contact %}

@@ -88,8 +88,10 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ '/assets/css/:THEME.css' | replace: ':THEME', site.theme | relative_url }}">
 
-  <!-- TRONT custom themes -->
-  <link rel="stylesheet" href="{{ '/assets/css/tront-themes.css' | relative_url }}">
+  <!-- Same-origin shared ColorMagic editor and primary navigation. -->
+  <link rel="stylesheet" href="/assets/css/tront-theme-editor.css">
+  <link rel="stylesheet" href="/assets/css/tront-navbar.css">
+  <link rel="stylesheet" href="{{ '/assets/css/tront-theme-bridge.css' | relative_url }}">
 
   <!-- Web Font -->
   <link rel="stylesheet" href="{{ site.data.origin[type].webfonts | relative_url }}">
@@ -116,8 +118,10 @@
 
   <script src="{{ '/assets/js/dist/theme.min.js' | relative_url }}"></script>
 
-  <!-- TRONT theme cycler (must load after theme.min.js, before paint) -->
-  <script src="{{ '/assets/js/tront-theme.js' | relative_url }}"></script>
+  <!-- Apply the saved shared palette before paint, then synchronize Chirpy. -->
+  <script src="/assets/js/tront-system.js"></script>
+  <script src="/assets/js/tront-theme-editor.js"></script>
+  <script src="{{ '/assets/js/tront-theme-bridge.js' | relative_url }}"></script>
 
   {% include js-selector.html lang=lang %}
 
