@@ -31,8 +31,8 @@ html[data-tront-theme-surface="blog"] {
     --highlighter-rouge-color: var(--te-accent);
     --input-focus-border-color: var(--te-accent);
     --checkbox-checked-color: var(--te-accent);
-    --main-bg: var(--te-bg);
-    --sidebar-bg: var(--te-panel);
+    --main-bg: color-mix(in srgb, var(--te-bg) 94%, var(--te-accent));
+    --sidebar-bg: color-mix(in srgb, var(--te-panel) 97%, var(--te-accent));
     --topbar-bg: var(--te-panel);
     --highlight-bg-color: var(--te-panel);
     --card-bg: var(--te-panel);
@@ -105,7 +105,9 @@ html[data-tront-theme-surface="blog"] #main-wrapper :is(h1, h2) {
     background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 html[data-tront-theme-surface="blog"] #sidebar #avatar > img { border: 2px solid var(--te-line); box-shadow: 0 0 16px color-mix(in srgb, var(--te-accent) 24%, transparent); }
-html[data-tront-theme-surface="blog"] .card { background: var(--te-panel-fill); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--te-line); }
+html[data-tront-theme-surface="blog"] .card { background: color-mix(in srgb, var(--te-panel-fill) 98%, var(--te-accent)); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--te-line); }
 html[data-tront-theme-surface="blog"] .card:hover { border-color: var(--te-accent); box-shadow: 0 0 24px color-mix(in srgb, var(--te-accent) 24%, transparent); }
 html[data-tront-theme-surface="blog"] #sidebar .nav-item.active .nav-link { text-shadow: 0 0 10px color-mix(in srgb, var(--te-accent) 24%, transparent); }
 html[data-tront-theme-surface="blog"] :is(.btn, .page-link, .post-preview):is(:hover, :focus) { text-decoration: none; }
+/* Change ink/grounds together; keep interaction motion without color tweening. */
+html[data-tront-theme-surface="blog"] :is(a, button, input, .page-link) { transition-property: transform, box-shadow; }

@@ -48,13 +48,13 @@ async function contrast(page) {
     page.on('response', response => { if (response.url().startsWith(url) && /\.(css|js)(\?|$)/.test(response.url()) && response.status() >= 400) missing.push(response.url()); });
     await page.route('**/*', route => {
       const u = new URL(route.request().url());
-      if (u.hostname === '127.0.0.1' || ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com'].includes(u.hostname)) return route.continue();
+      if ((route.request().resourceType() === 'image' && u.hostname === 'tront.xyz') || u.hostname === '127.0.0.1' || ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com'].includes(u.hostname)) return route.continue();
       return route.fulfill({ status: 200, contentType: 'text/javascript', body: '' });
     });
     const baselineContext = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
     await baselineContext.route('**/*', route => {
       const u = new URL(route.request().url());
-      return u.hostname === '127.0.0.1' || ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com'].includes(u.hostname) ? route.continue() : route.fulfill({ status: 200, body: '' });
+      return (route.request().resourceType() === 'image' && u.hostname === 'tront.xyz') || u.hostname === '127.0.0.1' || ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com'].includes(u.hostname) ? route.continue() : route.fulfill({ status: 200, body: '' });
     });
     const baseline = await baselineContext.newPage();
     baseline.on('pageerror', error => errors.push('baseline: ' + error.message));
