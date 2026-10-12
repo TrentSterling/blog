@@ -118,7 +118,7 @@ async function contrast(page) {
         const mode = preset === 'light' ? 'light' : 'dark';
         await page.waitForFunction(mode => document.documentElement.getAttribute('data-mode') === mode && sessionStorage.getItem('mode') === mode, mode);
         await page.locator('[data-action="close"]').click(); await contrast(page);
-        const proseLink = page.locator('.content a:not(.img-link):not(.popup)').first();
+        const proseLink = page.locator('.content a:not(.img-link):not(.popup):not(.anchor):visible').first();
         if (await proseLink.count()) { await proseLink.hover(); await contrast(page); await page.mouse.move(0, 0); }
         await page.locator('#tront-theme-btn').click();
       }
