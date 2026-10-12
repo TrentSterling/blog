@@ -89,17 +89,26 @@ async function contrast(page) {
     await page.evaluate(() => { localStorage.setItem('tront-theme', 'tront-purple'); localStorage.setItem('tront-previews-paused', 'true'); });
     const firstPost = await page.locator('#post-list .post-preview').first().getAttribute('href');
     assert.ok(firstPost.startsWith('/blog/posts/'));
+    const tabRoutes = await page.locator('#sidebar .nav-link').evaluateAll(links => links.map(a => a.getAttribute('href')).filter(h => h && h.startsWith('/blog/') && h !== '/blog/'));
+    const paginationRoute = await page.locator('.pagination a[href]:not([href="/blog/"])').first().getAttribute('href');
+    const taxonomyRoutes = ['tags', 'categories'].map(kind => {
+      const dir = fs.readdirSync(path.join(root, 'blog', kind), { withFileTypes: true }).find(e => e.isDirectory());
+      assert.ok(dir, 'generated ' + kind + ' route exists'); return '/blog/' + kind + '/' + dir.name + '/';
+    });
     let codePost;
+    const textCoverage = [];
     for (const entry of fs.readdirSync(path.join(root, 'blog/posts'), { withFileTypes: true })) {
       if (!entry.isDirectory()) continue;
       const file = path.join(root, 'blog/posts', entry.name, 'index.html');
-      if (fs.existsSync(file) && /class="highlight"/.test(fs.readFileSync(file, 'utf8'))) { codePost = '/blog/posts/' + entry.name + '/'; break; }
+      if (fs.existsSync(file) && /class="highlight"/.test(fs.readFileSync(file, 'utf8')) && /<code[^>]*class="[^"]*highlighter-rouge/.test(fs.readFileSync(file, 'utf8'))) { codePost = '/blog/posts/' + entry.name + '/'; break; }
     }
     assert.ok(codePost, 'a built post with code is available for contrast coverage');
-    for (const route of [...new Set(['/blog/', firstPost, codePost])]) {
+    const routes = [...new Set(['/blog/', firstPost, codePost, '/blog/404.html', paginationRoute, ...tabRoutes, ...taxonomyRoutes])];
+    for (const route of routes) {
       await page.goto(url + route, { waitUntil: 'networkidle' });
       assert.equal(await page.locator('html').getAttribute('data-tront-theme-surface'), 'blog');
       assert.equal(await page.locator('#mode-toggle').count(), 0);
+      textCoverage.push({ route, inlineCode: await page.locator('.content code:not(.highlight code)').count(), codeBlocks: await page.locator('.highlight').count() });
       assert.deepEqual(await page.locator('#magic-navbar-container a').evaluateAll(links => links.map(a => a.getAttribute('href'))), ['/discord/', '/blog/', '/games/', '/']);
       await page.locator('#tront-theme-btn').click();
       assert.equal(await page.locator('[data-peg-row]:visible').count(), 4);
@@ -108,7 +117,10 @@ async function contrast(page) {
         await page.selectOption('[name="preset"]', preset); await contrast(page);
         const mode = preset === 'light' ? 'light' : 'dark';
         await page.waitForFunction(mode => document.documentElement.getAttribute('data-mode') === mode && sessionStorage.getItem('mode') === mode, mode);
-        await page.locator('[data-action="close"]').click(); await contrast(page); await page.locator('#tront-theme-btn').click();
+        await page.locator('[data-action="close"]').click(); await contrast(page);
+        const proseLink = page.locator('.content a:not(.img-link):not(.popup)').first();
+        if (await proseLink.count()) { await proseLink.hover(); await contrast(page); await page.mouse.move(0, 0); }
+        await page.locator('#tront-theme-btn').click();
       }
       await page.selectOption('[name="preset"]', 'dark');
       if (route === '/blog/' || route === firstPost) await page.screenshot({ path: path.join(out, (route === '/blog/' ? 'blog-home' : 'blog-post') + '-editor-desktop-dark.png') });
@@ -119,6 +131,7 @@ async function contrast(page) {
       await page.keyboard.press('Escape');
       assert.equal(await page.locator('#tront-theme-btn').evaluate(el => el === document.activeElement), true);
       if (route === '/blog/' || route === firstPost) await page.screenshot({ path: path.join(out, (route === '/blog/' ? 'blog-home' : 'blog-post') + '-desktop-dark.png') });
+      if (route !== '/blog/' && route !== firstPost && route !== codePost) await page.screenshot({ path: path.join(out, 'child-' + route.replace(/[^a-z0-9]+/gi, '-') + '-desktop-dark.png') });
       const saved = await page.evaluate(() => localStorage.getItem('tront-theme-editor-v1'));
       await page.reload(); assert.equal(await page.evaluate(() => localStorage.getItem('tront-theme-editor-v1')), saved);
       for (const width of [320, 360, 390, 768]) {
@@ -159,11 +172,12 @@ async function contrast(page) {
     await page.locator('#mask').click();
     assert.equal(await page.locator('body').getAttribute('sidebar-display'), null);
     assert.deepEqual(await page.evaluate(() => [localStorage.getItem('tront-theme'), localStorage.getItem('tront-previews-paused')]), ['tront-purple', 'true']);
+    assert.ok(textCoverage.some(x => x.inlineCode > 0 && x.codeBlocks > 0), 'rendered contrast audit includes actual inline code and syntax blocks');
     fs.writeFileSync(path.join(out, 'blog-contrast-report.json'), JSON.stringify(contrastFailures, null, 2));
     assert.deepEqual(contrastFailures, [], 'rendered blog text stays readable across every route and preset');
     assert.deepEqual(missing, [], 'same-origin theme and blog scripts/styles load');
     assert.deepEqual(errors, [], 'no page JavaScript errors');
-    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, routes: ['/blog/', firstPost, codePost], presets: 6, widths: [320, 360, 390, 768, 1440], search: 'passed', sidebar: 'passed', errors, missing }, null, 2));
+    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, textCoverage, routes, presets: 6, widths: [320, 360, 390, 768, 1440], search: 'passed', sidebar: 'passed', errors, missing }, null, 2));
     console.log('PASS: blog build, shared navbar/editor, presets, post/code contrast, keyboard, mobile, persistence, search and sidebar.');
   } catch (error) {
     if (page) { fs.writeFileSync(path.join(out, 'blog-browser-failure.json'), JSON.stringify({ error: error.message, url: page.url() }, null, 2)); await page.screenshot({ path: path.join(out, 'blog-browser-failure.png') }); }

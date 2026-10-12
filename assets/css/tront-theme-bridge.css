@@ -1,5 +1,8 @@
 /* Chirpy 7.2.4 token bridge. Article text, layout, links and post files are unchanged. */
 html[data-tront-theme-surface="blog"] {
+    --tront-accent: var(--te-accent);
+    --tront-accent-secondary: var(--te-secondary);
+    --tront-accent-glow: color-mix(in srgb, var(--te-accent) 24%, transparent);
     --text-color: var(--te-ink);
     --heading-color: var(--te-ink);
     --kbd-text-color: var(--te-ink);
@@ -122,3 +125,10 @@ html[data-tront-theme-surface="blog"] #sidebar :is(.site-title, .sidebar-bottom 
 /* Preserve caption/disabled-navigation roles without fixed gray ink. */
 html[data-tront-theme-surface="blog"] .content :is(img, .popup, video) + em,
 html[data-tront-theme-surface="blog"] .post-navigation .btn.disabled { color: var(--te-muted); }
+
+/* Chirpy's prose-link hover uses fixed orange; keep its underline with safe ink. */
+html[data-tront-theme-surface="blog"] :is(.content, .post-meta, .post-tags, footer) a:hover { color: var(--te-accent) !important; border-bottom-color: var(--te-accent); }
+
+/* The inherited blog 404 keeps its composition and readable action labels. */
+html[data-tront-theme-surface="blog"] .error-actions a.primary { background: var(--te-button); color: var(--te-ink); }
+html[data-tront-theme-surface="blog"] .error-glitch { color: var(--te-muted); opacity: 1; }
