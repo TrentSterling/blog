@@ -118,3 +118,7 @@ html[data-tront-theme-surface="blog"] :is(.btn, .page-link, .post-preview):is(:h
 /* Change ink/grounds together; keep interaction motion without color tweening. */
 html[data-tront-theme-surface="blog"] :is(a, button, input, .page-link),
 html[data-tront-theme-surface="blog"] #sidebar :is(.site-title, .sidebar-bottom a) { transition-property: transform, box-shadow; }
+
+/* Preserve caption/disabled-navigation roles without fixed gray ink. */
+html[data-tront-theme-surface="blog"] .content :is(img, .popup, video) + em,
+html[data-tront-theme-surface="blog"] .post-navigation .btn.disabled { color: var(--te-muted); }

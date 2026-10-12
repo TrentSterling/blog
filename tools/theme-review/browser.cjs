@@ -121,7 +121,7 @@ async function contrast(page) {
       if (route === '/blog/' || route === firstPost) await page.screenshot({ path: path.join(out, (route === '/blog/' ? 'blog-home' : 'blog-post') + '-desktop-dark.png') });
       const saved = await page.evaluate(() => localStorage.getItem('tront-theme-editor-v1'));
       await page.reload(); assert.equal(await page.evaluate(() => localStorage.getItem('tront-theme-editor-v1')), saved);
-      for (const width of [320, 390, 768]) {
+      for (const width of [320, 360, 390, 768]) {
         await page.setViewportSize({ width, height: 844 });
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, 'blog does not overflow horizontally');
         assert.equal(await page.locator('#magic-navbar-container').evaluate(nav => [...nav.children].every(el => { const r = el.getBoundingClientRect(); return r.left >= 0 && r.right <= innerWidth; })), true, 'primary navbar fits');
@@ -140,7 +140,19 @@ async function contrast(page) {
     const resultHref = await page.locator('#search-results article h2 a').first().getAttribute('href');
     assert.ok(resultHref.includes('/blog/posts/'));
     await page.locator('#search-input').fill(''); await page.locator('#search-input').press('Backspace');
+    assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, 'clearing desktop search restores content');
     await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(url + '/blog/');
+    await page.locator('#search-trigger').click();
+    await page.locator('#search-input').fill('Tronto'); await page.locator('#search-input').press('p');
+    await page.locator('#search-results article').first().waitFor();
+    await page.locator('#search-cancel').click();
+    assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, 'mobile Cancel restores content');
+    assert.equal(await page.locator('#sidebar-trigger').isVisible(), true);
+    await page.locator('#post-list .post-preview').first().click();
+    await page.waitForURL('**' + firstPost);
+    assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, 'post navigation starts with search closed');
+    assert.equal(await page.locator('#search-input').inputValue(), '');
     await page.goto(url + '/blog/');
     await page.locator('#sidebar-trigger').click();
     assert.equal(await page.locator('body').getAttribute('sidebar-display'), '');
@@ -151,7 +163,7 @@ async function contrast(page) {
     assert.deepEqual(contrastFailures, [], 'rendered blog text stays readable across every route and preset');
     assert.deepEqual(missing, [], 'same-origin theme and blog scripts/styles load');
     assert.deepEqual(errors, [], 'no page JavaScript errors');
-    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, routes: ['/blog/', firstPost, codePost], presets: 6, widths: [320, 390, 768, 1440], search: 'passed', sidebar: 'passed', errors, missing }, null, 2));
+    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, routes: ['/blog/', firstPost, codePost], presets: 6, widths: [320, 360, 390, 768, 1440], search: 'passed', sidebar: 'passed', errors, missing }, null, 2));
     console.log('PASS: blog build, shared navbar/editor, presets, post/code contrast, keyboard, mobile, persistence, search and sidebar.');
   } catch (error) {
     if (page) { fs.writeFileSync(path.join(out, 'blog-browser-failure.json'), JSON.stringify({ error: error.message, url: page.url() }, null, 2)); await page.screenshot({ path: path.join(out, 'blog-browser-failure.png') }); }
