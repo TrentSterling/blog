@@ -95,6 +95,12 @@ html[data-tront-theme-surface="blog"] .highlight :is(.s, .sb, .sc, .dl, .sd, .s2
 html[data-tront-theme-surface="blog"] .highlight :is(.o, .ow, .p, .pi) { color: var(--te-ink); }
 html[data-tront-theme-surface="blog"] .highlight :is(.na, .gh) { color: var(--te-blue); background-color: transparent; }
 html[data-tront-theme-surface="blog"] .highlight :is(.err, .gd, .si, .se) { color: var(--te-red); background-color: var(--te-elem); }
+/* Complete Rouge token coverage, including classes only emitted in light mode. */
+html[data-tront-theme-surface="blog"] .highlight :is(.nb, .bp, .ne, .nl, .py, .nv, .vc, .vg, .vi, .vm, .l, .ld) { color: var(--te-orange); }
+html[data-tront-theme-surface="blog"] .highlight :is(.nd, .nf, .fm, .gu) { color: var(--te-secondary); }
+html[data-tront-theme-surface="blog"] .highlight :is(.gl, .gt) { color: var(--te-muted); }
+html[data-tront-theme-surface="blog"] .highlight :is(.ni, .ge, .gs, .gr) { color: var(--te-ink); }
+html[data-tront-theme-surface="blog"] .highlight .gi { background-color: var(--te-elem); }
 html[data-tront-theme-surface="blog"] input::placeholder { color: var(--te-muted); opacity: 1; }
 
 /* Keep Chirpy's reading canvas and its custom accent/material roles. */
@@ -110,4 +116,5 @@ html[data-tront-theme-surface="blog"] .card:hover { border-color: var(--te-accen
 html[data-tront-theme-surface="blog"] #sidebar .nav-item.active .nav-link { text-shadow: 0 0 10px color-mix(in srgb, var(--te-accent) 24%, transparent); }
 html[data-tront-theme-surface="blog"] :is(.btn, .page-link, .post-preview):is(:hover, :focus) { text-decoration: none; }
 /* Change ink/grounds together; keep interaction motion without color tweening. */
-html[data-tront-theme-surface="blog"] :is(a, button, input, .page-link) { transition-property: transform, box-shadow; }
+html[data-tront-theme-surface="blog"] :is(a, button, input, .page-link),
+html[data-tront-theme-surface="blog"] #sidebar :is(.site-title, .sidebar-bottom a) { transition-property: transform, box-shadow; }

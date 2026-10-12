@@ -19,6 +19,7 @@ const createServer = root => http.createServer((req, res) => {
 });
 const server = createServer(root);
 const baselineServer = createServer(path.resolve('_baseline'));
+const contrastFailures = [];
 async function contrast(page) {
   const failed = await page.evaluate(() => {
     const api = window.TrontThemeEditor;
@@ -29,10 +30,10 @@ async function contrast(page) {
       if (!box.width || !box.height || css.visibility === 'hidden' || Number(css.opacity) === 0) return [];
       const rgb = css.color.match(/[\d.]+/g)?.slice(0, 3).map(Number);
       const ratio = rgb && api.contrast(rgb, bound);
-      return ratio >= 4.5 ? [] : [{ tag: el.tagName, class: el.className, text: el.textContent.trim().slice(0, 55), color: css.color, ratio }];
+      return ratio >= 4.5 ? [] : [{ tag: el.tagName, class: el.className, text: el.textContent.trim().slice(0, 55), color: css.color, ratio, transition: css.transitionProperty, mode: document.documentElement.getAttribute('data-te-mode'), accent: getComputedStyle(document.documentElement).getPropertyValue('--te-accent') }];
     });
   });
-  assert.deepEqual(failed, [], 'rendered blog text stays readable');
+  if (failed.length) contrastFailures.push({ url: page.url(), failures: failed });
 }
 (async () => {
   let browser, page;
@@ -146,6 +147,8 @@ async function contrast(page) {
     await page.locator('#mask').click();
     assert.equal(await page.locator('body').getAttribute('sidebar-display'), null);
     assert.deepEqual(await page.evaluate(() => [localStorage.getItem('tront-theme'), localStorage.getItem('tront-previews-paused')]), ['tront-purple', 'true']);
+    fs.writeFileSync(path.join(out, 'blog-contrast-report.json'), JSON.stringify(contrastFailures, null, 2));
+    assert.deepEqual(contrastFailures, [], 'rendered blog text stays readable across every route and preset');
     assert.deepEqual(missing, [], 'same-origin theme and blog scripts/styles load');
     assert.deepEqual(errors, [], 'no page JavaScript errors');
     fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, routes: ['/blog/', firstPost, codePost], presets: 6, widths: [320, 390, 768, 1440], search: 'passed', sidebar: 'passed', errors, missing }, null, 2));
