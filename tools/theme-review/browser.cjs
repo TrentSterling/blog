@@ -14,7 +14,8 @@ const createServer = root => http.createServer((req, res) => {
     let file = path.resolve(root, '.' + filePath);
     if (file !== root && !file.startsWith(root + path.sep)) { res.writeHead(403); return res.end(); }
     if (fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
-    res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream' }); fs.createReadStream(file).pipe(res);
+    const body = fs.readFileSync(file); // Missing directory indexes must return 404, not crash the server.
+    res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream' }); res.end(body);
   } catch { res.writeHead(404); res.end('Not found'); }
 });
 const server = createServer(root);
@@ -90,7 +91,8 @@ async function contrast(page) {
     const firstPost = await page.locator('#post-list .post-preview').first().getAttribute('href');
     assert.ok(firstPost.startsWith('/blog/posts/'));
     const tabRoutes = await page.locator('#sidebar .nav-link').evaluateAll(links => links.map(a => a.getAttribute('href')).filter(h => h && h.startsWith('/blog/') && h !== '/blog/'));
-    const paginationRoute = await page.locator('.pagination a[href]:not([href="/blog/"])').first().getAttribute('href');
+    const paginationRoute = await page.locator('.pagination .page-item:not(.disabled) a[href^="/blog/"]:not([href="/blog/"])').first().getAttribute('href');
+    assert.ok(paginationRoute?.startsWith('/blog/'), 'exercise a real pagination route, excluding disabled # arrows');
     const taxonomyRoutes = ['tags', 'categories'].map(kind => {
       const dir = fs.readdirSync(path.join(root, 'blog', kind), { withFileTypes: true }).find(e => e.isDirectory());
       assert.ok(dir, 'generated ' + kind + ' route exists'); return '/blog/' + kind + '/' + dir.name + '/';
@@ -105,7 +107,8 @@ async function contrast(page) {
     assert.ok(codePost, 'a built post with code is available for contrast coverage');
     const routes = [...new Set(['/blog/', firstPost, codePost, '/blog/404.html', paginationRoute, ...tabRoutes, ...taxonomyRoutes])];
     for (const route of routes) {
-      await page.goto(url + route, { waitUntil: 'networkidle' });
+      const response = await page.goto(url + route, { waitUntil: 'networkidle' });
+      assert.equal(response.status(), 200, 'built route loads: ' + route);
       assert.equal(await page.locator('html').getAttribute('data-tront-theme-surface'), 'blog');
       assert.equal(await page.locator('#mode-toggle').count(), 0);
       textCoverage.push({ route, inlineCode: await page.locator('.content code:not(.highlight code)').count(), codeBlocks: await page.locator('.highlight').count() });
