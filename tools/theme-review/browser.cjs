@@ -57,6 +57,8 @@ async function contrast(page) {
       return u.hostname === '127.0.0.1' || ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com'].includes(u.hostname) ? route.continue() : route.fulfill({ status: 200, body: '' });
     });
     const baseline = await baselineContext.newPage();
+    baseline.on('pageerror', error => errors.push('baseline: ' + error.message));
+    baseline.on('response', response => { if (response.url().startsWith(baselineUrl) && /\.(css|js)(\?|$)/.test(response.url()) && response.status() >= 400) missing.push(response.url()); });
     await baseline.goto(baselineUrl + '/blog/', { waitUntil: 'networkidle' });
     await baseline.evaluate(() => localStorage.setItem('tront-theme', 'tront-purple'));
     await baseline.reload({ waitUntil: 'networkidle' });
@@ -72,6 +74,8 @@ async function contrast(page) {
     const comparisons = [];
     for (const width of [1440, 390]) {
       await page.setViewportSize({ width, height: 1000 }); await baseline.setViewportSize({ width, height: 1000 });
+      // Resize triggers Chirpy's existing sidebar transition; compare settled layouts.
+      await Promise.all([page.waitForTimeout(500), baseline.waitForTimeout(500)]);
       const before = await composition(baseline), after = await composition(page);
       assert.deepEqual(after, before, 'Chirpy reading canvas, sidebar/card geometry, gradient headings and glass materials remain page-specific');
       await baseline.screenshot({ path: path.join(out, `blog-baseline-${width}.png`) });
