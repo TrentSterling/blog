@@ -8,7 +8,7 @@ const root = path.resolve(process.env.BLOG_SITE_ROOT || '_site');
 const out = path.resolve(process.env.BLOG_SCREENSHOTS || '.local/theme-review');
 fs.mkdirSync(out, { recursive: true });
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.woff2': 'font/woff2' };
-const server = http.createServer((req, res) => {
+const createServer = root => http.createServer((req, res) => {
   try {
     const filePath = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     let file = path.resolve(root, '.' + filePath);
@@ -17,6 +17,8 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream' }); fs.createReadStream(file).pipe(res);
   } catch { res.writeHead(404); res.end('Not found'); }
 });
+const server = createServer(root);
+const baselineServer = createServer(path.resolve('_baseline'));
 async function contrast(page) {
   const failed = await page.evaluate(() => {
     const api = window.TrontThemeEditor;
@@ -37,6 +39,8 @@ async function contrast(page) {
   try {
     await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
     const url = `http://127.0.0.1:${server.address().port}`;
+    await new Promise(resolve => baselineServer.listen(0, '127.0.0.1', resolve));
+    const baselineUrl = `http://127.0.0.1:${baselineServer.address().port}`;
     browser = await chromium.launch({ headless: true, executablePath: process.env.THEME_BROWSER_EXECUTABLE || undefined });
     page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
     const errors = [], missing = [];
@@ -47,6 +51,35 @@ async function contrast(page) {
       if (u.hostname === '127.0.0.1' || ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com'].includes(u.hostname)) return route.continue();
       return route.fulfill({ status: 200, contentType: 'text/javascript', body: '' });
     });
+    const baselineContext = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+    await baselineContext.route('**/*', route => {
+      const u = new URL(route.request().url());
+      return u.hostname === '127.0.0.1' || ['cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com', 'cdnjs.cloudflare.com'].includes(u.hostname) ? route.continue() : route.fulfill({ status: 200, body: '' });
+    });
+    const baseline = await baselineContext.newPage();
+    await baseline.goto(baselineUrl + '/blog/', { waitUntil: 'networkidle' });
+    await baseline.evaluate(() => localStorage.setItem('tront-theme', 'tront-purple'));
+    await baseline.reload({ waitUntil: 'networkidle' });
+    const composition = p => p.evaluate(() => ({
+      bodyImage: getComputedStyle(document.body).backgroundImage,
+      panels: ['main', '#sidebar', '#post-list', '#post-list .card'].map(selector => { const el = document.querySelector(selector), r = el.getBoundingClientRect(), s = getComputedStyle(el); return { selector, x: r.x, width: r.width, radius: s.borderRadius, font: s.fontFamily }; }),
+      titles: [...document.querySelectorAll('#post-list .card-title')].map(el => el.textContent),
+      cardBlur: getComputedStyle(document.querySelector('#post-list .card')).backdropFilter,
+      headingGradient: getComputedStyle(document.querySelector('#post-list h1')).backgroundImage.includes('linear-gradient')
+    }));
+    await page.goto(url + '/blog/', { waitUntil: 'networkidle' });
+    await page.locator('#tront-theme-btn').click(); await page.selectOption('[name="preset"]', 'purple'); await page.keyboard.press('Escape');
+    const comparisons = [];
+    for (const width of [1440, 390]) {
+      await page.setViewportSize({ width, height: 1000 }); await baseline.setViewportSize({ width, height: 1000 });
+      const before = await composition(baseline), after = await composition(page);
+      assert.deepEqual(after, before, 'Chirpy reading canvas, sidebar/card geometry, gradient headings and glass materials remain page-specific');
+      await baseline.screenshot({ path: path.join(out, `blog-baseline-${width}.png`) });
+      await page.screenshot({ path: path.join(out, `blog-themed-${width}.png`) });
+      comparisons.push({ width, before, after });
+    }
+    await baselineContext.close();
+    await page.setViewportSize({ width: 1440, height: 1000 });
     await page.goto(url + '/blog/', { waitUntil: 'networkidle' });
     await page.evaluate(() => { localStorage.setItem('tront-theme', 'tront-purple'); localStorage.setItem('tront-previews-paused', 'true'); });
     const firstPost = await page.locator('#post-list .post-preview').first().getAttribute('href');
@@ -111,10 +144,10 @@ async function contrast(page) {
     assert.deepEqual(await page.evaluate(() => [localStorage.getItem('tront-theme'), localStorage.getItem('tront-previews-paused')]), ['tront-purple', 'true']);
     assert.deepEqual(missing, [], 'same-origin theme and blog scripts/styles load');
     assert.deepEqual(errors, [], 'no page JavaScript errors');
-    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', routes: ['/blog/', firstPost, codePost], presets: 6, widths: [320, 390, 768, 1440], search: 'passed', sidebar: 'passed', errors, missing }, null, 2));
+    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, routes: ['/blog/', firstPost, codePost], presets: 6, widths: [320, 390, 768, 1440], search: 'passed', sidebar: 'passed', errors, missing }, null, 2));
     console.log('PASS: blog build, shared navbar/editor, presets, post/code contrast, keyboard, mobile, persistence, search and sidebar.');
   } catch (error) {
     if (page) { fs.writeFileSync(path.join(out, 'blog-browser-failure.json'), JSON.stringify({ error: error.message, url: page.url() }, null, 2)); await page.screenshot({ path: path.join(out, 'blog-browser-failure.png') }); }
     throw error;
-  } finally { if (browser) await browser.close(); await new Promise(resolve => server.close(resolve)); }
+  } finally { if (browser) await browser.close(); await new Promise(resolve => server.close(resolve)); await new Promise(resolve => baselineServer.close(resolve)); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

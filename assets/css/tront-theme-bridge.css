@@ -31,7 +31,7 @@ html[data-tront-theme-surface="blog"] {
     --highlighter-rouge-color: var(--te-accent);
     --input-focus-border-color: var(--te-accent);
     --checkbox-checked-color: var(--te-accent);
-    --main-bg: var(--te-panel);
+    --main-bg: var(--te-bg);
     --sidebar-bg: var(--te-panel);
     --topbar-bg: var(--te-panel);
     --highlight-bg-color: var(--te-panel);
@@ -96,3 +96,16 @@ html[data-tront-theme-surface="blog"] .highlight :is(.o, .ow, .p, .pi) { color: 
 html[data-tront-theme-surface="blog"] .highlight :is(.na, .gh) { color: var(--te-blue); background-color: transparent; }
 html[data-tront-theme-surface="blog"] .highlight :is(.err, .gd, .si, .se) { color: var(--te-red); background-color: var(--te-elem); }
 html[data-tront-theme-surface="blog"] input::placeholder { color: var(--te-muted); opacity: 1; }
+
+/* Keep Chirpy's reading canvas and its custom accent/material roles. */
+html[data-tront-theme-editor][data-tront-theme-surface="blog"] body { background-color: var(--main-bg); background-image: none; }
+html[data-tront-theme-surface="blog"] .pagination .page-item.disabled .page-link { color: var(--te-muted); }
+html[data-tront-theme-surface="blog"] #main-wrapper :is(h1, h2) {
+    background-image: linear-gradient(135deg in srgb, var(--te-accent), var(--te-secondary));
+    background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+html[data-tront-theme-surface="blog"] #sidebar #avatar > img { border: 2px solid var(--te-line); box-shadow: 0 0 16px color-mix(in srgb, var(--te-accent) 24%, transparent); }
+html[data-tront-theme-surface="blog"] .card { background: var(--te-panel-fill); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--te-line); }
+html[data-tront-theme-surface="blog"] .card:hover { border-color: var(--te-accent); box-shadow: 0 0 24px color-mix(in srgb, var(--te-accent) 24%, transparent); }
+html[data-tront-theme-surface="blog"] #sidebar .nav-item.active .nav-link { text-shadow: 0 0 10px color-mix(in srgb, var(--te-accent) 24%, transparent); }
+html[data-tront-theme-surface="blog"] :is(.btn, .page-link, .post-preview):is(:hover, :focus) { text-decoration: none; }
