@@ -46,8 +46,9 @@
           }
         };
 
-        const giscus =
-          document.getElementsByClassName('giscus-frame')[0].contentWindow;
+        const frame = document.getElementsByClassName('giscus-frame')[0];
+        if (!frame) return; // Theme changes can happen before lazy comments load.
+        const giscus = frame.contentWindow;
         giscus.postMessage({ giscus: message }, 'https://giscus.app');
       }
     });

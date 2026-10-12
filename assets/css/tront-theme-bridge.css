@@ -1,0 +1,98 @@
+/* Chirpy 7.2.4 token bridge. Article text, layout, links and post files are unchanged. */
+html[data-tront-theme-surface="blog"] {
+    --text-color: var(--te-ink);
+    --heading-color: var(--te-ink);
+    --kbd-text-color: var(--te-ink);
+    --code-color: var(--te-ink);
+    --prompt-text-color: var(--te-ink);
+    --topbar-text-color: var(--te-ink);
+    --post-list-text-color: var(--te-ink);
+    --btn-patinator-text-color: var(--te-ink);
+    --filepath-text-color: var(--te-ink);
+    --text-muted-color: var(--te-muted);
+    --text-muted-highlight-color: var(--te-muted);
+    --label-color: var(--te-muted);
+    --blockquote-text-color: var(--te-muted);
+    --site-subtitle-color: var(--te-muted);
+    --sidebar-muted-color: var(--te-muted);
+    --search-icon-color: var(--te-muted);
+    --btn-share-color: var(--te-muted);
+    --highlight-lineno-color: var(--te-muted);
+    --code-header-text-color: var(--te-muted);
+    --code-header-muted-color: var(--te-muted);
+    --code-header-icon-color: var(--te-muted);
+    --link-color: var(--te-accent);
+    --sidebar-active-color: var(--te-accent);
+    --sidebar-btn-color: var(--te-accent);
+    --site-title-color: var(--te-accent);
+    --toc-highlight: var(--te-accent);
+    --btn-share-hover-color: var(--te-accent);
+    --categories-icon-hover-color: var(--te-accent);
+    --highlighter-rouge-color: var(--te-accent);
+    --input-focus-border-color: var(--te-accent);
+    --checkbox-checked-color: var(--te-accent);
+    --main-bg: var(--te-panel);
+    --sidebar-bg: var(--te-panel);
+    --topbar-bg: var(--te-panel);
+    --highlight-bg-color: var(--te-panel);
+    --card-bg: var(--te-panel);
+    --mask-bg: var(--te-panel);
+    --button-bg: var(--te-elem);
+    --sidebar-btn-bg: var(--te-elem);
+    --card-header-bg: var(--te-elem);
+    --tag-hover: var(--te-elem);
+    --search-tag-bg: var(--te-elem);
+    --inline-code-bg: var(--te-elem);
+    --kbd-bg-color: var(--te-elem);
+    --tb-even-bg: var(--te-elem);
+    --prompt-tip-bg: var(--te-elem);
+    --prompt-info-bg: var(--te-elem);
+    --prompt-warning-bg: var(--te-elem);
+    --prompt-danger-bg: var(--te-elem);
+    --sidebar-hover-bg: var(--te-hover);
+    --card-hover-bg: var(--te-hover);
+    --card-hovor-bg: var(--te-hover);
+    --categories-hover-bg: var(--te-hover);
+    --btn-paginator-hover-color: var(--te-hover);
+    --footnote-target-bg: var(--te-hover);
+    --tb-odd-bg: var(--te-hover);
+    --main-border-color: var(--te-line);
+    --blockquote-border-color: var(--te-line);
+    --btn-border-color: var(--te-line);
+    --btn-backtotop-border-color: var(--te-line);
+    --sidebar-border-color: var(--te-line);
+    --avatar-border-color: var(--te-line);
+    --search-border-color: var(--te-line);
+    --toc-popup-border-color: var(--te-line);
+    --tb-border-color: var(--te-line);
+    --tag-border: var(--te-line);
+    --categories-border: var(--te-line);
+    --language-border-color: var(--te-line);
+    --kbd-wrap-color: var(--te-line);
+    --timeline-color: var(--te-line);
+    --timeline-year-dot-color: var(--te-line);
+    --dash-color: var(--te-line);
+    --checkbox-color: var(--te-line);
+    --prompt-tip-icon-color: var(--te-green);
+    --clipboard-checked-color: var(--te-green);
+    --prompt-info-icon-color: var(--te-blue);
+    --prompt-warning-icon-color: var(--te-orange);
+    --prompt-danger-icon-color: var(--te-red);
+    --timeline-node-bg: var(--te-secondary);
+    --link-underline-color: var(--te-line);
+    --img-bg: var(--te-elem);
+    --tag-shadow: transparent;
+}
+html[data-tront-theme-surface="blog"] :is(.text-muted, .post-meta, #search-hints) { color: var(--te-muted) !important; }
+html[data-tront-theme-surface="blog"] :is(input, button, select) { color: var(--te-ink); }
+html[data-tront-theme-surface="blog"] :is(#search-input, .btn, .page-link) { background-color: var(--te-elem); border-color: var(--te-line); }
+html[data-tront-theme-surface="blog"] #archives li:nth-child(odd) { background-image: var(--te-button); }
+html[data-tront-theme-surface="blog"] :is(.highlight, .highlight .w) { background-color: var(--te-panel); color: var(--te-ink); }
+html[data-tront-theme-surface="blog"] .highlight :is(.c, .ch, .cd, .cm, .cpf, .c1, .cs, .gp, .lineno) { color: var(--te-muted); }
+html[data-tront-theme-surface="blog"] .highlight :is(.cp, .nt, .nn, .nc, .no, .kc, .kt, .kd) { color: var(--te-orange); }
+html[data-tront-theme-surface="blog"] .highlight :is(.k, .kn, .kp, .kr, .kv, .sa) { color: var(--te-secondary); }
+html[data-tront-theme-surface="blog"] .highlight :is(.s, .sb, .sc, .dl, .sd, .s2, .sh, .sx, .s1, .sr, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx, .ss, .gi) { color: var(--te-green); }
+html[data-tront-theme-surface="blog"] .highlight :is(.o, .ow, .p, .pi) { color: var(--te-ink); }
+html[data-tront-theme-surface="blog"] .highlight :is(.na, .gh) { color: var(--te-blue); background-color: transparent; }
+html[data-tront-theme-surface="blog"] .highlight :is(.err, .gd, .si, .se) { color: var(--te-red); background-color: var(--te-elem); }
+html[data-tront-theme-surface="blog"] input::placeholder { color: var(--te-muted); opacity: 1; }
