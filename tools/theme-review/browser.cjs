@@ -62,8 +62,7 @@ async function contrast(page) {
     baseline.on('pageerror', error => errors.push('baseline: ' + error.message));
     baseline.on('response', response => { if (response.url().startsWith(baselineUrl) && /\.(css|js)(\?|$)/.test(response.url()) && response.status() >= 400) missing.push(response.url()); });
     await baseline.goto(baselineUrl + '/blog/', { waitUntil: 'networkidle' });
-    await baseline.evaluate(() => localStorage.setItem('tront-theme', 'tront-purple'));
-    await baseline.reload({ waitUntil: 'networkidle' });
+    await baseline.locator('#tront-theme-btn').click(); await baseline.selectOption('[name="preset"]', 'purple'); await baseline.keyboard.press('Escape');
     const composition = p => p.evaluate(() => ({
       bodyImage: getComputedStyle(document.body).backgroundImage,
       panels: ['main', '#sidebar', '#post-list', '#post-list .card'].map(selector => { const el = document.querySelector(selector), r = el.getBoundingClientRect(), s = getComputedStyle(el); return { selector, x: r.x, width: r.width, radius: s.borderRadius, font: s.fontFamily }; }),
@@ -83,6 +82,11 @@ async function contrast(page) {
       await baseline.screenshot({ path: path.join(out, `blog-baseline-${width}.png`) });
       await page.screenshot({ path: path.join(out, `blog-themed-${width}.png`) });
       comparisons.push({ width, before, after });
+    }
+    await baseline.setViewportSize({ width: 1440, height: 1000 });
+    for (const preset of ['dark', 'light']) {
+      await baseline.locator('#tront-theme-btn').click(); await baseline.selectOption('[name="preset"]', preset); await baseline.keyboard.press('Escape');
+      await baseline.locator('#topbar-wrapper').screenshot({ path: path.join(out, `search-before-${preset}.png`) });
     }
     await baselineContext.close();
     await page.setViewportSize({ width: 1440, height: 1000 });
@@ -150,25 +154,98 @@ async function contrast(page) {
       await page.setViewportSize({ width: 1440, height: 1000 });
     }
     await page.goto(url + '/blog/', { waitUntil: 'networkidle' });
-    await page.locator('#search-input').fill('Tronto'); await page.locator('#search-input').press('p');
+    const searchCoverage = [];
+    const input = page.locator('#search-input');
+    const surface = async (preset, width) => {
+      const state = await page.locator('#search').evaluate(wrapper => {
+        const input = wrapper.querySelector('input'), css = getComputedStyle(input), outer = getComputedStyle(wrapper);
+        const r = wrapper.getBoundingClientRect(), i = input.getBoundingClientRect();
+        const api = window.TrontThemeEditor;
+        const context = document.createElement('canvas').getContext('2d');
+        const rgb = color => {
+          context.fillStyle = color; context.fillRect(0, 0, 1, 1);
+          return Array.from(context.getImageData(0, 0, 1, 1).data).slice(0, 3);
+        };
+        return {
+          background: css.backgroundColor, image: css.backgroundImage, border: css.borderTopWidth,
+          outerRadius: parseFloat(outer.borderTopLeftRadius), outerOutline: outer.outlineWidth, innerOutline: css.outlineWidth,
+          inputFits: i.left >= r.left && i.right <= r.right && i.top >= r.top && i.bottom <= r.bottom,
+          contrast: api.contrast(rgb(css.color), rgb(outer.backgroundColor)),
+          placeholderContrast: api.contrast(rgb(getComputedStyle(input, '::placeholder').color), rgb(outer.backgroundColor)),
+          overflow: document.documentElement.scrollWidth > innerWidth,
+          focused: document.activeElement === input
+        };
+      });
+      assert.equal(state.background, 'rgba(0, 0, 0, 0)', 'input stays transparent inside the rounded search surface');
+      assert.equal(state.image, 'none'); assert.equal(state.border, '0px');
+      assert.ok(state.outerRadius > 0 && state.inputFits, 'search stays rounded and input fits');
+      assert.ok(state.contrast >= 4.5 && state.placeholderContrast >= 4.5, 'typed text and placeholder stay readable');
+      assert.equal(state.overflow, false);
+      if (state.focused) {
+        assert.equal(state.outerOutline, '2px', 'focus is visible around the whole pill');
+        assert.equal(state.innerOutline, '0px', 'no inner rectangular focus outline');
+      }
+      searchCoverage.push({ preset, width, ...state });
+    };
+    for (const preset of ['dark', 'cyan', 'purple', 'ember', 'moss', 'light']) {
+      await page.locator('#tront-theme-btn').click(); await page.selectOption('[name="preset"]', preset); await page.keyboard.press('Escape');
+      await surface(preset, 1440);
+      if (['dark', 'light'].includes(preset)) await page.locator('#topbar-wrapper').screenshot({ path: path.join(out, `search-after-${preset}.png`) });
+      await input.focus(); await page.keyboard.press('Shift+Tab'); await page.keyboard.press('Tab');
+      assert.equal(await input.evaluate(el => el === document.activeElement), true, 'keyboard reaches search');
+      await surface(preset, 1440);
+      if (['dark', 'light'].includes(preset)) await page.locator('#topbar-wrapper').screenshot({ path: path.join(out, `search-focus-${preset}.png`) });
+    }
+    await input.pressSequentially('Trontop');
     await page.locator('#search-results article').first().waitFor();
     assert.match(await page.locator('#search-results').innerText(), /Trontop/i);
-    const resultHref = await page.locator('#search-results article h2 a').first().getAttribute('href');
-    assert.ok(resultHref.includes('/blog/posts/'));
-    await page.locator('#search-input').fill(''); await page.locator('#search-input').press('Backspace');
+    await page.screenshot({ path: path.join(out, 'search-desktop-results.png') });
+    const result = page.locator('#search-results article h2 a').first();
+    const resultHref = await result.getAttribute('href');
+    const resultPath = new URL(resultHref, page.url()).pathname;
+    assert.ok(resultPath.startsWith('/blog/posts/'));
+    assert.equal(new URL(resultHref, page.url()).origin, url, 'result retains its real same-origin URL');
+    await result.focus(); await page.keyboard.press('Enter'); await page.waitForURL('**' + resultPath);
+    assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, 'result navigation closes search');
+    await page.goBack({ waitUntil: 'networkidle' });
+    await input.fill(''); await input.pressSequentially('zzzz-no-matching-blog-post-zzzz');
+    await page.locator('#search-results > p').waitFor();
+    assert.equal(await page.locator('#search-results article').count(), 0, 'unmatched query shows the empty state');
+    await input.press('ControlOrMeta+A'); await input.press('Backspace');
     assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, 'clearing desktop search restores content');
-    await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto(url + '/blog/');
-    await page.locator('#search-trigger').click();
-    await page.locator('#search-input').fill('Tronto'); await page.locator('#search-input').press('p');
-    await page.locator('#search-results article').first().waitFor();
-    await page.locator('#search-cancel').click();
-    assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, 'mobile Cancel restores content');
-    assert.equal(await page.locator('#sidebar-trigger').isVisible(), true);
+    await input.pressSequentially('Trontop'); await input.press('Escape');
+    assert.equal(await input.inputValue(), '');
+    assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, 'Escape clears desktop search');
+    assert.equal(await input.evaluate(el => el === document.activeElement), true, 'desktop Escape keeps typing focus');
+    for (const width of [320, 360, 390, 768]) {
+      await page.setViewportSize({ width, height: 844 }); await page.goto(url + '/blog/', { waitUntil: 'networkidle' });
+      for (const preset of ['dark', 'light']) {
+        await page.locator('#tront-theme-btn').click(); await page.selectOption('[name="preset"]', preset); await page.keyboard.press('Escape');
+        for (const dismiss of ['Cancel', 'Escape']) {
+          const trigger = page.locator('#search-trigger');
+          await trigger.focus(); await page.keyboard.press('Enter');
+          assert.equal(await input.evaluate(el => el === document.activeElement), true, 'mobile opening focuses input');
+          assert.equal(await input.inputValue(), '', 'opening and reopening start without a stale query');
+          await surface(preset, width);
+          await input.pressSequentially('Trontop'); await page.locator('#search-results article').first().waitFor();
+          if (width === 390 && dismiss === 'Cancel') await page.screenshot({ path: path.join(out, `search-mobile-results-${preset}.png`) });
+          if (dismiss === 'Cancel') {
+            await page.keyboard.press('Tab');
+            assert.equal(await page.locator('#search-cancel').evaluate(el => el === document.activeElement), true);
+            await page.keyboard.press('Enter');
+          } else await input.press('Escape');
+          assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, `${dismiss} restores mobile content`);
+          assert.equal(await input.inputValue(), '');
+          assert.equal(await trigger.evaluate(el => el === document.activeElement), true, `${dismiss} restores trigger focus`);
+          assert.equal(await page.locator('#sidebar-trigger').isVisible(), true);
+          assert.equal(await page.locator('#post-list').isVisible(), true);
+        }
+      }
+    }
     await page.locator('#post-list .post-preview').first().click();
     await page.waitForURL('**' + firstPost);
     assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, 'post navigation starts with search closed');
-    assert.equal(await page.locator('#search-input').inputValue(), '');
+    assert.equal(await input.inputValue(), '');
     await page.goto(url + '/blog/');
     await page.locator('#sidebar-trigger').click();
     assert.equal(await page.locator('body').getAttribute('sidebar-display'), '');
@@ -180,7 +257,7 @@ async function contrast(page) {
     assert.deepEqual(contrastFailures, [], 'rendered blog text stays readable across every route and preset');
     assert.deepEqual(missing, [], 'same-origin theme and blog scripts/styles load');
     assert.deepEqual(errors, [], 'no page JavaScript errors');
-    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, textCoverage, routes, presets: 6, widths: [320, 360, 390, 768, 1440], search: 'passed', sidebar: 'passed', errors, missing }, null, 2));
+    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, textCoverage, routes, presets: 6, widths: [320, 360, 390, 768, 1440], search: 'passed', searchCoverage, sidebar: 'passed', errors, missing }, null, 2));
     console.log('PASS: blog build, shared navbar/editor, presets, post/code contrast, keyboard, mobile, persistence, search and sidebar.');
   } catch (error) {
     if (page) { fs.writeFileSync(path.join(out, 'blog-browser-failure.json'), JSON.stringify({ error: error.message, url: page.url() }, null, 2)); await page.screenshot({ path: path.join(out, 'blog-browser-failure.png') }); }

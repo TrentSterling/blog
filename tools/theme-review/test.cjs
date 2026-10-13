@@ -52,3 +52,35 @@ test('lazy comments guard remains valid after HTML compression removes line brea
   const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
   assert.doesNotThrow(() => new vm.Script(script.replace(/\n/g, ' ')));
 });
+
+test('search paints one surface and moves keyboard focus to its rounded wrapper', () => {
+  const css = fs.readFileSync(path.join(root, 'assets/css/tront-theme-bridge.css'), 'utf8');
+  assert.doesNotMatch(css, /:is\(#search-input,/);
+  assert.match(css, /#search-input\s*\{[^}]*min-width:\s*0;[^}]*background:\s*transparent;/);
+  assert.match(css, /#search:focus-within\s*\{[^}]*outline:\s*2px solid var\(--te-accent\)/);
+  assert.match(css, /#search-input:focus-visible\s*\{\s*outline:\s*none;/);
+});
+
+test('search Cancel and Escape reset the real input value and mobile focus', () => {
+  const html = fs.readFileSync(path.join(root, '_includes/search-loader.html'), 'utf8');
+  const script = html.match(/<script>([\s\S]*?)<\/script>/)[1]
+    .replace(/{%-?\s*comment\s*-?%}[\s\S]*?{%-?\s*endcomment\s*-?%}/g, '')
+    .replace(/{%[\s\S]*?%}/g, '').replace(/{{[\s\S]*?}}/g, 'placeholder');
+  const handlers = {}, events = [];
+  let mobile = false, focused = false, prevented = false;
+  const input = { value: 'Trontop', addEventListener: (name, fn) => handlers[name] = fn, dispatchEvent: event => events.push(event.type) };
+  const cancel = { classList: { contains: () => mobile }, addEventListener: (name, fn) => handlers.cancel = fn, click: () => handlers.cancel() };
+  const trigger = { focus: () => focused = true };
+  const elements = { 'search-input': input, 'search-cancel': cancel, 'search-trigger': trigger };
+  vm.runInNewContext(script.replace(/\n/g, ' '), {
+    document: { addEventListener: (name, fn) => fn(), getElementById: id => elements[id] },
+    SimpleJekyllSearch() {}, Event: class { constructor(type) { this.type = type; } }
+  });
+  handlers.cancel(); assert.equal(input.value, ''); assert.equal(focused, true); assert.deepEqual(events, ['input']);
+  for (const isMobile of [false, true]) {
+    mobile = isMobile; focused = false; input.value = 'Trontop';
+    handlers.keydown({ key: 'Escape', preventDefault: () => prevented = true });
+    assert.equal(input.value, ''); assert.equal(focused, isMobile); assert.equal(prevented, true);
+  }
+  input.value = 'unchanged'; handlers.keydown({ key: 'Enter' }); assert.equal(input.value, 'unchanged');
+});
