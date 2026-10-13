@@ -91,3 +91,32 @@ test('search Cancel and Escape reset the real input value and mobile focus', () 
   }
   input.value = 'unchanged'; handlers.keydown({ key: 'Enter' }); assert.equal(input.value, 'unchanged');
 });
+
+
+test('supported blog editor reserves its exact pending label without exposing a control', () => {
+  const nav = fs.readFileSync(path.join(root, '_includes/navbar.html'), 'utf8');
+  const script = nav.match(/<script>([\s\S]*?)<\/script>/)[1].replace(/\n/g, ' ');
+  assert.match(nav, /class="theme-label"> Theme<\/span>/);
+  for (const mode of ['dark', 'light']) {
+    const attrs = {}, icon = { textContent: '◐' };
+    const button = { setAttribute: (key, value) => attrs[key] = value, querySelector: () => icon };
+    const document = { getElementById: () => button, documentElement: { getAttribute: () => mode } };
+    const window = { TrontThemeEditor: {}, HTMLDialogElement: class {} };
+    window.HTMLDialogElement.prototype.showModal = function () {};
+    vm.runInNewContext(script, { document, window });
+    assert.equal(attrs['data-te-pending-slot'], '');
+    assert.equal(icon.textContent, mode === 'light' ? '◑' : '◐');
+    assert.equal(button.hidden, undefined, 'bootstrap never unhides the control');
+  }
+  const css = fs.readFileSync(path.join(root, 'assets/css/tront-theme-bridge.css'), 'utf8');
+  assert.match(css, /#tront-theme-btn\[hidden\]\[data-te-pending-slot\]\s*\{[^}]*display:\s*flex !important;[^}]*visibility:\s*hidden;[^}]*pointer-events:\s*none;/);
+});
+
+test('missing editor or unsupported dialog never gets a pending slot or dead control', () => {
+  const nav = fs.readFileSync(path.join(root, '_includes/navbar.html'), 'utf8');
+  const script = nav.match(/<script>([\s\S]*?)<\/script>/)[1].replace(/\n/g, ' ');
+  for (const window of [{}, { TrontThemeEditor: {} }, { TrontThemeEditor: {}, HTMLDialogElement: class {} }]) {
+    const document = { getElementById: () => ({ setAttribute() { throw Error('must remain fully hidden'); } }) };
+    assert.doesNotThrow(() => vm.runInNewContext(script, { document, window }));
+  }
+});

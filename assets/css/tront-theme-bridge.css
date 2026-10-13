@@ -151,3 +151,12 @@ html[data-tront-theme-surface="blog"] #search:focus-within {
     outline-offset: 2px;
 }
 html[data-tront-theme-surface="blog"] #search-input:focus-visible { outline: none; }
+
+/* Keep the final navbar geometry while the supported editor awaits DOMContentLoaded.
+   Visibility keeps the reserved slot out of focus/accessibility navigation. Without
+   JavaScript or native dialog support, no marker is added and [hidden] stays hidden. */
+html[data-tront-theme-surface="blog"] #magic-navbar-container #tront-theme-btn[hidden][data-te-pending-slot] {
+    display: flex !important;
+    visibility: hidden;
+    pointer-events: none;
+}
