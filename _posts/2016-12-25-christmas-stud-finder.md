@@ -9,7 +9,7 @@ image: "/assets/img/tongue.jpg"
 
 More NodeMCU magic! A stud finder. It sounds like a geiger counter. I added an antenna to explain electromagnetic waves / interference to my wife. It was fun sticking it to my tongue and pretending it hurts.
 
-[![NodeMCU Stud Finder](/assets/img/tongue.jpg)](/assets/img/tongue.jpg)
+[![NodeMCU Stud Finder](/assets/img/tongue.jpg)]({{ '/assets/img/tongue.jpg' | relative_url }})
 
 Read more to see code snippets and whatnot.
 

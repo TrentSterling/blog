@@ -39,10 +39,10 @@ My artist got sick, so I used some art from viewers. After the jam, I planned to
 
 ## Screenshots:
 
-[![2015-06-12_17-32-56](/assets/img/2015-06-14_16-34-46.png)](/assets/img/2015-06-14_16-34-46.png)
-[![2015-06-12_17-32-56](/assets/img/2015-06-12_17-32-56.png)](/assets/img/2015-06-12_17-32-56.png)
-[![2015-06-14_16-32-21](/assets/img/2015-06-14_16-32-21.png)](/assets/img/2015-06-14_16-32-21.png)
-[![2015-06-14_16-34-46](/assets/img/2015-06-14_16-34-46.png)](/assets/img/2015-06-14_16-34-46.png)
-[![2015-06-15_03-42-08](/assets/img/2015-06-15_03-42-08.png)](/assets/img/2015-06-15_03-42-08.png)
-[![2015-06-15_04-41-13](/assets/img/2015-06-15_04-41-13.png)](/assets/img/2015-06-15_04-41-13.png)
+[![2015-06-12_17-32-56](/assets/img/2015-06-14_16-34-46.png)]({{ '/assets/img/2015-06-14_16-34-46.png' | relative_url }})
+[![2015-06-12_17-32-56](/assets/img/2015-06-12_17-32-56.png)]({{ '/assets/img/2015-06-12_17-32-56.png' | relative_url }})
+[![2015-06-14_16-32-21](/assets/img/2015-06-14_16-32-21.png)]({{ '/assets/img/2015-06-14_16-32-21.png' | relative_url }})
+[![2015-06-14_16-34-46](/assets/img/2015-06-14_16-34-46.png)]({{ '/assets/img/2015-06-14_16-34-46.png' | relative_url }})
+[![2015-06-15_03-42-08](/assets/img/2015-06-15_03-42-08.png)]({{ '/assets/img/2015-06-15_03-42-08.png' | relative_url }})
+[![2015-06-15_04-41-13](/assets/img/2015-06-15_04-41-13.png)]({{ '/assets/img/2015-06-15_04-41-13.png' | relative_url }})
 

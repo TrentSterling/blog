@@ -15,7 +15,7 @@ I've always loved [SpaceMonger](https://en.wikipedia.org/wiki/SpaceMonger). You 
 
 SpaceMonger was discontinued years ago. WinDirStat is slow. TreeSize is fine but corporate. So I built my own.
 
-**[GitHub Repo](https://github.com/TrentSterling/SpaceView)** | **[Download](https://github.com/TrentSterling/SpaceView/releases/latest)** | **[Site](https://tront.xyz/SpaceView/)**
+**[GitHub Repo](https://github.com/TrentSterling/SpaceView)** | **[Download](https://github.com/TrentSterling/SpaceView/releases/latest)** | **[Site](https://tront.xyz/spaceview/)**
 
 ## What It Does
 

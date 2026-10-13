@@ -291,7 +291,8 @@ async function contrast(page) {
     assert.deepEqual(contrastFailures, [], 'rendered blog text stays readable across every route and preset');
     assert.deepEqual(missing, [], 'same-origin theme and blog scripts/styles load');
     assert.deepEqual(errors, [], 'no page JavaScript errors');
-    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, textCoverage, routes, presets: 6, widths: [320, 360, 390, 768, 1440], search: 'passed', searchCoverage, sidebar: 'passed', errors, missing }, null, 2));
+    const repairedLinks = await require('./link-repair-browser.cjs')(browser, url, baselineUrl, root, out);
+    fs.writeFileSync(path.join(out, 'blog-browser-report.json'), JSON.stringify({ status: 'passed', compositionComparisons: comparisons, textCoverage, routes, presets: 6, widths: [320, 360, 390, 768, 1440], search: 'passed', searchCoverage, sidebar: 'passed', repairedLinks: { status: repairedLinks.status, destinations: repairedLinks.destinations.length, categories: repairedLinks.categories.length }, errors, missing }, null, 2));
     console.log('PASS: blog build, shared navbar/editor, presets, post/code contrast, keyboard, mobile, persistence, search and sidebar.');
   } catch (error) {
     if (page) { fs.writeFileSync(path.join(out, 'blog-browser-failure.json'), JSON.stringify({ error: error.message, url: page.url() }, null, 2)); await page.screenshot({ path: path.join(out, 'blog-browser-failure.png') }); }

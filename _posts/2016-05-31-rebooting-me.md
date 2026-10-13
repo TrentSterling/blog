@@ -7,7 +7,7 @@ description: "A reflection on consistency, audience building, and coming back af
 image: "/assets/img/2016-05-31_19-12-01.jpg"
 ---
 
-[![Rebooting](/assets/img/2016-05-31_19-12-01.jpg)](/assets/img/2016-05-31_19-12-01.jpg)
+[![Rebooting](/assets/img/2016-05-31_19-12-01.jpg)]({{ '/assets/img/2016-05-31_19-12-01.jpg' | relative_url }})
 
 ## The Problem
 

@@ -13,10 +13,10 @@ It's PI Day!
 
 So here's a link to this crazy space game I did.
 
-[![SPACE, YO!](/assets/img/spacesnap.jpg)](/assets/img/spacesnap.jpg)
+[![SPACE, YO!](/assets/img/spacesnap.jpg)]({{ '/assets/img/spacesnap.jpg' | relative_url }})
 
 **Play it:** [https://trent.itch.io/7dayspacejam](https://trent.itch.io/7dayspacejam)
 
-[![MOAR SPACE, YO!](/assets/img/spaceshot2.jpg)](/assets/img/spaceshot2.jpg)
+[![MOAR SPACE, YO!](/assets/img/spaceshot2.jpg)]({{ '/assets/img/spaceshot2.jpg' | relative_url }})
 
 Pretty neat huh?

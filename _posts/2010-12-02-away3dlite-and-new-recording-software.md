@@ -9,7 +9,7 @@ image: "/assets/img/better_performance_lower_memory_shits_working.jpg"
 
 Engine was stripped down, rebuilt using Away3DLite. Now I have to turn it back into a game.
 
-[![Pretty huh? Too bad it's not a game yet.](/assets/img/better_performance_lower_memory_shits_working.jpg)](/assets/img/better_performance_lower_memory_shits_working.jpg)
+[![Pretty huh? Too bad it's not a game yet.](/assets/img/better_performance_lower_memory_shits_working.jpg)]({{ '/assets/img/better_performance_lower_memory_shits_working.jpg' | relative_url }})
 
 Well, what can I say? Switching to Away3DLite was a larger task than I thought it would be, and now that things seem to be working, I'll have to copy/paste a lot of my old work back into the project, and adapt it to work with the rebuilt engine. Isn't making games fun?
 

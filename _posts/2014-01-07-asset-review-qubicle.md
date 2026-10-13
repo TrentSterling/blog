@@ -15,7 +15,7 @@ First on the list: 2 fun voxel tools from the friendly guys at [MindDesk](http:/
 
 ## Qubicle Constructor - $80
 
-[![Qubicle Constructor](/assets/img/constructor.jpg)](/assets/img/constructor.jpg)
+[![Qubicle Constructor](/assets/img/constructor.jpg)]({{ '/assets/img/constructor.jpg' | relative_url }})
 
 Link to developer: [http://www.qubicle-constructor.com/](http://www.qubicle-constructor.com/)
 
@@ -31,7 +31,7 @@ I'll give Qubicle Constructor **4/5 stars**. Even with the bugs.
 
 ## Qubicle Unite - $25
 
-[![Qubicle Unite - Look how optimized he is!](/assets/img/unite.jpg)](/assets/img/unite.jpg)
+[![Qubicle Unite - Look how optimized he is!](/assets/img/unite.jpg)]({{ '/assets/img/unite.jpg' | relative_url }})
 _Look how optimized he is! Where's all the polygons at?_
 
 Now, Unite is a tool built for Unity, to import Qubicle Constructor files as a mesh. There's an optimization pass, and the resulting files are small and typically low poly. As long as you avoid too many smooth edges, Unite imported models will perform quite nicely. Keeping the art cartoony and boxy is key.

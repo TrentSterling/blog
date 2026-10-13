@@ -7,7 +7,7 @@ description: "Migrating from Wordpress to static site generation with Wintersmit
 image: "/assets/img/8266.jpg"
 ---
 
-[![NodeMCU Chip](/assets/img/8266.jpg)](/assets/img/8266.jpg)
+[![NodeMCU Chip](/assets/img/8266.jpg)]({{ '/assets/img/8266.jpg' | relative_url }})
 
 I've been dabbling in a lot of NodeJS lately. Everything from robots, wifi toasters, a twitch overlay, and a discord bot.
 

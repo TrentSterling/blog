@@ -74,4 +74,4 @@ Claude Code isn't magic. It's a very fast pair programmer that never gets tired 
 
 For a project like this, where the architecture is clear and the scope is focused, it's extremely effective. I'd estimate it cut the development time by 3-4x. Not because the code is trivial, but because the iteration speed is so much faster.
 
-The source is on [GitHub](https://github.com/TrentSterling/SpaceView). The app is on [tront.xyz/SpaceView](https://tront.xyz/SpaceView/). MIT licensed.
+The source is on [GitHub](https://github.com/TrentSterling/SpaceView). The app is on [tront.xyz/SpaceView](https://tront.xyz/spaceview/). MIT licensed.
