@@ -13,8 +13,9 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
   fs.mkdirSync(dir, { recursive: true });
   const report = { status: 'running', viewportHeight: 1000,
     methodology: 'Real editor input/change/click events. Screenshots exclude the editor and shared navbar. Changed pixels have a maximum RGB channel delta of at least 2/255. Each change also preserves content/layout and passes rendered-ink contrast checks.',
-    thresholds: { changedChannelDelta: 2, minimumChangedPixels: 100, minimumChangedFraction: 0.002, restorationChangedFraction: 0.0001, restorationMeanChannelDelta: 0.01 },
-    baseline: [], cases: [], persistence: [], preview: [] };
+    thresholds: { changedChannelDelta: 2, minimumChangedPixels: 100, minimumChangedFraction: 0.002, restorationChangedFraction: 0.0005, restorationMeanChannelDelta: 0.01 },
+    restorationNoisePolicy: 'Restoration requires identical saved state and computed paint, at most 0.05% changed pixels, and mean channel delta <=0.01/255. Fresh per-control reference images and no-change modal calibration separate sparse browser raster noise from theme differences. Changed controls still require >=0.2% changed pixels.',
+    baseline: [], calibration: [], cases: [], persistence: [], preview: [] };
   const reportFile = path.join(out, 'blog-control-effects-report.json');
   const writeReport = () => fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
   const key = 'tront-theme-editor-v1';
@@ -27,17 +28,21 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
     const a = PNG.sync.read(aBuffer), b = PNG.sync.read(bBuffer);
     assert.equal(a.width, b.width, 'pixel comparison widths match');
     assert.equal(a.height, b.height, 'pixel comparison heights match');
-    let changed = 0, total = 0, maximum = 0;
+    let changed = 0, total = 0, maximum = 0, minX = a.width, minY = a.height, maxX = -1, maxY = -1;
     for (let i = 0; i < a.data.length; i += 4) {
       let delta = 0;
       for (let c = 0; c < 3; c++) {
         const d = Math.abs(a.data[i + c] - b.data[i + c]);
         total += d; maximum = Math.max(maximum, d); delta = Math.max(delta, d);
       }
-      if (delta >= report.thresholds.changedChannelDelta) changed++;
+      if (delta >= report.thresholds.changedChannelDelta) {
+        changed++;
+        const x = (i / 4) % a.width, y = Math.floor(i / 4 / a.width);
+        minX = Math.min(minX, x); minY = Math.min(minY, y); maxX = Math.max(maxX, x); maxY = Math.max(maxY, y);
+      }
     }
     return { width: a.width, height: a.height, pixels: a.width * a.height, changedPixels: changed,
-      changedFraction: changed / (a.width * a.height), meanChannelDelta: total / (a.width * a.height * 3), maximumChannelDelta: maximum };
+      changedFraction: changed / (a.width * a.height), meanChannelDelta: total / (a.width * a.height * 3), maximumChannelDelta: maximum, changedBounds: changed ? { x: minX, y: minY, width: maxX - minX + 1, height: maxY - minY + 1 } : null };
   }
   function changed(metrics, label) {
     assert.ok(metrics.changedPixels >= report.thresholds.minimumChangedPixels && metrics.changedFraction >= report.thresholds.minimumChangedFraction,
@@ -139,12 +144,15 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
       const y = Math.max(0, Math.ceil(Math.max(bottom('#magic-navbar-container'), bottom('#topbar-wrapper'))) + 8);
       const r = document.querySelector('#post-list .card').getBoundingClientRect();
       const x = Math.max(0, Math.ceil(r.left)), cy = Math.max(y, Math.ceil(r.top));
+      const text = document.querySelector('#post-list .post-preview .card-body') || document.querySelector('#post-list .post-preview');
+      const t = text.getBoundingClientRect(), tx = Math.max(0, Math.ceil(t.left)), ty = Math.max(y, Math.ceil(t.top));
       return { page: { x: 0, y, width: innerWidth, height: Math.floor(innerHeight - y) },
-        card: { x, y: cy, width: Math.floor(Math.min(innerWidth, r.right) - x), height: Math.floor(Math.min(innerHeight, r.bottom) - cy) } };
+        card: { x, y: cy, width: Math.floor(Math.min(innerWidth, r.right) - x), height: Math.floor(Math.min(innerHeight, r.bottom) - cy) },
+        surface: { x: tx, y: ty, width: Math.floor(Math.min(innerWidth, t.right) - tx), height: Math.floor(Math.min(innerHeight, t.bottom) - ty) } };
     });
     assert.ok(clips.page.height > 300 && clips.card.height > 40, 'large real page/card pixel regions exist');
     const buffers = {};
-    for (const region of ['page', 'card']) buffers[region] = await page.screenshot({ path: path.join(dir, `${name}-${region}.png`), clip: clips[region], animations: 'disabled', caret: 'hide' });
+    for (const region of ['page', 'card', 'surface']) buffers[region] = await page.screenshot({ path: path.join(dir, `${name}-${region}.png`), clip: clips[region], animations: 'disabled', caret: 'hide' });
     return { name, data, clips, buffers };
   }
   function sameStructure(before, after, label) {
@@ -152,12 +160,16 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
     assert.deepEqual(after.data.content, before.data.content, label + ': visible post content and destinations remain unchanged');
     assert.deepEqual(after.clips, before.clips, label + ': identical pixel region coordinates');
   }
-  function metricPair(before, after) {
-    return { page: diff(before.buffers.page, after.buffers.page), card: diff(before.buffers.card, after.buffers.card) };
+  function samePaint(before, after, label) {
+    assert.deepEqual(after.data.css, before.data.css, label + ': actual computed canvas, heading, card surface, blur, sidebar and topbar paint is restored exactly');
+    assert.deepEqual(after.data.state, before.data.state, label + ': editor state is restored exactly');
   }
-  function files(snapshot) { return { page: `controls/${snapshot.name}-page.png`, card: `controls/${snapshot.name}-card.png` }; }
+  function metricPair(before, after) {
+    return { page: diff(before.buffers.page, after.buffers.page), card: diff(before.buffers.card, after.buffers.card), surface: diff(before.buffers.surface, after.buffers.surface) };
+  }
+  function files(snapshot) { return { page: `controls/${snapshot.name}-page.png`, card: `controls/${snapshot.name}-card.png`, surface: `controls/${snapshot.name}-surface.png` }; }
   function copyBefore(snapshot, name) {
-    for (const region of ['page', 'card']) fs.writeFileSync(path.join(dir, `${name}-${region}.png`), snapshot.buffers[region]);
+    for (const region of ['page', 'card', 'surface']) fs.writeFileSync(path.join(dir, `${name}-${region}.png`), snapshot.buffers[region]);
     return { ...snapshot, name };
   }
   async function contextFor(url, width) {
@@ -183,28 +195,32 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
   // PNGJS-only nearest-neighbor preview. Reduce the overview if necessary to
   // keep CI's inline diagnostic under 60 KB; full-resolution evidence is saved.
   function createPreview(pairs, filename = 'blog-control-effects-preview.png') {
-    let preview, sheet, tileWidth = 240;
+    let preview, sheet, tileWidth = 300;
     do {
       const tileHeight = Math.round(tileWidth * 145 / 240), gutter = 4;
       sheet = new PNG({ width: tileWidth * 2 + gutter, height: (tileHeight + gutter) * pairs.length + gutter });
       sheet.data.fill(255);
       function blit(buffer, dx, dy) {
         const source = PNG.sync.read(buffer);
-        for (let y = 0; y < tileHeight; y++) for (let x = 0; x < tileWidth; x++) {
-          const sx = Math.floor(x * source.width / tileWidth), sy = Math.floor(y * source.height / tileHeight);
+        const scale = Math.min(tileWidth / source.width, tileHeight / source.height);
+        const drawWidth = Math.floor(source.width * scale), drawHeight = Math.floor(source.height * scale);
+        dx += Math.floor((tileWidth - drawWidth) / 2); dy += Math.floor((tileHeight - drawHeight) / 2);
+        for (let y = 0; y < drawHeight; y++) for (let x = 0; x < drawWidth; x++) {
+          const sx = Math.floor(x * source.width / drawWidth), sy = Math.floor(y * source.height / drawHeight);
           const src = (sy * source.width + sx) * 4, dest = ((dy + y) * sheet.width + dx + x) * 4;
           for (let c = 0; c < 4; c++) sheet.data[dest + c] = source.data[src + c];
         }
       }
       pairs.forEach((pair, row) => {
         const y = gutter + row * (tileHeight + gutter);
-        blit(pair.before.buffers.page, 0, y); blit(pair.after.buffers.page, tileWidth + gutter, y);
+        const region = pair.region || 'page';
+        blit(pair.before.buffers[region], 0, y); blit(pair.after.buffers[region], tileWidth + gutter, y);
       });
       preview = PNG.sync.write(sheet, { colorType: 2 });
       tileWidth -= 20;
     } while (preview.length > 60000 && tileWidth >= 80);
     fs.writeFileSync(path.join(out, filename), preview);
-    report.preview = pairs.map((pair, row) => ({ row: row + 1, label: pair.label, left: files(pair.before), right: files(pair.after) }));
+    report.preview = pairs.map((pair, row) => ({ row: row + 1, label: pair.label, region: pair.region || 'page', left: files(pair.before), right: files(pair.after) }));
     report.previewDimensions = { width: sheet.width, height: sheet.height, bytes: preview.length };
     return preview;
   }
@@ -215,7 +231,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
       const { context, page } = await contextFor(baselineBase, width);
       await configure(page, mode);
       const seed = await capture(page, `baseline-${width}-${mode}-seed`, false);
-      for (const [control, value] of [['angle', 0], ['position-0', 24], ['position-1', 12], ['position-2', 88], ['position-3', 76], ['frost', 100]]) {
+      for (const [control, value] of [['angle', 270], ['position-0', 24], ['position-1', 12], ['position-2', 88], ['position-3', 76], ['frost', 100]]) {
         const label = `baseline-${width}-${mode}-${control}`;
         const before = copyBefore(seed, label + '-before');
         await open(page); await input(page, control, value); await close(page);
@@ -243,17 +259,29 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
       const resetExpected = await capture(page, `${prefix}-reset-reference`);
       await configure(page, mode);
       const seed = await capture(page, `${prefix}-seed`);
+      await open(page); await close(page);
+      const calibration = await capture(page, `${prefix}-no-change-editor-cycle`);
+      latestPair = { label: prefix + '-no-change-editor-cycle', before: seed, after: calibration };
+      sameStructure(seed, calibration, prefix + ' no-change calibration');
+      samePaint(seed, calibration, prefix + ' no-change calibration');
+      const calibrationPixels = metricPair(seed, calibration);
+      report.calibration.push({ width, mode, before: files(seed), after: files(calibration), pixels: calibrationPixels, paintAndStateIdentical: true });
+      console.log('BLOG_CONTROL_NO_CHANGE_CALIBRATION ' + JSON.stringify(report.calibration.at(-1)));
+      restored(calibrationPixels.page, prefix + ' no-change editor cycle');
+      restored(calibrationPixels.card, prefix + ' no-change card');
+      writeReport();
       const controls = [
         ...[0, 1, 2, 3].map(i => ({ name: 'color-' + i, value: replacements[i] })),
         ...[24, 12, 88, 76].map((value, i) => ({ name: 'position-' + i, value })),
-        { name: 'angle', value: 0 }, { name: 'intensity', value: 0 }, { name: 'frost', value: 100 },
+        { name: 'angle', value: 270 }, { name: 'intensity', value: 0 }, { name: 'frost', value: 100 },
         { name: 'palette', value: mode === 'light' ? 'light' : 'purple' },
         { name: 'appearance', value: mode === 'light' ? 'dark' : 'light' },
         { name: 'color-magic' }, { name: 'input-draft' }, { name: 'reset' }
       ];
       for (const control of controls) {
         const label = `${prefix}-${control.name}`;
-        const before = copyBefore(seed, label + '-before');
+        const before = await capture(page, label + '-before');
+        samePaint(seed, before, label + ' fresh pre-control reference');
         await open(page);
         if (control.name === 'palette') await page.selectOption('.te-dialog [name="preset"]', control.value);
         else if (control.name === 'appearance') await page.locator(`.te-dialog [name="mode"][value="${control.value}"]`).check();
@@ -279,6 +307,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
         assert.notDeepEqual(after.data.state, before.data.state, 'real control persisted a changed state');
         if (control.name === 'frost') {
           changed(metrics.card, label + ' actual glass card');
+          changed(metrics.surface, label + ' actual text surface, excluding thumbnail');
           assert.equal(before.data.css.card.blur, 'blur(12.5px)');
           assert.equal(after.data.css.card.blur, 'blur(0px)');
           assert.notEqual(after.data.css.cardSurface.background, before.data.css.cardSurface.background, 'frost changes the actual post-preview card surface alpha');
@@ -289,14 +318,26 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
         }
         if (control.name === 'reset') {
           assert.deepEqual(after.data.state, resetExpected.data.state, 'Reset restores the default editor state');
+          samePaint(resetExpected, after, label + ' default reference');
           record.resetReferencePixels = metricPair(resetExpected, after);
           restored(record.resetReferencePixels.page, label + ' matches independently selected Midnight');
         }
-        if (width === 1440 && ['angle', 'frost'].includes(control.name)) previewPairs.push({ label, before, after });
+        if (['angle', 'frost'].includes(control.name)) {
+          console.log('BLOG_CONTROL_CASE_METRICS ' + JSON.stringify({ width, mode, control: control.name, pixels: metrics, beforeCss: before.data.css, afterCss: after.data.css, before: files(before), after: files(after) }));
+          const region = control.name === 'frost' ? 'surface' : 'page';
+          if (width === 1440) previewPairs.push({ label, before, after, region });
+          const partialPairs = previewPairs.length ? previewPairs : [{ label, before, after, region }];
+          const partial = createPreview(partialPairs, 'blog-control-effects-partial-preview.png');
+          console.log('BLOG_CONTROL_PARTIAL_PREVIEW_ROWS ' + JSON.stringify(partialPairs.map(p => p.label)));
+          console.log('BLOG_CONTROL_PARTIAL_PREVIEW_PNG ' + partial.toString('base64'));
+        }
         await open(page); await page.locator('[data-action="undo"]').click(); await close(page);
         const undo = await capture(page, label + '-undo');
-        sameStructure(seed, undo, label + ' Undo');
-        record.undo = { files: files(undo), pixels: metricPair(seed, undo), stateRestored: true };
+        latestPair = { label: label + '-Undo', before, after: undo };
+        sameStructure(before, undo, label + ' Undo');
+        record.undo = { files: files(undo), pixels: metricPair(before, undo), stateRestored: false, computedPaintRestored: false };
+        samePaint(before, undo, label + ' Undo');
+        record.undo.stateRestored = true; record.undo.computedPaintRestored = true;
         assert.deepEqual(undo.data.state, seed.data.state, 'one Undo restores the complete pre-gesture state');
         restored(record.undo.pixels.page, label + ' Undo');
         restored(record.undo.pixels.card, label + ' Undo card');
@@ -310,6 +351,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
       await page.reload({ waitUntil: 'networkidle' });
       const reloaded = await capture(page, `${prefix}-persist-reload`);
       sameStructure(persisted, reloaded, prefix + ' reload');
+      samePaint(persisted, reloaded, prefix + ' reload');
       assert.deepEqual(reloaded.data.state, persisted.data.state);
       const reloadPixels = metricPair(persisted, reloaded); restored(reloadPixels.page, prefix + ' reload');
       persistence.checks.push({ name: 'reload', after: files(reloaded), pixels: reloadPixels });
@@ -321,6 +363,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
       await page.goBack({ waitUntil: 'networkidle' });
       const returned = await capture(page, `${prefix}-persist-navigation`);
       sameStructure(persisted, returned, prefix + ' post navigation');
+      samePaint(persisted, returned, prefix + ' post navigation');
       const navigationPixels = metricPair(persisted, returned); restored(navigationPixels.page, prefix + ' real post navigation');
       persistence.checks.push({ name: 'post-navigation-and-back', route: postHref, after: files(returned), pixels: navigationPixels });
       const receiver = await context.newPage();
@@ -331,6 +374,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
       const senderAfter = await capture(page, `${prefix}-storage-sender`);
       const receiveAfter = await capture(receiver, `${prefix}-storage-after`);
       sameStructure(receiveBefore, receiveAfter, prefix + ' storage event');
+      samePaint(senderAfter, receiveAfter, prefix + ' receiving tab');
       assert.deepEqual(receiveAfter.data.state, senderAfter.data.state);
       const storagePixels = metricPair(receiveBefore, receiveAfter), synchronizedPixels = metricPair(senderAfter, receiveAfter);
       changed(storagePixels.page, prefix + ' receiving tab must visibly update');
@@ -342,6 +386,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
       const reset = await capture(page, `${prefix}-reset-persist-before`);
       await page.reload({ waitUntil: 'networkidle' });
       const resetReload = await capture(page, `${prefix}-reset-persist-after`);
+      samePaint(reset, resetReload, prefix + ' Reset reload');
       assert.deepEqual(resetReload.data.state, resetExpected.data.state);
       const resetPixels = metricPair(reset, resetReload); restored(resetPixels.page, prefix + ' Reset survives reload');
       persistence.checks.push({ name: 'reset-reload', before: files(reset), after: files(resetReload), pixels: resetPixels });
@@ -363,9 +408,11 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
     return report;
   } catch (error) {
     report.status = 'failed'; report.error = error.stack || error.message;
-    console.log('BLOG_CONTROL_PIXEL_FAILURE ' + JSON.stringify({ error: error.message, lastCase: report.cases.at(-1), lastBaseline: report.baseline.at(-1), completedCases: report.cases.length }));
+    console.log('BLOG_CONTROL_PIXEL_FAILURE ' + JSON.stringify({ error: error.message, lastCase: report.cases.at(-1), lastBaseline: report.baseline.at(-1), completedCases: report.cases.length, completedControlMetrics: report.cases.map(c => ({ width: c.width, mode: c.mode, control: c.control, pixels: c.pixels, undo: c.undo?.pixels })), calibration: report.calibration }));
     if (latestPair) {
-      const preview = createPreview([latestPair], 'blog-control-effects-failure-preview.png');
+      const failurePairs = [...previewPairs, latestPair];
+      const preview = createPreview(failurePairs, 'blog-control-effects-failure-preview.png');
+      console.log('BLOG_CONTROL_FAILURE_PREVIEW_ROWS ' + JSON.stringify(failurePairs.map(p => p.label)));
       console.log('BLOG_CONTROL_PREVIEW_PNG ' + preview.toString('base64'));
     }
     writeReport(); throw error;
