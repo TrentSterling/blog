@@ -64,6 +64,7 @@ async function contrast(page) {
     const baselineUrl = `http://127.0.0.1:${baselineServer.address().port}`;
     browser = await chromium.launch({ headless: true, executablePath: process.env.THEME_BROWSER_EXECUTABLE || undefined });
     await require('./first-paint.cjs')(browser, url, out);
+    await require('./topbar-icons.cjs')(browser, url, baselineUrl, out);
     page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
     const errors = [], missing = [];
     page.on('pageerror', error => errors.push(error.message));

@@ -120,3 +120,16 @@ test('missing editor or unsupported dialog never gets a pending slot or dead con
     assert.doesNotThrow(() => vm.runInNewContext(script, { document, window }));
   }
 });
+
+
+test('only Menu and Search trigger glyphs use page-native decorative SVGs', () => {
+  const html = fs.readFileSync(path.join(root, '_includes/topbar.html'), 'utf8');
+  for (const [id, label] of [['sidebar-trigger', 'Menu'], ['search-trigger', 'Search']]) {
+    const button = html.match(new RegExp('<button[^>]*id="' + id + '"[\\s\\S]*?<\\/button>'))[0];
+    assert.ok(button.includes('aria-label="' + label + '"'));
+    assert.match(button, /<svg[^>]*width="1.25em"[^>]*height="1em"[^>]*stroke="currentColor"[^>]*aria-hidden="true"[^>]*focusable="false"/);
+    assert.doesNotMatch(button, /<i|fa-bars|fa-search/);
+  }
+  assert.equal((html.match(/<svg/g) || []).length, 2);
+  assert.match(html, /<search[^>]*id="search"[\s\S]*?<i class="fas fa-search fa-fw"><\/i>/, 'other font icons are unchanged');
+});
