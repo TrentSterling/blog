@@ -7,6 +7,25 @@ const { chromium } = require('playwright');
 const root = path.resolve(process.env.BLOG_SITE_ROOT || '_site');
 const out = path.resolve(process.env.BLOG_SCREENSHOTS || '.local/theme-review');
 fs.mkdirSync(out, { recursive: true });
+/* Inventory every generated HTML route; only the explicit routes below are browser-tested. */
+const builtRoutes = [];
+function inventory(directory) {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) inventory(file);
+    else if (entry.name.endsWith('.html')) {
+      const relative = path.relative(root, file).split(path.sep).join('/');
+      const html = fs.readFileSync(file, 'utf8');
+      builtRoutes.push({ route: '/' + relative.replace(/index\.html$/, ''), file: relative,
+        title: html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1].trim() || '', bytes: fs.statSync(file).size });
+    }
+  }
+}
+inventory(path.join(root, 'blog'));
+builtRoutes.sort((a, b) => a.route.localeCompare(b.route));
+fs.writeFileSync(path.join(out, 'blog-built-routes.json'), JSON.stringify({
+  source: 'Production Jekyll build', scope: 'HTML route inventory, not browser coverage', count: builtRoutes.length, routes: builtRoutes
+}, null, 2));
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.woff2': 'font/woff2' };
 const createServer = root => http.createServer((req, res) => {
   try {
@@ -174,7 +193,7 @@ async function contrast(page) {
         return {
           textColor: css.color, placeholderColor: getComputedStyle(input, '::placeholder').color, backgrounds, ground,
           transition: css.transitionProperty, background: css.backgroundColor, image: css.backgroundImage, border: css.borderTopWidth,
-          outerRadius: parseFloat(outer.borderTopLeftRadius), outerOutline: outer.outlineWidth, innerOutline: css.outlineWidth,
+          outerRadius: parseFloat(outer.borderTopLeftRadius), outerOutline: outer.outlineWidth, outerOutlineStyle: outer.outlineStyle, innerOutlineStyle: css.outlineStyle,
           inputFits: i.left >= r.left && i.right <= r.right && i.top >= r.top && i.bottom <= r.bottom,
           contrast: api.contrast(rgb(css.color), ground),
           placeholderContrast: api.contrast(rgb(getComputedStyle(input, '::placeholder').color), ground),
@@ -192,7 +211,8 @@ async function contrast(page) {
       assert.equal(state.overflow, false);
       if (state.focused) {
         assert.equal(state.outerOutline, '2px', 'focus is visible around the whole pill');
-        assert.equal(state.innerOutline, '0px', 'no inner rectangular focus outline');
+        assert.equal(state.outerOutlineStyle, 'solid');
+        assert.equal(state.innerOutlineStyle, 'none', 'no inner rectangular focus outline');
       }
     };
     for (const preset of ['dark', 'cyan', 'purple', 'ember', 'moss', 'light']) {
