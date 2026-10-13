@@ -163,29 +163,36 @@ async function contrast(page) {
         const api = window.TrontThemeEditor;
         const context = document.createElement('canvas').getContext('2d');
         const rgb = color => {
-          context.fillStyle = color; context.fillRect(0, 0, 1, 1);
+          context.clearRect(0, 0, 1, 1); context.fillStyle = color; context.fillRect(0, 0, 1, 1);
           return Array.from(context.getImageData(0, 0, 1, 1).data).slice(0, 3);
         };
+        const backgrounds = [];
+        for (let el = wrapper; el; el = el.parentElement) backgrounds.unshift(getComputedStyle(el).backgroundColor);
+        context.clearRect(0, 0, 1, 1); context.fillStyle = '#fff'; context.fillRect(0, 0, 1, 1);
+        for (const color of backgrounds) { context.fillStyle = color; context.fillRect(0, 0, 1, 1); }
+        const ground = Array.from(context.getImageData(0, 0, 1, 1).data).slice(0, 3);
         return {
+          textColor: css.color, placeholderColor: getComputedStyle(input, '::placeholder').color, backgrounds, ground,
           background: css.backgroundColor, image: css.backgroundImage, border: css.borderTopWidth,
           outerRadius: parseFloat(outer.borderTopLeftRadius), outerOutline: outer.outlineWidth, innerOutline: css.outlineWidth,
           inputFits: i.left >= r.left && i.right <= r.right && i.top >= r.top && i.bottom <= r.bottom,
-          contrast: api.contrast(rgb(css.color), rgb(outer.backgroundColor)),
-          placeholderContrast: api.contrast(rgb(getComputedStyle(input, '::placeholder').color), rgb(outer.backgroundColor)),
+          contrast: api.contrast(rgb(css.color), ground),
+          placeholderContrast: api.contrast(rgb(getComputedStyle(input, '::placeholder').color), ground),
           overflow: document.documentElement.scrollWidth > innerWidth,
           focused: document.activeElement === input
         };
       });
+      searchCoverage.push({ preset, width, ...state });
+      fs.writeFileSync(path.join(out, 'blog-search-report.json'), JSON.stringify(searchCoverage, null, 2));
       assert.equal(state.background, 'rgba(0, 0, 0, 0)', 'input stays transparent inside the rounded search surface');
       assert.equal(state.image, 'none'); assert.equal(state.border, '0px');
       assert.ok(state.outerRadius > 0 && state.inputFits, 'search stays rounded and input fits');
-      assert.ok(state.contrast >= 4.5 && state.placeholderContrast >= 4.5, 'typed text and placeholder stay readable');
+      assert.ok(state.contrast >= 4.5 && state.placeholderContrast >= 4.5, 'typed text and placeholder stay readable: ' + JSON.stringify(state));
       assert.equal(state.overflow, false);
       if (state.focused) {
         assert.equal(state.outerOutline, '2px', 'focus is visible around the whole pill');
         assert.equal(state.innerOutline, '0px', 'no inner rectangular focus outline');
       }
-      searchCoverage.push({ preset, width, ...state });
     };
     for (const preset of ['dark', 'cyan', 'purple', 'ember', 'moss', 'light']) {
       await page.locator('#tront-theme-btn').click(); await page.selectOption('[name="preset"]', preset); await page.keyboard.press('Escape');
@@ -221,7 +228,7 @@ async function contrast(page) {
       await page.setViewportSize({ width, height: 844 }); await page.goto(url + '/blog/', { waitUntil: 'networkidle' });
       for (const preset of ['dark', 'light']) {
         await page.locator('#tront-theme-btn').click(); await page.selectOption('[name="preset"]', preset); await page.keyboard.press('Escape');
-        for (const dismiss of ['Cancel', 'Escape']) {
+        for (const dismiss of ['Cancel', 'Escape', 'ResultEscape']) {
           const trigger = page.locator('#search-trigger');
           await trigger.focus(); await page.keyboard.press('Enter');
           assert.equal(await input.evaluate(el => el === document.activeElement), true, 'mobile opening focuses input');
@@ -233,6 +240,9 @@ async function contrast(page) {
             await page.keyboard.press('Tab');
             assert.equal(await page.locator('#search-cancel').evaluate(el => el === document.activeElement), true);
             await page.keyboard.press('Enter');
+          } else if (dismiss === 'ResultEscape') {
+            await page.locator('#search-results article h2 a').first().focus();
+            await page.keyboard.press('Escape');
           } else await input.press('Escape');
           assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, `${dismiss} restores mobile content`);
           assert.equal(await input.inputValue(), '');

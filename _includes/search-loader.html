@@ -59,14 +59,17 @@
       clearSearch();
       trigger.focus();
     });
-    input.addEventListener('keydown', (event) => {
+    const dismissSearch = (event) => {
       if (event.key !== 'Escape') return;
       event.preventDefault();
       if (cancel.classList.contains('d-block')) {
         cancel.click();
       } else {
         clearSearch();
+        input.focus();
       }
-    });
+    };
+    input.addEventListener('keydown', dismissSearch);
+    document.getElementById('search-result-wrapper').addEventListener('keydown', dismissSearch);
   });
 </script>

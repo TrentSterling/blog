@@ -67,11 +67,11 @@ test('search Cancel and Escape reset the real input value and mobile focus', () 
     .replace(/{%-?\s*comment\s*-?%}[\s\S]*?{%-?\s*endcomment\s*-?%}/g, '')
     .replace(/{%[\s\S]*?%}/g, '').replace(/{{[\s\S]*?}}/g, 'placeholder');
   const handlers = {}, events = [];
-  let mobile = false, focused = false, prevented = false;
-  const input = { value: 'Trontop', addEventListener: (name, fn) => handlers[name] = fn, dispatchEvent: event => events.push(event.type) };
+  let mobile = false, focused = false, inputFocused = false, prevented = false;
+  const input = { value: 'Trontop', focus: () => inputFocused = true, addEventListener: (name, fn) => handlers[name] = fn, dispatchEvent: event => events.push(event.type) };
   const cancel = { classList: { contains: () => mobile }, addEventListener: (name, fn) => handlers.cancel = fn, click: () => handlers.cancel() };
   const trigger = { focus: () => focused = true };
-  const elements = { 'search-input': input, 'search-cancel': cancel, 'search-trigger': trigger };
+  const elements = { 'search-input': input, 'search-cancel': cancel, 'search-trigger': trigger, 'search-result-wrapper': { addEventListener: (name, fn) => handlers.resultKeydown = fn } };
   vm.runInNewContext(script.replace(/\n/g, ' '), {
     document: { addEventListener: (name, fn) => fn(), getElementById: id => elements[id] },
     SimpleJekyllSearch() {}, Event: class { constructor(type) { this.type = type; } }
@@ -81,6 +81,11 @@ test('search Cancel and Escape reset the real input value and mobile focus', () 
     mobile = isMobile; focused = false; input.value = 'Trontop';
     handlers.keydown({ key: 'Escape', preventDefault: () => prevented = true });
     assert.equal(input.value, ''); assert.equal(focused, isMobile); assert.equal(prevented, true);
+  }
+  for (const isMobile of [false, true]) {
+    mobile = isMobile; focused = false; inputFocused = false; input.value = 'Trontop';
+    handlers.resultKeydown({ key: 'Escape', preventDefault() {} });
+    assert.equal(input.value, ''); assert.equal(focused, isMobile); assert.equal(inputFocused, !isMobile);
   }
   input.value = 'unchanged'; handlers.keydown({ key: 'Enter' }); assert.equal(input.value, 'unchanged');
 });
