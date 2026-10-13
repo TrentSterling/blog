@@ -35,10 +35,10 @@ html[data-tront-theme-surface="blog"] {
     --input-focus-border-color: var(--te-accent);
     --checkbox-checked-color: var(--te-accent);
     --main-bg: color-mix(in srgb, var(--te-bg) 94%, var(--te-accent));
-    --sidebar-bg: color-mix(in srgb, var(--te-panel) 97%, var(--te-accent));
-    --topbar-bg: var(--te-panel);
+    --sidebar-bg: var(--te-panel-fill);
+    --topbar-bg: var(--te-panel-fill);
     --highlight-bg-color: var(--te-panel);
-    --card-bg: var(--te-panel);
+    --card-bg: var(--te-panel-fill);
     --mask-bg: var(--te-panel);
     --button-bg: var(--te-elem);
     --sidebar-btn-bg: var(--te-elem);
@@ -106,15 +106,27 @@ html[data-tront-theme-surface="blog"] .highlight :is(.ni, .ge, .gs, .gr) { color
 html[data-tront-theme-surface="blog"] .highlight .gi { background-color: var(--te-elem); }
 html[data-tront-theme-surface="blog"] input::placeholder { color: var(--te-muted); opacity: 1; }
 
-/* Keep Chirpy's reading canvas and its custom accent/material roles. */
-html[data-tront-theme-editor][data-tront-theme-surface="blog"] body { background-color: var(--main-bg); background-image: none; }
+/* Keep Chirpy's geometry; paint the editor's bounded four-stop wash on its canvas.
+   Viewport sizing makes every stop visible instead of stretching one gradient over
+   the entire multi-screen post list. It introduces no elements or layout shift. */
+html[data-tront-theme-editor][data-tront-theme-surface="blog"] body {
+    background-color: var(--te-bg);
+    background-image: var(--te-wash);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+html[data-tront-theme-surface="blog"] :is(#sidebar, #topbar-wrapper, #toc-bar) {
+    backdrop-filter: blur(var(--te-blur));
+    -webkit-backdrop-filter: blur(var(--te-blur));
+}
 html[data-tront-theme-surface="blog"] .pagination .page-item.disabled .page-link { color: var(--te-muted); }
 html[data-tront-theme-surface="blog"] #main-wrapper :is(h1, h2) {
-    background-image: linear-gradient(135deg in srgb, var(--te-accent), var(--te-secondary));
+    background-image: var(--tront-heading-gradient, linear-gradient(135deg in srgb, var(--te-accent), var(--te-secondary)));
     background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 html[data-tront-theme-surface="blog"] #sidebar #avatar > img { border: 2px solid var(--te-line); box-shadow: 0 0 16px color-mix(in srgb, var(--te-accent) 24%, transparent); }
-html[data-tront-theme-surface="blog"] .card { background: color-mix(in srgb, var(--te-panel-fill) 98%, var(--te-accent)); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--te-line); }
+html[data-tront-theme-surface="blog"] .card { background: var(--te-panel-fill); backdrop-filter: blur(var(--te-blur)); -webkit-backdrop-filter: blur(var(--te-blur)); border: 1px solid var(--te-line); }
 html[data-tront-theme-surface="blog"] .card:hover { border-color: var(--te-accent); box-shadow: 0 0 24px color-mix(in srgb, var(--te-accent) 24%, transparent); }
 html[data-tront-theme-surface="blog"] #sidebar .nav-item.active .nav-link { text-shadow: 0 0 10px color-mix(in srgb, var(--te-accent) 24%, transparent); }
 html[data-tront-theme-surface="blog"] :is(.btn, .page-link, .post-preview):is(:hover, :focus) { text-decoration: none; }
@@ -160,3 +172,4 @@ html[data-tront-theme-surface="blog"] #magic-navbar-container #tront-theme-btn[h
     visibility: hidden;
     pointer-events: none;
 }
+

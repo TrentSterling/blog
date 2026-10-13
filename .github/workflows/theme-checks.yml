@@ -68,7 +68,7 @@ jobs:
           node-version: '24'
           package-manager-cache: false
       - name: Check theme bridge and protected content
-        run: node --test tools/theme-review/test.cjs
+        run: node --test tools/theme-review/test.cjs tools/theme-review/heading.test.cjs
       - name: Build and validate existing post metadata
         run: |
           bundle exec ruby tools/test_unique_post_urls.rb
@@ -81,7 +81,7 @@ jobs:
       - name: Install pinned browser tooling and official Chrome
         id: browser-tools
         run: |
-          npm install --prefix "$RUNNER_TEMP/blog-tests" --no-save --package-lock=false --ignore-scripts playwright@1.62.0
+          npm install --prefix "$RUNNER_TEMP/blog-tests" --no-save --package-lock=false --ignore-scripts playwright@1.62.0 pngjs@7.0.0
           node "$RUNNER_TEMP/blog-tests/node_modules/playwright/cli.js" install --with-deps chrome
           echo "NODE_PATH=$RUNNER_TEMP/blog-tests/node_modules" >> "$GITHUB_ENV"
       - name: Test the built blog in Chrome
@@ -95,6 +95,8 @@ jobs:
           path: |
             .local/theme-review/*.png
             .local/theme-review/*.json
+            .local/theme-review/controls/*.png
           include-hidden-files: true
           if-no-files-found: warn
           retention-days: 7
+

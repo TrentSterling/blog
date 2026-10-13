@@ -34,7 +34,14 @@ module.exports = async function checkNavbarFirstPaint(browser, base, out) {
               const measure = new Function('return (' + snapshot + ')()');
               const sample = () => {
                 const nav = measure();
-                if (nav) window.__navPaint.frames.push({ t: performance.now(), nav, hidden: document.getElementById('tront-theme-btn').hidden });
+                if (nav) {
+                  const heading = document.querySelector('#main-wrapper h1');
+                  const card = document.querySelector('#post-list .card');
+                  window.__navPaint.frames.push({ t: performance.now(), nav, hidden: document.getElementById('tront-theme-btn').hidden,
+                    canvas: getComputedStyle(document.body).backgroundImage,
+                    heading: heading ? getComputedStyle(heading).backgroundImage : null,
+                    card: card ? { fill: getComputedStyle(card).backgroundColor, blur: getComputedStyle(card).backdropFilter } : null });
+                }
                 if (!window.__navPaint.stop && window.__navPaint.frames.length < 600) requestAnimationFrame(sample);
               };
               requestAnimationFrame(sample);
@@ -75,7 +82,13 @@ module.exports = async function checkNavbarFirstPaint(browser, base, out) {
             const fcp = trace.paints.find(p => p.name === 'first-contentful-paint')?.t;
             const painted = trace.frames.filter(f => fcp === undefined || f.t >= fcp);
             assert.ok(painted.length, 'post-FCP samples exist');
-            for (const frame of painted) assert.deepEqual(frame.nav, final, 'navbar does not move at editor reveal after first paint');
+            const finalPaint = trace.frames[trace.frames.length - 1];
+            for (const frame of painted) {
+              assert.deepEqual(frame.nav, final, 'navbar does not move at editor reveal after first paint');
+              assert.equal(frame.canvas, finalPaint.canvas, 'canvas gradient has no post-first-paint theme flash');
+              if (frame.heading) assert.equal(frame.heading, finalPaint.heading, 'readable heading ramp is applied before first paint');
+              if (frame.card) assert.deepEqual(frame.card, finalPaint.card, 'panel frost is applied before first paint');
+            }
             assert.equal(await page.locator('#tront-theme-btn').evaluate(b => b.hasAttribute('aria-controls')), true);
             await page.locator('#tront-theme-btn').click();
             await page.locator('#tront-theme-editor').waitFor({ state: 'visible' });
@@ -108,3 +121,4 @@ module.exports = async function checkNavbarFirstPaint(browser, base, out) {
   fs.writeFileSync(path.join(out, 'blog-first-paint-report.json'), JSON.stringify({ status: 'passed', cases: results }, null, 2));
   console.log('PASS: 16 cold/delayed navbar first-paint checks and two honest fallback checks.');
 };
+
