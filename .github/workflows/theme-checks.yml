@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           repository: TrentSterling/trentsterling.github.io
-          ref: 87a76222ec163d1478ad038797000c528cba830e
+          ref: 6fbe52c2926bc13e8751be2d902b38e54b2c6df1
           path: .local/shared-source
           persist-credentials: false
           sparse-checkout-cone-mode: false
@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           repository: TrentSterling/trentsterling.github.io
-          ref: 91d0a6874fbb4769d546574870e25c406a81608d
+          ref: 6fbe52c2926bc13e8751be2d902b38e54b2c6df1
           path: .local/shared-baseline
           persist-credentials: false
           sparse-checkout-cone-mode: false
