@@ -11,11 +11,11 @@ IoT is the Wild West. Standards and frameworks are being developed by big compan
 
 My goal in researching IoT was pretty simple. Wifi Toast. An RGB lightbulb. A keyfinder. A security system. Most of your typical IoT Hello World type projects.
 
-[![Wood, Acrylic, and some LEDs!](/assets/img/woodencore.jpg)](/assets/img/woodencore.jpg)
+[![Wood, Acrylic, and some LEDs!](/assets/img/woodencore.jpg)]({{ '/assets/img/woodencore.jpg' | relative_url }})
 
 But this opened my eyes to Microcontrollers vs Microprocessors, signal processing, electromagnetism, and the speed of light. Analog still has some uses too.
 
-[![Robot Farmers](/assets/img/farmrobotics.jpg)](/assets/img/farmrobotics.jpg)
+[![Robot Farmers](/assets/img/farmrobotics.jpg)]({{ '/assets/img/farmrobotics.jpg' | relative_url }})
 
 Honestly, I think I want to focus on robotics. Until I can afford more stepper motors and servos, I'll have to keep the human element in my projects.
 

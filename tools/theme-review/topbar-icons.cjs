@@ -65,7 +65,7 @@ module.exports = async function checkPageNativeTopbarIcons(browser, base, baseli
       const page = pages[1];
       const outer = items => items.map(({ id, rect, font, padding }) => ({ id, rect, font, padding }));
       assert.deepEqual(outer(evidence.after.buttons), outer(evidence.before.buttons), 'outer Menu/Search button rectangles and styles remain exactly unchanged');
-      assert.deepEqual(evidence.before.buttons.map(b => b.icon.tag), ['i', 'i'], 'baseline retains the original font glyphs');
+      assert.deepEqual(evidence.before.buttons.map(b => b.icon.tag), ['svg', 'svg'], 'released baseline retains page-native SVG glyphs');
       const fcp = evidence.after.paint.paints.find(p => p.name === 'first-contentful-paint')?.t;
       assert.ok(Number.isFinite(fcp), 'candidate has a real first contentful paint');
       const painted = evidence.after.paint.frames.filter(f => f.t >= fcp);

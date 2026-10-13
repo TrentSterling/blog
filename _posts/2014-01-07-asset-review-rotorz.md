@@ -13,7 +13,7 @@ Today we're comparing tilemappers. I've only had YouTube videos and other review
 
 ## Rotorz Tile System - $55
 
-[![Rotorz Tile System](/assets/img/rotorz-maxresdefault.jpg)](/assets/img/rotorz-maxresdefault.jpg)
+[![Rotorz Tile System](/assets/img/rotorz-maxresdefault.jpg)]({{ '/assets/img/rotorz-maxresdefault.jpg' | relative_url }})
 
 - Asset Store: [https://www.assetstore.unity3d.com/#/content/3344](https://www.assetstore.unity3d.com/#/content/3344)
 - Developer: [http://rotorz.com/](http://rotorz.com/)

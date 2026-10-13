@@ -7,10 +7,10 @@ description: "Got the brake pads replaced. Thoughts on hydraulics and vacuum mot
 image: "/assets/img/dirtyhands.jpg"
 ---
 
-[![Wash yo hands boy!](/assets/img/dirtyhands.jpg)](/assets/img/dirtyhands.jpg)
+[![Wash yo hands boy!](/assets/img/dirtyhands.jpg)]({{ '/assets/img/dirtyhands.jpg' | relative_url }})
 
 Got the brake pads replaced on my car today. Got me thinking about hydraulics and vacuum motors.
 
-[![Vacuum motor](/assets/img/vacuum.jpg)](/assets/img/vacuum.jpg)
+[![Vacuum motor](/assets/img/vacuum.jpg)]({{ '/assets/img/vacuum.jpg' | relative_url }})
 
 Nothing more to report. Just wanted to let you guys know I will be able to stop my 3500lb death box.

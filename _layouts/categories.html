@@ -5,12 +5,17 @@ layout: page
 
 {% include lang.html %}
 
+{% unless page.collection == 'tabs' %}
+  <h1>{{ page.title }}</h1>
+{% endunless %}
+
 {% assign HEAD_PREFIX = 'h_' %}
 {% assign LIST_PREFIX = 'l_' %}
 
 {% assign group_index = 0 %}
 
 {% assign sort_categories = site.categories | sort %}
+{% assign _category_index_rendered = '' | split: '' %}
 
 {% for category in sort_categories %}
   {% assign category_name = category | first %}
@@ -18,6 +23,7 @@ layout: page
   {% assign first_post = posts_of_category | first %}
 
   {% if category_name == first_post.categories[0] %}
+    {% assign _category_index_rendered = _category_index_rendered | push: category_name %}
     {% assign sub_categories = '' | split: '' %}
 
     {% for post in posts_of_category %}
@@ -103,6 +109,7 @@ layout: page
         <div id="{{ LIST_PREFIX }}{{ group_index }}" class="collapse show" aria-expanded="true">
           <ul class="list-group">
             {% for sub_category in sub_categories %}
+              {% assign _category_index_rendered = _category_index_rendered | push: sub_category %}
               <li class="list-group-item">
                 <i class="far fa-folder fa-fw"></i>
 
@@ -136,3 +143,29 @@ layout: page
     {% assign group_index = group_index | plus: 1 %}
   {% endif %}
 {% endfor %}
+
+{% unless page.collection == 'tabs' %}
+  {% for category in sort_categories %}
+    {% assign category_name = category | first %}
+    {% unless _category_index_rendered contains category_name %}
+      {% assign posts_size = category | last | size %}
+      <div class="card categories">
+        <div class="card-header d-flex justify-content-between hide-border-bottom">
+          <span class="ms-2">
+            <i class="far fa-folder fa-fw"></i>
+            {% capture _category_url %}/categories/{{ category_name | slugify | url_encode }}/{% endcapture %}
+            <a href="{{ _category_url | relative_url }}" class="mx-2">{{ category_name }}</a>
+            <span class="text-muted small font-weight-light">
+              {{ posts_size }}
+              {% if posts_size > 1 %}
+                {{ site.data.locales[lang].categories.post_measure.plural | default: site.data.locales[lang].categories.post_measure }}
+              {% else %}
+                {{ site.data.locales[lang].categories.post_measure.singular | default: site.data.locales[lang].categories.post_measure }}
+              {% endif %}
+            </span>
+          </span>
+        </div>
+      </div>
+    {% endunless %}
+  {% endfor %}
+{% endunless %}

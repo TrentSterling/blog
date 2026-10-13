@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const { execFileSync } = require('node:child_process');
+const { REPAIRS, normalizePostForPreservation, verifySources, verifyNegativeCases } = require('./link-repair.cjs');
 const root = path.resolve(__dirname, '../..');
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
 function environment(denied = false) {
@@ -33,16 +33,44 @@ test('one picker uses same-origin shared assets with the correct blog base path'
   assert.ok(!fs.readFileSync(path.join(root, '_includes/sidebar.html'), 'utf8').includes('id="mode-toggle"'));
   assert.match(fs.readFileSync(path.join(root, 'Gemfile'), 'utf8'), /jekyll-theme-chirpy", "7\.2\.4"/);
 });
-test('posts, metadata, sidebar content and layout body remain untouched', () => {
+test('only exact allowlisted post URLs change; all other protected working-tree bytes remain intact', () => {
   const baseline = process.env.BLOG_BASELINE_ROOT;
   if (!baseline) throw Error('BLOG_BASELINE_ROOT is required for preservation checks');
-  const protectedPaths = ['_posts', '_tabs', '_data', '_plugins', 'Gemfile', '_config.yml', '_layouts/post.html', '_layouts/home.html', '_includes/footer.html'];
-  const tree = dir => execFileSync('git', ['-C', dir, 'ls-tree', '-r', '--full-tree', 'HEAD', '--', ...protectedPaths], { encoding: 'utf8' });
-  assert.equal(tree(root), tree(baseline));
-  const layout = dir => fs.readFileSync(path.join(dir, '_layouts/default.html'), 'utf8').split('  <body>')[1];
-  assert.equal(layout(root), layout(baseline), 'all blog layout/body content is preserved');
-  const sidebar = dir => fs.readFileSync(path.join(dir, '_includes/sidebar.html'), 'utf8').replace(/  {% unless site.theme_mode %}[\s\S]*?  {% endunless %}\n/, '');
-  assert.equal(sidebar(root), sidebar(baseline), 'only the obsolete duplicate theme control is removed');
+  const protectedPaths = ['_posts', '_tabs', '_data', '_plugins', 'assets/img', 'Gemfile', '_config.yml',
+    '_layouts/post.html', '_layouts/home.html', '_layouts/default.html', '_includes/footer.html',
+    '_includes/sidebar.html', '_includes/navbar.html', '_includes/topbar.html'];
+  // Read the working tree, not only HEAD: this must catch uncommitted edits,
+  // additions and removals as well as the committed PR changes in CI.
+  const files = dir => {
+    const result = [];
+    function visit(relative) {
+      const stat = fs.lstatSync(path.join(dir, relative));
+      assert.ok(!stat.isSymbolicLink(), `protected path must not be a symlink: ${relative}`);
+      if (stat.isDirectory()) {
+        for (const name of fs.readdirSync(path.join(dir, relative)).sort()) visit(relative + '/' + name);
+      } else result.push(relative);
+    }
+    for (const relative of protectedPaths) visit(relative);
+    return result.sort();
+  };
+  const currentFiles = files(root), baselineFiles = files(baseline);
+  assert.deepEqual(currentFiles, baselineFiles, 'protected files are neither added nor removed');
+  verifySources(root);
+  for (const relative of currentFiles) {
+    const current = fs.readFileSync(path.join(root, relative));
+    const original = fs.readFileSync(path.join(baseline, relative));
+    if (REPAIRS.some(repair => repair.path === relative)) {
+      assert.equal(normalizePostForPreservation(relative, current.toString('utf8')),
+        normalizePostForPreservation(relative, original.toString('utf8')),
+        `${relative}: reverse only the approved URLs; preserve every other post byte`);
+    } else {
+      assert.deepEqual(current, original, `${relative}: unlisted protected content is byte-for-byte intact`);
+    }
+  }
+});
+
+test('URL preservation rejects prose, captions, image sources, wrong destinations and duplicate-count changes', () => {
+  assert.equal(verifyNegativeCases(root).length, 8);
 });
 
 test('lazy comments guard remains valid after HTML compression removes line breaks', () => {

@@ -13,11 +13,11 @@ image: "/assets/img/yRyskp.jpg"
 {: .prompt-tip }
 
 
-[![Jenn's Cafe](/assets/img/yRyskp.jpg)](/assets/img/yRyskp.jpg)
+[![Jenn's Cafe](/assets/img/yRyskp.jpg)]({{ '/assets/img/yRyskp.jpg' | relative_url }})
 
 I started working on a game for my wife, Jennifer, inspired by a mix of *The Sims*, *Diner Dash*, and *Black and White*. The goal was to create something fun and personalized, but as development went on, I found myself getting caught up in the level editor and the customization options.
 
-[![Restaurant View](/assets/img/DZ1nsPwW4AEB7gE.jpg)](/assets/img/DZ1nsPwW4AEB7gE.jpg)
+[![Restaurant View](/assets/img/DZ1nsPwW4AEB7gE.jpg)]({{ '/assets/img/DZ1nsPwW4AEB7gE.jpg' | relative_url }})
 
 *Jenn’s Cafe* is a simulation and management game that gives players the ability to design and build their own restaurant. The customization is central to the experience, allowing players to freely place and stack objects, creating a highly personalized environment, much like *The Sims* and *Diner Dash*. There’s a level editor inspired by *Sims 3/4*, with an array of props and decorations that players can freely place within the space.
 
@@ -29,7 +29,7 @@ While the game lacks depth in its current state, there is still a fun building e
 
 ---
 
-[![Kitchen View](/assets/img/KQnkFb.jpg)](/assets/img/KQnkFb.jpg)
+[![Kitchen View](/assets/img/KQnkFb.jpg)]({{ '/assets/img/KQnkFb.jpg' | relative_url }})
 
 ---
 
