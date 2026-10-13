@@ -88,7 +88,7 @@ html[data-tront-theme-surface="blog"] {
 }
 html[data-tront-theme-surface="blog"] :is(.text-muted, .post-meta, #search-hints) { color: var(--te-muted) !important; }
 html[data-tront-theme-surface="blog"] :is(input, button, select) { color: var(--te-ink); }
-html[data-tront-theme-surface="blog"] :is(#search-input, .btn, .page-link) { background-color: var(--te-elem); border-color: var(--te-line); }
+html[data-tront-theme-surface="blog"] :is(.btn, .page-link) { background-color: var(--te-elem); border-color: var(--te-line); }
 html[data-tront-theme-surface="blog"] #archives li:nth-child(odd) { background-image: var(--te-button); }
 html[data-tront-theme-surface="blog"] :is(.highlight, .highlight .w) { background-color: var(--te-panel); color: var(--te-ink); }
 html[data-tront-theme-surface="blog"] .highlight :is(.c, .ch, .cd, .cm, .cpf, .c1, .cs, .gp, .lineno) { color: var(--te-muted); }
@@ -136,3 +136,18 @@ html[data-tront-theme-surface="blog"] .error-glitch { color: var(--te-muted); op
 /* Sticky contents labels and post-navigation labels switch ink with their grounds. */
 html[data-tront-theme-surface="blog"] #toc-bar { transition-property: top, transform; }
 html[data-tront-theme-surface="blog"] .post-navigation :is(.btn, .btn:hover)::before { color: var(--te-muted); transition-property: transform, box-shadow; }
+
+/* Search is one rounded surface, including its keyboard focus indicator. */
+html[data-tront-theme-surface="blog"] #search-input {
+    min-width: 0;
+    background: transparent;
+    color: var(--te-ink);
+    caret-color: var(--te-accent);
+    transition: none;
+}
+html[data-tront-theme-surface="blog"] #search:focus-within {
+    border-color: var(--te-accent);
+    outline: 2px solid var(--te-accent);
+    outline-offset: 2px;
+}
+html[data-tront-theme-surface="blog"] #search-input:focus-visible { outline: none; }

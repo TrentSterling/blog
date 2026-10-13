@@ -21,8 +21,12 @@
 <script>
   {% comment %} Note: dependent library will be loaded in `js-selector.html` {% endcomment %}
   document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('search-input');
+    const cancel = document.getElementById('search-cancel');
+    const trigger = document.getElementById('search-trigger');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
+      searchInput: input,
       resultsContainer: document.getElementById('search-results'),
       json: '{{ '/assets/js/data/search.json' | relative_url }}',
       searchResultTemplate: '{{ result_elem | strip_newlines }}',
@@ -45,5 +49,27 @@
         }
       }
     });
+
+    /* Reset the actual value so Cancel/reopen never restores a stale query. */
+    const clearSearch = () => {
+      input.value = '';
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    };
+    cancel.addEventListener('click', () => {
+      clearSearch();
+      trigger.focus();
+    });
+    const dismissSearch = (event) => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      if (cancel.classList.contains('d-block')) {
+        cancel.click();
+      } else {
+        clearSearch();
+        input.focus();
+      }
+    };
+    input.addEventListener('keydown', dismissSearch);
+    document.getElementById('search-result-wrapper').addEventListener('keydown', dismissSearch);
   });
 </script>
