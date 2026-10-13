@@ -40,7 +40,7 @@ module.exports = async function checkNavbarFirstPaint(browser, base, out) {
                   window.__navPaint.frames.push({ t: performance.now(), nav, hidden: document.getElementById('tront-theme-btn').hidden,
                     canvas: getComputedStyle(document.body).backgroundImage,
                     heading: heading ? getComputedStyle(heading).backgroundImage : null,
-                    card: card ? { fill: getComputedStyle(card).backgroundColor, blur: getComputedStyle(card).backdropFilter } : null });
+                    card: card ? { fill: getComputedStyle(card.querySelector('.post-preview') || card).backgroundColor, blur: getComputedStyle(card).backdropFilter } : null });
                 }
                 if (!window.__navPaint.stop && window.__navPaint.frames.length < 600) requestAnimationFrame(sample);
               };

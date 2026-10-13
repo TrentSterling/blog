@@ -21,6 +21,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
   const colors = ['#ff3500', '#05df69', '#125cff', '#ed08e7'];
   const replacements = ['#00aaff', '#ffbf00', '#ff2050', '#10edaf'];
   const previewPairs = [];
+  let latestPair = null;
   const liveContexts = new Set();
   function diff(aBuffer, bBuffer) {
     const a = PNG.sync.read(aBuffer), b = PNG.sync.read(bBuffer);
@@ -113,7 +114,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
         mode: [document.documentElement.getAttribute('data-te-mode'), document.documentElement.getAttribute('data-mode'), sessionStorage.getItem('mode')],
         geometry: [...document.querySelectorAll('#main-wrapper, main, #post-list, #post-list .card, #post-list h1, #sidebar, #topbar-wrapper, #magic-navbar-container > *')].map(el => ({ tag: el.tagName, class: el.className, id: el.id, rect: rect(el) })),
         content: [...document.querySelectorAll('#post-list .card')].map(el => ({ text: el.innerText, links: [...el.querySelectorAll('a')].map(a => a.getAttribute('href')) })),
-        css: { body: style('body'), main: style('main'), sidebar: style('#sidebar'), topbar: style('#topbar-wrapper'), card: style('#post-list .card'), heading },
+        css: { body: style('body'), main: style('main'), sidebar: style('#sidebar'), topbar: style('#topbar-wrapper'), card: style('#post-list .card'), cardSurface: style('#post-list .post-preview'), heading },
         contrast: { bound: tokens.bound, checkedTextNodes: ratios.length, minimumTextRatio: Math.min(...ratios), headingStops: stops, headingRatios, failures },
         overflow: document.documentElement.scrollWidth > innerWidth,
         editorOpen: !!document.querySelector('.te-dialog').open
@@ -179,6 +180,34 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
     return { context, page };
   }
   const closeContext = async context => { await context.close(); liveContexts.delete(context); };
+  // PNGJS-only nearest-neighbor preview. Reduce the overview if necessary to
+  // keep CI's inline diagnostic under 60 KB; full-resolution evidence is saved.
+  function createPreview(pairs, filename = 'blog-control-effects-preview.png') {
+    let preview, sheet, tileWidth = 240;
+    do {
+      const tileHeight = Math.round(tileWidth * 145 / 240), gutter = 4;
+      sheet = new PNG({ width: tileWidth * 2 + gutter, height: (tileHeight + gutter) * pairs.length + gutter });
+      sheet.data.fill(255);
+      function blit(buffer, dx, dy) {
+        const source = PNG.sync.read(buffer);
+        for (let y = 0; y < tileHeight; y++) for (let x = 0; x < tileWidth; x++) {
+          const sx = Math.floor(x * source.width / tileWidth), sy = Math.floor(y * source.height / tileHeight);
+          const src = (sy * source.width + sx) * 4, dest = ((dy + y) * sheet.width + dx + x) * 4;
+          for (let c = 0; c < 4; c++) sheet.data[dest + c] = source.data[src + c];
+        }
+      }
+      pairs.forEach((pair, row) => {
+        const y = gutter + row * (tileHeight + gutter);
+        blit(pair.before.buffers.page, 0, y); blit(pair.after.buffers.page, tileWidth + gutter, y);
+      });
+      preview = PNG.sync.write(sheet, { colorType: 2 });
+      tileWidth -= 20;
+    } while (preview.length > 60000 && tileWidth >= 80);
+    fs.writeFileSync(path.join(out, filename), preview);
+    report.preview = pairs.map((pair, row) => ({ row: row + 1, label: pair.label, left: files(pair.before), right: files(pair.after) }));
+    report.previewDimensions = { width: sheet.width, height: sheet.height, bytes: preview.length };
+    return preview;
+  }
   try {
     // Reproduce the original adapter's disconnected controls at both requested
     // widths/modes, without assuming frost's opacity change had no effect.
@@ -193,6 +222,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
         const after = await capture(page, label + '-after', false);
         sameStructure(before, after, label);
         const metrics = metricPair(before, after);
+        latestPair = { label, before, after };
         const record = { width, mode, control, from: before.data.state, to: after.data.state,
           before: files(before), after: files(after), pixels: metrics, beforeCss: before.data.css, afterCss: after.data.css };
         report.baseline.push(record); writeReport();
@@ -240,6 +270,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
         const after = await capture(page, label + '-after');
         sameStructure(before, after, label);
         const metrics = metricPair(before, after);
+        latestPair = { label, before, after };
         const record = { width, mode, control: control.name, before: files(before), after: files(after),
           from: before.data.state, to: after.data.state, pixels: metrics, beforeCss: before.data.css, afterCss: after.data.css,
           contrast: after.data.contrast, geometryAndContentUnchanged: true };
@@ -250,7 +281,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
           changed(metrics.card, label + ' actual glass card');
           assert.equal(before.data.css.card.blur, 'blur(12.5px)');
           assert.equal(after.data.css.card.blur, 'blur(0px)');
-          assert.notEqual(after.data.css.card.background, before.data.css.card.background, 'frost changes actual card alpha');
+          assert.notEqual(after.data.css.cardSurface.background, before.data.css.cardSurface.background, 'frost changes the actual post-preview card surface alpha');
         }
         if (control.name === 'angle' || control.name.startsWith('position-')) {
           assert.notEqual(after.data.css.body.image, before.data.css.body.image, 'control reaches rendered body gradient');
@@ -316,26 +347,7 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
       persistence.checks.push({ name: 'reset-reload', before: files(reset), after: files(resetReload), pixels: resetPixels });
       writeReport(); await closeContext(context);
     }
-    // PNGJS-only, nearest-neighbor overview: row order is documented in JSON.
-    // The full-size source images and all comparison measurements are retained.
-    const tileWidth = 240, tileHeight = 145, gutter = 4;
-    const sheet = new PNG({ width: tileWidth * 2 + gutter, height: (tileHeight + gutter) * previewPairs.length + gutter });
-    sheet.data.fill(255);
-    function blit(buffer, dx, dy) {
-      const source = PNG.sync.read(buffer);
-      for (let y = 0; y < tileHeight; y++) for (let x = 0; x < tileWidth; x++) {
-        const sx = Math.floor(x * source.width / tileWidth), sy = Math.floor(y * source.height / tileHeight);
-        const src = (sy * source.width + sx) * 4, dest = ((dy + y) * sheet.width + dx + x) * 4;
-        for (let c = 0; c < 4; c++) sheet.data[dest + c] = source.data[src + c];
-      }
-    }
-    previewPairs.forEach((pair, row) => {
-      const y = gutter + row * (tileHeight + gutter);
-      blit(pair.before.buffers.page, 0, y); blit(pair.after.buffers.page, tileWidth + gutter, y);
-      report.preview.push({ row: row + 1, label: pair.label, left: files(pair.before), right: files(pair.after) });
-    });
-    const preview = PNG.sync.write(sheet, { colorType: 2 });
-    fs.writeFileSync(path.join(out, 'blog-control-effects-preview.png'), preview);
+    const preview = createPreview(previewPairs);
     report.status = 'passed';
     report.summary = [...new Set(report.cases.map(c => c.control))].map(control => {
       const records = report.cases.filter(c => c.control === control);
@@ -350,7 +362,12 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
     console.log('PASS: 64 rendered control changes, their pixel-restoring Undo actions, 24 baseline reproductions, and 16 persistence/navigation/storage checks at 390/1440 light/dark.');
     return report;
   } catch (error) {
-    report.status = 'failed'; report.error = error.stack || error.message; writeReport();
-    throw error;
+    report.status = 'failed'; report.error = error.stack || error.message;
+    console.log('BLOG_CONTROL_PIXEL_FAILURE ' + JSON.stringify({ error: error.message, lastCase: report.cases.at(-1), lastBaseline: report.baseline.at(-1), completedCases: report.cases.length }));
+    if (latestPair) {
+      const preview = createPreview([latestPair], 'blog-control-effects-failure-preview.png');
+      console.log('BLOG_CONTROL_PREVIEW_PNG ' + preview.toString('base64'));
+    }
+    writeReport(); throw error;
   } finally { for (const context of liveContexts) await context.close(); }
 };
