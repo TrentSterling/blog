@@ -241,7 +241,8 @@ async function contrast(page) {
             assert.equal(await page.locator('#search-cancel').evaluate(el => el === document.activeElement), true);
             await page.keyboard.press('Enter');
           } else if (dismiss === 'ResultEscape') {
-            await page.locator('#search-results article h2 a').first().focus();
+            await page.keyboard.press('Tab'); await page.keyboard.press('Tab');
+            assert.equal(await page.locator('#search-results article h2 a').first().evaluate(el => el === document.activeElement), true, 'keyboard reaches a mobile result link');
             await page.keyboard.press('Escape');
           } else await input.press('Escape');
           assert.equal(await page.locator('#search-result-wrapper').isVisible(), false, `${dismiss} restores mobile content`);

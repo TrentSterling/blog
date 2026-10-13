@@ -141,6 +141,8 @@ html[data-tront-theme-surface="blog"] .post-navigation :is(.btn, .btn:hover)::be
 html[data-tront-theme-surface="blog"] #search-input {
     min-width: 0;
     background: transparent;
+    color: var(--te-ink);
+    caret-color: var(--te-accent);
 }
 html[data-tront-theme-surface="blog"] #search:focus-within {
     border-color: var(--te-accent);
