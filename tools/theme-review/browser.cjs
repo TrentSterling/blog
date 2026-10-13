@@ -63,6 +63,7 @@ async function contrast(page) {
     await new Promise(resolve => baselineServer.listen(0, '127.0.0.1', resolve));
     const baselineUrl = `http://127.0.0.1:${baselineServer.address().port}`;
     browser = await chromium.launch({ headless: true, executablePath: process.env.THEME_BROWSER_EXECUTABLE || undefined });
+    await require('./first-paint.cjs')(browser, url, out);
     page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
     const errors = [], missing = [];
     page.on('pageerror', error => errors.push(error.message));
