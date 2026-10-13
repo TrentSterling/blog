@@ -173,7 +173,7 @@ async function contrast(page) {
         const ground = Array.from(context.getImageData(0, 0, 1, 1).data).slice(0, 3);
         return {
           textColor: css.color, placeholderColor: getComputedStyle(input, '::placeholder').color, backgrounds, ground,
-          background: css.backgroundColor, image: css.backgroundImage, border: css.borderTopWidth,
+          transition: css.transitionProperty, background: css.backgroundColor, image: css.backgroundImage, border: css.borderTopWidth,
           outerRadius: parseFloat(outer.borderTopLeftRadius), outerOutline: outer.outlineWidth, innerOutline: css.outlineWidth,
           inputFits: i.left >= r.left && i.right <= r.right && i.top >= r.top && i.bottom <= r.bottom,
           contrast: api.contrast(rgb(css.color), ground),
@@ -185,6 +185,7 @@ async function contrast(page) {
       searchCoverage.push({ preset, width, ...state });
       fs.writeFileSync(path.join(out, 'blog-search-report.json'), JSON.stringify(searchCoverage, null, 2));
       assert.equal(state.background, 'rgba(0, 0, 0, 0)', 'input stays transparent inside the rounded search surface');
+      assert.equal(state.transition, 'none', 'theme changes cannot tween search ink against the new surface');
       assert.equal(state.image, 'none'); assert.equal(state.border, '0px');
       assert.ok(state.outerRadius > 0 && state.inputFits, 'search stays rounded and input fits');
       assert.ok(state.contrast >= 4.5 && state.placeholderContrast >= 4.5, 'typed text and placeholder stay readable: ' + JSON.stringify(state));

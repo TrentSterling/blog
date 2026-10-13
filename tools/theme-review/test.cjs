@@ -58,6 +58,7 @@ test('search paints one surface and moves keyboard focus to its rounded wrapper'
   assert.doesNotMatch(css, /:is\(#search-input,/);
   assert.match(css, /#search-input\s*\{[^}]*min-width:\s*0;[^}]*background:\s*transparent;/);
   assert.match(css, /#search-input\s*\{[^}]*color:\s*var\(--te-ink\)/);
+  assert.match(css, /#search-input\s*\{[^}]*transition:\s*none;/);
   assert.match(css, /#search:focus-within\s*\{[^}]*outline:\s*2px solid var\(--te-accent\)/);
   assert.match(css, /#search-input:focus-visible\s*\{\s*outline:\s*none;/);
 });

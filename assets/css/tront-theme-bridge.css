@@ -143,6 +143,7 @@ html[data-tront-theme-surface="blog"] #search-input {
     background: transparent;
     color: var(--te-ink);
     caret-color: var(--te-accent);
+    transition: none;
 }
 html[data-tront-theme-surface="blog"] #search:focus-within {
     border-color: var(--te-accent);
