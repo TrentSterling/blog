@@ -324,6 +324,19 @@ module.exports = async function checkControlEffects(browser, base, baselineBase,
         }
         if (['angle', 'frost'].includes(control.name)) {
           console.log('BLOG_CONTROL_CASE_METRICS ' + JSON.stringify({ width, mode, control: control.name, pixels: metrics, beforeCss: before.data.css, afterCss: after.data.css, before: files(before), after: files(after) }));
+          // Preserve full-resolution public-site evidence in the decoded CI log
+          // as well as the artifact, so reviewers without a browser sign-in can
+          // inspect the actual pixels. Lossless PNG re-encoding never resizes.
+          if (width === 1440) {
+            for (const [side, snapshot] of [['before', before], ['after', after]]) {
+              for (const region of control.name === 'frost' ? ['surface'] : ['page']) {
+                const source = PNG.sync.read(snapshot.buffers[region]);
+                const png = PNG.sync.write(source, { deflateLevel: 9 });
+                console.log('BLOG_CONTROL_FULL_PNG ' + JSON.stringify({ label, side, region,
+                  width: source.width, height: source.height, png: png.toString('base64') }));
+              }
+            }
+          }
           const region = control.name === 'frost' ? 'surface' : 'page';
           if (width === 1440) previewPairs.push({ label, before, after, region });
           const partialPairs = previewPairs.length ? previewPairs : [{ label, before, after, region }];
