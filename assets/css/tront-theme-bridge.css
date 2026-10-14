@@ -201,3 +201,8 @@ html[data-tront-theme-surface="blog"] .content video[width="960"][height="600"] 
     aspect-ratio: 8 / 5;
 }
 
+/* Keep cards and side panels proportional when a wide viewport opens at low zoom. */
+html[data-tront-theme-surface="blog"] #main-wrapper > .container {
+    max-width: 76rem;
+}
+
