@@ -49,6 +49,23 @@ jobs:
               report.push({name,url:page.url(),description,text,imgs});
               console.log(JSON.stringify({name,url:page.url(),description,imgs}));
             }
+            const found=[];
+            for(let n=1;n<=19&&found.length<2;n++){
+              await page.goto('https://tront.xyz/blog/'+(n===1?'':'page'+n+'/'),{waitUntil:'networkidle'});
+              for(const title of ['Godgame Village','ORCFLOW']){
+                if(found.includes(title)) continue;
+                const card=page.locator('#post-list .post-preview').filter({has:page.getByRole('heading',{name:title,exact:true})});
+                if(await card.count()){
+                  await card.scrollIntoViewIfNeeded();
+                  await card.locator('img').evaluate(e=>e.decode());
+                  const img=await card.locator('img').evaluate(e=>({src:e.currentSrc,width:e.naturalWidth,height:e.naturalHeight}));
+                  assert.ok(img.width>0&&img.src.includes('/article-thumbnails/'),title+' authentic thumbnail');
+                  await card.screenshot({path:'.local/public-zoom/card-'+title.replace(/ /g,'-')+'.png'});
+                  report.push({card:title,url:page.url(),image:img});found.push(title);
+                }
+              }
+            }
+            assert.equal(found.length,2,'Both authentic thumbnail cards found');
             fs.writeFileSync('.local/public-zoom/spotchecks.json',JSON.stringify(report,null,2));
             await browser.close();
           })().catch(e=>{console.error(e);process.exit(1)});
