@@ -1,6 +1,7 @@
 ---
 title: "BREAKMASS"
-date: 2026-10-14 15:16:48 +0000
+date: 2026-09-17 15:16:48 +0000
+last_modified_at: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "I made a voxel destruction sandbox called BREAKMASS. The God Hand lets you grab a building, pull it away from its supports and throw it into the building next door."

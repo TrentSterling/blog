@@ -1,6 +1,7 @@
 ---
 title: "VibeSpace"
-date: 2026-10-14 15:16:48 +0000
+date: 2025-08-03 15:16:48 +0000
+last_modified_at: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "VibeSpace is a Three.js space-flight experiment with a procedural universe and a boosty autopilot."

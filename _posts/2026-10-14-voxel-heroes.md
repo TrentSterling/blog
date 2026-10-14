@@ -1,6 +1,7 @@
 ---
 title: "Voxel Heroes"
-date: 2026-10-14 15:16:48 +0000
+date: 2026-10-02 15:16:48 +0000
+last_modified_at: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "Voxel Heroes is a little voxel adventure that you can play with friends. Start in Mossbrook, get a sword and some equipment, then head out into the dungeons."
