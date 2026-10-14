@@ -177,7 +177,7 @@ html[data-tront-theme-surface="blog"] #magic-navbar-container #tront-theme-btn[h
 html[data-tront-theme-surface="blog"] #main-wrapper main > #tail-wrapper {
     width: 100%;
     margin: 0 !important;
-    padding: 0 0.25rem;
+    padding: 0 0.25rem !important;
 }
 html[data-tront-theme-surface="blog"] #main-wrapper footer {
     height: auto;

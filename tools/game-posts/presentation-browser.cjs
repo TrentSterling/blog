@@ -56,12 +56,13 @@ const server = http.createServer((req,res) => {
       await page.goto(base+route,{waitUntil:'networkidle'});
       const footer=page.locator('footer');await footer.scrollIntoViewIfNeeded();await page.waitForTimeout(800);await footer.scrollIntoViewIfNeeded();
       const data=await page.evaluate(()=>{
-        const f=document.querySelector('footer'),r=f.getBoundingClientRect(),m=document.querySelector('main').getBoundingClientRect(),p=f.querySelector('p').getBoundingClientRect(),s=getComputedStyle(f);
-        return {text:f.innerText,x:r.x,right:r.right,width:r.width,height:r.height,mainX:m.x,mainRight:m.right,textX:p.x,textRight:p.right,background:s.backgroundColor,scroll:document.documentElement.scrollWidth,viewport:innerWidth};
+        const f=document.querySelector('footer'),r=f.getBoundingClientRect(),m=document.querySelector('main').getBoundingClientRect(),p=f.querySelector('p').getBoundingClientRect(),s=getComputedStyle(f),t=getComputedStyle(document.querySelector('#tail-wrapper'));
+        return {text:f.innerText,x:r.x,right:r.right,width:r.width,height:r.height,mainX:m.x,mainRight:m.right,textX:p.x,textRight:p.right,background:s.backgroundColor,tailLeft:t.paddingLeft,tailRight:t.paddingRight,scroll:document.documentElement.scrollWidth,viewport:innerWidth};
       });
       assert.ok(data.x>=data.mainX && data.right<=data.mainRight+1,'footer shares the main content column');
       assert.ok(data.textX>=data.x && data.textRight<=data.right+1,'copyright stays inside footer');
       assert.equal(data.background,'rgba(0, 0, 0, 0)','footer follows the page wash');
+      assert.equal(data.tailLeft,data.tailRight,'footer has balanced content padding at every width');
       assert.match(data.text,/© \d{4} Trent Sterling\./);assert.ok(data.scroll<=width+1,'no horizontal overflow');
       await page.screenshot({path:path.join(out,`${route.replaceAll('/','-') || 'index'}-${width}-footer.png`)});
       report.footers.push({route,width,...data});await context.close();
