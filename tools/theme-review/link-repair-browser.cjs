@@ -27,7 +27,7 @@ const article = page => page.evaluate(() => ({
 module.exports = async function checkRepairedLinks(browser, base, baselineBase, siteRoot, out) {
   const report = { status: 'running', built: verifyBuiltSite(path.join(siteRoot, 'blog')),
     widths, categories: [], posts: [], destinations: [], errors: [], missingAssets: [],
-    knownUnrecovered: ['assets/img/screen21.jpg', 'assets/img/screen3.jpg'] };
+    recoveredImages: [] };
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, serviceWorkers: 'block' });
   let page;
   const save = () => fs.writeFileSync(path.join(out, 'blog-link-repair-report.json'), JSON.stringify(report, null, 2));
@@ -163,6 +163,45 @@ module.exports = async function checkRepairedLinks(browser, base, baselineBase, 
       report.posts.push(evidence); save();
     }
     assert.equal(report.destinations.length, 40);
+    // Preserve the migrated article exactly while restoring its two omitted JPEGs.
+    const recoveredRoute = '/blog/posts/dont-touch-the-red-stuff/';
+    await open(baseline, baselineBase, recoveredRoute);
+    const recoveredOriginal = await article(baseline);
+    for (const width of widths) {
+      await page.setViewportSize({ width, height: 1000 });
+      await open(page, base, recoveredRoute);
+      assert.deepEqual(await article(page), recoveredOriginal, 'restored screenshots do not change article content or metadata');
+      for (const name of ['screen21', 'screen3']) {
+        const href = `/blog/assets/img/blog/wp/${name}.jpg`;
+        const image = page.locator(`main .content img[src="${href}"]`);
+        assert.equal(await image.count(), 1);
+        await image.scrollIntoViewIfNeeded();
+        await image.evaluate(img => img.decode());
+        const decoded = await image.evaluate(img => {
+          const r = img.getBoundingClientRect();
+          return { complete: img.complete, width: img.naturalWidth, height: img.naturalHeight,
+            visibleWidth: r.width, visibleHeight: r.height, left: r.left, right: r.right };
+        });
+        assert.equal(decoded.complete, true);
+        assert.deepEqual([decoded.width, decoded.height], [600, 337]);
+        assert.ok(decoded.visibleWidth > 0 && decoded.visibleHeight > 0);
+        assert.ok(decoded.left >= -1 && decoded.right <= width + 1, 'restored image fits the reading viewport');
+        assert.equal(await image.locator('..').getAttribute('href'), href, 'enlargement points to the same recovered image');
+        await page.screenshot({ path: path.join(out, `recovered-${name}-${width}.png`) });
+        report.recoveredImages.push({ viewportWidth: width, href, ...decoded });
+      }
+    }
+    const imagePage = await context.newPage();
+    for (const name of ['screen21', 'screen3']) {
+      const response = await imagePage.goto(base + `/blog/assets/img/blog/wp/${name}.jpg`);
+      assert.equal(response.status(), 200);
+      assert.match(response.headers()['content-type'], /^image\/jpeg/);
+      const image = imagePage.locator('img');
+      await image.evaluate(img => img.decode());
+      assert.deepEqual(await image.evaluate(img => [img.naturalWidth, img.naturalHeight]), [600, 337]);
+    }
+    await imagePage.close();
+    save();
     assert.deepEqual(report.errors, [], 'repaired blog routes have no JavaScript errors');
     assert.deepEqual(report.missingAssets, [], 'same-origin scripts and styles load');
     report.status = 'passed';

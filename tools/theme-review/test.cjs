@@ -4,9 +4,22 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const crypto = require('node:crypto');
 const { REPAIRS, normalizePostForPreservation, verifySources, verifyNegativeCases } = require('./link-repair.cjs');
 const root = path.resolve(__dirname, '../..');
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
+// Exact archived 600x337 JPEG bytes. The WordPress migration referenced the
+// unsuffixed names but omitted these two images; the article is unchanged.
+const recoveredImages = new Map([
+  ['assets/img/blog/wp/screen21.jpg', '0129c8b2ff304ae9e4527d0d48691fccd1fb6c6548406d0891399c5aba3a16e8'],
+  ['assets/img/blog/wp/screen3.jpg', 'a474e89407554af975d8110ffaf6eb78ef5a20fb2d88996e87f41c49cf79adfa']
+]);
+// Sources: http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/10/screen21-600x337.jpg
+//          http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/10/screen3-600x337.jpg
+function verifyRecoveredImage(relative, bytes) {
+  assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), recoveredImages.get(relative),
+    `${relative}: recovered image must match the authentic archived bytes`);
+}
 function environment(denied = false) {
   const attrs = { 'data-te-mode': 'dark' }, writes = [], messages = [];
   let observer;
@@ -54,10 +67,17 @@ test('only exact allowlisted post URLs change; all other protected working-tree 
     return result.sort();
   };
   const currentFiles = files(root), baselineFiles = files(baseline);
-  assert.deepEqual(currentFiles, baselineFiles, 'protected files are neither added nor removed');
+  const recoveredAdditions = new Set(currentFiles.filter(relative =>
+    recoveredImages.has(relative) && !baselineFiles.includes(relative)));
+  assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative)), baselineFiles,
+    'protected files are neither added nor removed except the two exact recovered images');
   verifySources(root);
   for (const relative of currentFiles) {
     const current = fs.readFileSync(path.join(root, relative));
+    if (recoveredAdditions.has(relative)) {
+      verifyRecoveredImage(relative, current);
+      continue;
+    }
     const original = fs.readFileSync(path.join(baseline, relative));
     if (REPAIRS.some(repair => repair.path === relative)) {
       assert.equal(normalizePostForPreservation(relative, current.toString('utf8')),
@@ -66,6 +86,16 @@ test('only exact allowlisted post URLs change; all other protected working-tree 
     } else {
       assert.deepEqual(current, original, `${relative}: unlisted protected content is byte-for-byte intact`);
     }
+  }
+});
+
+test('recovered historical screenshots retain exact authentic bytes and reject tampering', () => {
+  for (const [relative] of recoveredImages) {
+    const bytes = fs.readFileSync(path.join(root, relative));
+    verifyRecoveredImage(relative, bytes);
+    const changed = Buffer.from(bytes);
+    changed[changed.length - 1] ^= 1;
+    assert.throws(() => verifyRecoveredImage(relative, changed), /authentic archived bytes/);
   }
 });
 
