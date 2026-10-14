@@ -87,11 +87,14 @@ jobs:
           RELEASE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           set -eu
-          for file in assets/css/tront-theme-bridge.css assets/js/tront-theme-bridge.js; do
+          for file in assets/css/tront-theme-bridge.css assets/js/tront-theme-bridge.js assets/img/blog/wp/screen21.jpg assets/img/blog/wp/screen3.jpg; do
             fetched="$RUNNER_TEMP/$(basename "$file")"
             matched=false
             for attempt in 1 2 3 4 5 6; do
-              if curl --location --fail --silent --show-error --connect-timeout 10 --max-time 30 "${RELEASE_URL%/}/$file?release=${GITHUB_SHA}" -o "$fetched" && cmp -s "$file" "$fetched"; then
+              if content_type=$(curl --location --fail --silent --show-error --connect-timeout 10 --max-time 30 --write-out '%{content_type}' "${RELEASE_URL%/}/$file?release=${GITHUB_SHA}" -o "$fetched") && cmp -s "$file" "$fetched"; then
+                case "$file" in
+                  *.jpg) [ "$content_type" = "image/jpeg" ] || { sleep 15; continue; } ;;
+                esac
                 matched=true
                 break
               fi
@@ -101,7 +104,7 @@ jobs:
               echo "Published asset does not match release $GITHUB_SHA: $file"
               exit 1
             fi
-            echo "Published release asset verified: $file"
+            echo "Published release asset verified: $file ($content_type)"
             sha256sum "$fetched"
           done
 
