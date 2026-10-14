@@ -1,6 +1,7 @@
 ---
 title: "Jenn's Farm"
-date: 2026-10-14 15:16:48 +0000
+date: 2026-05-31 15:16:48 +0000
+last_modified_at: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "Jenn's Farm is a little 3D farming game I made for the browser. Till some soil, plant seeds, water the crops, then harvest and sell them so you can buy more seeds."

@@ -1,6 +1,7 @@
 ---
 title: "Terrain Lab"
-date: 2026-10-14 15:16:48 +0000
+date: 2026-09-17 15:16:48 +0000
+last_modified_at: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "Terrain Lab lets you dig into the landscape, pile more ground on top, smooth it out or flatten an area."

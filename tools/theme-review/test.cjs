@@ -10,6 +10,8 @@ const root = path.resolve(__dirname, '../..');
 const restoration = require('../image-restoration/verify.cjs');
 const voice = require('../voice-restoration/verify.cjs');
 const publication = require('../game-posts/manifest.json');
+const { approved: historicalDates, normalizeDateMetadata } = require('../game-posts/dates.cjs');
+require('../game-posts/dates.test.cjs');
 const publishedFiles = new Map([...publication.posts, ...publication.assets].map(file => [file.path, file.sha256]));
 test('reviewed archival wording, media, dates and safe placeholders are preserved', () => voice.verify(root));
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
@@ -93,6 +95,12 @@ test('reviewed additions are exact and all existing protected working-tree bytes
       continue;
     }
     const original = fs.readFileSync(path.join(baseline, relative));
+    if (historicalDates.has(relative)) {
+      assert.equal(normalizeDateMetadata(relative, current.toString('utf8')),
+        normalizeDateMetadata(relative, original.toString('utf8')),
+        `${relative}: only the approved date and October 14 update metadata may differ`);
+      continue;
+    }
     if (REPAIRS.some(repair => repair.path === relative) || restoration.manifest.posts.some(post => post.path === relative) || voice.manifest.posts.some(post => post.path === relative)) {
       assert.equal(normalizePostForPreservation(relative, current.toString('utf8')),
         normalizePostForPreservation(relative, original.toString('utf8')),
