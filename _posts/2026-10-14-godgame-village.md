@@ -5,7 +5,7 @@ last_modified_at: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "Village is a god-game prototype where you've got a little settlement to look after and powers you can use directly in the world."
-image: "/assets/img/icon.jpg"
+image: "/assets/img/article-thumbnails/godgame-village-2026-10-14.png"
 ---
 
 Village is a god-game prototype where you've got a little settlement to look after and powers you can use directly in the world. There are three islands and six houses. Workers harvest and deliver food, quarry a finite supply of stone, and build a bridge to bring another recruit into the village.

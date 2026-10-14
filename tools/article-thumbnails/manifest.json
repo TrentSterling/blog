@@ -1,0 +1,240 @@
+{
+  "scope": "Authentic article thumbnails replacing unrelated planet-jumper art",
+  "checkedUtc": "2026-10-14T16:30:08.914Z",
+  "posts": [
+    {
+      "path": "_posts/2014-09-28-gamedev-vlogdiary-1.md",
+      "title": "GameDev Vlog/Diary #1",
+      "beforeSha256": "3cba302b6934e8fd910989a88325bdb344f968d20e91fe8e48d8e456046bd303",
+      "afterSha256": "8edf8dfcdf0e36f373db369118fbdd74a385f45e735cc3926d9aab0221ff3ca3",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/gamedev-vlogdiary-1-qFx_cJcXj34.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "qFx_cJcXj34",
+        "url": "https://i.ytimg.com/vi/qFx_cJcXj34/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-10-15-gamedev-vlogdiary-2.md",
+      "title": "GameDev Vlog/Diary #2",
+      "beforeSha256": "43c2e16bce141007504231fe6234f842493926eaa2d142c53c34bc16741b3f04",
+      "afterSha256": "16c863fcf8fad987b091f88e3d7a432464fff2c8a3f5c8c8db35b310e287d7bc",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/gamedev-vlogdiary-2-qHfz6rU4GYA.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "qHfz6rU4GYA",
+        "url": "https://i.ytimg.com/vi/qHfz6rU4GYA/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-10-20-gamedev-vlogdiary-3.md",
+      "title": "GameDev Vlog/Diary #3",
+      "beforeSha256": "f58dfc3c4148bee3a74ae9b71aced3131c753aacb1627d0fb012eba5821917ff",
+      "afterSha256": "2a8140c3c51b69c62e1327b4c76bf8c9575096ce344c36d6b64c85aad442bba6",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/gamedev-vlogdiary-3-0VGh415jfrc.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "0VGh415jfrc",
+        "url": "https://i.ytimg.com/vi/0VGh415jfrc/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-11-29-game-dev-vlog-4.md",
+      "title": "Game Dev Vlog #4",
+      "beforeSha256": "35e49d2b0dafc8a8cd2e5a8ea375158e3956a508ebe17e7442019e369074d2e2",
+      "afterSha256": "c192192213c855c3862107ca1fc8e042a12f07ca9748c4cf7f1c931776651f08",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/game-dev-vlog-4-IP3tRx5HkTg.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "IP3tRx5HkTg",
+        "url": "https://i.ytimg.com/vi/IP3tRx5HkTg/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-12-15-game-dev-vlog-5.md",
+      "title": "Game Dev Vlog #5",
+      "beforeSha256": "a70c07eceb199a50f3804e3b128ffb2d6f13254f3a005ccd0846c8b9ea8e30e2",
+      "afterSha256": "50a1b0310861669b79b66afd4a3b9c7a655b84f1f042a3c1eb8985be2e9e81e8",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/game-dev-vlog-5-Cwgr0tiM3OQ.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "Cwgr0tiM3OQ",
+        "url": "https://i.ytimg.com/vi/Cwgr0tiM3OQ/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2015-06-17-gamedev-vlog-6.md",
+      "title": "GameDev Vlog #6",
+      "beforeSha256": "6f959cfe783844ad23744eacf13c475228bd68c97e499ae8530b849d6744b10b",
+      "afterSha256": "089856d66ae6e515b6273eeb32f26b437b6fd1c3c9c9a954735875c8442cc80d",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/gamedev-vlog-6-_NpiSot1c-g.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "_NpiSot1c-g",
+        "url": "https://i.ytimg.com/vi/_NpiSot1c-g/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2015-07-10-gamedev-vlog-7.md",
+      "title": "GameDev Vlog #7",
+      "beforeSha256": "54e11cc45166f25b520eb995f3ae11682fea6434db3c8e8e1204ee94392e9d61",
+      "afterSha256": "324e2b9b210471084a75e1bca5424b36092e1bb02d0a352eb426cacfeba291be",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/gamedev-vlog-7-sMMeCj0yoZc.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "sMMeCj0yoZc",
+        "url": "https://i.ytimg.com/vi/sMMeCj0yoZc/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2015-07-10-gamedev-vlog-8.md",
+      "title": "GameDev Vlog #8",
+      "beforeSha256": "79e4333d8ce33597e7e688d4979846c45929ccb61776adb44b01048dfb33b324",
+      "afterSha256": "7c519c4dc89f6e4e6fdfdb3f257496f444a4668e9f7333111cb02b95c51b4138",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/gamedev-vlog-8-1-TjZRML9Tg.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "1-TjZRML9Tg",
+        "url": "https://i.ytimg.com/vi/1-TjZRML9Tg/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2015-07-19-gamedev-vlog-9.md",
+      "title": "GameDev Vlog #9",
+      "beforeSha256": "6894b59afe93d17a6c6d5305a07f3da450b76e4e0e4569e6872f6df8eaa580a7",
+      "afterSha256": "57e43cbe427e8a13df73d6c4a5768b25c42758febb638f348d8dfd308c4f4eda",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/gamedev-vlog-9-NBHL7rwasqg.jpg\"",
+      "source": {
+        "type": "Original embedded YouTube video thumbnail",
+        "videoId": "NBHL7rwasqg",
+        "url": "https://i.ytimg.com/vi/NBHL7rwasqg/hqdefault.jpg"
+      }
+    },
+    {
+      "path": "_posts/2026-10-14-godgame-village.md",
+      "title": "Godgame Village",
+      "beforeSha256": "02ec4c1a80f434c014f7cb9eab070f8e0bd63d66db4223ca6a92b3e7c39f5e0a",
+      "afterSha256": "60ae44ac4f577d358f54ef569b3a88b54433381c3ac44de1103a3c4dbb37389d",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/godgame-village-2026-10-14.png\"",
+      "source": {
+        "type": "Live game screenshot",
+        "slug": "godgame",
+        "url": "https://tront.xyz/godgame/",
+        "title": "Hollow Hands - Village Supply Trial",
+        "utc": "2026-10-14T16:28:23.603Z",
+        "browser": "155.0.8059.40",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "context": "Fresh isolated context; no preexisting saves",
+        "actions": [
+          "Space to Start Village"
+        ],
+        "state": "XR unavailable\n\nNo immersive WebXR session available. Hardware not tested.",
+        "file": "godgame-gameplay.png",
+        "sha256": "b79fe3804fe956fd25a7f922686384f41d4bdd48c7ecde31da6420478519be5c",
+        "errors": []
+      }
+    },
+    {
+      "path": "_posts/2026-10-14-orcflow.md",
+      "title": "ORCFLOW",
+      "beforeSha256": "b81524c3c89afbc39a249309a8fe25e77bac61c56d53f1bf6477545312dadec0",
+      "afterSha256": "9d787608c3467e2efac8cec78ee55b202dca575b6cb4b25e8174b745a4f96386",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/orcflow-2026-10-14.png\"",
+      "source": {
+        "type": "Live game screenshot",
+        "slug": "orcflow",
+        "url": "https://tront.xyz/orcflow/?map=0",
+        "title": "ORCFLOW - sir, we have a flow field",
+        "utc": "2026-10-14T16:28:33.032Z",
+        "browser": "155.0.8059.40",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "context": "Fresh isolated context; no preexisting saves",
+        "actions": [
+          "Clicked THE SIEVE map",
+          "Selected MG NEST",
+          "Clicked two rock tiles",
+          "Space to start wave",
+          "Waited 5 seconds"
+        ],
+        "state": "BASE\n90 / 90\ngold 320\norcs 507\nkills 0\ntowers 0\nWAVE 1\n603 left to spawn\nTHE SIEVE\n1x SOUND ON\n1-5 build (turrets on rock, ramparts get chewed) · click a turret to upgrade · Q/E abilities · T fast for",
+        "file": "orcflow-gameplay.png",
+        "sha256": "3076cee22c19ab1098cf534e3c5e847280b3a148b685c230dd5384f463f4660b",
+        "errors": []
+      }
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/img/article-thumbnails/gamedev-vlogdiary-1-qFx_cJcXj34.jpg",
+      "sha256": "12461ac71740aea69d3f222d0815c9ade8e7c87dfbc70e2ed7f024cdba8058af",
+      "bytes": 40645
+    },
+    {
+      "path": "assets/img/article-thumbnails/gamedev-vlogdiary-2-qHfz6rU4GYA.jpg",
+      "sha256": "bd5bd5e8abe5ab23478008722e38a61ce5c19ceaef5473b1b614cf711b4036b1",
+      "bytes": 28734
+    },
+    {
+      "path": "assets/img/article-thumbnails/gamedev-vlogdiary-3-0VGh415jfrc.jpg",
+      "sha256": "68ef43cf6f095d3370cd635134eb4ad449c35ed2d805ce6f5e375c9d4ad50b72",
+      "bytes": 31081
+    },
+    {
+      "path": "assets/img/article-thumbnails/game-dev-vlog-4-IP3tRx5HkTg.jpg",
+      "sha256": "bd2f4119198c73f7fefaff70639c322029787653ab0b865d5c49da78487591c4",
+      "bytes": 37943
+    },
+    {
+      "path": "assets/img/article-thumbnails/game-dev-vlog-5-Cwgr0tiM3OQ.jpg",
+      "sha256": "83e91b74c15927bd8c4036a5b355c48b3707625f514189fc7781258b35f7e565",
+      "bytes": 38678
+    },
+    {
+      "path": "assets/img/article-thumbnails/gamedev-vlog-6-_NpiSot1c-g.jpg",
+      "sha256": "02b40e7a5a2dffa6fe63bf3d35ac8d4188e12a22ab8937e9ac098a678aa2d29c",
+      "bytes": 33653
+    },
+    {
+      "path": "assets/img/article-thumbnails/gamedev-vlog-7-sMMeCj0yoZc.jpg",
+      "sha256": "4d8641b1f1472b28d85e735a2570f9642a1516cba0b1e21ea4d9b921eed83459",
+      "bytes": 30921
+    },
+    {
+      "path": "assets/img/article-thumbnails/gamedev-vlog-8-1-TjZRML9Tg.jpg",
+      "sha256": "5913c9a9b8682689cfba7d0b10a71a92b79e333b3c1acba43838563369489d00",
+      "bytes": 28735
+    },
+    {
+      "path": "assets/img/article-thumbnails/gamedev-vlog-9-NBHL7rwasqg.jpg",
+      "sha256": "bd9eeeb515700ad6d56f924ea5e946027416ec5ca0c83fd9d6aec5d4ab2513d7",
+      "bytes": 30948
+    },
+    {
+      "path": "assets/img/article-thumbnails/godgame-village-2026-10-14.png",
+      "sha256": "b79fe3804fe956fd25a7f922686384f41d4bdd48c7ecde31da6420478519be5c",
+      "bytes": 331679
+    },
+    {
+      "path": "assets/img/article-thumbnails/orcflow-2026-10-14.png",
+      "sha256": "3076cee22c19ab1098cf534e3c5e847280b3a148b685c230dd5384f463f4660b",
+      "bytes": 256732
+    }
+  ]
+}

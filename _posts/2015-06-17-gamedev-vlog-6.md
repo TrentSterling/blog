@@ -4,7 +4,7 @@ date: 2015-06-17
 categories: [devblog]
 tags: [Vlog]
 description: "A video log detailing what I’ve been up to lately regarding game development. This video focuses on my BaconGameJam entry  {% include youtube.html..."
-image: "/assets/img/icon.jpg"
+image: "/assets/img/article-thumbnails/gamedev-vlog-6-_NpiSot1c-g.jpg"
 ---
 
 A video log detailing what I’ve been up to lately regarding game development. This video focuses on my BaconGameJam entry!
