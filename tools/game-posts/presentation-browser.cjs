@@ -24,7 +24,7 @@ const server = http.createServer((req,res) => {
     await new Promise(r=>server.listen(0,'127.0.0.1',r));
     const base=process.env.RELEASE_URL || `http://127.0.0.1:${server.address().port}/blog`;
     browser=await chromium.launch({headless:true,executablePath:process.env.THEME_BROWSER_EXECUTABLE||undefined});
-    for(const post of manifest.posts){
+    async function inspectPost(post){
       const context=await browser.newContext({viewport:{width:1440,height:1000},serviceWorkers:'block'});
       const page=await context.newPage(), media=[];
       page.on('request',r=>{if(/\.mp4(?:\?|$)/.test(r.url())) media.push(r.url());});
@@ -46,11 +46,14 @@ const server = http.createServer((req,res) => {
       }
       // Only after every cold player is captured may video data be requested.
       for(const video of await page.locator('main video').all()){
-        const playback=await video.evaluate(async e=>{e.muted=true;await e.play();await new Promise(r=>setTimeout(r,250));e.pause();return {time:e.currentTime,width:e.videoWidth,height:e.videoHeight,renderedHeight:e.getBoundingClientRect().height};});
+        const playback=await video.evaluate(async e=>{e.muted=true;await Promise.race([e.play(),new Promise((_,reject)=>setTimeout(()=>reject(Error('video playback timed out')),30000))]);await new Promise(r=>setTimeout(r,250));e.pause();return {time:e.currentTime,width:e.videoWidth,height:e.videoHeight,renderedHeight:e.getBoundingClientRect().height};});
         assert.ok(playback.time>0 && playback.width>0); report.videos.push({url:post.url,...playback});
       }
       await context.close();
+      console.log(`Cold posters and playback passed: ${post.title}`);
     }
+    const queue=[...manifest.posts];
+    await Promise.all(Array.from({length:4},async()=>{while(queue.length) await inspectPost(queue.shift());}));
     for(const width of [390,1440,2048]) for(const route of ['/','/page2/','/posts/smear/','/posts/magic-archer/']){
       const context=await browser.newContext({viewport:{width,height:1000},serviceWorkers:'block'}),page=await context.newPage();
       await page.goto(base+route,{waitUntil:'networkidle'});
