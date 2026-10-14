@@ -17,6 +17,7 @@ function verify(root) {
   for (const image of manifest.images) {
     assert.ok(!paths.has(image.path), 'no duplicate recovered asset'); paths.add(image.path);
     assert.equal(hash(fs.readFileSync(path.join(root, image.path))), image.sha256, image.path + ': exact archived bytes');
+    assert.ok(image.markup.includes(`src="/${image.path}"`), 'Chirpy adds baseurl to raw image source exactly once');
     const post = fs.readFileSync(path.join(root, image.postPath), 'utf8');
     assert.equal(post.split(image.markup).length - 1, 1, image.id + ': one exact image and caption');
   }

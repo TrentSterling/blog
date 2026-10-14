@@ -29,7 +29,9 @@ async function check(browser, siteBase, out) {
         for(const image of images){
           const figure=page.locator(`[data-restored-image="${image.id}"]`);
           assert.equal(await figure.count(),1,image.id);
-          const img=figure.locator('img');await img.scrollIntoViewIfNeeded();await img.evaluate(el=>el.decode());
+          const img=figure.locator('img');
+          assert.equal(new URL(await img.getAttribute('src'),url).href,`${siteBase}/${image.path}`,'Chirpy image URL has exactly one base path');
+          await img.scrollIntoViewIfNeeded();await img.evaluate(el=>el.decode());
           const decoded=await img.evaluate(el=>{const r=el.getBoundingClientRect();return {width:el.naturalWidth,height:el.naturalHeight,visibleWidth:r.width,visibleHeight:r.height,left:r.left,right:r.right,complete:el.complete};});
           assert.deepEqual([decoded.width,decoded.height],image.dimensions,image.id);
           assert.ok(decoded.complete&&decoded.visibleWidth>0&&decoded.visibleHeight>0,image.id);

@@ -25,13 +25,13 @@ Rotorz is surely the best choice when it comes to tile-mapped games. I've been w
 I saw that in recent versions, corner tiles can be configured to rotate automatically. Before, you needed 4 separate prefabs with rotations applied. The setting is called Rotational Symmetry. This lets you add a single corner piece, and Rotorz will handle the 4 rotations required.
 
 <figure data-restored-image="asset-review-rotorz-1">
-  <a href="{{ '/assets/img/blog/restored/rotorz-tile-system-banner3.png' | relative_url }}"><img src="{{ '/assets/img/blog/restored/rotorz-tile-system-banner3.png' | relative_url }}" alt="rotorz-tile-system-banner3" width="647" height="230" loading="lazy"></a>
+  <a href="{{ '/assets/img/blog/restored/rotorz-tile-system-banner3.png' | relative_url }}"><img src="/assets/img/blog/restored/rotorz-tile-system-banner3.png" alt="rotorz-tile-system-banner3" width="647" height="230" loading="lazy"></a>
 </figure>
 
 Rotorz has what my previous tile system attempts completely failed at. A great UI. Before I literally had a basic prefab array, but now I have amazing icons with preview images of the brushes that I want to use. There are even scripts included to use Rotorz as a live level editor. Assuming your game is grid based, you can now place objects and walls ingame with almost no code.
 
 <figure data-restored-image="asset-review-rotorz-2">
-  <a href="{{ '/assets/img/blog/restored/runtime-api.jpg' | relative_url }}"><img src="{{ '/assets/img/blog/restored/runtime-api.jpg' | relative_url }}" alt="runtime-api" width="660" height="340" loading="lazy"></a>
+  <a href="{{ '/assets/img/blog/restored/runtime-api.jpg' | relative_url }}"><img src="/assets/img/blog/restored/runtime-api.jpg" alt="runtime-api" width="660" height="340" loading="lazy"></a>
 </figure>
 
 I also really like the keyboard shortcuts, like using `<` or `>` to rotate tiles, and `B` for brush. The editor feels like it is a part of the default Unity editor, and keys are easy to memorize and make 'sense'.
@@ -47,7 +47,7 @@ I feel like I'm going to overuse this saying, but it's the **"Photoshop of level
 ## Optimization
 
 <figure data-restored-image="asset-review-rotorz-3">
-  <a href="{{ '/assets/img/blog/restored/optimizedcolliders.jpg' | relative_url }}"><img src="{{ '/assets/img/blog/restored/optimizedcolliders.jpg' | relative_url }}" alt="optimizedcolliders" width="1147" height="692" loading="lazy"></a>
+  <a href="{{ '/assets/img/blog/restored/optimizedcolliders.jpg' | relative_url }}"><img src="/assets/img/blog/restored/optimizedcolliders.jpg" alt="optimizedcolliders" width="1147" height="692" loading="lazy"></a>
   <figcaption>Many box colliders merged into….not many.</figcaption>
 </figure>
 
@@ -58,7 +58,7 @@ Something that I must mention here is that I already atlas all my meshes/texture
 ## PlayMaker Support
 
 <figure data-restored-image="asset-review-rotorz-4">
-  <a href="{{ '/assets/img/blog/restored/painting-tiles-using-playmaker.png' | relative_url }}"><img src="{{ '/assets/img/blog/restored/painting-tiles-using-playmaker.png' | relative_url }}" alt="painting-tiles-using-playmaker" width="814" height="318" loading="lazy"></a>
+  <a href="{{ '/assets/img/blog/restored/painting-tiles-using-playmaker.png' | relative_url }}"><img src="/assets/img/blog/restored/painting-tiles-using-playmaker.png" alt="painting-tiles-using-playmaker" width="814" height="318" loading="lazy"></a>
 </figure>
 
 Rotorz has PlayMaker support. The repository on bitbucket contains the PlayMaker actions to integrate with Rotorz. This makes setting up a complete level editor easy. I was able to make a fully featured editor, with drag/drop, rotations, painting of tiles, and multiple grids, in a single day.
