@@ -12,7 +12,7 @@ I made a multiplayer match-three game for Jennifer. It’s called Gems Together,
 
 Then you get a few cascades going and the board starts blowing itself up. Bigger matches make blast gems and prisms, the combo counter climbs, and the scenery changes around the cabinet while you keep playing. Even the gem sounds follow the music’s key. The cabinet, jewels and menus are all drawn on the GPU, packed into one HTML file. Here’s a bit of it running.
 
-<figure><video class="embed-video file" controls playsinline preload="none" src="https://tront.xyz/games/media/gems-together-2026.mp4"></video><figcaption>Gems Together.</figcaption></figure>
+<figure><video class="embed-video file" controls playsinline poster="https://tront.xyz/games/media/gems-together-2026.webp" preload="none" src="https://tront.xyz/games/media/gems-together-2026.mp4"></video><figcaption>Gems Together.</figcaption></figure>
 
 ## The board keeps going
 

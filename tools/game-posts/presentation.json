@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "path": "_layouts/default.html",
+      "beforeSha256": "d49aa177e247a5cbe32767db17e4fe12213434e9123872e9e3e20ca0d187a120",
+      "afterSha256": "e2aaa082bb88fd2308d5b022a4f15c5926c43ad254fe45ff474da0ce6c5f06ca"
+    }
+  ]
+}

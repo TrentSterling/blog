@@ -10,9 +10,11 @@ const root = path.resolve(__dirname, '../..');
 const restoration = require('../image-restoration/verify.cjs');
 const voice = require('../voice-restoration/verify.cjs');
 const publication = require('../game-posts/manifest.json');
+const posters = require('../game-posts/video-posters.cjs');
+const presentation = require('../game-posts/presentation.json');
+const publishedFiles = new Map([...publication.posts, ...publication.assets, ...posters.manifest.assets].map(file => [file.path, file.sha256]));
 const { approved: historicalDates, normalizeDateMetadata } = require('../game-posts/dates.cjs');
 require('../game-posts/dates.test.cjs');
-const publishedFiles = new Map([...publication.posts, ...publication.assets].map(file => [file.path, file.sha256]));
 test('reviewed archival wording, media, dates and safe placeholders are preserved', () => voice.verify(root));
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
 // Exact archived 600x337 JPEG bytes. The WordPress migration referenced the
@@ -83,6 +85,7 @@ test('reviewed additions are exact and all existing protected working-tree bytes
   assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative) && !publicationAdditions.has(relative)), baselineFiles,
     'protected files are neither added nor removed except the exact reviewed additions');
   verifySources(root);
+  posters.verify(root);
   for (const relative of currentFiles) {
     const current = fs.readFileSync(path.join(root, relative));
     if (publicationAdditions.has(relative)) {
@@ -95,13 +98,19 @@ test('reviewed additions are exact and all existing protected working-tree bytes
       continue;
     }
     const original = fs.readFileSync(path.join(baseline, relative));
-    if (historicalDates.has(relative)) {
+    const layout = presentation.files.find(file => file.path === relative);
+    if (layout) {
+      const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
+      assert.equal(hash(current), layout.afterSha256, 'reviewed content-column alignment');
+      assert.ok([layout.beforeSha256, layout.afterSha256].includes(hash(original)), 'known layout baseline');
+    } else if (posters.manifest.posts.some(post => post.path === relative)) {
+      assert.equal(posters.normalize(relative, current.toString('utf8')), posters.normalize(relative, original.toString('utf8')),
+        relative + ': poster attributes and new CraftMine2 clip preserve every prior article byte');
+    } else if (historicalDates.has(relative)) {
       assert.equal(normalizeDateMetadata(relative, current.toString('utf8')),
         normalizeDateMetadata(relative, original.toString('utf8')),
         `${relative}: only the approved date and October 14 update metadata may differ`);
-      continue;
-    }
-    if (REPAIRS.some(repair => repair.path === relative) || restoration.manifest.posts.some(post => post.path === relative) || voice.manifest.posts.some(post => post.path === relative)) {
+    } else if (REPAIRS.some(repair => repair.path === relative) || restoration.manifest.posts.some(post => post.path === relative) || voice.manifest.posts.some(post => post.path === relative)) {
       assert.equal(normalizePostForPreservation(relative, current.toString('utf8')),
         normalizePostForPreservation(relative, original.toString('utf8')),
         `${relative}: reverse only the approved URLs; preserve every other post byte`);
