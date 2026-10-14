@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "path": "_posts/2026-10-14-craftmine2.md",
+      "beforeSha256": "109401d42f49a0f592c159b37d6d173793c713a6cf597fa44dc6a8c9c72413c7",
+      "afterSha256": "ee93d088730ebb02d725be17868cc3f5c97d4369875258d8d88383df9dca2438",
+      "edits": [
+        {
+          "before": "<video class=\"embed-video file\" controls playsinline preload=\"none\" src=\"https://tront.xyz/games/media/craftmine-2025.mp4\">",
+          "after": "<video class=\"embed-video file\" controls playsinline poster=\"https://tront.xyz/games/media/craftmine-2025.webp\" preload=\"none\" src=\"https://tront.xyz/games/media/craftmine-2025.mp4\">"
+        },
+        {
+          "before": "![CraftMine 2: castle, river and waterfalls, October 14, 2026.](/assets/img/game-posts/CraftMine-2026-10-14-delivered-95d43e3-castle-waterfalls.png)",
+          "after": "![CraftMine 2: castle, river and waterfalls, October 14, 2026.](/assets/img/game-posts/CraftMine-2026-10-14-delivered-95d43e3-castle-waterfalls.png)\n\n<figure><video class=\"embed-video file\" controls playsinline preload=\"none\" poster=\"https://tront.xyz/games/media/craftmine2-2026.webp\" src=\"https://tront.xyz/games/media/craftmine2-2026.mp4\"></video><figcaption>CraftMine 2.</figcaption></figure>"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-gems-together.md",
+      "beforeSha256": "3d10aec81f45ef87a2b7891fc1a736b152cd1a42c9d73340ee766293aafaf3ed",
+      "afterSha256": "4c5a87c62741186becd10b730a896aedd600cd598a9c4d121ce61441b8b39957",
+      "edits": [
+        {
+          "before": "<video class=\"embed-video file\" controls playsinline preload=\"none\" src=\"https://tront.xyz/games/media/gems-together-2026.mp4\">",
+          "after": "<video class=\"embed-video file\" controls playsinline poster=\"https://tront.xyz/games/media/gems-together-2026.webp\" preload=\"none\" src=\"https://tront.xyz/games/media/gems-together-2026.mp4\">"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-smear.md",
+      "beforeSha256": "1b63221e79b03d0beb464e79a202d82c5fe229a747d2906f926aa634ab9d8d9e",
+      "afterSha256": "631cd544bb353f7e0a11070924de7d25ed0c5774fe41aacbe8c463e1b982b28f",
+      "edits": [
+        {
+          "before": "<video class=\"embed-video file\" controls playsinline preload=\"none\" src=\"https://tront.xyz/games/media/smear-2026.mp4\">",
+          "after": "<video class=\"embed-video file\" controls playsinline poster=\"https://tront.xyz/games/media/smear-2026.webp\" preload=\"none\" src=\"https://tront.xyz/games/media/smear-2026.mp4\">"
+        },
+        {
+          "before": "<video class=\"embed-video file\" controls playsinline preload=\"none\" src=\"https://tront.xyz/smear/review/v46/pistol.mp4\">",
+          "after": "<video class=\"embed-video file\" controls playsinline width=\"960\" height=\"600\" poster=\"{{ '/assets/img/game-posts/smear-pistol-v46.webp' | relative_url }}\" preload=\"none\" src=\"https://tront.xyz/smear/review/v46/pistol.mp4\">"
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/img/game-posts/smear-pistol-v46.webp",
+      "sha256": "8bf3d17f9bfcb9af9a0a6b92c6d419d3fb8e8bcdcbc8a8e6eab7c10d374ce9e8"
+    }
+  ]
+}
