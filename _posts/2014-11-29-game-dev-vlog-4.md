@@ -4,7 +4,7 @@ date: 2014-11-29
 categories: [devblog]
 tags: [Vlog]
 description: "{% include youtube.html id='IP3tRx5HkTg' %}  Pushing this video onto the site a little late. I need to find a way to synchronize all my social media..."
-image: "/assets/img/icon.jpg"
+image: "/assets/img/article-thumbnails/game-dev-vlog-4-IP3tRx5HkTg.jpg"
 ---
 
 {% include youtube.html id="IP3tRx5HkTg" %}

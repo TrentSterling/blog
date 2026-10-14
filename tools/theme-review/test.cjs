@@ -11,11 +11,13 @@ const restoration = require('../image-restoration/verify.cjs');
 const voice = require('../voice-restoration/verify.cjs');
 const publication = require('../game-posts/manifest.json');
 const posters = require('../game-posts/video-posters.cjs');
+const thumbnails = require('../article-thumbnails/verify.cjs');
 const presentation = require('../game-posts/presentation.json');
-const publishedFiles = new Map([...publication.posts, ...publication.assets, ...posters.manifest.assets].map(file => [file.path, file.sha256]));
+const publishedFiles = new Map([...publication.posts, ...publication.assets, ...posters.manifest.assets, ...thumbnails.manifest.assets].map(file => [file.path, file.sha256]));
 const { approved: historicalDates, normalizeDateMetadata } = require('../game-posts/dates.cjs');
 require('../game-posts/dates.test.cjs');
 test('reviewed archival wording, media, dates and safe placeholders are preserved', () => voice.verify(root));
+test('authentic thumbnails preserve every article byte outside the approved image field', () => thumbnails.verify(root));
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
 // Exact archived 600x337 JPEG bytes. The WordPress migration referenced the
 // unsuffixed names but omitted these two images; the article is unchanged.
@@ -103,6 +105,9 @@ test('reviewed additions are exact and all existing protected working-tree bytes
       const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
       assert.equal(hash(current), layout.afterSha256, 'reviewed content-column alignment');
       assert.ok([layout.beforeSha256, layout.afterSha256].includes(hash(original)), 'known layout baseline');
+    } else if (thumbnails.manifest.posts.some(post => post.path === relative)) {
+      assert.equal(thumbnails.normalize(relative, current.toString('utf8')), thumbnails.normalize(relative, original.toString('utf8')),
+        relative + ': only the exact reviewed thumbnail field may differ');
     } else if (posters.manifest.posts.some(post => post.path === relative)) {
       assert.equal(posters.normalize(relative, current.toString('utf8')), posters.normalize(relative, original.toString('utf8')),
         relative + ': poster attributes and new CraftMine2 clip preserve every prior article byte');

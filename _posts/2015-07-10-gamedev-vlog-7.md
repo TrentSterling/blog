@@ -4,7 +4,7 @@ date: 2015-07-10
 categories: [devblog]
 tags: [Vlog]
 description: "A video log detailing what I’ve been up to lately regarding game development. This video is about my adventures with UNet and making a multiplayer..."
-image: "/assets/img/icon.jpg"
+image: "/assets/img/article-thumbnails/gamedev-vlog-7-sMMeCj0yoZc.jpg"
 ---
 
 A video log detailing what I’ve been up to lately regarding game development. This video is about my adventures with UNet and making a multiplayer twinstick shooter.

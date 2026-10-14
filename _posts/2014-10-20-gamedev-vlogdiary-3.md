@@ -4,7 +4,7 @@ date: 2014-10-20
 categories: [devblog]
 tags: [Vlog]
 description: "{% include youtube.html id='0VGh415jfrc' %}     Play game:  https://bacongamejam.org/jams/bacongamejam-08/282/"
-image: "/assets/img/icon.jpg"
+image: "/assets/img/article-thumbnails/gamedev-vlogdiary-3-0VGh415jfrc.jpg"
 ---
 
 {% include youtube.html id="0VGh415jfrc" %}
