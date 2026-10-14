@@ -104,6 +104,7 @@ jobs:
           name: blog-theme-review-${{ github.event.pull_request.number }}
           path: |
             .local/theme-review/*.json
+            .local/theme-review/restored-*.png
             .local/theme-review/blog-control-effects-preview.png
             .local/theme-review/controls/1440-*-angle-before-page.png
             .local/theme-review/controls/1440-*-angle-after-page.png

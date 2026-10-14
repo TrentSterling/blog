@@ -12,17 +12,20 @@ const links = page => page.evaluate(() => {
   }));
   return { sidebar: read('#sidebar .nav-link'), primary: read('#magic-navbar-container a') };
 });
-const article = page => page.evaluate(() => ({
+const article = page => page.evaluate(() => {
+  const preserved = document.querySelector('main article > .content')?.cloneNode(true);
+  preserved?.querySelectorAll('[data-restored-image]').forEach(el => el.remove());
+  return ({
   heading: document.querySelector('main h1')?.textContent.trim(),
-  content: document.querySelector('main article > .content')?.textContent,
-  images: [...document.querySelectorAll('main article > .content img')].map(img => Object.fromEntries(
+  content: preserved?.textContent.replace(/\s+/g, ' ').trim(),
+  images: [...(preserved?.querySelectorAll('img') || [])].map(img => Object.fromEntries(
     ['src', 'alt', 'title', 'width', 'height', 'loading'].map(name => [name, img.getAttribute(name)]))),
   metadata: ['link[rel="canonical"]', 'meta[name="description"]', 'meta[property="og:title"]',
     'meta[property="og:description"]', 'meta[property="og:image"]', 'meta[property="og:url"]'].map(selector => {
     const el = document.querySelector(selector); return [selector, el?.getAttribute(el.tagName === 'LINK' ? 'href' : 'content')];
   }),
   title: document.title
-}));
+}); });
 
 module.exports = async function checkRepairedLinks(browser, base, baselineBase, siteRoot, out) {
   const report = { status: 'running', built: verifyBuiltSite(path.join(siteRoot, 'blog')),

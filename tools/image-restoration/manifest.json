@@ -1,0 +1,729 @@
+{
+  "baseCommit": "23328df0731f620c26e819f38f05329956eb779d",
+  "images": [
+    {
+      "postSlug": "ld34-js-runtime-unity",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/ld34-executing-js-during-runtime-in-unity/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/12/2015-12-13_02-53-57-600x338.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/12/2015-12-13_02-53-57.png",
+      "originalOrder": 0,
+      "alt": "2015-12-13_02-53-57",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/12/2015-12-13_02-53-57.png",
+      "bytes": 593380,
+      "sha256": "03f893135dd8d298f8e2d7da6bf368fec43114fd83cbddfdd9dea5393399bd23",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2015-12-18-ld34-js-runtime-unity.md",
+      "path": "assets/img/blog/restored/2015-12-13_02-53-57.png",
+      "caption": "",
+      "id": "ld34-js-runtime-unity-0",
+      "markup": "<figure data-restored-image=\"ld34-js-runtime-unity-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-12-13_02-53-57.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-12-13_02-53-57.png' | relative_url }}\" alt=\"2015-12-13_02-53-57\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"ld34-js-runtime-unity-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-12-13_02-53-57.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-12-13_02-53-57.png' | relative_url }}\" alt=\"2015-12-13_02-53-57\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "ld34-js-runtime-unity",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/ld34-executing-js-during-runtime-in-unity/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/12/consoleworks-600x338.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/12/consoleworks.jpg",
+      "originalOrder": 1,
+      "alt": "consoleworks",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/12/consoleworks.jpg",
+      "bytes": 48670,
+      "sha256": "20da71c510dcac4bbb67118e17a9612a6386fc544445b1ce446f462bb7aa2aff",
+      "dimensions": [
+        1024,
+        576
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2015-12-18-ld34-js-runtime-unity.md",
+      "path": "assets/img/blog/restored/consoleworks.jpg",
+      "caption": "",
+      "id": "ld34-js-runtime-unity-1",
+      "markup": "<figure data-restored-image=\"ld34-js-runtime-unity-1\">\n  <a href=\"{{ '/assets/img/blog/restored/consoleworks.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/consoleworks.jpg' | relative_url }}\" alt=\"consoleworks\" width=\"1024\" height=\"576\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"ld34-js-runtime-unity-1\">\n  <a href=\"{{ '/assets/img/blog/restored/consoleworks.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/consoleworks.jpg' | relative_url }}\" alt=\"consoleworks\" width=\"1024\" height=\"576\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "voxel-twinstick-voxefire",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/voxel-mobile-twinstick-shooter/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-22_18-11-52-600x338.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-22_18-11-52.png",
+      "originalOrder": 1,
+      "alt": "2015-05-22_18-11-52",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-22_18-11-52.png",
+      "bytes": 412751,
+      "sha256": "cfa2f4de6ece7d5d585270edb7d0571c909ab3cb95869268e125888721a7b298",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2015-05-15-voxel-twinstick-voxefire.md",
+      "path": "assets/img/blog/restored/2015-05-22_18-11-52.png",
+      "caption": "",
+      "id": "voxel-twinstick-voxefire-1",
+      "markup": "<figure data-restored-image=\"voxel-twinstick-voxefire-1\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-05-22_18-11-52.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-05-22_18-11-52.png' | relative_url }}\" alt=\"2015-05-22_18-11-52\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"voxel-twinstick-voxefire-1\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-05-22_18-11-52.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-05-22_18-11-52.png' | relative_url }}\" alt=\"2015-05-22_18-11-52\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "voxel-twinstick-voxefire",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/voxel-mobile-twinstick-shooter/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-28_16-35-17-600x340.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-28_16-35-17.png",
+      "originalOrder": 2,
+      "alt": "2015-05-28_16-35-17",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-28_16-35-17.png",
+      "bytes": 146521,
+      "sha256": "36e60dfa03632ed257bab7d42e220c920192dedfc44c784903f1ac20784b1b4f",
+      "dimensions": [
+        1294,
+        733
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2015-05-15-voxel-twinstick-voxefire.md",
+      "path": "assets/img/blog/restored/2015-05-28_16-35-17.png",
+      "caption": "",
+      "id": "voxel-twinstick-voxefire-2",
+      "markup": "<figure data-restored-image=\"voxel-twinstick-voxefire-2\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-05-28_16-35-17.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-05-28_16-35-17.png' | relative_url }}\" alt=\"2015-05-28_16-35-17\" width=\"1294\" height=\"733\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"voxel-twinstick-voxefire-2\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-05-28_16-35-17.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-05-28_16-35-17.png' | relative_url }}\" alt=\"2015-05-28_16-35-17\" width=\"1294\" height=\"733\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "voxel-twinstick-voxefire",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/voxel-mobile-twinstick-shooter/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-30_07-35-05-600x336.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-30_07-35-05.png",
+      "originalOrder": 3,
+      "alt": "2015-05-30_07-35-05",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/06/2015-05-30_07-35-05.png",
+      "bytes": 278173,
+      "sha256": "93be4d04552cc4cf46d096004e6e4b4b09e7f31ccc32b83380b32344379fbbb8",
+      "dimensions": [
+        1634,
+        916
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2015-05-15-voxel-twinstick-voxefire.md",
+      "path": "assets/img/blog/restored/2015-05-30_07-35-05.png",
+      "caption": "",
+      "id": "voxel-twinstick-voxefire-3",
+      "markup": "<figure data-restored-image=\"voxel-twinstick-voxefire-3\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-05-30_07-35-05.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-05-30_07-35-05.png' | relative_url }}\" alt=\"2015-05-30_07-35-05\" width=\"1634\" height=\"916\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"voxel-twinstick-voxefire-3\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-05-30_07-35-05.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-05-30_07-35-05.png' | relative_url }}\" alt=\"2015-05-30_07-35-05\" width=\"1634\" height=\"916\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "multiplayer-topdown-zombie",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/multiplayer-topdown-zombie-shooter/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-10_02-16-47-600x286.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-10_02-16-47.jpg",
+      "originalOrder": 0,
+      "alt": "2015-07-10_02-16-47",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-10_02-16-47.jpg",
+      "bytes": 299654,
+      "sha256": "34cd51d576a118c9dc789cf33b94b0cb8dd5823d2f0bba07bee258299aeebc45",
+      "dimensions": [
+        1920,
+        915
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2015-07-19-multiplayer-topdown-zombie.md",
+      "path": "assets/img/blog/restored/2015-07-10_02-16-47.jpg",
+      "caption": "",
+      "id": "multiplayer-topdown-zombie-0",
+      "markup": "<figure data-restored-image=\"multiplayer-topdown-zombie-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-07-10_02-16-47.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-07-10_02-16-47.jpg' | relative_url }}\" alt=\"2015-07-10_02-16-47\" width=\"1920\" height=\"915\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"multiplayer-topdown-zombie-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-07-10_02-16-47.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-07-10_02-16-47.jpg' | relative_url }}\" alt=\"2015-07-10_02-16-47\" width=\"1920\" height=\"915\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "multiplayer-topdown-zombie",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/multiplayer-topdown-zombie-shooter/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-10_23-24-03-600x303.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-10_23-24-03.jpg",
+      "originalOrder": 1,
+      "alt": "2015-07-10_23-24-03",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-10_23-24-03.jpg",
+      "bytes": 278816,
+      "sha256": "0c8e12230acead3b9254dfcfbae114cc598d085aef425db7df23c58bc83ccc6f",
+      "dimensions": [
+        1712,
+        865
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2015-07-19-multiplayer-topdown-zombie.md",
+      "path": "assets/img/blog/restored/2015-07-10_23-24-03.jpg",
+      "caption": "",
+      "id": "multiplayer-topdown-zombie-1",
+      "markup": "<figure data-restored-image=\"multiplayer-topdown-zombie-1\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-07-10_23-24-03.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-07-10_23-24-03.jpg' | relative_url }}\" alt=\"2015-07-10_23-24-03\" width=\"1712\" height=\"865\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"multiplayer-topdown-zombie-1\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-07-10_23-24-03.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-07-10_23-24-03.jpg' | relative_url }}\" alt=\"2015-07-10_23-24-03\" width=\"1712\" height=\"865\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "multiplayer-topdown-zombie",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/multiplayer-topdown-zombie-shooter/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-19_23-32-16-600x275.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-19_23-32-16.jpg",
+      "originalOrder": 2,
+      "alt": "2015-07-19_23-32-16",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-19_23-32-16.jpg",
+      "bytes": 287570,
+      "sha256": "77c656598f33c066cd441e1ce6b138aa1dcd4a4fd2f595dcbb743e088a1d7e57",
+      "dimensions": [
+        1920,
+        879
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2015-07-19-multiplayer-topdown-zombie.md",
+      "path": "assets/img/blog/restored/2015-07-19_23-32-16.jpg",
+      "caption": "",
+      "id": "multiplayer-topdown-zombie-2",
+      "markup": "<figure data-restored-image=\"multiplayer-topdown-zombie-2\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-07-19_23-32-16.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-07-19_23-32-16.jpg' | relative_url }}\" alt=\"2015-07-19_23-32-16\" width=\"1920\" height=\"879\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"multiplayer-topdown-zombie-2\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-07-19_23-32-16.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-07-19_23-32-16.jpg' | relative_url }}\" alt=\"2015-07-19_23-32-16\" width=\"1920\" height=\"879\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "multiplayer-topdown-zombie",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/multiplayer-topdown-zombie-shooter/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-19_23-32-40-600x274.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-19_23-32-40.jpg",
+      "originalOrder": 3,
+      "alt": "2015-07-19_23-32-40",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2015-07-19_23-32-40.jpg",
+      "bytes": 234943,
+      "sha256": "b47585bfba80938377c25308b9334d0314340021f0c707d3146025ca49e535e0",
+      "dimensions": [
+        1919,
+        877
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2015-07-19-multiplayer-topdown-zombie.md",
+      "path": "assets/img/blog/restored/2015-07-19_23-32-40.jpg",
+      "caption": "",
+      "id": "multiplayer-topdown-zombie-3",
+      "markup": "<figure data-restored-image=\"multiplayer-topdown-zombie-3\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-07-19_23-32-40.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-07-19_23-32-40.jpg' | relative_url }}\" alt=\"2015-07-19_23-32-40\" width=\"1919\" height=\"877\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"multiplayer-topdown-zombie-3\">\n  <a href=\"{{ '/assets/img/blog/restored/2015-07-19_23-32-40.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2015-07-19_23-32-40.jpg' | relative_url }}\" alt=\"2015-07-19_23-32-40\" width=\"1919\" height=\"877\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "ludum-dare-31",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/ludum-dare-31/index.html",
+      "archivedImage": "http://old.trentsterling.com/ludumdare.com/compo/wp-content/uploads/2014/12/2014-12-08_14-13-31-550x309.jpg",
+      "originalFullSize": "http://old.trentsterling.com/ludumdare.com/compo/wp-content/uploads/2014/12/2014-12-08_14-13-31-550x309.jpg",
+      "originalOrder": 0,
+      "alt": "2014-12-08_14-13-31",
+      "source": "http://old.trentsterling.com/ludumdare.com/compo/wp-content/uploads/2014/12/2014-12-08_14-13-31-550x309.jpg",
+      "bytes": 53647,
+      "sha256": "627b960d5708799f8756ab1b5bff8feaa1722e22d3ba9b3b691b2212a73f06d8",
+      "dimensions": [
+        550,
+        309
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2014-12-15-ludum-dare-31.md",
+      "path": "assets/img/blog/restored/2014-12-08_14-13-31-550x309.jpg",
+      "caption": "",
+      "id": "ludum-dare-31-0",
+      "markup": "<figure data-restored-image=\"ludum-dare-31-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2014-12-08_14-13-31-550x309.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2014-12-08_14-13-31-550x309.jpg' | relative_url }}\" alt=\"2014-12-08_14-13-31\" width=\"550\" height=\"309\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"ludum-dare-31-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2014-12-08_14-13-31-550x309.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2014-12-08_14-13-31-550x309.jpg' | relative_url }}\" alt=\"2014-12-08_14-13-31\" width=\"550\" height=\"309\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "rebooting-me",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/rebooting-me/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-10_16-32-40-600x299.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-10_16-32-40.jpg",
+      "originalOrder": 0,
+      "alt": "Unity_2016-05-10_16-32-40",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-10_16-32-40.jpg",
+      "bytes": 253032,
+      "sha256": "6c18a1ff4b4c1dd063f3a513715897ae18d7646de5c678959ced89580392f9fa",
+      "dimensions": [
+        1920,
+        957
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-05-31-rebooting-me.md",
+      "path": "assets/img/blog/restored/Unity_2016-05-10_16-32-40.jpg",
+      "caption": "",
+      "id": "rebooting-me-0",
+      "markup": "<figure data-restored-image=\"rebooting-me-0\">\n  <a href=\"{{ '/assets/img/blog/restored/Unity_2016-05-10_16-32-40.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/Unity_2016-05-10_16-32-40.jpg' | relative_url }}\" alt=\"Unity_2016-05-10_16-32-40\" width=\"1920\" height=\"957\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"rebooting-me-0\">\n  <a href=\"{{ '/assets/img/blog/restored/Unity_2016-05-10_16-32-40.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/Unity_2016-05-10_16-32-40.jpg' | relative_url }}\" alt=\"Unity_2016-05-10_16-32-40\" width=\"1920\" height=\"957\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "rebooting-me",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/rebooting-me/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-28_12-18-14-600x338.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-28_12-18-14.jpg",
+      "originalOrder": 2,
+      "alt": "2016-05-28_12-18-14",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-28_12-18-14.jpg",
+      "bytes": 218532,
+      "sha256": "87b0e38e2c15eaf68e9a3be682cc24e433ed1fa534352e778e0f8a20eac816b1",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-05-31-rebooting-me.md",
+      "path": "assets/img/blog/restored/2016-05-28_12-18-14.jpg",
+      "caption": "",
+      "id": "rebooting-me-2",
+      "markup": "<figure data-restored-image=\"rebooting-me-2\">\n  <a href=\"{{ '/assets/img/blog/restored/2016-05-28_12-18-14.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2016-05-28_12-18-14.jpg' | relative_url }}\" alt=\"2016-05-28_12-18-14\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"rebooting-me-2\">\n  <a href=\"{{ '/assets/img/blog/restored/2016-05-28_12-18-14.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2016-05-28_12-18-14.jpg' | relative_url }}\" alt=\"2016-05-28_12-18-14\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "rebooting-me",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/rebooting-me/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-05_09-41-41-600x338.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-05_09-41-41.png",
+      "originalOrder": 3,
+      "alt": "2016-05-05_09-41-41",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-05_09-41-41.png",
+      "bytes": 306518,
+      "sha256": "1b1cacdaac0e0796e8111bf9408a0ba0e808c568af5c51de8360c3d72b202525",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2016-05-31-rebooting-me.md",
+      "path": "assets/img/blog/restored/2016-05-05_09-41-41.png",
+      "caption": "",
+      "id": "rebooting-me-3",
+      "markup": "<figure data-restored-image=\"rebooting-me-3\">\n  <a href=\"{{ '/assets/img/blog/restored/2016-05-05_09-41-41.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2016-05-05_09-41-41.png' | relative_url }}\" alt=\"2016-05-05_09-41-41\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"rebooting-me-3\">\n  <a href=\"{{ '/assets/img/blog/restored/2016-05-05_09-41-41.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2016-05-05_09-41-41.png' | relative_url }}\" alt=\"2016-05-05_09-41-41\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "rebooting-me",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/rebooting-me/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-07_12-20-58-600x299.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-07_12-20-58.jpg",
+      "originalOrder": 4,
+      "alt": "Unity_2016-05-07_12-20-58",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-07_12-20-58.jpg",
+      "bytes": 357636,
+      "sha256": "eb18167cc8033384fd7915545f115b2e64cd82474d7406d4e7f4a9301c289b96",
+      "dimensions": [
+        1920,
+        957
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-05-31-rebooting-me.md",
+      "path": "assets/img/blog/restored/Unity_2016-05-07_12-20-58.jpg",
+      "caption": "",
+      "id": "rebooting-me-4",
+      "markup": "<figure data-restored-image=\"rebooting-me-4\">\n  <a href=\"{{ '/assets/img/blog/restored/Unity_2016-05-07_12-20-58.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/Unity_2016-05-07_12-20-58.jpg' | relative_url }}\" alt=\"Unity_2016-05-07_12-20-58\" width=\"1920\" height=\"957\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"rebooting-me-4\">\n  <a href=\"{{ '/assets/img/blog/restored/Unity_2016-05-07_12-20-58.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/Unity_2016-05-07_12-20-58.jpg' | relative_url }}\" alt=\"Unity_2016-05-07_12-20-58\" width=\"1920\" height=\"957\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "rebooting-me",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/rebooting-me/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-09_15-19-00-600x299.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-09_15-19-00.jpg",
+      "originalOrder": 5,
+      "alt": "Unity_2016-05-09_15-19-00",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/Unity_2016-05-09_15-19-00-600x299.jpg",
+      "bytes": 39989,
+      "sha256": "de42e2911947075b22120f696ddc43e3b83eebd4408278ff481d67eadd0c2779",
+      "dimensions": [
+        600,
+        299
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-05-31-rebooting-me.md",
+      "path": "assets/img/blog/restored/Unity_2016-05-09_15-19-00-600x299.jpg",
+      "caption": "",
+      "id": "rebooting-me-5",
+      "markup": "<figure data-restored-image=\"rebooting-me-5\">\n  <a href=\"{{ '/assets/img/blog/restored/Unity_2016-05-09_15-19-00-600x299.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/Unity_2016-05-09_15-19-00-600x299.jpg' | relative_url }}\" alt=\"Unity_2016-05-09_15-19-00\" width=\"600\" height=\"299\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"rebooting-me-5\">\n  <a href=\"{{ '/assets/img/blog/restored/Unity_2016-05-09_15-19-00-600x299.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/Unity_2016-05-09_15-19-00-600x299.jpg' | relative_url }}\" alt=\"Unity_2016-05-09_15-19-00\" width=\"600\" height=\"299\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "rebooting-me",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/rebooting-me/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/WWAHost_2016-05-28_10-43-37-596x369.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/WWAHost_2016-05-28_10-43-37.png",
+      "originalOrder": 6,
+      "alt": "WWAHost_2016-05-28_10-43-37",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/WWAHost_2016-05-28_10-43-37.png",
+      "bytes": 475986,
+      "sha256": "e81a9bd96f9d1957cdf79100fab3c0278dfdef5bf60d446949341dc6a1538ca6",
+      "dimensions": [
+        962,
+        596
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2016-05-31-rebooting-me.md",
+      "path": "assets/img/blog/restored/WWAHost_2016-05-28_10-43-37.png",
+      "caption": "",
+      "id": "rebooting-me-6",
+      "markup": "<figure data-restored-image=\"rebooting-me-6\">\n  <a href=\"{{ '/assets/img/blog/restored/WWAHost_2016-05-28_10-43-37.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/WWAHost_2016-05-28_10-43-37.png' | relative_url }}\" alt=\"WWAHost_2016-05-28_10-43-37\" width=\"962\" height=\"596\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"rebooting-me-6\">\n  <a href=\"{{ '/assets/img/blog/restored/WWAHost_2016-05-28_10-43-37.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/WWAHost_2016-05-28_10-43-37.png' | relative_url }}\" alt=\"WWAHost_2016-05-28_10-43-37\" width=\"962\" height=\"596\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "rebooting-me",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/rebooting-me/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-28_10-54-14-600x338.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-28_10-54-14.jpg",
+      "originalOrder": 7,
+      "alt": "2016-05-28_10-54-14",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2016/05/2016-05-28_10-54-14.jpg",
+      "bytes": 208294,
+      "sha256": "d77ef46aa7107d93083a152da8a2b34a1f0bd81e28b053190725cc15880971d4",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-05-31-rebooting-me.md",
+      "path": "assets/img/blog/restored/2016-05-28_10-54-14.jpg",
+      "caption": "",
+      "id": "rebooting-me-7",
+      "markup": "<figure data-restored-image=\"rebooting-me-7\">\n  <a href=\"{{ '/assets/img/blog/restored/2016-05-28_10-54-14.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2016-05-28_10-54-14.jpg' | relative_url }}\" alt=\"2016-05-28_10-54-14\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "\n<figure data-restored-image=\"rebooting-me-7\">\n  <a href=\"{{ '/assets/img/blog/restored/2016-05-28_10-54-14.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2016-05-28_10-54-14.jpg' | relative_url }}\" alt=\"2016-05-28_10-54-14\" width=\"1920\" height=\"1080\" loading=\"lazy\"></a>\n</figure>\n"
+    },
+    {
+      "postSlug": "voxel-helicopter-shooter",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/voxel-helicopter-shooter/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2014-09-06_00-59-20-600x287.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2014-09-06_00-59-20.png",
+      "originalOrder": 0,
+      "alt": "2014-09-06_00-59-20",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2015/07/2014-09-06_00-59-20.png",
+      "bytes": 495596,
+      "sha256": "3cee45900617b21a5abac8b21e8ebdfb8a66d8d1a833818febd7fbf01b4dc7d0",
+      "dimensions": [
+        1920,
+        919
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2014-06-19-voxel-helicopter-shooter.md",
+      "path": "assets/img/blog/restored/2014-09-06_00-59-20.png",
+      "caption": "",
+      "id": "voxel-helicopter-shooter-0",
+      "markup": "<figure data-restored-image=\"voxel-helicopter-shooter-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2014-09-06_00-59-20.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2014-09-06_00-59-20.png' | relative_url }}\" alt=\"2014-09-06_00-59-20\" width=\"1920\" height=\"919\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"voxel-helicopter-shooter-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2014-09-06_00-59-20.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2014-09-06_00-59-20.png' | relative_url }}\" alt=\"2014-09-06_00-59-20\" width=\"1920\" height=\"919\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "asset-review-rotorz",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/asset-review-rotorz-tile-system/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/rotorz-tile-system-banner3-600x230.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/rotorz-tile-system-banner3.png",
+      "originalOrder": 1,
+      "alt": "rotorz-tile-system-banner3",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/rotorz-tile-system-banner3.png",
+      "bytes": 18837,
+      "sha256": "749cea2b91e2dff25d8cf4f2276077e3c5e4b36a3645d06d518ed5e9ac4ec24c",
+      "dimensions": [
+        647,
+        230
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2014-01-07-asset-review-rotorz.md",
+      "path": "assets/img/blog/restored/rotorz-tile-system-banner3.png",
+      "caption": "",
+      "id": "asset-review-rotorz-1",
+      "markup": "<figure data-restored-image=\"asset-review-rotorz-1\">\n  <a href=\"{{ '/assets/img/blog/restored/rotorz-tile-system-banner3.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/rotorz-tile-system-banner3.png' | relative_url }}\" alt=\"rotorz-tile-system-banner3\" width=\"647\" height=\"230\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"asset-review-rotorz-1\">\n  <a href=\"{{ '/assets/img/blog/restored/rotorz-tile-system-banner3.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/rotorz-tile-system-banner3.png' | relative_url }}\" alt=\"rotorz-tile-system-banner3\" width=\"647\" height=\"230\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "asset-review-rotorz",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/asset-review-rotorz-tile-system/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/runtime-api-600x340.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/runtime-api.jpg",
+      "originalOrder": 2,
+      "alt": "runtime-api",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/runtime-api.jpg",
+      "bytes": 24859,
+      "sha256": "a0bc2919abbc9691fa62570059bc3033278dd577c7aad0df57a853ddd521ec66",
+      "dimensions": [
+        660,
+        340
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2014-01-07-asset-review-rotorz.md",
+      "path": "assets/img/blog/restored/runtime-api.jpg",
+      "caption": "",
+      "id": "asset-review-rotorz-2",
+      "markup": "<figure data-restored-image=\"asset-review-rotorz-2\">\n  <a href=\"{{ '/assets/img/blog/restored/runtime-api.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/runtime-api.jpg' | relative_url }}\" alt=\"runtime-api\" width=\"660\" height=\"340\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"asset-review-rotorz-2\">\n  <a href=\"{{ '/assets/img/blog/restored/runtime-api.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/runtime-api.jpg' | relative_url }}\" alt=\"runtime-api\" width=\"660\" height=\"340\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "asset-review-rotorz",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/asset-review-rotorz-tile-system/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/optimizedcolliders-600x369.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/optimizedcolliders.jpg",
+      "originalOrder": 3,
+      "alt": "optimizedcolliders",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/optimizedcolliders.jpg",
+      "bytes": 65841,
+      "sha256": "bb55b3168ba17f5b84513002a458ea5558ef982dd5c9251583d9f057535af4bb",
+      "dimensions": [
+        1147,
+        692
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2014-01-07-asset-review-rotorz.md",
+      "path": "assets/img/blog/restored/optimizedcolliders.jpg",
+      "caption": "Many box colliders merged into….not many.",
+      "id": "asset-review-rotorz-3",
+      "markup": "<figure data-restored-image=\"asset-review-rotorz-3\">\n  <a href=\"{{ '/assets/img/blog/restored/optimizedcolliders.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/optimizedcolliders.jpg' | relative_url }}\" alt=\"optimizedcolliders\" width=\"1147\" height=\"692\" loading=\"lazy\"></a>\n  <figcaption>Many box colliders merged into….not many.</figcaption>\n</figure>",
+      "insertion": "<figure data-restored-image=\"asset-review-rotorz-3\">\n  <a href=\"{{ '/assets/img/blog/restored/optimizedcolliders.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/optimizedcolliders.jpg' | relative_url }}\" alt=\"optimizedcolliders\" width=\"1147\" height=\"692\" loading=\"lazy\"></a>\n  <figcaption>Many box colliders merged into….not many.</figcaption>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "asset-review-rotorz",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/asset-review-rotorz-tile-system/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/painting-tiles-using-playmaker-600x318.png",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/painting-tiles-using-playmaker.png",
+      "originalOrder": 4,
+      "alt": "painting-tiles-using-playmaker",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/painting-tiles-using-playmaker.png",
+      "bytes": 26511,
+      "sha256": "8daf1a2848a6bf166af718ca0f214307d703dc621cb2871657b27a654c1428d7",
+      "dimensions": [
+        814,
+        318
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2014-01-07-asset-review-rotorz.md",
+      "path": "assets/img/blog/restored/painting-tiles-using-playmaker.png",
+      "caption": "",
+      "id": "asset-review-rotorz-4",
+      "markup": "<figure data-restored-image=\"asset-review-rotorz-4\">\n  <a href=\"{{ '/assets/img/blog/restored/painting-tiles-using-playmaker.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/painting-tiles-using-playmaker.png' | relative_url }}\" alt=\"painting-tiles-using-playmaker\" width=\"814\" height=\"318\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"asset-review-rotorz-4\">\n  <a href=\"{{ '/assets/img/blog/restored/painting-tiles-using-playmaker.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/painting-tiles-using-playmaker.png' | relative_url }}\" alt=\"painting-tiles-using-playmaker\" width=\"814\" height=\"318\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "a-new-year-2014",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/a-new-year-2014/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/2014-New-Year-HD-Wallpaper-600x369.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/2014-New-Year-HD-Wallpaper.jpg",
+      "originalOrder": 0,
+      "alt": "Colourful 2014 in fiery sparklers",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/2014-New-Year-HD-Wallpaper.jpg",
+      "bytes": 640859,
+      "sha256": "8e0ac50ca65f3d14001197748c715b12432d71b98d5b9481d97d2edbd20ffeb4",
+      "dimensions": [
+        3000,
+        1875
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2014-01-03-a-new-year-2014.md",
+      "path": "assets/img/blog/restored/2014-New-Year-HD-Wallpaper.jpg",
+      "caption": "",
+      "id": "a-new-year-2014-0",
+      "markup": "<figure data-restored-image=\"a-new-year-2014-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2014-New-Year-HD-Wallpaper.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2014-New-Year-HD-Wallpaper.jpg' | relative_url }}\" alt=\"Colourful 2014 in fiery sparklers\" width=\"3000\" height=\"1875\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"a-new-year-2014-0\">\n  <a href=\"{{ '/assets/img/blog/restored/2014-New-Year-HD-Wallpaper.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/2014-New-Year-HD-Wallpaper.jpg' | relative_url }}\" alt=\"Colourful 2014 in fiery sparklers\" width=\"3000\" height=\"1875\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "a-new-year-2014",
+      "archivePage": "http://old.trentsterling.com/trentsterling.com/a-new-year-2014/index.html",
+      "archivedImage": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080-600x369.jpg",
+      "originalFullSize": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080.jpg",
+      "originalOrder": 2,
+      "alt": "ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080",
+      "source": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080.jpg",
+      "bytes": 108538,
+      "sha256": "9692bd43d6b3b7d976b6038dc1e054f8579bb2a4e68120409ed52c76e6b787b1",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2014-01-03-a-new-year-2014.md",
+      "path": "assets/img/blog/restored/ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080.jpg",
+      "caption": "",
+      "id": "a-new-year-2014-2",
+      "markup": "<figure data-restored-image=\"a-new-year-2014-2\">\n  <a href=\"{{ '/assets/img/blog/restored/ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080.jpg' | relative_url }}\" alt=\"ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080\" width=\"1280\" height=\"720\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"a-new-year-2014-2\">\n  <a href=\"{{ '/assets/img/blog/restored/ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080.jpg' | relative_url }}\" alt=\"ss_579fc8cc705203a86fb4fde7257d7f549a7c2136.1920x1080\" width=\"1280\" height=\"720\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "new-blog-new-tech",
+      "source": "http://blog.trentsterling.com/articles/new-blog-new-tech/leds.jpg",
+      "alt": "LED PARTY!",
+      "bytes": 246039,
+      "sha256": "3e9777b8048842696b09449812f3e668dc0725693234209a2f459c0a6cd049b8",
+      "dimensions": [
+        900,
+        540
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-12-15-new-blog-new-tech.md",
+      "path": "assets/img/blog/restored/leds.jpg",
+      "caption": "",
+      "archivePage": "http://blog.trentsterling.com/articles/new-blog-new-tech/",
+      "archivedImage": "http://blog.trentsterling.com/articles/new-blog-new-tech/leds.jpg",
+      "originalFullSize": "http://blog.trentsterling.com/articles/new-blog-new-tech/leds.jpg",
+      "originalOrder": 1,
+      "id": "new-blog-new-tech-1",
+      "markup": "<figure data-restored-image=\"new-blog-new-tech-1\">\n  <a href=\"{{ '/assets/img/blog/restored/leds.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/leds.jpg' | relative_url }}\" alt=\"LED PARTY!\" width=\"900\" height=\"540\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"new-blog-new-tech-1\">\n  <a href=\"{{ '/assets/img/blog/restored/leds.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/leds.jpg' | relative_url }}\" alt=\"LED PARTY!\" width=\"900\" height=\"540\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "switching-to-static",
+      "source": "http://blog.trentsterling.com/articles/switching-to-static-markdown/banana.png",
+      "alt": "a banana",
+      "bytes": 327896,
+      "sha256": "58e4a6249b416b4daec7b1b653d28f791e75ae9621a7b7b0a11bb0179947f890",
+      "dimensions": [
+        953,
+        595
+      ],
+      "contentType": "image/png",
+      "postPath": "_posts/2016-12-20-switching-to-static.md",
+      "path": "assets/img/blog/restored/banana.png",
+      "caption": "",
+      "archivePage": "http://blog.trentsterling.com/articles/switching-to-static-markdown/",
+      "archivedImage": "http://blog.trentsterling.com/articles/switching-to-static-markdown/banana.png",
+      "originalFullSize": "http://blog.trentsterling.com/articles/switching-to-static-markdown/banana.png",
+      "originalOrder": 0,
+      "id": "switching-to-static-0",
+      "markup": "<figure data-restored-image=\"switching-to-static-0\">\n  <a href=\"{{ '/assets/img/blog/restored/banana.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/banana.png' | relative_url }}\" alt=\"a banana\" width=\"953\" height=\"595\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"switching-to-static-0\">\n  <a href=\"{{ '/assets/img/blog/restored/banana.png' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/banana.png' | relative_url }}\" alt=\"a banana\" width=\"953\" height=\"595\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "iot-musings",
+      "source": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/ironman1.jpg",
+      "alt": "Iron Dude",
+      "bytes": 652883,
+      "sha256": "cfbdddb468027b05cd22a9e1e6ec85c055a212ca0624d401c1ec2db4ae492e34",
+      "dimensions": [
+        1600,
+        1067
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-12-26-iot-musings.md",
+      "path": "assets/img/blog/restored/ironman1.jpg",
+      "caption": "",
+      "archivePage": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/",
+      "archivedImage": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/ironman1.jpg",
+      "originalFullSize": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/ironman1.jpg",
+      "originalOrder": 2,
+      "id": "iot-musings-2",
+      "markup": "<figure data-restored-image=\"iot-musings-2\">\n  <a href=\"{{ '/assets/img/blog/restored/ironman1.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/ironman1.jpg' | relative_url }}\" alt=\"Iron Dude\" width=\"1600\" height=\"1067\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"iot-musings-2\">\n  <a href=\"{{ '/assets/img/blog/restored/ironman1.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/ironman1.jpg' | relative_url }}\" alt=\"Iron Dude\" width=\"1600\" height=\"1067\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "iot-musings",
+      "source": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/ironman2.jpg",
+      "alt": "So hip!",
+      "bytes": 33145,
+      "sha256": "008bf12a2c93b80c6b0e82ce7098256f4fd739ea65be4dc5a83fb94c4b520d41",
+      "dimensions": [
+        958,
+        719
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-12-26-iot-musings.md",
+      "path": "assets/img/blog/restored/ironman2.jpg",
+      "caption": "",
+      "archivePage": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/",
+      "archivedImage": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/ironman2.jpg",
+      "originalFullSize": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/ironman2.jpg",
+      "originalOrder": 3,
+      "id": "iot-musings-3",
+      "markup": "<figure data-restored-image=\"iot-musings-3\">\n  <a href=\"{{ '/assets/img/blog/restored/ironman2.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/ironman2.jpg' | relative_url }}\" alt=\"So hip!\" width=\"958\" height=\"719\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"iot-musings-3\">\n  <a href=\"{{ '/assets/img/blog/restored/ironman2.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/ironman2.jpg' | relative_url }}\" alt=\"So hip!\" width=\"958\" height=\"719\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "iot-musings",
+      "source": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/fashion.jpg",
+      "alt": "LEDs are hawt",
+      "bytes": 40195,
+      "sha256": "7ee375f435ff748b3219299472051191f730faf73df454032b36d742c90506ac",
+      "dimensions": [
+        570,
+        670
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-12-26-iot-musings.md",
+      "path": "assets/img/blog/restored/fashion.jpg",
+      "caption": "",
+      "archivePage": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/",
+      "archivedImage": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/fashion.jpg",
+      "originalFullSize": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/fashion.jpg",
+      "originalOrder": 4,
+      "id": "iot-musings-4",
+      "markup": "<figure data-restored-image=\"iot-musings-4\">\n  <a href=\"{{ '/assets/img/blog/restored/fashion.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/fashion.jpg' | relative_url }}\" alt=\"LEDs are hawt\" width=\"570\" height=\"670\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"iot-musings-4\">\n  <a href=\"{{ '/assets/img/blog/restored/fashion.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/fashion.jpg' | relative_url }}\" alt=\"LEDs are hawt\" width=\"570\" height=\"670\" loading=\"lazy\"></a>\n</figure>\n\n"
+    },
+    {
+      "postSlug": "iot-musings",
+      "source": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/robocop.jpg",
+      "alt": "You are Robocop!",
+      "bytes": 126605,
+      "sha256": "791458af3d537104f650a0d8c1ed1ada3a239d0142dba0c05931f0a250575450",
+      "dimensions": [
+        900,
+        556
+      ],
+      "contentType": "image/jpeg",
+      "postPath": "_posts/2016-12-26-iot-musings.md",
+      "path": "assets/img/blog/restored/robocop.jpg",
+      "caption": "",
+      "archivePage": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/",
+      "archivedImage": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/robocop.jpg",
+      "originalFullSize": "http://blog.trentsterling.com/articles/musings-on-the-internet-of-things/robocop.jpg",
+      "originalOrder": 5,
+      "id": "iot-musings-5",
+      "markup": "<figure data-restored-image=\"iot-musings-5\">\n  <a href=\"{{ '/assets/img/blog/restored/robocop.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/robocop.jpg' | relative_url }}\" alt=\"You are Robocop!\" width=\"900\" height=\"556\" loading=\"lazy\"></a>\n</figure>",
+      "insertion": "<figure data-restored-image=\"iot-musings-5\">\n  <a href=\"{{ '/assets/img/blog/restored/robocop.jpg' | relative_url }}\"><img src=\"{{ '/assets/img/blog/restored/robocop.jpg' | relative_url }}\" alt=\"You are Robocop!\" width=\"900\" height=\"556\" loading=\"lazy\"></a>\n</figure>\n\n"
+    }
+  ],
+  "posts": [
+    {
+      "path": "_posts/2015-12-18-ld34-js-runtime-unity.md",
+      "baselineSha256": "aeb6a90cbba77914bce2fbab25255dd82bddaaa5b388cced9f974543c94d7cd9",
+      "restoredSha256": "1b28f9ca47feddfaf7596fd0a7e8a66482729e97f41f37ec6ff00f772ee9bc62"
+    },
+    {
+      "path": "_posts/2015-05-15-voxel-twinstick-voxefire.md",
+      "baselineSha256": "bdcaf2b1f8c112d00a8a1f6c2e0e000dea819eb73d0d2f3db57bbfc36f2a302b",
+      "restoredSha256": "ac5baf89418c6f3c5e2e55283672e99c66e558401b88873318175e2b9d792d42"
+    },
+    {
+      "path": "_posts/2015-07-19-multiplayer-topdown-zombie.md",
+      "baselineSha256": "b3f6919b2f43318568ecafda1db87a95bc0bbe618c0c42ddb209ff4f463cafdc",
+      "restoredSha256": "05f50c0b2507e6c15221fd82e87fbb7cbf26a6065e6ab53b42d8b5f2ce8b123e"
+    },
+    {
+      "path": "_posts/2014-12-15-ludum-dare-31.md",
+      "baselineSha256": "ca61a53a0518833570b545029243c479461bf07018ca785b61dc20d7c75936aa",
+      "restoredSha256": "9fc1c9787e0b2195f9a2d0f746b79ab5dfa51c4e68fb1ece0d1ec148a33d93f6"
+    },
+    {
+      "path": "_posts/2016-05-31-rebooting-me.md",
+      "baselineSha256": "f36985278263bfcc33c60b82d62c66fd16b9b53885cf1ee14a1c0cdfb97c6007",
+      "restoredSha256": "1ecd45d3978577d67aa876f8e23fd9385e0a6fa6755b94050d5ca5a8f146f900"
+    },
+    {
+      "path": "_posts/2014-06-19-voxel-helicopter-shooter.md",
+      "baselineSha256": "fd41cc651007332f5054fd785979fca7ffd6a84b68e668cca83849e7e9c7a310",
+      "restoredSha256": "8194252a193e8e344c6d639befe39e14b8e3de6d2d6391810c3e374ef5dc033e"
+    },
+    {
+      "path": "_posts/2014-01-07-asset-review-rotorz.md",
+      "baselineSha256": "faf5fe06b21b14c633b36a1671c9c015b2e46315ded126c0ce8ffb6955fd7891",
+      "restoredSha256": "3698ffbfea493d9281338c5ab4863798fb2a0ec34a36e825b14922a6881a9574"
+    },
+    {
+      "path": "_posts/2014-01-03-a-new-year-2014.md",
+      "baselineSha256": "e7716de052adcf744414e82f9a1bb725869480b1fde1813f776e82ee10fa3be6",
+      "restoredSha256": "83223604669b93b3fa7e30f69186b203b7354bd9dfd9a1f5e616ee365a482b72"
+    },
+    {
+      "path": "_posts/2016-12-15-new-blog-new-tech.md",
+      "baselineSha256": "b277dcfbdffeaa5e0fb6fe0e0154910279358c683ec271649097868bc58f632a",
+      "restoredSha256": "b1a1e58b57f426d0f2da27bbd4f78fc5b47fb8606e9583186a2e7a8432706ff3"
+    },
+    {
+      "path": "_posts/2016-12-20-switching-to-static.md",
+      "baselineSha256": "8187fa2f92db6a816b7029865f808603f9d64faf562164af1bdaf9b52172fb90",
+      "restoredSha256": "d773350596d9b18eef72e47cacd1598ba13cd402dff0d8fdb4dd8dd951895239"
+    },
+    {
+      "path": "_posts/2016-12-26-iot-musings.md",
+      "baselineSha256": "96e56d73f380536de04ab3fcd75b17b095f20da5b6b59dd5cf8be2a190cdf590",
+      "restoredSha256": "0aef13cc44ae790b48778b8e437fe6ecb92b2b34bc0491779b3b80c3e5bbc62c"
+    }
+  ],
+  "notes": [
+    "Original full-size files are used when recoverable; two retained archive-sized fallbacks remain exact original bytes.",
+    "Rebooting ME, VoxeFire and Multiplayer Topdown Zombie were previously abridged. Images retain original relative order, but missing prose prevents exact text interleaving. No prose or dates were changed.",
+    "Existing Bouncy and Rotorz images retain their current placement; restored images retain the original relative image sequence.",
+    "Rotorz maxresdefault was already present as rotorz-maxresdefault.jpg and was excluded by exact SHA-256 match.",
+    "Jenn’s Cafe cooking.jpg and cafe.jpg exactly match retained renamed yRyskp.jpg and KQnkFb.jpg; neither duplicated."
+  ]
+}

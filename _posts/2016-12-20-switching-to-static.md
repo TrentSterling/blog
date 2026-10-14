@@ -10,6 +10,10 @@ Wintersmith is some kind of NodeJS magic that turns markdown files into blog pos
 
 I host everything on Surge after I build the static content. It's pretty damn spiffy.
 
+<figure data-restored-image="switching-to-static-0">
+  <a href="{{ '/assets/img/blog/restored/banana.png' | relative_url }}"><img src="{{ '/assets/img/blog/restored/banana.png' | relative_url }}" alt="a banana" width="953" height="595" loading="lazy"></a>
+</figure>
+
 The workflow is simple:
 1. Write posts in Markdown
 2. Build with Wintersmith

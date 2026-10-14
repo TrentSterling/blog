@@ -7,6 +7,10 @@ description: "Ludum Dare 34 entry where I added multiplayer AND modding support 
 image: "/assets/img/ingamescripting.jpg"
 ---
 
+<figure data-restored-image="ld34-js-runtime-unity-0">
+  <a href="{{ '/assets/img/blog/restored/2015-12-13_02-53-57.png' | relative_url }}"><img src="{{ '/assets/img/blog/restored/2015-12-13_02-53-57.png' | relative_url }}" alt="2015-12-13_02-53-57" width="1920" height="1080" loading="lazy"></a>
+</figure>
+
 Started this project during Ludum Dare 34. Was supposed to be a fairly simple game. Streamed the development from start to finish on Twitch.
 
 During Twitch streams, I typically take advice from the chat. This can sometimes be really distracting, and is probably a bad idea in general. Everyone who watches the stream wants to see you create the most amazing thing in the world, and feature/scope creep becomes a serious issue quickly.
@@ -24,5 +28,9 @@ The game is turning into a sandbox of some kind. Something like Garry's Mod, wit
 ## Technical Learnings
 
 Through all this, I learned a lot about reflection and how Unity's version of JS is sorta weird. Hoping to turn this in-game console into an asset. Just needs cleanup and to be generic enough for others to use.
+
+<figure data-restored-image="ld34-js-runtime-unity-1">
+  <a href="{{ '/assets/img/blog/restored/consoleworks.jpg' | relative_url }}"><img src="{{ '/assets/img/blog/restored/consoleworks.jpg' | relative_url }}" alt="consoleworks" width="1024" height="576" loading="lazy"></a>
+</figure>
 
 It even runs on Android!

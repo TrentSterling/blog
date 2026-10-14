@@ -20,3 +20,15 @@ Performance has been a roller coaster - while some things are surprisingly speed
 - Designed for FireTV controller input
 
 ![VoxeFire Screenshot](/assets/img/2015-05-15_02-29-22.png)
+
+<figure data-restored-image="voxel-twinstick-voxefire-1">
+  <a href="{{ '/assets/img/blog/restored/2015-05-22_18-11-52.png' | relative_url }}"><img src="{{ '/assets/img/blog/restored/2015-05-22_18-11-52.png' | relative_url }}" alt="2015-05-22_18-11-52" width="1920" height="1080" loading="lazy"></a>
+</figure>
+
+<figure data-restored-image="voxel-twinstick-voxefire-2">
+  <a href="{{ '/assets/img/blog/restored/2015-05-28_16-35-17.png' | relative_url }}"><img src="{{ '/assets/img/blog/restored/2015-05-28_16-35-17.png' | relative_url }}" alt="2015-05-28_16-35-17" width="1294" height="733" loading="lazy"></a>
+</figure>
+
+<figure data-restored-image="voxel-twinstick-voxefire-3">
+  <a href="{{ '/assets/img/blog/restored/2015-05-30_07-35-05.png' | relative_url }}"><img src="{{ '/assets/img/blog/restored/2015-05-30_07-35-05.png' | relative_url }}" alt="2015-05-30_07-35-05" width="1634" height="916" loading="lazy"></a>
+</figure>

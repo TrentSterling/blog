@@ -17,6 +17,10 @@ And now I'm porting my Wordpress into Markdown - in an effort to future-proof th
 
 Static website hosting is basically free these days. Got some HTML, CSS, and JS? The cloud has your back.
 
+<figure data-restored-image="new-blog-new-tech-1">
+  <a href="{{ '/assets/img/blog/restored/leds.jpg' | relative_url }}"><img src="{{ '/assets/img/blog/restored/leds.jpg' | relative_url }}" alt="LED PARTY!" width="900" height="540" loading="lazy"></a>
+</figure>
+
 Static pages that are not generated on the fly seem to be all the rage these days. It makes sense! This article won't change unless I make the changes. Why do I need to load all of this data dynamically? Why use PHP/Wordpress and an SQL database to construct what will end up being the exact same content over and over? It's a waste of electricity!
 
 ## The Stack

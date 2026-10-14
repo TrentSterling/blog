@@ -67,6 +67,7 @@ async function contrast(page) {
     const legacyUrl = `http://127.0.0.1:${legacyServer.address().port}`;
     browser = await chromium.launch({ headless: true, executablePath: process.env.THEME_BROWSER_EXECUTABLE || undefined });
     await require('./control-effects.cjs')(browser, url, legacyUrl, out);
+    await require('../image-restoration/browser.cjs')(browser, `${url}/blog`, out);
     await require('./first-paint.cjs')(browser, url, out);
     await require('./topbar-icons.cjs')(browser, url, baselineUrl, out);
     page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });

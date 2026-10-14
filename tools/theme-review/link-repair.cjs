@@ -398,6 +398,7 @@ function gitBlob(text) {
 // Also exported for the existing preservation suite. It canonicalizes only
 // this exact allowlist; it does not strip arbitrary links or article content.
 function normalizePostForPreservation(relativePath, contents) {
+  contents = require("../image-restoration/verify.cjs").normalize(relativePath, contents);
   const repair = REPAIRS.find(item => item.path === relativePath);
   if (!repair) return contents;
   let result = contents;

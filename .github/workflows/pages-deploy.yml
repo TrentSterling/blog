@@ -80,7 +80,9 @@ jobs:
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
-          sparse-checkout: assets
+          sparse-checkout: |
+            assets
+            tools/image-restoration
 
       - name: Verify published theme bridge bytes
         env:
@@ -108,3 +110,21 @@ jobs:
             sha256sum "$fetched"
           done
 
+      - name: Verify restored images on the public site in Chrome
+        env:
+          RELEASE_URL: ${{ steps.deployment.outputs.page_url }}
+          THEME_BROWSER_EXECUTABLE: /opt/google/chrome/chrome
+        run: |
+          npm install --prefix "$RUNNER_TEMP/blog-tests" --no-save --package-lock=false --ignore-scripts playwright@1.62.0
+          node "$RUNNER_TEMP/blog-tests/node_modules/playwright/cli.js" install --with-deps chrome
+          NODE_PATH="$RUNNER_TEMP/blog-tests/node_modules" node tools/image-restoration/browser.cjs
+
+      - name: Save published image proof
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: published-image-proof
+          path: .local/released-images/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 7
