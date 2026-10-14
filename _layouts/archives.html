@@ -24,7 +24,7 @@ layout: page
 
     <li>
       {% if post.work_period %}
-        {% include post-date.html post=post class='text-muted small me-2 text-nowrap' lang=lang %}
+        {% include post-date.html post=post class='text-muted small me-2 text-nowrap' lang=lang archive=true %}
       {% else %}
         {% assign ts = post.date | date: '%s' %}
         <span class="date day" data-ts="{{ ts }}" data-df="DD">{{ post.date | date: '%d' }}</span>

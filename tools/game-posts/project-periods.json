@@ -44,7 +44,7 @@
     {
       "path": "_layouts/archives.html",
       "before": "07e22e7a9cfb029402fa425dbd1038c9646e8d3eb1406940dadf70e406f18a2a",
-      "after": "5260856a04e68388d35f6160785a302c2243cfdacdead8a30e781ba45722fcd0"
+      "after": "af0f0fe615f24744a61e20a4ab3390aa5089bb93eb7c3b687c6201176ac19ac1"
     },
     {
       "path": "_layouts/category.html",
@@ -64,7 +64,7 @@
     {
       "path": "_includes/post-date.html",
       "before": null,
-      "after": "c71cac06a65c08d0a7b6fb2a8fd4716644c1facb99b32784c5cab416335d8980"
+      "after": "73d5272b27895bf7047380257fc109dc29b8beba9b01ce483dd3e8c9c940b3d1"
     },
     {
       "path": "_plugins/project_chronology.rb",

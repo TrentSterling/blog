@@ -52,10 +52,12 @@ module.exports=async(browser,base,out)=>{
    await page.setViewportSize({width,height:1000});await page.goto(base+'/archives/',{waitUntil:'networkidle'});
    for(const post of fixture.posts){
     const row=page.locator('#archives li').filter({has:page.locator(`a[href="${new URL(post.url).pathname}"]`)});
-    assert.equal(await row.count(),1);assert.equal(await row.locator('[data-work-period]').innerText(),post.period.replace('-','\u2013'));
+    assert.equal(await row.count(),1);assert.equal((await row.locator('[data-work-period]').innerText()).replace(/\s/g,''),post.period.replace('-','\u2013'));
+    assert.ok((await row.locator('[data-work-period]').boundingBox()).width<=64,'year range stays inside the existing timeline date column');
     assert.equal(await row.locator('[data-ts]').count(),0);
     const year=await row.evaluate(el=>el.parentElement.previousElementSibling.textContent.trim());assert.equal(year,post.period.split('-').pop());
     report.archives.push({period:post.period,year,width});
+    if(post.period==='2024-2025'){await row.scrollIntoViewIfNeeded();await row.screenshot({path:path.join(out,`period-archive-scamper-${width}.png`)});}
    }
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
    await page.locator('#archives a[href="/blog/posts/bombertank/"]').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,`period-archive-${width}.png`)});save();
