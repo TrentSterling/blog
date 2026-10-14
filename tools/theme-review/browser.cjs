@@ -39,6 +39,7 @@ const createServer = root => http.createServer((req, res) => {
 });
 const server = createServer(root);
 const baselineServer = createServer(path.resolve('_baseline'));
+const legacyServer = createServer(path.resolve('_legacy'));
 const contrastFailures = [];
 async function contrast(page) {
   const failed = await page.evaluate(() => {
@@ -62,8 +63,10 @@ async function contrast(page) {
     const url = `http://127.0.0.1:${server.address().port}`;
     await new Promise(resolve => baselineServer.listen(0, '127.0.0.1', resolve));
     const baselineUrl = `http://127.0.0.1:${baselineServer.address().port}`;
+    await new Promise(resolve => legacyServer.listen(0, '127.0.0.1', resolve));
+    const legacyUrl = `http://127.0.0.1:${legacyServer.address().port}`;
     browser = await chromium.launch({ headless: true, executablePath: process.env.THEME_BROWSER_EXECUTABLE || undefined });
-    await require('./control-effects.cjs')(browser, url, baselineUrl, out);
+    await require('./control-effects.cjs')(browser, url, legacyUrl, out);
     await require('./first-paint.cjs')(browser, url, out);
     await require('./topbar-icons.cjs')(browser, url, baselineUrl, out);
     page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
@@ -296,6 +299,6 @@ async function contrast(page) {
   } catch (error) {
     if (page) { fs.writeFileSync(path.join(out, 'blog-browser-failure.json'), JSON.stringify({ error: error.message, url: page.url() }, null, 2)); await page.screenshot({ path: path.join(out, 'blog-browser-failure.png') }); }
     throw error;
-  } finally { if (browser) await browser.close(); await new Promise(resolve => server.close(resolve)); await new Promise(resolve => baselineServer.close(resolve)); }
+  } finally { if (browser) await browser.close(); await new Promise(resolve => server.close(resolve)); await new Promise(resolve => baselineServer.close(resolve)); await new Promise(resolve => legacyServer.close(resolve)); }
 })().catch(error => { console.error(error); process.exitCode = 1; });
 
