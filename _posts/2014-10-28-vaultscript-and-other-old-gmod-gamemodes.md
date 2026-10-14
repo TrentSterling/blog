@@ -4,7 +4,7 @@ date: 2014-10-28
 categories: [devblog]
 tags: [GMod, Programming, VaultScript]
 description: "I had an old friend on steam recently ask about my old Garry’s Mod lua scripts. He asked if I still had them. This wasn’t the first time he had asked..."
-image: "/assets/img/icon.jpg"
+image: "/assets/img/blog/vaultscript.jpg"
 ---
 
 I had an old friend on steam recently ask about my old Garry’s Mod lua scripts. He asked if I still had them. This wasn’t the first time he had asked me, and in the past, I told him that I might get back into Garry’s Mod, and rewrite the scripts myself into a nice gamemode. That was years ago, so when he asked me again recently, I decided to say screw it, and upload the old scripts to github.

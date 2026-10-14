@@ -4,7 +4,7 @@ date: 2013-10-22
 categories: [devblog]
 tags: [3D, Art, Indie, Qubicle, Unity, Voxel]
 description: "Embedded Content  Just posting a test of this fancy SketchFab model viewer. I’ve see"
-image: "/assets/img/icon.jpg"
+image: "/assets/img/article-thumbnails/sketchfab-test-original.jpg"
 ---
 
 [Embedded Content](https://sketchfab.com/models/13cbac67d2cc49df83d991719f535ee1/embed?autostart=&autospin=&controls=1&transparent=)

@@ -4,7 +4,7 @@ date: 2014-09-22
 categories: [devblog]
 tags: [Unity]
 description: ""
-image: "/assets/img/icon.jpg"
+image: "/assets/img/article-thumbnails/just-cause-2-random-funny-moments-original.jpg"
 ---
 
 
