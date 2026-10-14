@@ -1,6 +1,6 @@
 {
   "scope": "Authentic article thumbnails replacing unrelated planet-jumper art",
-  "checkedUtc": "2026-10-14T16:30:08.914Z",
+  "checkedUtc": "2026-10-14T16:36:33.942Z",
   "posts": [
     {
       "path": "_posts/2014-09-28-gamedev-vlogdiary-1.md",
@@ -178,6 +178,104 @@
         "sha256": "3076cee22c19ab1098cf534e3c5e847280b3a148b685c230dd5384f463f4660b",
         "errors": []
       }
+    },
+    {
+      "path": "_posts/2013-10-22-sketchfab-test.md",
+      "title": "SketchFab Test",
+      "beforeSha256": "690f88229e4fe49dd0a9a98e92b46d39c4c8e7b36fb8659d493e78841a2f3b1e",
+      "afterSha256": "c3c4991a446570aa96abc40909ec2df916d5b71b3805408d6213d97ada428e21",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/sketchfab-test-original.jpg\"",
+      "source": {
+        "type": "Exact original WordPress featured image",
+        "archivePage": "http://old.trentsterling.com/trentsterling.com/sketchfab-test/index.html",
+        "originalTitle": "SketchFab Test",
+        "url": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2013/10/sketchfabtest.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-01-15-screwing-teammates-in-hunger-games.md",
+      "title": "Screwing teammates in Hunger Games",
+      "beforeSha256": "65c120c17ff7ec24012d495da643770a24b6b7229c8876b94ce3b6636f69caaf",
+      "afterSha256": "44ae73f9b4a811b73c89db08d8e8f35e3eaa90d3e0ce85ca2e7e8d814cd81440",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/screwing-teammates-in-hunger-games-original.jpg\"",
+      "source": {
+        "type": "Exact original WordPress featured image",
+        "archivePage": "http://old.trentsterling.com/trentsterling.com/screwing-teammates-in-hunger-games/index.html",
+        "originalTitle": "Screwing teammates in Hunger Games",
+        "url": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/0.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-01-20-unity-playmaker-simple-waypoint-pathfinding.md",
+      "title": "Unity PlayMaker Simple Waypoint PathFinding",
+      "beforeSha256": "ea766d47d09e3cf74fc89897f2d1e064b3a97ec4e75caf273c54b6327b23ca29",
+      "afterSha256": "e46bd7aa6d0d947fa4d22624990103dec7723727ebdd3ef34844b047856be417",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/unity-playmaker-simple-waypoint-pathfinding-original.jpg\"",
+      "source": {
+        "type": "Exact original WordPress featured image",
+        "archivePage": "http://old.trentsterling.com/trentsterling.com/unity-playmaker-simple-waypoint-pathfinding/index.html",
+        "originalTitle": "Unity PlayMaker Simple Waypoint PathFinding",
+        "url": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/01/pathfindingaction.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-04-09-unity-playmaker-twinstick-controls-demo.md",
+      "title": "Unity PlayMaker TwinStick Controls Demo",
+      "beforeSha256": "bd44123c82d37612449da76f2f880ed49f8f667c77f1cbf59de969ff72fd6d7d",
+      "afterSha256": "2958db42a60be5069dbc9443d88b4e6329c9380258057128ab043d46a18f8a80",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/unity-playmaker-twinstick-controls-demo-original.jpg\"",
+      "source": {
+        "type": "Exact original WordPress featured image",
+        "archivePage": "http://old.trentsterling.com/trentsterling.com/unity-playmaker-twinstick-controls-demo/index.html",
+        "originalTitle": "Unity PlayMaker TwinStick Controls Demo",
+        "url": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/04/2twinstickcontrolsdemo.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-09-22-just-cause-2-multiplayer-funny-moments.md",
+      "title": "Just Cause 2 Multiplayer Funny Moments",
+      "beforeSha256": "23833beeacef5f8e61276ddf0fa42d0e5616701c441930134eeee841b28ae93d",
+      "afterSha256": "2f564de4d7f57bfd2b4e2e350f31c542839a9af5b52687e6f9b265cc98eaf1a2",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/just-cause-2-multiplayer-funny-moments-original.jpg\"",
+      "source": {
+        "type": "Exact original WordPress featured image",
+        "archivePage": "http://old.trentsterling.com/trentsterling.com/just-cause-2-multiplayer-funny-moments/index.html",
+        "originalTitle": "Just Cause 2 Multiplayer Funny Moments ",
+        "url": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/09/maxresdefault-1.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-09-22-just-cause-2-random-funny-moments.md",
+      "title": "Just Cause 2 Random Funny Moments",
+      "beforeSha256": "78c0225283fa2578b75582bc931eb8341e4f0a41f6be768b1e30ccdbad272afb",
+      "afterSha256": "2d87a0288d8c830007927a91a477e91b81782e7e050fd96fc34600eb3790a5a0",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/article-thumbnails/just-cause-2-random-funny-moments-original.jpg\"",
+      "source": {
+        "type": "Exact original WordPress featured image",
+        "archivePage": "http://old.trentsterling.com/trentsterling.com/just-cause-2-random-funny-moments/index.html",
+        "originalTitle": "Just Cause 2 Random Funny Moments ",
+        "url": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/09/maxresdefault1.jpg"
+      }
+    },
+    {
+      "path": "_posts/2014-10-28-vaultscript-and-other-old-gmod-gamemodes.md",
+      "title": "VaultScript and other old GMod gamemodes",
+      "beforeSha256": "bb035e17fe5eb148c247f2130c2035629a74d436f8db604441f0be61b5ceff18",
+      "afterSha256": "738d7483f97b6d6791c6e68c24387931e4bc0dcd9692e7dfdcf38058faf4b141",
+      "before": "image: \"/assets/img/icon.jpg\"",
+      "after": "image: \"/assets/img/blog/vaultscript.jpg\"",
+      "source": {
+        "type": "Exact original WordPress featured image",
+        "archivePage": "http://old.trentsterling.com/trentsterling.com/vaultscript-and-other-old-gmod-gamemodes/index.html",
+        "originalTitle": "VaultScript and other old GMod gamemodes",
+        "url": "http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/10/vaultscript.jpg"
+      }
     }
   ],
   "assets": [
@@ -235,6 +333,41 @@
       "path": "assets/img/article-thumbnails/orcflow-2026-10-14.png",
       "sha256": "3076cee22c19ab1098cf534e3c5e847280b3a148b685c230dd5384f463f4660b",
       "bytes": 256732
+    },
+    {
+      "path": "assets/img/article-thumbnails/sketchfab-test-original.jpg",
+      "sha256": "5b6fb432fbf87c80179f5bf4c1029643591d27b99b67960130ef149c297cb448",
+      "bytes": 449140
+    },
+    {
+      "path": "assets/img/article-thumbnails/screwing-teammates-in-hunger-games-original.jpg",
+      "sha256": "ce3ffd61e0713b520d91e13a6d15f5fce54db8d4b023b8186d5ec4adcf0cd84a",
+      "bytes": 30531
+    },
+    {
+      "path": "assets/img/article-thumbnails/unity-playmaker-simple-waypoint-pathfinding-original.jpg",
+      "sha256": "2c15c1fc642cf3578c916ffd9761f9066606f76f697e3be53b74607b8e557149",
+      "bytes": 645420
+    },
+    {
+      "path": "assets/img/article-thumbnails/unity-playmaker-twinstick-controls-demo-original.jpg",
+      "sha256": "b6bba32e855395f5f96711a1de757857691a4bb2839891f314c66d981c9b1cde",
+      "bytes": 713313
+    },
+    {
+      "path": "assets/img/article-thumbnails/just-cause-2-multiplayer-funny-moments-original.jpg",
+      "sha256": "22af7be3c8934198c524e04c35c66b361de70fa2b4e440d85a234aaab22ce0da",
+      "bytes": 265593
+    },
+    {
+      "path": "assets/img/article-thumbnails/just-cause-2-random-funny-moments-original.jpg",
+      "sha256": "5cedac0c259f8675273119cb26bf71d3c00b3ee630a6713c30c768cb3c771b6d",
+      "bytes": 252223
+    },
+    {
+      "path": "assets/img/blog/vaultscript.jpg",
+      "sha256": "fe8cf1fa315eed0039725c0020a2f7418845412650646e02121afb8091d4d6c3",
+      "bytes": 579222
     }
   ]
 }
