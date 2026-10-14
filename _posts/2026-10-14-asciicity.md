@@ -15,4 +15,4 @@ The city loads in chunks, but the traffic cars keep their identities as those ch
 
 [Project page](https://tront.xyz/asciicity/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/asciicity.webp?v=34b4446efd20" src="https://tront.xyz/games/media/asciicity.mp4?v=abf84d294b2c"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/asciicity.webp?v=34b4446efd20" src="https://tront.xyz/games/media/asciicity.mp4?v=abf84d294b2c"></video>

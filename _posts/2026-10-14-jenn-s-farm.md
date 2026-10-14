@@ -15,4 +15,4 @@ I used a vertex shader to bend the world away from the camera, giving it that An
 
 [Project page](https://tront.xyz/jennsfarm/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/jenn-s-farm-2026.webp?v=a0cacfcb8253" src="https://tront.xyz/games/media/jenn-s-farm-2026.mp4?v=af92dac69ae6"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/jenn-s-farm-2026.webp?v=a0cacfcb8253" src="https://tront.xyz/games/media/jenn-s-farm-2026.mp4?v=af92dac69ae6"></video>

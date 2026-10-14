@@ -13,4 +13,4 @@ It's vanilla JavaScript writing a character grid into the page. This was the ear
 
 [Project page](https://tront.xyz/wolfenstein)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/ascii-wolfenstein-2025.webp?v=2b3e83b17b71" src="https://tront.xyz/games/media/ascii-wolfenstein-2025.mp4?v=8f19eb4c5130"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/ascii-wolfenstein-2025.webp?v=2b3e83b17b71" src="https://tront.xyz/games/media/ascii-wolfenstein-2025.mp4?v=8f19eb4c5130"></video>

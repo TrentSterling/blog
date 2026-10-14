@@ -15,4 +15,4 @@ I also put in a garage where you can change your hull, paint and flag, along wit
 
 [Project page](https://tront.xyz/tinytreads/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/tiny-treads-2026.webp?v=695d0c68976e" src="https://tront.xyz/games/media/tiny-treads-2026.mp4?v=754ee2ee465a"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/tiny-treads-2026.webp?v=695d0c68976e" src="https://tront.xyz/games/media/tiny-treads-2026.mp4?v=754ee2ee465a"></video>

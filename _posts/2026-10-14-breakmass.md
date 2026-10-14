@@ -15,4 +15,4 @@ Teardown and Noita are the inspirations here. The models are procedural, and the
 
 [Project page](https://tront.xyz/breakmass/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/breakmass-2026.webp?v=d5817db3258c" src="https://tront.xyz/games/media/breakmass-2026.mp4?v=a7051b9cf154"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/breakmass-2026.webp?v=d5817db3258c" src="https://tront.xyz/games/media/breakmass-2026.mp4?v=a7051b9cf154"></video>

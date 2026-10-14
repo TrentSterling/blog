@@ -17,4 +17,4 @@ You can save a world as JSON, export the loaded terrain as an OBJ, or save a pla
 
 [Project page](https://tront.xyz/terrainlab/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/terrain-lab-2026.webp?v=5b059cefd15e" src="https://tront.xyz/games/media/terrain-lab-2026.mp4?v=324c8f602170"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/terrain-lab-2026.webp?v=5b059cefd15e" src="https://tront.xyz/games/media/terrain-lab-2026.mp4?v=324c8f602170"></video>

@@ -13,4 +13,4 @@ Collect burst charge, find a better line and try to beat your previous time. Roo
 
 [Project page](https://tront.xyz/slopeloop/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/slopeloop-2026.webp?v=458e0080bbae" src="https://tront.xyz/games/media/slopeloop-2026.mp4?v=2807ff09298b"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/slopeloop-2026.webp?v=458e0080bbae" src="https://tront.xyz/games/media/slopeloop-2026.mp4?v=2807ff09298b"></video>

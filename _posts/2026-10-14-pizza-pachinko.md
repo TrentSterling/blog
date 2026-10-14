@@ -15,4 +15,4 @@ It's a small vanilla JavaScript game using Canvas 2D, with its own collision che
 
 [Project page](https://tront.xyz/pachinko)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/pizzapachinko-2025.webp?v=ab1a60fe2171" src="https://tront.xyz/games/media/pizzapachinko-2025.mp4?v=e424e2d78faf"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/pizzapachinko-2025.webp?v=ab1a60fe2171" src="https://tront.xyz/games/media/pizzapachinko-2025.mp4?v=e424e2d78faf"></video>

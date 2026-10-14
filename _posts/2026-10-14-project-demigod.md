@@ -13,4 +13,4 @@ My part covers netcode and gameplay, along with menus, IK, ragdolls, shaders and
 
 [Project page](https://store.steampowered.com/app/1646580/Project_Demigod/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/project-demigod-2025-present.webp?v=3c6e91c8b27d" src="https://tront.xyz/games/media/project-demigod-2025-present.mp4?v=6e4c39fd82ee"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/project-demigod-2025-present.webp?v=3c6e91c8b27d" src="https://tront.xyz/games/media/project-demigod-2025-present.mp4?v=6e4c39fd82ee"></video>

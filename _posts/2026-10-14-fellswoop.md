@@ -15,4 +15,4 @@ The models, animation, sounds and interface are made in code, with Three.js embe
 
 [Project page](https://tront.xyz/fellswoop/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/fellswoop-2026.webp?v=330ce729b9c7" src="https://tront.xyz/games/media/fellswoop-2026.mp4?v=cc14043e94bc"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/fellswoop-2026.webp?v=330ce729b9c7" src="https://tront.xyz/games/media/fellswoop-2026.mp4?v=cc14043e94bc"></video>

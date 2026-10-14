@@ -15,4 +15,4 @@ It's built in Phaser 3. To make a board, the generator fills the diagonal boxes 
 
 [Project page](https://tront.xyz/sudoku)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/makeupbeachsudoku-2025.webp?v=71ec14750528" src="https://tront.xyz/games/media/makeupbeachsudoku-2025.mp4?v=908dd623901e"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/makeupbeachsudoku-2025.webp?v=71ec14750528" src="https://tront.xyz/games/media/makeupbeachsudoku-2025.mp4?v=908dd623901e"></video>

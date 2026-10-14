@@ -15,4 +15,4 @@ It's built with Three.js. The characters, tools and rewards are all part of that
 
 [Project page](https://tront.xyz/voxelheroes/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/voxel-heroes-2026.webp?v=ae5a4ab107b9" src="https://tront.xyz/games/media/voxel-heroes-2026.mp4?v=dca697ff3027"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/voxel-heroes-2026.webp?v=ae5a4ab107b9" src="https://tront.xyz/games/media/voxel-heroes-2026.mp4?v=dca697ff3027"></video>

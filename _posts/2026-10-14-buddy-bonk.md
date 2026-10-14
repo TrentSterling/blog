@@ -17,4 +17,4 @@ One player's browser runs the physics at 120 Hz and shares it with the others ov
 
 [Project page](https://tront.xyz/buddy/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/buddy-bonk-2026.webp?v=13b072113278" src="https://tront.xyz/games/media/buddy-bonk-2026.mp4?v=72e4d1197061"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/buddy-bonk-2026.webp?v=13b072113278" src="https://tront.xyz/games/media/buddy-bonk-2026.mp4?v=72e4d1197061"></video>

@@ -11,4 +11,4 @@ Here's a dungeon crawler prototype I worked on in 2014, based on Binding of Isaa
 
 There's still a short clip of it in the gallery, along with this preview.
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/binding-of-isaac-clone-2014.webp?v=cdb245371a48" src="https://tront.xyz/games/media/binding-of-isaac-clone-2014.mp4?v=898704224836"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/binding-of-isaac-clone-2014.webp?v=cdb245371a48" src="https://tront.xyz/games/media/binding-of-isaac-clone-2014.mp4?v=898704224836"></video>

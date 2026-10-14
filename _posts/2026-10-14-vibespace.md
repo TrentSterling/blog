@@ -13,4 +13,4 @@ Generation work runs in a Web Worker, with active nebulae kept around the camera
 
 [Project page](https://tront.xyz/vibespace)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/vibespace-2025.webp?v=b8630c48718d" src="https://tront.xyz/games/media/vibespace-2025.mp4?v=78d6ee2c90f8"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/vibespace-2025.webp?v=b8630c48718d" src="https://tront.xyz/games/media/vibespace-2025.mp4?v=78d6ee2c90f8"></video>

@@ -17,4 +17,4 @@ There's also a sandbox with different army presets, including elite and ranged m
 
 [Project page](https://tront.xyz/senddudes/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/send-dudes-2026.webp?v=a61a0a659d43" src="https://tront.xyz/games/media/send-dudes-2026.mp4?v=0ef3024cc990"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/send-dudes-2026.webp?v=a61a0a659d43" src="https://tront.xyz/games/media/send-dudes-2026.mp4?v=0ef3024cc990"></video>

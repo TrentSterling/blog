@@ -15,4 +15,4 @@ It's all in one HTML file, including Three.js. You can export the aquarium as JS
 
 [Project page](https://tront.xyz/aqua-empire/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/aqua-empire-2026.webp?v=252a5846665a" src="https://tront.xyz/games/media/aqua-empire-2026.mp4?v=f1ba36dbd233"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/aqua-empire-2026.webp?v=252a5846665a" src="https://tront.xyz/games/media/aqua-empire-2026.mp4?v=f1ba36dbd233"></video>

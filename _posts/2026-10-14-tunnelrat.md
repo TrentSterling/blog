@@ -15,4 +15,4 @@ WASD and R/F move the ship, Q/E rolls it, and there's an Xbox controller layout 
 
 [Project page](https://tront.xyz/tunnelrat/)
 
-<video controls playsinline preload="none" poster="https://tront.xyz/games/media/tunnelrat-2026.webp?v=a57d149bff58" src="https://tront.xyz/games/media/tunnelrat-2026.mp4?v=d0cc7b39b5fd"></video>
+<video class="embed-video file" controls playsinline preload="none" poster="https://tront.xyz/games/media/tunnelrat-2026.webp?v=a57d149bff58" src="https://tront.xyz/games/media/tunnelrat-2026.mp4?v=d0cc7b39b5fd"></video>
