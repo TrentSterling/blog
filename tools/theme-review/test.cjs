@@ -7,6 +7,7 @@ const vm = require('node:vm');
 const crypto = require('node:crypto');
 const { REPAIRS, normalizePostForPreservation, verifySources, verifyNegativeCases } = require('./link-repair.cjs');
 const root = path.resolve(__dirname, '../..');
+const restoration = require('../image-restoration/verify.cjs');
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
 // Exact archived 600x337 JPEG bytes. The WordPress migration referenced the
 // unsuffixed names but omitted these two images; the article is unchanged.
@@ -16,6 +17,7 @@ const recoveredImages = new Map([
 ]);
 // Sources: http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/10/screen21-600x337.jpg
 //          http://old.trentsterling.com/trentsterling.com/wp-content/uploads/2014/10/screen3-600x337.jpg
+for (const image of restoration.manifest.images) recoveredImages.set(image.path, image.sha256);
 function verifyRecoveredImage(relative, bytes) {
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), recoveredImages.get(relative),
     `${relative}: recovered image must match the authentic archived bytes`);
@@ -70,7 +72,7 @@ test('only exact allowlisted post URLs change; all other protected working-tree 
   const recoveredAdditions = new Set(currentFiles.filter(relative =>
     recoveredImages.has(relative) && !baselineFiles.includes(relative)));
   assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative)), baselineFiles,
-    'protected files are neither added nor removed except the two exact recovered images');
+    'protected files are neither added nor removed except the exact recovered images');
   verifySources(root);
   for (const relative of currentFiles) {
     const current = fs.readFileSync(path.join(root, relative));
@@ -79,7 +81,7 @@ test('only exact allowlisted post URLs change; all other protected working-tree 
       continue;
     }
     const original = fs.readFileSync(path.join(baseline, relative));
-    if (REPAIRS.some(repair => repair.path === relative)) {
+    if (REPAIRS.some(repair => repair.path === relative) || restoration.manifest.posts.some(post => post.path === relative)) {
       assert.equal(normalizePostForPreservation(relative, current.toString('utf8')),
         normalizePostForPreservation(relative, original.toString('utf8')),
         `${relative}: reverse only the approved URLs; preserve every other post byte`);
@@ -87,6 +89,10 @@ test('only exact allowlisted post URLs change; all other protected working-tree 
       assert.deepEqual(current, original, `${relative}: unlisted protected content is byte-for-byte intact`);
     }
   }
+});
+
+test('image-only restoration preserves all prose, metadata, captions and image order', () => {
+  restoration.verify(root);
 });
 
 test('recovered historical screenshots retain exact authentic bytes and reject tampering', () => {
