@@ -1,6 +1,7 @@
 ---
 title: "ASCII Wolfenstein"
 date: 2026-10-14 15:16:48 +0000
+work_period: "2025"
 categories: [devblog, Projects]
 tags: [Games]
 description: "This is a little Wolfenstein-style raycaster, except the whole view is text. WASD moves you around and Q/E turns the camera."

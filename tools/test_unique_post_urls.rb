@@ -51,3 +51,5 @@ class UniquePostUrlsTest < Minitest::Test
     assert_includes error.message, "categories/devblog"
   end
 end
+
+require_relative 'game-posts/chronology.test'

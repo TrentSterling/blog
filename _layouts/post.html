@@ -22,9 +22,13 @@ script_includes:
     {% endif %}
 
     <div class="post-meta text-muted">
-      <!-- published date -->
+      {% if page.work_period %}
+        <span>Work from {% include post-date.html post=page lang=lang %}</span>
+      {% endif %}
+
+      <!-- Actual article publication stays distinct from project chronology. -->
       <span>
-        {{ site.data.locales[lang].post.posted }}
+        {% if page.work_period %}Published{% else %}{{ site.data.locales[lang].post.posted }}{% endif %}
         {% include datetime.html date=page.date tooltip=true lang=lang %}
       </span>
 

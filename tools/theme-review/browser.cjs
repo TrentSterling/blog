@@ -66,6 +66,7 @@ async function contrast(page) {
     await new Promise(resolve => legacyServer.listen(0, '127.0.0.1', resolve));
     const legacyUrl = `http://127.0.0.1:${legacyServer.address().port}`;
     browser = await chromium.launch({ headless: true, executablePath: process.env.THEME_BROWSER_EXECUTABLE || undefined });
+    await require('../game-posts/precision-browser.cjs')(browser, `${url}/blog`, out);
     await require('./control-effects.cjs')(browser, url, legacyUrl, out);
     await require('../image-restoration/browser.cjs')(browser, `${url}/blog`, out);
     await require('../voice-restoration/browser.cjs')(browser, `${url}/blog`, out);

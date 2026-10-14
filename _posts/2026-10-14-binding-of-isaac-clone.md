@@ -1,6 +1,7 @@
 ---
 title: "Binding of Isaac Clone"
 date: 2026-10-14 15:16:48 +0000
+work_period: "2014"
 categories: [devblog, Projects]
 tags: [Games]
 description: "Here's a dungeon crawler prototype I worked on in 2014, based on Binding of Isaac. I streamed it on Twitch, and it used procedural generation."

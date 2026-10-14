@@ -1,0 +1,75 @@
+{
+  "description": "Work years are independent of article publication. Unknown days follow exact-day items within the same year; ranges use their last evidenced year. No timestamp is invented.",
+  "posts": [
+    {
+      "path": "_posts/2026-10-14-ascii-wolfenstein.md",
+      "period": "2025",
+      "url": "https://tront.xyz/blog/posts/ascii-wolfenstein/",
+      "published": "2026-10-14 15:16:48 +0000",
+      "source": "https://github.com/TrentSterling/trentsterling.github.io/blob/2ebbdf765001edf21058f8af20d7d0ea071dbc32/games/index.html"
+    },
+    {
+      "path": "_posts/2026-10-14-binding-of-isaac-clone.md",
+      "period": "2014",
+      "url": "https://tront.xyz/blog/posts/binding-of-isaac-clone/",
+      "published": "2026-10-14 15:16:48 +0000",
+      "source": "https://github.com/TrentSterling/trentsterling.github.io/blob/2ebbdf765001edf21058f8af20d7d0ea071dbc32/games/index.html"
+    },
+    {
+      "path": "_posts/2026-10-14-bombertank.md",
+      "period": "2009",
+      "url": "https://tront.xyz/blog/posts/bombertank/",
+      "published": "2026-10-14 15:16:48 +0000",
+      "source": "https://github.com/TrentSterling/trentsterling.github.io/blob/2ebbdf765001edf21058f8af20d7d0ea071dbc32/games/index.html"
+    },
+    {
+      "path": "_posts/2026-10-14-scamper.md",
+      "period": "2024-2025",
+      "url": "https://tront.xyz/blog/posts/scamper/",
+      "published": "2026-10-14 15:16:48 +0000",
+      "source": "https://github.com/TrentSterling/trentsterling.github.io/blob/2ebbdf765001edf21058f8af20d7d0ea071dbc32/games/index.html"
+    }
+  ],
+  "reviewed": [
+    {
+      "path": "_layouts/home.html",
+      "before": "582a3f7498ff83463630d5924d0e97c4a738c0afe2c429e57a36b501dfedeac1",
+      "after": "0da09525e558d790455d199235c8978d3f9ac3b853d5e387949947c686588deb"
+    },
+    {
+      "path": "_layouts/post.html",
+      "before": "24c43c314f0b5035d9e4f4852a0d436d859b83145b151d68bb8176a9ff763be1",
+      "after": "c410b448d04d1ab8ebb8e68b38df264fe18c290aba5c957078b362d67bf007b7"
+    },
+    {
+      "path": "_layouts/archives.html",
+      "before": "07e22e7a9cfb029402fa425dbd1038c9646e8d3eb1406940dadf70e406f18a2a",
+      "after": "af0f0fe615f24744a61e20a4ab3390aa5089bb93eb7c3b687c6201176ac19ac1"
+    },
+    {
+      "path": "_layouts/category.html",
+      "before": "298a42b9bb5b107274c467a4e1d299367d51d6727797dbc6bc8470e79c73c070",
+      "after": "dc5f17442b94b80e6299eaa30dbf40a4eeb432d0bf2c058239571af6a3b64569"
+    },
+    {
+      "path": "_layouts/tag.html",
+      "before": "687386bf6ce85da2ab12ae11b9714c32741c52546760a1e55d1cd7ce6fe1aec5",
+      "after": "32bb623d8ff94892d983d876f9cc0791a6c7a46c5175a3aff85d855d9e313e67"
+    },
+    {
+      "path": "_includes/related-posts.html",
+      "before": "b95a816aa1bf105050fbfb8e8417f7c14b3efd1a29c4e63fdff9985cc74e927a",
+      "after": "e2ab1a9173f16522820e81c0b8c2d61aef4db5991795ab50c790e5b3bb07110c"
+    },
+    {
+      "path": "_includes/post-date.html",
+      "before": null,
+      "after": "6e4e4217a693a46b5cb3db092d16de858737d45e380c1e7816dfc2be2945951e"
+    },
+    {
+      "path": "_plugins/project_chronology.rb",
+      "before": null,
+      "after": "2053e55a7fc3e051a21865b268ee48b874f1749e9e4390aca4f7d9b238617028"
+    }
+  ]
+}

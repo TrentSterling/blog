@@ -1,0 +1,5 @@
+{% if include.post.work_period %}
+  <span{% if include.class %} class="{{ include.class }}"{% endif %} data-work-period="{{ include.post.work_period | escape }}" title="Project work period; exact date unknown">{% if include.archive and include.post.work_period contains '-' %}{% assign years = include.post.work_period | split: '-' %}<span style="display:inline-block;line-height:1.2;vertical-align:middle;text-align:center">{{ years.first }}&ndash;<br>{{ years.last }}</span>{% else %}{{ include.post.work_period_label }}{% endif %}</span>
+{% else %}
+  {% include datetime.html date=include.post.date class=include.class lang=include.lang %}
+{% endif %}
