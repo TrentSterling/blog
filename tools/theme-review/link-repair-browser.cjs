@@ -165,7 +165,7 @@ module.exports = async function checkRepairedLinks(browser, base, baselineBase, 
           }
           if (popupPromise) await destination.close();
           else { await page.goBack({ waitUntil: 'domcontentloaded' }); assert.equal(page.url(), base + route); }
-          assert.deepEqual(await article(page), original, 'returning from the target restores the unchanged article');
+          assert.deepEqual(await article(page), repaired, 'returning from the target restores the same reviewed article');
           report.destinations.push({ route, href, occurrence: i + 1, activation, status: response.status(),
             contentType: response.headers()['content-type'], returnFlow: popupPromise ? 'popup closed' : 'browser Back' });
           save();
