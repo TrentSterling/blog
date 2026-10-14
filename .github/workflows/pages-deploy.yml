@@ -83,6 +83,7 @@ jobs:
           sparse-checkout: |
             assets
             tools/image-restoration
+            tools/voice-restoration
 
       - name: Verify published theme bridge bytes
         env:
@@ -118,13 +119,16 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/blog-tests" --no-save --package-lock=false --ignore-scripts playwright@1.62.0
           node "$RUNNER_TEMP/blog-tests/node_modules/playwright/cli.js" install --with-deps chrome
           NODE_PATH="$RUNNER_TEMP/blog-tests/node_modules" node tools/image-restoration/browser.cjs
+          NODE_PATH="$RUNNER_TEMP/blog-tests/node_modules" node tools/voice-restoration/browser.cjs
 
       - name: Save published image proof
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: published-image-proof
-          path: .local/released-images/
+          path: |
+            .local/released-images/
+            .local/released-voice/
           include-hidden-files: true
           if-no-files-found: warn
           retention-days: 7

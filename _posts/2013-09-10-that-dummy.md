@@ -66,31 +66,3 @@ I tried for a few days to fix things up and get the game working, but with no su
 Each build I sent to Andrew was dated. I was on day 64. He wanted the game done by Day 20. Day 64 is reflected in the video above.
 
 This game wasn’t completed because of some bugs in player movement that couldn’t be fixed without a massive rewrite. Halfway through the rewrite- things felt impossible. If I pick up Flash again, this game might get completed, and it’s possible that this game will be revived in Unity. Only time will tell.
-
-
-
-
-
-### Game Overview
-
-This game was close to completion but ultimately left unfinished. Here’s a breakdown of its features from my perspective:
-
-- **Engine & Physics**: I used a custom physics engine, where objects weren’t locked to a grid and supported multiple layers (foreground, background, fog). This allowed for more dynamic interactions between game elements.
-
-- **Lighting & Effects**: The lighting was pre-baked into the map data. I added options to adjust hue, saturation, brightness, and contrast, which allowed for dreamlike color filter effects. There were also blood effects, where static objects would stain with blood particles, though dynamic objects were unaffected by them.
-
-- **Physics Interactions**: I implemented a variety of physics objects and interactions, like objects being moved by fans or knocked around. The physics also impacted things like elevators and projectiles. Collisions with objects triggered various effects, including blood or death.
-
-- **Editor Features**: I developed a live editor where players could modify the game while playing. There was also an object editor for adjusting physics properties like mass and material, influencing how objects interacted and how sounds were triggered.
-
-- **Gameplay**: The core gameplay loop was never fully realized. While there were basic player movements (running, jumping, taking damage), many key gameplay features were incomplete. Hazards like spikes, turrets, and missiles were present but not fully functional.
-
-- **Limitations**: The game showed potential as a tech demo but was missing a story, characters, and a solid gameplay loop. Several systems, like the turret pathfinding, were unfinished and caused bugs. The overall experience felt incomplete.
-
-- **Development Tool**: I originally built the game in Flash and considered porting it to Unity, but I found Unity’s 2D capabilities couldn’t replicate the custom, optimized experience that Flash offered.
-
-- **Final Thoughts**: Despite being technically strong, the game wasn’t finished. I’ve thought about revisiting it, but I’m hesitant about going back to Flash or moving to Unity due to time constraints and the limitations of Unity’s 2D tools.
-
-### Sentiment
-
-The comments I received were positive and supportive. Many were curious about the potential revival of the game, with some offering help and others asking to test it. Everyoned seemed to have an interest in seeing the game either completed or rebooted, possibly in Unity. If I ever do go back to it, I'll have to find another artist.

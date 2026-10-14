@@ -122,8 +122,16 @@ module.exports = async function checkRepairedLinks(browser, base, baselineBase, 
       await Promise.all([open(page, base, route), open(baseline, baselineBase, route)]);
       const original = await article(baseline), repaired = await article(page);
       assert.ok(original.content && original.heading, 'baseline post content exists');
-      assert.deepEqual(repaired, original, `${route}: rendered text, image sources, captions and metadata are unchanged`);
-      const evidence = { route, renderedContentUnchanged: true, layouts: [] };
+      const voice = require('../voice-restoration/verify.cjs').manifest.posts.find(post => post.path === repair.path);
+      if (voice) {
+        // Source hashes and the dedicated rendered-quote suite cover approved prose.
+        // Keep all navigation, canonical, repaired-link and media checks in this suite.
+        const stable = value => ({ ...value, content: undefined,
+          images: [...value.images].sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b))),
+          metadata: value.metadata.filter(([name])=>!name.includes('description')) });
+        assert.deepEqual(stable(repaired), stable(original), `${route}: all non-prose/description content stays intact`);
+      } else assert.deepEqual(repaired, original, `${route}: rendered text, image sources, captions and metadata are unchanged`);
+      const evidence = { route, renderedContentUnchanged: !voice, reviewedVoiceRestoration: !!voice, layouts: [] };
       const representative = repair === REPAIRS[0] || slug === 'still-alive-blocky-dungeon-prototype' || slug === 'building-spaceview-with-claude';
       for (const width of widths) evidence.layouts.push(await layout(route, width, representative));
       await page.setViewportSize({ width: 1440, height: 1000 });
@@ -157,7 +165,7 @@ module.exports = async function checkRepairedLinks(browser, base, baselineBase, 
           }
           if (popupPromise) await destination.close();
           else { await page.goBack({ waitUntil: 'domcontentloaded' }); assert.equal(page.url(), base + route); }
-          assert.deepEqual(await article(page), original, 'returning from the target restores the unchanged article');
+          assert.deepEqual(await article(page), repaired, 'returning from the target restores the same reviewed article');
           report.destinations.push({ route, href, occurrence: i + 1, activation, status: response.status(),
             contentType: response.headers()['content-type'], returnFlow: popupPromise ? 'popup closed' : 'browser Back' });
           save();

@@ -3,9 +3,19 @@ title: "Jenn’s Cafe - A Personal Project for My Wife"
 date: 2017-01-06
 categories: [devblog, Projects]
 tags: [AI, Gameplay, Indie, Management, Restaurant, Simulation, Unity]
-description: "A game project inspired by The Sims, Diner Dash, and Black and White, created to impress my wife. Featuring custom restaurant building and management mechanics."
+description: "Started to work on a game for my wife, Jennifer. Original post and a separately labeled 2025 expansion."
 image: "/assets/img/yRyskp.jpg"
 ---
+
+## Original post
+
+Started to work on a game for my wife, Jennifer.
+
+It’s a bit like The Sims mixed with Diner Dash. I added some elements similar to Black and White - but I’m not sure they fix the theme well.
+
+I also started work on a desktop thin-client to organize all of my JS systems. It’s like my Twitch overlay on IoT Steroids.
+
+## 2025 expansion
 
 <iframe src="//www.youtube.com/embed/CnQKxeq4tdY" frameborder="0" allowfullscreen></iframe>
 

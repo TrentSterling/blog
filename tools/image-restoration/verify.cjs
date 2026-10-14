@@ -22,7 +22,7 @@ function verify(root) {
     assert.equal(post.split(image.markup).length - 1, 1, image.id + ': one exact image and caption');
   }
   for (const post of manifest.posts) {
-    const text = fs.readFileSync(path.join(root, post.path), 'utf8');
+    const text = require('../voice-restoration/verify.cjs').normalize(post.path, fs.readFileSync(path.join(root, post.path), 'utf8'));
     assert.equal(hash(text), post.restoredSha256, post.path + ': exact approved image-only change');
     assert.equal(hash(normalize(post.path, text)), post.baselineSha256,
       post.path + ': removing only exact restored image blocks recovers every original byte');

@@ -7,6 +7,12 @@ description: "A devlog discussing the early development of a multiplayer platfor
 image: "/assets/img/2014-11-18_22-39-28.png" # Using an image from the vlog/post
 ---
 
+## Original post
+
+Simply put – this is the game that started my twitch channel. We had a multiplayer platformer up and running in no time, and the public testing attracted viewers. Unity 5 broke this game, so it’ll be some time before I look back at it.
+
+## 2025 expansion
+
 <iframe src="//www.youtube.com/embed/IP3tRx5HkTg" frameborder="0" allowfullscreen></iframe>
 
 > I've detailed the development text a bit more in 2025, integrating details from the original Week 1 blog post and the vlog itself.
