@@ -29,11 +29,18 @@ IoT experiments with MQTT protocol, NodeMCU/ESP8266, and Espruino JavaScript.
  */
 function main()
 {
+    // See http://www.espruino.com/ESP8266_WifiUsage
+    // And http://www.espruino.com/Reference#Wifi
     var wifi = require("Wifi");
+    // See http://www.espruino.com/Reference#http
     var http = require("http");
 
     /**
      * Simple HTML tag generator
+     *
+     * @param {string} tag - The HTML tag name e.g. p, div or html
+     * @param {string|Array<string>} content - Content of the tag, a string or array of strings
+     * @returns {string} - A string of HTML
      */
     function htm(tag, content)
     {
@@ -43,6 +50,9 @@ function main()
 
     /**
      * Generates a table to display wireless APs SSIDs and channels
+     *
+     * @param {Array<object>} networks - An array of APs objects
+     * @returns
      */
     function generateTableForAPs(networks)
     {
@@ -57,6 +67,10 @@ function main()
 
     /**
      * Generates a simple HTML page
+     *
+     * @param {string} title - The title of the page, also the H1
+     * @param {string|Array<string>} content - Content of the page
+     * @returns
      */
     function generatePage(title, content)
     {
@@ -68,6 +82,9 @@ function main()
 
     /**
      * Handles all requests for the simple HTTP server
+     *
+     * @param {any} request - Incomming request
+     * @param {any} response - Response to client
      */
     function handleRequest(request, response)
     {
@@ -90,7 +107,9 @@ function main()
     }
 
     /**
-     * Handles the connection for the wifi.connect call
+     * Handles the connection for the wifi.connect call.
+     *
+     * @param {Error} err
      */
     function onConnect(err)
     {

@@ -39,3 +39,5 @@ And then there's XNA. Developing games with XNA looks very appealing to me. Ther
 Oh, and I suppose I should look into what platforms can publish to iphone and droid, seeing as mobile games are doing pretty well. Basically I want to develop games that fit my style, and casual isn't really what I have in mind when I think of my dream game. Who knows where I'll end up!
 
 EDIT: Thought I'd mention that I installed XNA game studio and got a basic hello world going. Again, making money seems like it would be much harder this way. Browser games get sponsors, and Unity isn't adopted by enough users/portals yet. I'll stick with Flash until I can be sure that money can be made with a different system. In a follow up post, I'll look into the Unreal Dev Kit (UDK).
+
+EDIT: For a more researched post about Flash vs Unity vs XNA, look [here](http://www.jadbox.com/2009/04/haxe-vs-unity3d-vs-xna-vs-others/). And even more information [here](http://board.flashkit.com/board/showthread.php?t=768990).

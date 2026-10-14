@@ -8,6 +8,8 @@ const crypto = require('node:crypto');
 const { REPAIRS, normalizePostForPreservation, verifySources, verifyNegativeCases } = require('./link-repair.cjs');
 const root = path.resolve(__dirname, '../..');
 const restoration = require('../image-restoration/verify.cjs');
+const voice = require('../voice-restoration/verify.cjs');
+test('reviewed archival wording, media, dates and safe placeholders are preserved', () => voice.verify(root));
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
 // Exact archived 600x337 JPEG bytes. The WordPress migration referenced the
 // unsuffixed names but omitted these two images; the article is unchanged.
@@ -81,7 +83,7 @@ test('only exact allowlisted post URLs change; all other protected working-tree 
       continue;
     }
     const original = fs.readFileSync(path.join(baseline, relative));
-    if (REPAIRS.some(repair => repair.path === relative) || restoration.manifest.posts.some(post => post.path === relative)) {
+    if (REPAIRS.some(repair => repair.path === relative) || restoration.manifest.posts.some(post => post.path === relative) || voice.manifest.posts.some(post => post.path === relative)) {
       assert.equal(normalizePostForPreservation(relative, current.toString('utf8')),
         normalizePostForPreservation(relative, original.toString('utf8')),
         `${relative}: reverse only the approved URLs; preserve every other post byte`);

@@ -105,6 +105,7 @@ jobs:
           path: |
             .local/theme-review/*.json
             .local/theme-review/restored-*.png
+            .local/theme-review/voice-*.png
             .local/theme-review/blog-control-effects-preview.png
             .local/theme-review/controls/1440-*-angle-before-page.png
             .local/theme-review/controls/1440-*-angle-after-page.png

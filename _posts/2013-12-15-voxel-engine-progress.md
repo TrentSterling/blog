@@ -7,100 +7,107 @@ description: "Updates on my voxel-based game engine, including batching, pathfin
 image: "/assets/img/Screenshot_2013-12-15-04-07-42.jpg"
 ---
 
-# Voxel Engine Progress & Optimizations
+I’ve been posting to G+, Facebook, and Twitter with some short snippets and screenshots. It’s probably good to mirror that content here, even if it’s not a ‘legit’ post.
 
-I've been posting updates on G+, Facebook, and Twitter, but it's probably a good idea to mirror some of that here, even if it’s just quick snippets and screenshots.
-
-### Isometric Looks Cool
-After experimenting, I think the game looks pretty neat in isometric view!
+Things look kinda neat in isometric view!
 
 ![Isometric View](/assets/img/isometriclook.png)
 
----
-
-### Shifting Focus: Voxel RPG to Bomberman Revival
-After some discussions, we decided to pause our voxel RPG and focus on something faster to release.
-
-I had previously worked on a Bomberman-style game and tried to revive it with multiplayer. This will be the third attempt, but this time, all the art and level editing work is already done.
+After a bit of discussion about our Voxel RPG, we decided to finish something that’d come out a little faster.
 
 ![Bomberman Revival](/assets/img/bomberscreeny.jpg)
 
-We're using the same system as the RPG, so progress has been smooth.
+I had previously done a bomberman game, and had tried to revive the project with multiplayer. This will be the 3rd time we revive this project, and this time we’re going to have all the art/level editing stuff out of the way.
 
-![Pathfinding](/assets/img/E8l4JxY.gif)
-Pathfinding is working well with the grid-based level editor. Since the editor is in-game, it has to be perfect.
 
----
 
-### Optimizing Batching for Performance
-I tackled batching today and set up an automated script that integrates with my in-game level editor.
-So far, I’ve managed to keep the entire scene under **three draw calls**-under ten even with lighting!
+Using the same system/engine as the RPG, so things have been progressing quite well.
+
+![Pathfinding](/assets/img/E8l4JxY.gif)Working out some pathfinding. Grid based level editor helps. In-game level editor means it needs be perfect.
 
 ![Batching Progress](/assets/img/batchingbeautiful.gif)
 
-Batching is a game-changer, but I need to refine my texture atlases.
+Had to attack batching a bit today. Set up an awesome script that works with my in-game level editor. So far I can keep the scene under 3 draw calls (Under 10 with plenty of lighting)!
 
----
-
-### Pathfinding Tweaks & AI Smoothing
-Pathfinding updates were instant but caused some wiggling. By staggering updates to one per second, AI movement looks much smoother now.
+Batching sure does amazing things! But boy do I need to work on my atlases! D=
 
 ![Optimized Pathfinding](/assets/img/fastpathing.gif)
 
----
+Weird wiggling resolved. Pathing is instant. Staggering updates, maybe 1 per second, will make the AI behave a bit smoother.
 
-### Debugging & Funny Moments
-Sometimes, I just have to sit back and say… what?
+Probably time to call it a night. That was a lot of progress for 1 day.
 
 ![Weird Debug Moment](/assets/img/whatthe.jpg)
 
-Also, a reminder to **multiply, not divide!**
+Sometimes I just have to sit back and say….wat.
 
 ![Multiply, Don't Divide](/assets/img/multnotdiv.jpg)
 
----
+I derped. Multiply! Don’t divide.
 
-### Vertex-Based Lighting for Mobile
-Since Unity has hard limits on dynamic lights for mobile, I implemented a system to **bake lighting into vertex colors** when saving a level.
-This allows **infinite lights** with **zero extra draw calls.**
+
+
+Guhh…. Thats cute.
 
 ![Vertex Lighting](/assets/img/vertexlightingunshaded.jpg)
 
-Unity doesn’t allow real-time shadow baking on mobile, and even if it did, it would be too performance-heavy. This approach lets players light up user-generated content without performance issues.
+I still need to factor in the dot product of the vertex normals - but infinite lights in the level editor is working! Processing each vertex takes a little time - so it’ll be a final step to saving a map.
 
-I'm also considering **baking ambient occlusion into vertex colors.** By casting 30-100 random rays per vertex, objects can self-shadow their environment slightly. Vertex colors are surprisingly versatile!
+This is my cheap way to get lighting on mobile without limiting the level editor. 0 extra draw calls here.
 
----
+My basic idea is to get around some of the limitations of Unity on mobile. I plan to have the level editor in the hands of the players, so I need to be able to light user-generated content.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[1]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[2]" />This would be fine if it wasn’t for Unity’s hard limits on lights/shaders. (Which are good to have really)<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[1]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[2]" />Unity doesn’t allow you to bake shadows at runtime - and that’d be too much for mobile anyway, so this is my compromise.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[4]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[5]" />Baking lighting to the vertex colors whenever you save a level. Its not fast enough to be used in real time, so the lighting is still static, but it lets users set up lit scenes with no negative performance impacts from the number of lights.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[7]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868502}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[8]" />In most cases I’d use something like a fancy deferred renderer, but we’re targeting mobile, so thats out of the question. And because the levels are user generated, this was the only way to bake lighting without driving the draw-calls through the roof.
 
-### Texture Atlasing & Batching Wins
-Using `Texture2D.PackTextures()`, I got automatic texture atlasing working, eliminating the need for paid Asset Store tools.
-Next, I’ll integrate it with my `AssetPostProcessor`, so models automatically batch and share materials on import.
+Also, depending on performance tests, I’m seriously considering baking ambient occlusion data into the vertex colors too. <br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868520}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[1]" /><br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868520}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[0].[2]" />Shoot about 30-100 random rays from each vertex, add up the hits, darken as we go. That way objects can self-shadow the environment a little. It surprises me how versatile vertex colors can be. For mobile- its pretty great.<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868520}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[1]" />
+
+
+<br data-reactid=".r[4euwe].[1][3][1]{comment10152102664772905_11868520}.[0].{right}.[0].{left}.[0].[0].[0][3].[0].[3].[0].[2]" />EDIT: Here’s that same scene with normals taken into account. I’ll add AO tommorow, its been a long day.
+
+
+
+I can’t really figure out what the difference between Unity’s vertex lit shader and my vertex color baking is.
+
+Frankly, I think my version looks nicer, but I’d really like a 1:1 match of the Unity lighting system. Mine is on the left, and it appears a little brighter. However, the light settings are exact duplicates.
+
+I’ve made sure everything was clamped where it should be (or saturate in the shader world).
+
+What on earth could the difference be? I tried looking at some falloff things. I looked at various attenuation configurations, but I really can’t seem to drill down the exact look.
+
+Perhaps it’s not important. This is why I don’t get things done.
 
 ![Atlas Progress](/assets/img/atlastest-1.jpg)
 
-With atlased textures, I finally got everything working across rendering, lighting, and batching.
-The result? The **entire scene in just one draw call.**
+Texture2D.PackTextures();
+
+Gives UV offsets for atlasing. It is now my hero. This built-in Unity function ensures I don’t have to purchase some fancy atlas stuff on the Asset Store.
+
+Next step is to integrate the atlas system with my AssetPostProcessor. Then I can have models ready to batch and sharing materials directly on import!
+
+I’m finding a lot of the custom editor scripts I’ve been working on might come in handy for other people’s projects - but they’re extremely specialized right now. As an example, a lot of my texture stuff is hard coded to use uncompressed textures using Point filtering (to keep that voxel look)
+
+I might release a bit of my tools after they’ve been more generalized.
 
 ![Mobile-Optimized Scene](/assets/img/mobileready-1.jpg)
 
-This leaves plenty of room for players, powerups, and effects. I won’t do much more optimization unless absolutely necessary.
+I finally got all my atlased textures to work with everything. The rendering/lighting/batching/atlas stuff is finally done. It could use some refactoring because its a little sloppy, but it works, and it matches an unbaked/unbatched scene almost 1:1.
 
----
+It actually looks better than a regular scene because I’ve added baked ambient occlusion (corner shadows).
 
-### Final Testing on Android
-Baking takes less than a minute, including ambient occlusion. I'd love to test on a beefier device like an OUYA, but for now, I’m using a low-end Android tablet.
+The entire scene is just 1 draw call, which leaves plenty of room for players, powerups, and effects. I don’t plan to do much more optimization. Players and powerups probably won’t be batched, unless performance demands it.
 
-![Android Testing](/assets/img/Screenshot_2013-12-15-04-07-42.jpg)
+I also had a fun time getting uncompressed textures to look right on android. My batching was originally based on bits of code from the free “Draw Call Minimizer” package from the asset store - but it ended up spitting out non-power-of-two textures, which breaks everything.
 
-If I can stay above **30 FPS**, it should be fine. **25 FPS might be the real target for low-end devices.**
-Still need to test with interactive objects in the scene.
+Ended up writing my own code that implements Unity’s methods, and it came out cleaner and simpler (but interestingly, not faster). Speed doesn’t matter for this though, because this optimization is done in the editor - not at runtime.
 
----
+I’ll be sure to post something on my blog that goes into depth about it all. Getting a scene like this on mobile - with a runtime level editor? 1 draw-call for the entire scene, no matter how many lights?
 
-### Final Thoughts
-This has been a lot of progress for one day. Getting a **runtime level editor**, **fully batched scenes**, and **dynamic lighting on mobile** in a single draw call?
-I think that’s pretty sweet.
+I think it’s pretty sweet.
 
 ![Lighting Optimization](/assets/img/lightingchunkbake.gif)
 
-More updates soon!
+Animated chunk lighting. Hoping I can optimize it for mobile a bit more. It’s not exactly fast right now.
+
+![Android Testing](/assets/img/Screenshot_2013-12-15-04-07-42.jpg)
+
+Testing on android. Baking takes less than a minute - including ambient occlusion, but I really want to try and speed it up a bit more.  I’d love for something with beefier hardware, or possibly an OUYA to give me an FPS average. I’m using a low-end tablet right now for testing.
+
+Frankly if I can keep the framerate above 30, I think it’ll be fine, but honestly 25 may end up my target for this device. I still don’t have any interactive objects in the scene yet.

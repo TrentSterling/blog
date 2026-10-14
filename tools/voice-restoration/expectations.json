@@ -1,0 +1,19 @@
+{
+  "flash-unity-and-xna": ["For a more researched post about Flash vs Unity vs XNA"],
+  "box2d-vs-nape": ["One side-effect that I've seen", "Object penetration seems like less of a problem in Box2D"],
+  "that-dummy": ["Deltaluca, the author of the Nape physics engine", "Only time will tell"],
+  "voxel-engine-progress": ["Draw Call Minimizer", "the lighting is still static", "Players and powerups probably won’t be batched"],
+  "a-new-year-2014": ["Not sure where I was going with that"],
+  "12-games-in-12-weeks": ["Screw em", "Got an opinion on it? Tell me!"],
+  "voxel-twinstick-voxefire": ["the artwork is sourced from Twitch viewers", "hiccups or hitching"],
+  "magic-archer": ["Original post", "2025 expansion", "it’ll be some time before I look back at it"],
+  "thomas-clone": ["will probably not see much further development"],
+  "bacon-game-jam-buttloads": ["My artist got sick, so I had to use some art from viewers"],
+  "dash-till-dawn": ["2DGameDev did all the art", "It should be our first release on Android"],
+  "multiplayer-topdown-zombie": ["I need to work on a lot of UI stuff", "generic UI framework"],
+  "bear-party-ld33": ["I'll be releasing", "Uploads of the builds comin' up soon", "Probably have to dumb down the shaders"],
+  "rebooting-me": ["die-hard fans", "cheeseburger cannon", "a very big thank you to my single patreon"],
+  "switching-to-static": ["Check out this banana", "Cool huh?"],
+  "mqtt-iot-experiments": ["http://www.espruino.com/ESP8266_WifiUsage", "@param {string} tag", "your_password"],
+  "jenns-cafe": ["Original post", "2025 expansion", "desktop thin-client", "Twitch overlay on IoT Steroids"]
+}
