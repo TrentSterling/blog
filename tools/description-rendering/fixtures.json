@@ -1,0 +1,58 @@
+[
+  {
+    "path": "_posts/2014-09-28-gamedev-vlogdiary-1.md",
+    "description": "{% include youtube.html id='qFxcJcXj34' %}  Here’s my first Game Dev Vlog. Friend of mine is always looking for more streams/gamedev related content...",
+    "expected": "Here’s my first Game Dev Vlog. Friend of mine is always looking for more streams/gamedev related content...",
+    "youtube": [
+      "qFx_cJcXj34"
+    ]
+  },
+  {
+    "path": "_posts/2014-10-15-gamedev-vlogdiary-2.md",
+    "description": "{% include youtube.html id='qHfz6rU4GYA' %}  Trent Sterling is my name. I am a game developer. I make games. I also play games. Sometimes I upload...",
+    "expected": "Trent Sterling is my name. I am a game developer. I make games. I also play games. Sometimes I upload...",
+    "youtube": [
+      "qHfz6rU4GYA"
+    ]
+  },
+  {
+    "path": "_posts/2014-10-20-gamedev-vlogdiary-3.md",
+    "description": "{% include youtube.html id='0VGh415jfrc' %}     Play game:  https://bacongamejam.org/jams/bacongamejam-08/282/",
+    "expected": "Play game: https://bacongamejam.org/jams/bacongamejam-08/282/",
+    "youtube": [
+      "0VGh415jfrc"
+    ]
+  },
+  {
+    "path": "_posts/2014-11-29-game-dev-vlog-4.md",
+    "description": "{% include youtube.html id='IP3tRx5HkTg' %}  Pushing this video onto the site a little late. I need to find a way to synchronize all my social media...",
+    "expected": "Pushing this video onto the site a little late. I need to find a way to synchronize all my social media...",
+    "youtube": [
+      "IP3tRx5HkTg"
+    ]
+  },
+  {
+    "path": "_posts/2014-12-15-game-dev-vlog-5.md",
+    "description": "{% include youtube.html id='Cwgr0tiM3OQ' %}  Here’s vlog 5 And a link to my LD31 entry ...",
+    "expected": "Here’s vlog 5 And a link to my LD31 entry ...",
+    "youtube": [
+      "Cwgr0tiM3OQ"
+    ]
+  },
+  {
+    "path": "_posts/2015-06-17-gamedev-vlog-6.md",
+    "description": "A video log detailing what I’ve been up to lately regarding game development. This video focuses on my BaconGameJam entry  {% include youtube.html...",
+    "expected": "A video log detailing what I’ve been up to lately regarding game development. This video focuses on my BaconGameJam entry",
+    "youtube": [
+      "_NpiSot1c-g"
+    ]
+  },
+  {
+    "path": "_posts/2015-07-19-gamedev-vlog-9.md",
+    "description": "{% include youtube.html id='NBHL7rwasqg' %}  Another vlog This time it covered my collaboration zombie endless runner game.",
+    "expected": "Another vlog This time it covered my collaboration zombie endless runner game.",
+    "youtube": [
+      "NBHL7rwasqg"
+    ]
+  }
+]
