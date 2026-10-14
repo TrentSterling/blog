@@ -1,0 +1,520 @@
+{
+  "originalPublication": "2026-10-14 15:16:48 +0000",
+  "note": "Verified release/activity days for 30 retrospective posts. Preserve the original clock component for stable calendar display; it is not an asserted historical publication time. Keep the October 14 update date, current filenames, titles, URLs and all article content. Four year-only/range cases remain unchanged. CraftMine 2 remains October 14.",
+  "posts": [
+    {
+      "path": "_posts/2026-10-14-aqua-empire.md",
+      "date": "2026-10-02 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/aqua-empire/",
+      "basis": "The article includes the 2.5 Broodship/Crown Fish/Endless finale and 2.5.2 feeding-color behavior. Both shipped on this day. The initial 2.4 source preservation is not the date of the described final behavior.",
+      "public_evidence": []
+    },
+    {
+      "path": "_posts/2026-10-14-asciicity.md",
+      "date": "2026-08-16 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/asciicity/",
+      "basis": "First public v0.1.0 release follows August 15 development; the described semantic ASCII city, streamed traffic and driving were present by this release.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/asciicity/releases/tag/v0.1.0",
+          "timestamp": "2026-08-16T16:59:24Z"
+        },
+        {
+          "url": "https://github.com/TrentSterling/asciicity/commit/1ecf056a580115fb5037d08ce680b9575e131b8b",
+          "timestamp": "2026-08-16T16:54:50Z",
+          "sha": "1ecf056a580115fb5037d08ce680b9575e131b8b"
+        },
+        {
+          "url": "https://github.com/TrentSterling/asciicity/commit/4e949e36d3f9b2ae1a1672345060bd36350c665a",
+          "timestamp": "2026-08-15T19:56:48Z",
+          "sha": "4e949e36d3f9b2ae1a1672345060bd36350c665a"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-biomass.md",
+      "date": "2026-07-31 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/biomass/",
+      "basis": "The original BIOMASS fork and same-day contact/flow-field work already match the GPU zombie-crowd article. September changes only added search metadata.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/biomass/commit/c209fbad36dc2975d327a95e0ac3cb53c7e422c6",
+          "timestamp": "2026-07-31T13:56:51Z",
+          "sha": "c209fbad36dc2975d327a95e0ac3cb53c7e422c6"
+        },
+        {
+          "url": "https://github.com/TrentSterling/biomass/commit/022290ddf3a789dc167c79006fbb45ab9d3f5441",
+          "timestamp": "2026-07-31T14:01:12Z",
+          "sha": "022290ddf3a789dc167c79006fbb45ab9d3f5441"
+        },
+        {
+          "url": "https://github.com/TrentSterling/biomass/commit/ec1e30c1e0d9a546ec24609895d17e477dce126a",
+          "timestamp": "2026-07-31T14:56:33Z",
+          "sha": "ec1e30c1e0d9a546ec24609895d17e477dce126a"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-breakmass.md",
+      "date": "2026-09-17 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/breakmass/",
+      "basis": "Public hosting, God Hand twist/crush and the v0.13 destruction pass occurred on the same day and match the article.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/breakmass/commit/4340dcc793ebfaa75fdf6fa040fb1640293fb20b",
+          "timestamp": "2026-09-17T05:26:26Z",
+          "sha": "4340dcc793ebfaa75fdf6fa040fb1640293fb20b"
+        },
+        {
+          "url": "https://github.com/TrentSterling/breakmass/commit/428ebb042601e7ae386a9dbed42fd2fa1eaedccc",
+          "timestamp": "2026-09-17T05:42:50Z",
+          "sha": "428ebb042601e7ae386a9dbed42fd2fa1eaedccc"
+        },
+        {
+          "url": "https://github.com/TrentSterling/breakmass/commit/fd8f8645d31c3dd18c3fe2bf06b63683cad58074",
+          "timestamp": "2026-09-17T08:29:41Z",
+          "sha": "fd8f8645d31c3dd18c3fe2bf06b63683cad58074"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-buddy-bonk.md",
+      "date": "2026-09-17 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/buddy-bonk/",
+      "basis": "The article specifically mentions swing-sensitive toys, hoop carry rules and the catalogue; these arrived after the September 16 first deploy, in v0.7 and v0.8 on September 17.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/buddy/commit/476238da172d3463a220920dca49050af2a4c42a",
+          "timestamp": "2026-09-17T05:42:16Z",
+          "sha": "476238da172d3463a220920dca49050af2a4c42a"
+        },
+        {
+          "url": "https://github.com/TrentSterling/buddy/commit/c8c54017651b10884593eb427836e752319c16c2",
+          "timestamp": "2026-09-17T06:32:47Z",
+          "sha": "c8c54017651b10884593eb427836e752319c16c2"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-buttloads-2.md",
+      "date": "2026-10-02 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/buttloads-2/",
+      "basis": "The article describes the grown co-op mine, not the September first-dig prototype. The explicit instant co-op/polished 2.48 publication is the strongest matching release milestone.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/buttloads2/commit/58ccbc0df07eb076db25d5c8bbe66201a886e1e6",
+          "timestamp": "2026-10-02T03:43:54Z",
+          "sha": "58ccbc0df07eb076db25d5c8bbe66201a886e1e6"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-campfire.md",
+      "date": "2026-09-30 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/campfire/",
+      "basis": "Article includes WebGPU text, unified character presentation and P2P voice. These are explicitly the v1.8 publication, not the July original deploy.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/campfire/commit/1e66425bad9cf9d70dd501e7eedd0eecf55d2881",
+          "timestamp": "2026-09-30T08:14:04Z",
+          "sha": "1e66425bad9cf9d70dd501e7eedd0eecf55d2881"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-colony.md",
+      "date": "2026-02-24 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/colony/",
+      "basis": "Public site commit adds the actual playable dwarf-colony simulator. Historical colony/play/index.html contains dwarves, hiring, hunger, PeerJS, zombies and skeletons. Later README additions do not date the game.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/trentsterling.github.io/commit/872d57460cbaf2a54c8f5146cbbe6f07b6ad466c",
+          "timestamp": "2026-02-24T20:06:29Z",
+          "sha": "872d57460cbaf2a54c8f5146cbbe6f07b6ad466c"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-dead-ends.md",
+      "date": "2026-09-30 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/dead-ends/",
+      "basis": "The optional native GPU renderer and tested v29.1 package described in the article shipped September 30; September 17 is the earlier v14 hosting date.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/deadends/commit/1f223dbc4bf99cc715e89a1a9bf19efd377c4de4",
+          "timestamp": "2026-09-30T09:17:31Z",
+          "sha": "1f223dbc4bf99cc715e89a1a9bf19efd377c4de4"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-fellswoop.md",
+      "date": "2026-09-24 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/fellswoop/",
+      "basis": "First public FELLSWOOP 0.5.0 release at 01:06 UTC, followed by touch support. The authored changelog calls this September 23 in the original -05:00 local calendar; see alternative.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/fellswoop/commit/06ee842434b40c07958d57d958bae24d434ec663",
+          "timestamp": "2026-09-24T01:06:07Z",
+          "sha": "06ee842434b40c07958d57d958bae24d434ec663"
+        },
+        {
+          "url": "https://github.com/TrentSterling/fellswoop/commit/2f308f3ec08e3cce73b24b0143904c91d91e4796",
+          "timestamp": "2026-09-24T01:46:26Z",
+          "sha": "2f308f3ec08e3cce73b24b0143904c91d91e4796"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-gems-together.md",
+      "date": "2026-10-02 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/gems-together/",
+      "basis": "Use the v3.3.7 public release snapshot. The article includes the September 29-30 journey/challenge modes, downbeat transitions and final Silver announcer, all later than the first September 27 upload.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/gemstogether/releases/tag/v3.3.7",
+          "timestamp": "2026-10-02T05:37:10Z"
+        },
+        {
+          "url": "https://github.com/TrentSterling/gemstogether/commit/79bdba39e910763ec6844951be67107d43eb1c26",
+          "timestamp": "2026-09-29T23:59:23Z",
+          "sha": "79bdba39e910763ec6844951be67107d43eb1c26"
+        },
+        {
+          "url": "https://github.com/TrentSterling/gemstogether/commit/c59b163a127e7f18cde656687a117765e4a776e3",
+          "timestamp": "2026-09-30T10:24:37Z",
+          "sha": "c59b163a127e7f18cde656687a117765e4a776e3"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-godgame-village.md",
+      "date": "2026-10-13 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/godgame-village/",
+      "basis": "The described three-island Village and explicit Start Village planning flow were released October 13. October 10 was the different Hollow Hands/Shrine build.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/godgame/commit/a81bcb273444555e88f253d3c19cb2553a64de54",
+          "timestamp": "2026-10-13T09:40:58Z",
+          "sha": "a81bcb273444555e88f253d3c19cb2553a64de54"
+        },
+        {
+          "url": "https://github.com/TrentSterling/godgame/commit/79b01c5ce27ddfbe9000f214b10a7ee7b0315ec2",
+          "timestamp": "2026-10-13T21:48:28Z",
+          "sha": "79b01c5ce27ddfbe9000f214b10a7ee7b0315ec2"
+        },
+        {
+          "url": "https://github.com/TrentSterling/godgame/commit/58329ae0c6312225a3d9c15fe29c0adb1ae8a6fd",
+          "timestamp": "2026-10-13T21:44:12Z",
+          "sha": "58329ae0c6312225a3d9c15fe29c0adb1ae8a6fd"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-inkride.md",
+      "date": "2026-09-19 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/inkride/",
+      "basis": "First public hosting of the matching single-file collaborative physics sketchbook. Later same-day About metadata is not the basis.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/inkride/commit/b2e5ab3e20d27df54ceeada13f156ee3462c4679",
+          "timestamp": "2026-09-19T12:34:39Z",
+          "sha": "b2e5ab3e20d27df54ceeada13f156ee3462c4679"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-jenn-s-farm.md",
+      "date": "2026-05-31 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/jenn-s-farm/",
+      "basis": "The public 3D demo commit contains the described dynamic supply/demand market, procedural assets and farming loop. Historical market.js explicitly implements demand and recovering supply pressure. The older 2025 repository is a different scaffold and local February prototype is earlier.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/trentsterling.github.io/commit/fd8af2c296f7ce09645da14cf131a71827e3d44f",
+          "timestamp": "2026-05-31T02:55:37Z",
+          "sha": "fd8af2c296f7ce09645da14cf131a71827e3d44f"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-makeup-beach-sudoku.md",
+      "date": "2025-08-10 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/makeup-beach-sudoku/",
+      "basis": "First committed playable index.html in the matching Sudoku project; 2026 commits are branding, screenshots and About metadata.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/sudoku/commit/947e1ccfc6d0ada19d9a0c58f2dcb8708254e2da",
+          "timestamp": "2025-08-10T11:47:40Z",
+          "sha": "947e1ccfc6d0ada19d9a0c58f2dcb8708254e2da"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-orcflow.md",
+      "date": "2026-07-30 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/orcflow/",
+      "basis": "The twelve maps, free selection, turret upgrades and GPU horde were implemented in the July 30 public development/release sequence.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/orcflow/commit/7b9e5bbbc3e61bbf9c267c69e97d9ee987c76c02",
+          "timestamp": "2026-07-30T01:32:38Z",
+          "sha": "7b9e5bbbc3e61bbf9c267c69e97d9ee987c76c02"
+        },
+        {
+          "url": "https://github.com/TrentSterling/orcflow/commit/1267ab584b2b02ac76794df3ef49746b8e10db3e",
+          "timestamp": "2026-07-30T02:18:22Z",
+          "sha": "1267ab584b2b02ac76794df3ef49746b8e10db3e"
+        },
+        {
+          "url": "https://github.com/TrentSterling/orcflow/commit/53c1ca9f0215d17857387d9805087cead573f0fb",
+          "timestamp": "2026-07-30T06:34:51Z",
+          "sha": "53c1ca9f0215d17857387d9805087cead573f0fb"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-pizza-pachinko.md",
+      "date": "2025-09-03 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/pizza-pachinko/",
+      "basis": "First committed playable index.html, matching the 2025 gallery year. Subsequent 2026 edits only concern branding and search metadata.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/pachinko/commit/4e3e30a049106b8385695d62f3a669d1b1c33b5e",
+          "timestamp": "2025-09-03T03:02:40Z",
+          "sha": "4e3e30a049106b8385695d62f3a669d1b1c33b5e"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-project-demigod.md",
+      "date": "2025-12-02 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/project-demigod/",
+      "basis": "The article specifically describes social multiplayer and drone combat being public while broader enemy combat remains future work. This matches the dated official social-multiplayer announcement. The 2024 store launch predates the listed 2025-present contract period and is not an appropriate date for Trent's contribution.",
+      "public_evidence": [
+        {
+          "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1817483467049395",
+          "timestamp": "2025-12-02T20:49:34.000Z"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-ring-riot.md",
+      "date": "2026-10-03 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/ring-riot/",
+      "basis": "v0.4.0 release includes committed melee warnings described by the red-arc sentence. Bank shots/Crowd Pulse were added in v0.2 the previous day.",
+      "public_evidence": []
+    },
+    {
+      "path": "_posts/2026-10-14-send-dudes.md",
+      "date": "2026-09-18 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/send-dudes/",
+      "basis": "First hosted v0.4.2 README already documents three sectors/four waves, research/Titans, 200k sandbox and persistent blood. This matches the article; later layout work is not required to date it.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/senddudes/commit/ec194bb665d62e1661aea2d04d3f0de836923bd9",
+          "timestamp": "2026-09-18T09:24:29Z",
+          "sha": "ec194bb665d62e1661aea2d04d3f0de836923bd9"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-slopeloop.md",
+      "date": "2026-10-02 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/slopeloop/",
+      "basis": "First verified public release and v0.5 sprint publication. Original local history shows the described Sunfall Causeway/Rook work on September 30, well before the October 14 repository preservation import.",
+      "public_evidence": []
+    },
+    {
+      "path": "_posts/2026-10-14-smear.md",
+      "date": "2026-10-09 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/smear/",
+      "basis": "The article explicitly includes V47.1 crate-face fix plus V46/V47 handling/startup material. Date the latest described version, not the October 2 V8 import or October 6 V16 clip.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/smear/commit/7b79bd9d7c4cee6ac00aa61e59e97c72e893c72c",
+          "timestamp": "2026-10-09T04:18:59Z",
+          "sha": "7b79bd9d7c4cee6ac00aa61e59e97c72e893c72c"
+        },
+        {
+          "url": "https://github.com/TrentSterling/smear/commit/b6ff20159dc294395f3c103b54dfbe2dfdd41294",
+          "timestamp": "2026-10-09T01:50:14Z",
+          "sha": "b6ff20159dc294395f3c103b54dfbe2dfdd41294"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-terrain-lab.md",
+      "date": "2026-09-17 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/terrain-lab/",
+      "basis": "First public 3.8 Earthworks snapshot matches Surface Nets sculpting, worker streaming and exports. Later commits only add capture tools and metadata.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/terrainlab/commit/93fc97557815e9f7bae02a1672c43e78e94c99ee",
+          "timestamp": "2026-09-17T05:32:51Z",
+          "sha": "93fc97557815e9f7bae02a1672c43e78e94c99ee"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-tiny-treads.md",
+      "date": "2026-09-19 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/tiny-treads/",
+      "basis": "First public hosting of the matching turn-based artillery/garage/networking build.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/tinytreads/commit/adc591530f441bf18a4b462edf2d021af514be10",
+          "timestamp": "2026-09-19T12:34:46Z",
+          "sha": "adc591530f441bf18a4b462edf2d021af514be10"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-tinyrise.md",
+      "date": "2026-09-17 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/tinyrise/",
+      "basis": "Explicit Tinyrise 1.0.0 first public release. Its README already lists 4x4 city, stairs/bridges, residents, copy/rotate floors, JSON/PNG/GLB exports.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/tinyrise/commit/6f53c265a683da2214c94731e6044541098f7be8",
+          "timestamp": "2026-09-17T06:23:56Z",
+          "sha": "6f53c265a683da2214c94731e6044541098f7be8"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-tunnelrat.md",
+      "date": "2026-07-31 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/tunnelrat/",
+      "basis": "The playable vertical slice and same-day controller, chase-camera and corpse-run additions match the article.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/tunnelrat/commit/7e1fe21a67036120ec62076e61e300a686a148c1",
+          "timestamp": "2026-07-31T09:27:45Z",
+          "sha": "7e1fe21a67036120ec62076e61e300a686a148c1"
+        },
+        {
+          "url": "https://github.com/TrentSterling/tunnelrat/commit/ac78ead82f43ba7d04d06cac5a8e5f130b57aae0",
+          "timestamp": "2026-07-31T10:40:48Z",
+          "sha": "ac78ead82f43ba7d04d06cac5a8e5f130b57aae0"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-vibemaze.md",
+      "date": "2025-07-30 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/vibemaze/",
+      "basis": "The first playable index.html implements the ASCII triangle-rendered maze. August 1 adds navbar, scrolling and an above-collision fix, not a new project.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/vibemaze/commit/a3d3247912264920ddf5e5eeb1b64c729d5cb078",
+          "timestamp": "2025-07-30T02:35:09Z",
+          "sha": "a3d3247912264920ddf5e5eeb1b64c729d5cb078"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-vibepong.md",
+      "date": "2025-08-01 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/vibepong/",
+      "basis": "First playable index.html. Later commits are attribution, analytics, README screenshots or About metadata.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/vibepong/commit/04e8842f951fedd64ccb381d034c44618229e0c1",
+          "timestamp": "2025-08-01T04:55:29Z",
+          "sha": "04e8842f951fedd64ccb381d034c44618229e0c1"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-vibespace.md",
+      "date": "2025-08-03 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/vibespace/",
+      "basis": "First playable index.html. Later commits are attribution, analytics, README screenshots or About metadata.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/vibespace/commit/1781cc9c1ea819649299462aabe871e08a5ce953",
+          "timestamp": "2025-08-03T13:26:24Z",
+          "sha": "1781cc9c1ea819649299462aabe871e08a5ce953"
+        }
+      ]
+    },
+    {
+      "path": "_posts/2026-10-14-voxel-heroes.md",
+      "date": "2026-10-02 15:16:48 +0000",
+      "last_modified_at": "2026-10-14 15:16:48 +0000",
+      "original_date": "2026-10-14 15:16:48 +0000",
+      "url": "https://tront.xyz/blog/posts/voxel-heroes/",
+      "basis": "The article includes the expanded era adventure, shared co-op progress and companions. Use the explicit era-expansion milestone, after the September 30 co-op shipping commit and before unrelated later reward-floor polish.",
+      "public_evidence": [
+        {
+          "url": "https://github.com/TrentSterling/voxelheroes/commit/d00124d94d1a01f00a00427c24c02bd953e2228e",
+          "timestamp": "2026-10-02T02:00:32Z",
+          "sha": "d00124d94d1a01f00a00427c24c02bd953e2228e"
+        },
+        {
+          "url": "https://github.com/TrentSterling/voxelheroes/commit/dac10533fb12da8144c40c23f8c463c6e9c2780b",
+          "timestamp": "2026-09-30T17:12:19Z",
+          "sha": "dac10533fb12da8144c40c23f8c463c6e9c2780b"
+        }
+      ]
+    }
+  ]
+}

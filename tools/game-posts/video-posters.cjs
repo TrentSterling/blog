@@ -4,8 +4,10 @@ const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 const manifest = require('./video-posters.json');
+const { normalizeDateMetadata } = require('./dates.cjs');
 const hash = text => crypto.createHash('sha256').update(text).digest('hex');
 function normalize(relative, contents) {
+  contents = normalizeDateMetadata(relative, contents);
   const post = manifest.posts.find(p => p.path === relative);
   if (!post || hash(contents) !== post.afterSha256) return contents;
   let original = contents;
@@ -18,7 +20,7 @@ function normalize(relative, contents) {
 }
 function verify(root) {
   for (const post of manifest.posts) {
-    const text = fs.readFileSync(path.join(root, post.path), 'utf8');
+    const text = normalizeDateMetadata(post.path, fs.readFileSync(path.join(root, post.path), 'utf8'));
     assert.equal(hash(text), post.afterSha256, post.path + ': reviewed poster fix');
     assert.equal(hash(normalize(post.path, text)), post.beforeSha256);
     assert.equal(normalize(post.path, text + 'unexpected'), text + 'unexpected');

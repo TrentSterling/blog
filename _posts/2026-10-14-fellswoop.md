@@ -1,6 +1,7 @@
 ---
 title: "FELLSWOOP"
-date: 2026-10-14 15:16:48 +0000
+date: 2026-09-24 15:16:48 +0000
+last_modified_at: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "FELLSWOOP is a floating island, a forest, and one very busy axe. Move the mouse over a tree and it gets chopped."

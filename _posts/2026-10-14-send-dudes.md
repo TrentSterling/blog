@@ -1,6 +1,7 @@
 ---
 title: "SEND DUDES"
-date: 2026-10-14 15:16:48 +0000
+date: 2026-09-18 15:16:48 +0000
+last_modified_at: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "I took the GPU crowd experiments from BIOMASS and turned them into an army defense game. It's called SEND DUDES."

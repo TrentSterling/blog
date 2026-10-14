@@ -13,6 +13,8 @@ const publication = require('../game-posts/manifest.json');
 const posters = require('../game-posts/video-posters.cjs');
 const presentation = require('../game-posts/presentation.json');
 const publishedFiles = new Map([...publication.posts, ...publication.assets, ...posters.manifest.assets].map(file => [file.path, file.sha256]));
+const { approved: historicalDates, normalizeDateMetadata } = require('../game-posts/dates.cjs');
+require('../game-posts/dates.test.cjs');
 test('reviewed archival wording, media, dates and safe placeholders are preserved', () => voice.verify(root));
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
 // Exact archived 600x337 JPEG bytes. The WordPress migration referenced the
@@ -104,8 +106,11 @@ test('reviewed additions are exact and all existing protected working-tree bytes
     } else if (posters.manifest.posts.some(post => post.path === relative)) {
       assert.equal(posters.normalize(relative, current.toString('utf8')), posters.normalize(relative, original.toString('utf8')),
         relative + ': poster attributes and new CraftMine2 clip preserve every prior article byte');
-    } else
-    if (REPAIRS.some(repair => repair.path === relative) || restoration.manifest.posts.some(post => post.path === relative) || voice.manifest.posts.some(post => post.path === relative)) {
+    } else if (historicalDates.has(relative)) {
+      assert.equal(normalizeDateMetadata(relative, current.toString('utf8')),
+        normalizeDateMetadata(relative, original.toString('utf8')),
+        `${relative}: only the approved date and October 14 update metadata may differ`);
+    } else if (REPAIRS.some(repair => repair.path === relative) || restoration.manifest.posts.some(post => post.path === relative) || voice.manifest.posts.some(post => post.path === relative)) {
       assert.equal(normalizePostForPreservation(relative, current.toString('utf8')),
         normalizePostForPreservation(relative, original.toString('utf8')),
         `${relative}: reverse only the approved URLs; preserve every other post byte`);
