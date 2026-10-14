@@ -5,8 +5,10 @@ const path=require('node:path');
 const expectations=require('./expectations.json');
 const normalize=t=>t.replace(/[‘’]/g,"'").replace(/\s+/g,' ');
 module.exports=async(browser,base,out)=>{
+ base=base.replace(/\/$/,'');fs.mkdirSync(out,{recursive:true});
+ const host=new URL(base).hostname;
  const context=await browser.newContext({viewport:{width:390,height:844}});
- await context.route('**/*',r=>new URL(r.request().url()).hostname==='127.0.0.1'?r.continue():r.fulfill({status:200,body:''}));
+ await context.route('**/*',r=>new URL(r.request().url()).hostname===host?r.continue():r.fulfill({status:200,body:''}));
  const page=await context.newPage(),report=[];
  try{
   for(const [slug,quotes] of Object.entries(expectations)){
@@ -25,3 +27,7 @@ module.exports=async(browser,base,out)=>{
   fs.writeFileSync(path.join(out,'blog-voice-restoration-report.json'),JSON.stringify(report,null,2));
  }finally{await context.close();}
 };
+
+if(require.main===module){
+ (async()=>{const {chromium}=require('playwright');const browser=await chromium.launch({headless:true,executablePath:process.env.THEME_BROWSER_EXECUTABLE||undefined});try{await module.exports(browser,process.env.RELEASE_URL,process.env.BLOG_SCREENSHOTS||'.local/released-voice');}finally{await browser.close();}})().catch(error=>{console.error(error);process.exitCode=1;});
+}
