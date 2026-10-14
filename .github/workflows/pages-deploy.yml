@@ -74,3 +74,34 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Read exact released theme source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: assets
+
+      - name: Verify published theme bridge bytes
+        env:
+          RELEASE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -eu
+          for file in assets/css/tront-theme-bridge.css assets/js/tront-theme-bridge.js; do
+            fetched="$RUNNER_TEMP/$(basename "$file")"
+            matched=false
+            for attempt in 1 2 3 4 5 6; do
+              if curl --location --fail --silent --show-error --connect-timeout 10 --max-time 30 "${RELEASE_URL%/}/$file?release=${GITHUB_SHA}" -o "$fetched" && cmp -s "$file" "$fetched"; then
+                matched=true
+                break
+              fi
+              sleep 15
+            done
+            if [ "$matched" != true ]; then
+              echo "Published asset does not match release $GITHUB_SHA: $file"
+              exit 1
+            fi
+            echo "Published release asset verified: $file"
+            sha256sum "$fetched"
+          done
+

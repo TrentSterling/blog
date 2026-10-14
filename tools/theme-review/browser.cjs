@@ -63,6 +63,7 @@ async function contrast(page) {
     await new Promise(resolve => baselineServer.listen(0, '127.0.0.1', resolve));
     const baselineUrl = `http://127.0.0.1:${baselineServer.address().port}`;
     browser = await chromium.launch({ headless: true, executablePath: process.env.THEME_BROWSER_EXECUTABLE || undefined });
+    await require('./control-effects.cjs')(browser, url, baselineUrl, out);
     await require('./first-paint.cjs')(browser, url, out);
     await require('./topbar-icons.cjs')(browser, url, baselineUrl, out);
     page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
@@ -85,10 +86,8 @@ async function contrast(page) {
     await baseline.goto(baselineUrl + '/blog/', { waitUntil: 'networkidle' });
     await baseline.locator('#tront-theme-btn').click(); await baseline.selectOption('[name="preset"]', 'purple'); await baseline.keyboard.press('Escape');
     const composition = p => p.evaluate(() => ({
-      bodyImage: getComputedStyle(document.body).backgroundImage,
       panels: ['main', '#sidebar', '#post-list', '#post-list .card'].map(selector => { const el = document.querySelector(selector), r = el.getBoundingClientRect(), s = getComputedStyle(el); return { selector, x: r.x, width: r.width, radius: s.borderRadius, font: s.fontFamily }; }),
       titles: [...document.querySelectorAll('#post-list .card-title')].map(el => el.textContent),
-      cardBlur: getComputedStyle(document.querySelector('#post-list .card')).backdropFilter,
       headingGradient: getComputedStyle(document.querySelector('#post-list h1')).backgroundImage.includes('linear-gradient')
     }));
     await page.goto(url + '/blog/', { waitUntil: 'networkidle' });
@@ -99,7 +98,7 @@ async function contrast(page) {
       // Resize triggers Chirpy's existing sidebar transition; compare settled layouts.
       await Promise.all([page.waitForTimeout(500), baseline.waitForTimeout(500)]);
       const before = await composition(baseline), after = await composition(page);
-      assert.deepEqual(after, before, 'Chirpy reading canvas, sidebar/card geometry, gradient headings and glass materials remain page-specific');
+      assert.deepEqual(after, before, 'Chirpy sidebar/card geometry, typefaces, titles and heading-gradient roles stay intact; control-driven paint is checked separately');
       await baseline.screenshot({ path: path.join(out, `blog-baseline-${width}.png`) });
       await page.screenshot({ path: path.join(out, `blog-themed-${width}.png`) });
       comparisons.push({ width, before, after });
@@ -299,3 +298,4 @@ async function contrast(page) {
     throw error;
   } finally { if (browser) await browser.close(); await new Promise(resolve => server.close(resolve)); await new Promise(resolve => baselineServer.close(resolve)); }
 })().catch(error => { console.error(error); process.exitCode = 1; });
+
