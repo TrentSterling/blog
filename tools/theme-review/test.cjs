@@ -9,6 +9,8 @@ const { REPAIRS, normalizePostForPreservation, verifySources, verifyNegativeCase
 const root = path.resolve(__dirname, '../..');
 const restoration = require('../image-restoration/verify.cjs');
 const voice = require('../voice-restoration/verify.cjs');
+const publication = require('../game-posts/manifest.json');
+const publishedFiles = new Map([...publication.posts, ...publication.assets].map(file => [file.path, file.sha256]));
 test('reviewed archival wording, media, dates and safe placeholders are preserved', () => voice.verify(root));
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
 // Exact archived 600x337 JPEG bytes. The WordPress migration referenced the
@@ -50,7 +52,7 @@ test('one picker uses same-origin shared assets with the correct blog base path'
   assert.ok(!fs.readFileSync(path.join(root, '_includes/sidebar.html'), 'utf8').includes('id="mode-toggle"'));
   assert.match(fs.readFileSync(path.join(root, 'Gemfile'), 'utf8'), /jekyll-theme-chirpy", "7\.2\.4"/);
 });
-test('only exact allowlisted post URLs change; all other protected working-tree bytes remain intact', () => {
+test('reviewed additions are exact and all existing protected working-tree bytes remain intact', () => {
   const baseline = process.env.BLOG_BASELINE_ROOT;
   if (!baseline) throw Error('BLOG_BASELINE_ROOT is required for preservation checks');
   const protectedPaths = ['_posts', '_tabs', '_data', '_plugins', 'assets/img', 'Gemfile', '_config.yml',
@@ -73,11 +75,19 @@ test('only exact allowlisted post URLs change; all other protected working-tree 
   const currentFiles = files(root), baselineFiles = files(baseline);
   const recoveredAdditions = new Set(currentFiles.filter(relative =>
     recoveredImages.has(relative) && !baselineFiles.includes(relative)));
-  assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative)), baselineFiles,
-    'protected files are neither added nor removed except the exact recovered images');
+  const publicationAdditions = new Set(currentFiles.filter(relative =>
+    publishedFiles.has(relative) && !baselineFiles.includes(relative)));
+  assert.equal(publication.posts.length, 35, 'the reviewed publication contains 35 posts');
+  assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative) && !publicationAdditions.has(relative)), baselineFiles,
+    'protected files are neither added nor removed except the exact reviewed additions');
   verifySources(root);
   for (const relative of currentFiles) {
     const current = fs.readFileSync(path.join(root, relative));
+    if (publicationAdditions.has(relative)) {
+      assert.equal(crypto.createHash('sha256').update(current).digest('hex'), publishedFiles.get(relative),
+        `${relative}: exact reviewed publication bytes`);
+      continue;
+    }
     if (recoveredAdditions.has(relative)) {
       verifyRecoveredImage(relative, current);
       continue;
