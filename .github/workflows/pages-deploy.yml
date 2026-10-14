@@ -49,6 +49,9 @@ jobs:
       - name: Check duplicate post protection
         run: bundle exec ruby tools/test_unique_post_urls.rb
 
+      - name: Check plain-text description cleanup
+        run: ruby tools/test_plaintext_descriptions.rb
+
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
@@ -56,6 +59,9 @@ jobs:
 
       - name: Validate generated search metadata
         run: python3 tools/check_seo.py "_site${{ steps.pages.outputs.base_path }}"
+
+      - name: Check every generated post description
+        run: python3 tools/description-rendering/check_built.py "_site${{ steps.pages.outputs.base_path }}"
 
 
       - name: Upload site artifact
