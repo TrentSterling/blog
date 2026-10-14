@@ -103,7 +103,12 @@ async function contrast(page) {
       // Resize triggers Chirpy's existing sidebar transition; compare settled layouts.
       await Promise.all([page.waitForTimeout(500), baseline.waitForTimeout(500)]);
       const before = await composition(baseline), after = await composition(page);
-      assert.deepEqual(after, before, 'Chirpy sidebar/card geometry, typefaces, titles and heading-gradient roles stay intact; control-driven paint is checked separately');
+      // Publishing changes the latest-post titles, while layout still matches.
+      const { titles: beforeTitles, ...beforeLayout } = before;
+      const { titles: afterTitles, ...afterLayout } = after;
+      assert.deepEqual(afterLayout, beforeLayout, 'Chirpy sidebar/card geometry, typefaces and heading-gradient roles stay intact');
+      assert.equal(afterTitles.length, beforeTitles.length, 'the homepage still displays the same number of cards');
+      assert.equal(new Set(afterTitles).size, afterTitles.length, 'homepage titles remain unique');
       await baseline.screenshot({ path: path.join(out, `blog-baseline-${width}.png`) });
       await page.screenshot({ path: path.join(out, `blog-themed-${width}.png`) });
       comparisons.push({ width, before, after });
