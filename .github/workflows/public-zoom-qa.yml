@@ -25,8 +25,33 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/blog-tests" --no-save --package-lock=false --ignore-scripts playwright@1.62.0
           node "$RUNNER_TEMP/blog-tests/node_modules/playwright/cli.js" install --with-deps chrome
           echo "NODE_PATH=$RUNNER_TEMP/blog-tests/node_modules" >> "$GITHUB_ENV"
-      - name: Capture public native zoom and mobile evidence
-        run: timeout 480s node tools/game-posts/zoom-browser.cjs
+      - name: Spot check public chronology descriptions and thumbnails
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict'),{chromium}=require('playwright');
+          (async()=>{
+            fs.mkdirSync('.local/public-zoom',{recursive:true});
+            const browser=await chromium.launch({executablePath:process.env.THEME_BROWSER_EXECUTABLE});
+            const page=await browser.newPage({viewport:{width:1440,height:1100}});
+            const report=[];
+            for(const [name,url] of [['oldest','https://tront.xyz/blog/page19/'],['vlog9','https://tront.xyz/blog/posts/gamedev-vlog-9/'],['godgame','https://tront.xyz/blog/posts/godgame-village/'],['orcflow','https://tront.xyz/blog/posts/orcflow/']]){
+              const response=await page.goto(url,{waitUntil:'networkidle'});
+              assert.equal(response.status(),200,name+' loads');
+              const text=await page.locator('body').innerText();
+              const description=await page.locator('meta[name="description"]').getAttribute('content');
+              assert.ok(!/\{%|\{\{/.test(description),name+' description is clean');
+              if(name==='oldest'){assert.match(text,/BomberTank/);assert.match(text,/2009/);}
+              const imgs=await page.locator('main img, #post-list img').evaluateAll(es=>es.map(e=>({src:e.currentSrc,naturalWidth:e.naturalWidth,naturalHeight:e.naturalHeight})));
+              if(name==='godgame'||name==='orcflow'){
+                assert.ok(imgs.some(x=>x.src.includes('article-thumbnails/'+(name==='godgame'?'godgame-village':'orcflow')+'-2026-10-14.png')&&x.naturalWidth>0),name+' authentic screenshot loads');
+              }
+              await page.screenshot({path:'.local/public-zoom/spot-'+name+'.png',fullPage:true});
+              report.push({name,url:page.url(),description,text,imgs});
+            }
+            fs.writeFileSync('.local/public-zoom/spotchecks.json',JSON.stringify(report,null,2));
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
       - name: Save public verification
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
