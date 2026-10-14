@@ -64,7 +64,7 @@
     {
       "path": "_includes/post-date.html",
       "before": null,
-      "after": "73d5272b27895bf7047380257fc109dc29b8beba9b01ce483dd3e8c9c940b3d1"
+      "after": "6e4e4217a693a46b5cb3db092d16de858737d45e380c1e7816dfc2be2945951e"
     },
     {
       "path": "_plugins/project_chronology.rb",
