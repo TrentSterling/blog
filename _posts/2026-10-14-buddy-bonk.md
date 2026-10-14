@@ -1,6 +1,6 @@
 ---
 title: "Buddy Bonk"
-date: 2026-10-14
+date: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "Buddy Bonk is a ragdoll sandbox you can play with up to four people. Grab a limb, swing Buddy around and let go."

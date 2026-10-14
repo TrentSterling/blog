@@ -1,6 +1,6 @@
 ---
 title: "BomberTank"
-date: 2026-10-14
+date: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "BomberTank was a Bomberman-style Flash game I made back in 2009. You could customize your tank and take it into arena battles."

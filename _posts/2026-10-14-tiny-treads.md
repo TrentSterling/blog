@@ -1,6 +1,6 @@
 ---
 title: "Tiny Treads"
-date: 2026-10-14
+date: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "Tiny Treads is my turn-based tank artillery game. You aim, pick a weapon and take a shot."

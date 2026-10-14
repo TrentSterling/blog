@@ -1,6 +1,6 @@
 ---
 title: "Makeup Beach Sudoku"
-date: 2026-10-14
+date: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "I made a Sudoku game using makeup icons for the nine values. Pick an icon from the palette and fill in the board."

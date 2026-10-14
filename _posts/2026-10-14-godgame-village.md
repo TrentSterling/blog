@@ -1,6 +1,6 @@
 ---
 title: "Godgame Village"
-date: 2026-10-14
+date: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "Village is a god-game prototype where you've got a little settlement to look after and powers you can use directly in the world."

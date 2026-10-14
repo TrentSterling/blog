@@ -1,6 +1,6 @@
 ---
 title: "Aqua Empire"
-date: 2026-10-14
+date: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "Aqua Empire starts with feeding fish and somehow ends up with a Broodship fight. Grow the aquarium, keep the shoal fed and protect the nursery."

@@ -1,6 +1,6 @@
 ---
 title: "Project Demigod"
-date: 2026-10-14
+date: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "I've been working on Project Demigod with Omnifarious Studios as a contract Network Programmer and Unity Generalist. It's a VR superhero sandbox."

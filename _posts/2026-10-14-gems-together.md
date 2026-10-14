@@ -1,6 +1,6 @@
 ---
 title: "Gems Together"
-date: 2026-10-14
+date: 2026-10-14 15:16:48 +0000
 categories: [devblog, Projects]
 tags: [Games]
 description: "I made a multiplayer match-three game for Jennifer. It’s called Gems Together, and everyone who opens the page ends up playing on the same board."
