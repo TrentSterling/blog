@@ -13,7 +13,7 @@
       "path": "_posts/2026-10-14-ascii-wolfenstein.md",
       "title": "ASCII Wolfenstein",
       "url": "https://tront.xyz/blog/posts/ascii-wolfenstein/",
-      "sha256": "539371eb68e9282fa8b7ea39c0540c65567ef727102965b55664f8b8eab2c72d"
+      "sha256": "a224120425ca5905b0766753f20d1b827136a135e8d53806175441a223e20d79"
     },
     {
       "path": "_posts/2026-10-14-asciicity.md",
@@ -25,7 +25,7 @@
       "path": "_posts/2026-10-14-binding-of-isaac-clone.md",
       "title": "Binding of Isaac Clone",
       "url": "https://tront.xyz/blog/posts/binding-of-isaac-clone/",
-      "sha256": "d6b9af81e22348acae44cf9549523d808c1b3511153314380cbeec6d5318ce78"
+      "sha256": "7be416d4de9c2eb3ed320dda403c7f35289a47bdf4fd4c8a30600033a63bd050"
     },
     {
       "path": "_posts/2026-10-14-biomass.md",
@@ -37,7 +37,7 @@
       "path": "_posts/2026-10-14-bombertank.md",
       "title": "BomberTank",
       "url": "https://tront.xyz/blog/posts/bombertank/",
-      "sha256": "4ce6b1748ee3250cf19834baa82acf5a5c4a5ca0f0f1d0357b03a55e3657fd06"
+      "sha256": "2383b53832fc2fda9aff87e7917f46979c09cd1e0836eae5db17f00798e2cbca"
     },
     {
       "path": "_posts/2026-10-14-breakmass.md",
@@ -145,7 +145,7 @@
       "path": "_posts/2026-10-14-scamper.md",
       "title": "Scamper",
       "url": "https://tront.xyz/blog/posts/scamper/",
-      "sha256": "cf25ffef39e9d0960b22f6ef2d28875d942b758dd087a31aae4bdd24ad300da3"
+      "sha256": "968cf95e25ec79522c42c709a2736eb6fb5ffe9a1e40f8b48f942db731f8fcac"
     },
     {
       "path": "_posts/2026-10-14-send-dudes.md",

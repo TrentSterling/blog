@@ -1,0 +1,5 @@
+{% if include.post.work_period %}
+  <span{% if include.class %} class="{{ include.class }}"{% endif %} data-work-period="{{ include.post.work_period | escape }}" title="Project work period; exact date unknown">{{ include.post.work_period_label }}</span>
+{% else %}
+  {% include datetime.html date=include.post.date class=include.class lang=include.lang %}
+{% endif %}

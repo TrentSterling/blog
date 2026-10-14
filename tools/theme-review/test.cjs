@@ -12,6 +12,8 @@ const voice = require('../voice-restoration/verify.cjs');
 const publication = require('../game-posts/manifest.json');
 const { approved: historicalDates, normalizeDateMetadata } = require('../game-posts/dates.cjs');
 require('../game-posts/dates.test.cjs');
+const precision = require('../game-posts/precision.cjs');
+require('../game-posts/precision.test.cjs');
 const publishedFiles = new Map([...publication.posts, ...publication.assets].map(file => [file.path, file.sha256]));
 test('reviewed archival wording, media, dates and safe placeholders are preserved', () => voice.verify(root));
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
@@ -79,12 +81,18 @@ test('reviewed additions are exact and all existing protected working-tree bytes
     recoveredImages.has(relative) && !baselineFiles.includes(relative)));
   const publicationAdditions = new Set(currentFiles.filter(relative =>
     publishedFiles.has(relative) && !baselineFiles.includes(relative)));
+  const chronologyAdditions = new Set(currentFiles.filter(relative =>
+    precision.reviewed.has(relative) && precision.reviewed.get(relative).before === null && !baselineFiles.includes(relative)));
   assert.equal(publication.posts.length, 35, 'the reviewed publication contains 35 posts');
-  assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative) && !publicationAdditions.has(relative)), baselineFiles,
+  assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative) && !publicationAdditions.has(relative) && !chronologyAdditions.has(relative)), baselineFiles,
     'protected files are neither added nor removed except the exact reviewed additions');
   verifySources(root);
   for (const relative of currentFiles) {
     const current = fs.readFileSync(path.join(root, relative));
+    if (chronologyAdditions.has(relative)) {
+      precision.verifyReviewed(relative, current.toString('utf8'));
+      continue;
+    }
     if (publicationAdditions.has(relative)) {
       assert.equal(crypto.createHash('sha256').update(current).digest('hex'), publishedFiles.get(relative),
         `${relative}: exact reviewed publication bytes`);
@@ -95,6 +103,16 @@ test('reviewed additions are exact and all existing protected working-tree bytes
       continue;
     }
     const original = fs.readFileSync(path.join(baseline, relative));
+    if (precision.reviewed.has(relative) && !current.equals(original)) {
+      precision.verifyReviewed(relative, current.toString('utf8'), original.toString('utf8'));
+      continue;
+    }
+    if (precision.periods.has(relative)) {
+      assert.equal(precision.normalizePeriod(relative, current.toString('utf8')),
+        precision.normalizePeriod(relative, original.toString('utf8')),
+        `${relative}: only the verified project period may differ`);
+      continue;
+    }
     if (historicalDates.has(relative)) {
       assert.equal(normalizeDateMetadata(relative, current.toString('utf8')),
         normalizeDateMetadata(relative, original.toString('utf8')),
