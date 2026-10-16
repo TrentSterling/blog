@@ -109,7 +109,7 @@ const entries = new Map([
 ].map(entry => [entry.path, entry]));
 function gitBlob(contents) {
   const bytes = Buffer.from(contents, 'utf8');
-  return crypto.createHash('sha1').update('blob ' + bytes.length + '\\0'.replace('\\0', '\0')).update(bytes).digest('hex');
+  return crypto.createHash('sha1').update('blob ' + bytes.length + String.fromCharCode(0)).update(bytes).digest('hex');
 }
 function normalize(relative, text) {
   const entry = entries.get(relative);
@@ -123,7 +123,7 @@ function normalize(relative, text) {
   const original = restoredDescription.slice(0, entry.length);
   assert.equal(gitBlob(original), entry.before, relative + ': no edits to historical text, media or dates');
   const appendix = restoredDescription.slice(entry.length);
-  assert.match(appendix, /## Archive (?:notes|context) \\(2026\\)/, relative + ': labeled archive addition');
+  assert.match(appendix, /## Archive (?:notes|context) \(2026\)/, relative + ': labeled archive addition');
   return original;
 }
 function verify(root) {
