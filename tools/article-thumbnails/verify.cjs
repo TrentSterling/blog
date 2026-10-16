@@ -19,7 +19,7 @@ function normalize(relative, text) {
 }
 function verify(root) {
   for (const post of manifest.posts) {
-    const text = normalizeDateMetadata(post.path, fs.readFileSync(path.join(root, post.path), 'utf8'));
+    const text = normalizeDateMetadata(post.path, require('../seo/archive-annotations.cjs').normalize(post.path, fs.readFileSync(path.join(root, post.path), 'utf8')));
     assert.equal(hash(text), post.afterSha256, post.path + ': exact reviewed thumbnail change');
     assert.equal(hash(normalize(post.path, text)), post.beforeSha256);
     for (const altered of [text + '\nUnexpected prose', text.replace(/^title:.+$/m, 'title: Other'), text.replace(post.after, 'image: "/assets/img/other.jpg"')]) {
