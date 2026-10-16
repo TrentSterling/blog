@@ -110,7 +110,8 @@ test('reviewed additions are exact and all existing protected working-tree bytes
       verifyRecoveredImage(relative, current);
       continue;
     }
-    const original = fs.readFileSync(path.join(baseline, relative));
+    const originalBytes = fs.readFileSync(path.join(baseline, relative));
+    const original = archive.entries.has(relative) ? Buffer.from(archive.normalize(relative, originalBytes.toString('utf8'))) : originalBytes;
     if (precision.reviewed.has(relative) && !current.equals(original)) {
       precision.verifyReviewed(relative, current.toString('utf8'), original.toString('utf8'));
       continue;
