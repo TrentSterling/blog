@@ -3,7 +3,7 @@ title: "Engine design, components, and Papervision3D"
 date: 2011-03-04
 categories: [devblog]
 tags: [Design, Papervision3D]
-description: "Implementing a component-based entity system with FlashPunk-inspired architecture."
+description: "Trent Sterling's 2011 ActionScript game-engine experiments: composition over inheritance, FlashPunk-inspired components, Papervision3D culling and performance."
 image: "/assets/img/blog/drawing.png"
 ---
 
@@ -24,3 +24,14 @@ EDIT: As you can see from the image above, I've stolen my naming conventions fro
 *Invincible structure, or too complicated?*
 
 I felt as though this set up was the best, but then I saw the simplicity in [FlashPunk](http://flashpunk.net/).
+
+
+## Archive context (2026)
+
+The original article is unusually specific about its rendering budget. It describes replacing an inheritance-heavy entity system with components, factories, and pooling, then limiting a Papervision3D scene to roughly 500 triangles as a conservative target. It discusses hiding distant models and physics bodies, a second rendering pass for fake lighting, and the tradeoff between 30 FPS and responsiveness on low-powered machines.
+
+The screenshots support that account: one shows a FlashDevelop project with ActionScript component, physics, and rendering files beside a colorful cube stress test and Windows Task Manager; another shows the sprawling folder structure of an earlier engine. The screenshots demonstrate the development setup and prototype tools, not a formally repeatable performance benchmark.
+
+### Looking back (editorial)
+
+There is a recognizable engineering instinct here: make a system extensible, then make sure it can actually run on modest hardware. In 2011 the target was something as constrained as a netbook, not a modern VR headset. The hardware has changed dramatically, but the tension between ambitious simulation and a hard frame budget is already explicit. The earlier [3D Rendering in Flash](/blog/posts/3d-rendering-in-flash/) entry shows the renderer-selection side of the same work.
