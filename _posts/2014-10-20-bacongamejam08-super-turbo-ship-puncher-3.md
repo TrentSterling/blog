@@ -3,7 +3,7 @@ title: "BaconGameJam08! Super Turbo Ship Puncher 3"
 date: 2014-10-20
 categories: [devblog]
 tags: [2D, Game Jam, Unity]
-description: "A game created in 48 hours for the BaconGameJam. The theme was “Millions Of Them”.  ---  Dodge through 100’s of enemies while picking up 1000’s of..."
+description: "Super Turbo Ship Puncher 3 was Trent Sterling's 48-hour Unity twin-stick shooter for BaconGameJam 08, built around enemy swarms and explosive pickups."
 image: "/assets/img/blog/wp/2014-10-21_07-49-32.png"
 ---
 
@@ -41,3 +41,9 @@ Or on Kongregate: [http://www.kongregate.com/games/TrentSterling/super-turbo-sh
 Or you can play it on GameJolt: [http://gamejolt.com/games/arcade/super-turbo-ship-puncher-3/36253/](http://gamejolt.com/games/arcade/super-turbo-ship-puncher-3/36253/)
 
 Or PlayDot: [http://playdot.co/super-turbo-ship-puncher-3](http://playdot.co/super-turbo-ship-puncher-3)<dl class='gallery-item col-3'><dt class='gallery-icon'>![2014-10-21_07-49-32](/assets/img/blog/wp/2014-10-21_07-49-32.png)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![2014-10-21_07-49-59](/assets/img/blog/wp/2014-10-21_07-49-59.png)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![2014-10-21_07-50-24](/assets/img/blog/wp/2014-10-21_07-50-24.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![2014-10-21_07-50-52](/assets/img/blog/wp/2014-10-21_07-50-52.jpg)</dt></dl>
+
+## Archive notes (2026)
+
+This one has unusually concrete historical details in the original release note. The BaconGameJam theme was "Millions Of Them"; the loop was to dodge large waves of enemies, grab colorful pickups, and regain health through kills. The post also recommends an Xbox 360 controller for twin-stick input and mentions a laser that was overpowered at the time of judging.
+
+The old download and competition links are preserved above as historical references; some destinations may no longer work. Rather than recasting it as a current commercial game, this page documents what shipped during a specific 48-hour jam and what the developer wanted to rebalance afterward.
