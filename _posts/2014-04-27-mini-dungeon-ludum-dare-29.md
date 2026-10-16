@@ -3,7 +3,7 @@ title: "Mini Dungeon Ludum Dare 29"
 date: 2014-04-27
 categories: [devblog]
 tags: [2.5D, 3D, Blocky Dungeon, Ludum Dare, PlayMaker, Qubicle, Unity, Voxel]
-description: "runningzomber  So me and Yuuki didn’t really want to kill our momentum, but I also thought it would be fun to give ourselves a little challenge. ..."
+description: "A 2014 Ludum Dare 29 mini-dungeon experiment with Yuuki: voxel rooms, bow combat, spiders and skeletons, and a ten-level descent concept."
 image: "/assets/img/blog/wp/runningzomber.gif"
 ---
 
@@ -32,3 +32,13 @@ It’s up to Yuuki to come up with our level building blocks. Right now I’m us
 ![skellyarrows](/assets/img/blog/wp/skellyarrows.jpg)
 
 Anyway, I haven’t even officially entered on the Ludum Dare website because we’re not super committed to it. Lots of little interruptions have slowed progress a bit, and I have a full day of errands planned tomorrow. If the game reaches a playable state, we’ll post it all over, but I’d prefer it reaches a ‘**fun**‘ state.<dl class='gallery-item col-3'><dt class='gallery-icon'>![thehorror](/assets/img/blog/wp/thehorror.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![mytoe](/assets/img/blog/wp/mytoe.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![manyspiders](/assets/img/blog/wp/manyspiders.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![spidersohgod](/assets/img/blog/wp/spidersohgod.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![ohgodthepain](/assets/img/blog/wp/ohgodthepain.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![owie](/assets/img/blog/wp/owie.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![aimbottingskellys](/assets/img/blog/wp/aimbottingskellys.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![skellyarrows](/assets/img/blog/wp/skellyarrows.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![watchthemouse](/assets/img/blog/wp/watchthemouse.gif)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![runningzomber](/assets/img/blog/wp/runningzomber.gif)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![IMG_26042014_175343](/assets/img/blog/wp/IMG_26042014_175343.png)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![IMG_26042014_173617](/assets/img/blog/wp/IMG_26042014_173617.png)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![Capture](/assets/img/blog/wp/Capture1.jpg)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![IMG_26042014_172813](/assets/img/blog/wp/IMG_26042014_172813.png)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![IMG_26042014_172612](/assets/img/blog/wp/IMG_26042014_172612.png)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![IMG_26042014_171921](/assets/img/blog/wp/IMG_26042014_171921.png)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![IMG_26042014_171648](/assets/img/blog/wp/IMG_26042014_171648.png)</dt></dl><dl class='gallery-item col-3'><dt class='gallery-icon'>![IMG_26042014_171605](/assets/img/blog/wp/IMG_26042014_171605.png)</dt></dl>
+
+## Archive context (2026)
+
+The original entry documents a very deliberate scope reduction: one primary bow-and-arrow attack, a surface tutorial concept, and a small dungeon descending ten levels to fit the “Beneath the Surface” jam theme. The screenshots show dark tiled rooms, magenta projectile trails, bright green enemies, skeletons, and groups of small spider-like creatures. These are working visuals from the prototype, not proof that every planned floor or upgrade was completed.
+
+The post also distinguishes the more permissive jam rules from the competition rules because the team was using some purchased assets. That's useful historical context for how the experiment was assembled under a tight deadline.
+
+### Looking back (editorial)
+
+What's interesting in hindsight is how much effort went into keeping this *mini* while the images suggest an increasingly elaborate enemy roster. The post itself jokes about the team's usual tendency toward extra weapons, powers, and animations. It belongs alongside the other [Blocky Dungeon visual experiments](/blog/posts/pathfinding-and-a-shiny-key/) rather than being treated as a standalone released game.

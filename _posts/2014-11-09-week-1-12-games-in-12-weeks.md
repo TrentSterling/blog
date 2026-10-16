@@ -3,7 +3,7 @@ title: "Week 1: 12 Games in 12 Weeks"
 date: 2014-11-09
 categories: [devblog]
 tags: [Unity]
-description: "MFpRLkW  Wow, what a week  How to even begin? Well for starters, I guess I’ll mention that gamedev is hard. Scheduling is hard. Finishing stuff is..."
+description: "Week one of Trent Sterling's 2014 game-a-week challenge became a Unity networked co-op archer prototype, Twitch playtests, and a Unity 4.6 downgrade."
 image: "/assets/img/blog/wp/MFpRLkW.png"
 ---
 
@@ -49,3 +49,14 @@ I’m not entirely sure what I’ll be doing for Week 2. I want to keep working 
 I have a dedicated server running. Sometimes it goes down when I’m updating stuff. But yeah, check it out!
 
 [https://dl.dropboxusercontent.com/u/185467974/Games/CoopPlatformer/CoopPlatformerWebBuild/CoopPlatformerWebBuild.html](https://dl.dropboxusercontent.com/u/185467974/Games/CoopPlatformer/CoopPlatformerWebBuild/CoopPlatformerWebBuild.html)
+
+
+## Archive context (2026)
+
+The screenshots preserve the multiplayer build that complicated the original one-week plan. Tiny, brightly colored characters stand on brick platforms in torchlit, side-view rooms. Names and messages float above the players, while early chat, connection controls, and test-build UI are still visible. They are useful evidence of a working multiplayer playtest, not just concept art.
+
+The post itself documents the cost: online multiplayer took four development days, the Unity 4.6 beta caused Web Player compatibility problems, and reverting the project consumed another day. It also records 71 new Twitch followers that week and an occasion with more than 30 viewers playing together. Those are the author's 2014 observations, not independently verified modern audience statistics.
+
+### Looking back (editorial)
+
+The interesting contradiction is that a challenge meant to teach *finishing* immediately turned into building what people wanted to play. The response from real players mattered more than the arbitrary one-week cutoff, even though the added networking work blew up the schedule. That tension between scope and early playtesting is the story here. For how the challenge started, see [12 Games in 12 Weeks](/blog/posts/12-games-in-12-weeks/).
