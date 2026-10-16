@@ -3,7 +3,7 @@ title: "Multiplayer Topdown Zombie Shooter"
 date: 2015-07-19
 categories: [devblog, Projects]
 tags: [3D, Art, Multiplayer, Photon, Unity]
-description: "A Photon networked topdown twin-stick shooter for PC, Android, and Amazon FireTV."
+description: "A 2015 Photon multiplayer top-down zombie shooter for PC and Android, with colorful city streets, vehicles, touch controls, and early mobile testing."
 image: "/assets/img/ZombiesGame.jpg"
 ---
 
@@ -38,3 +38,9 @@ I'm hoping to use very simple minimal colored rectangle UIs for this game, and a
 
 
 ![Zombie Shooter](/assets/img/ZombiesGame.jpg)
+
+## Archive notes (2026)
+
+The screenshots show how far the urban presentation had already come. The overhead camera looks down on streets packed with parked and moving vehicles, crosswalks, buildings, and small characters fighting zombies. One capture has an explosion in the road, a tank and emergency vehicles nearby, plus translucent twin-stick controls and a ping readout. Those details give the brief original post some context: this wasn't just a few capsules shooting on a flat test plane.
+
+The post identifies Photon networking and describes planned PC and Android builds, plus early testing on Fire Phone and Fire TV with shadows disabled. That's the development target described in 2015, not a claim that a commercial release happened. The later [Guys, Girls and Guns update](/blog/posts/guys-girls-and-guns/) continues the zombie multiplayer thread and discusses making development progress public.

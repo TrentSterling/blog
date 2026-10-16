@@ -3,7 +3,7 @@ title: "Voxel Mobile Twinstick Shooter (VoxeFire)"
 date: 2015-05-15
 categories: [devblog, Projects]
 tags: [3D, FireTV, Unity, Voxel]
-description: "VoxeFire - a voxel-powered twin-stick shooter with destructible environments, built for Amazon FireTV."
+description: "VoxeFire, a 2015 Unity voxel twin-stick shooter targeting Amazon Fire TV, experimented with destructible arenas, shared voxel artwork, and mobile performance."
 image: "/assets/img/2015-05-15_02-29-22.png"
 ---
 
@@ -30,3 +30,9 @@ The entire arena, or game map is destructable, and the artwork is sourced from T
   <a href="{{ '/assets/img/blog/restored/2015-05-30_07-35-05.png' | relative_url }}"><img src="/assets/img/blog/restored/2015-05-30_07-35-05.png" alt="2015-05-30_07-35-05" width="1634" height="916" loading="lazy"></a>
 </figure>
 
+
+## Archive notes (2026)
+
+The screenshots expand on the post's central performance tradeoff. One view shows a blocky arena floor and structures with large openings and damaged-looking geometry. Another captures a character and colorful enemies inside a tiled environment, with an on-screen frame-time and FPS readout. These are development captures rather than a controlled benchmark.
+
+The original account is particularly useful because it identifies the target hardware (Amazon Fire TV), notes that some art came from Twitch viewers, and distinguishes generally smooth play from the hitching caused by bursts of destruction. It's an early example of the recurring problem in voxel games: the world can be cheap to render until a lot of it changes at once.
