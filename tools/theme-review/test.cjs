@@ -7,6 +7,7 @@ const vm = require('node:vm');
 const crypto = require('node:crypto');
 const { REPAIRS, normalizePostForPreservation, verifySources, verifyNegativeCases } = require('./link-repair.cjs');
 const root = path.resolve(__dirname, '../..');
+const archive = require('../seo/archive-annotations.cjs');
 const restoration = require('../image-restoration/verify.cjs');
 const voice = require('../voice-restoration/verify.cjs');
 const publication = require('../game-posts/manifest.json');
@@ -19,7 +20,7 @@ const { approved: historicalDates, normalizeDateMetadata } = require('../game-po
 require('../game-posts/dates.test.cjs');
 const precision = require('../game-posts/precision.cjs');
 require('../game-posts/precision.test.cjs');
-test('reviewed archival wording, media, dates and safe placeholders are preserved', () => voice.verify(root));
+test('reviewed archival wording, media, dates and safe placeholders are preserved', () => { archive.verify(root); voice.verify(root); });
 test('authentic thumbnails preserve every article byte outside the approved image field', () => thumbnails.verify(root));
 const source = fs.readFileSync(path.join(root, 'assets/js/tront-theme-bridge.js'), 'utf8');
 // Exact archived 600x337 JPEG bytes. The WordPress migration referenced the
@@ -94,7 +95,8 @@ test('reviewed additions are exact and all existing protected working-tree bytes
   verifySources(root);
   posters.verify(root);
   for (const relative of currentFiles) {
-    const current = fs.readFileSync(path.join(root, relative));
+    const originalCurrent = fs.readFileSync(path.join(root, relative));
+    const current = archive.entries.has(relative) ? Buffer.from(archive.normalize(relative, originalCurrent.toString('utf8'))) : originalCurrent;
     if (chronologyAdditions.has(relative)) {
       precision.verifyReviewed(relative, current.toString('utf8'));
       continue;
