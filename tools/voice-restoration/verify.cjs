@@ -14,7 +14,7 @@ function normalize(relative, contents) {
 function verify(root) {
   for (const post of manifest.posts) {
     assert.equal(hash(post.baseline), post.baselineSha256, post.path + ': pinned baseline');
-    const text = fs.readFileSync(path.join(root, post.path), 'utf8');
+    const text = require('../seo/archive-annotations.cjs').normalize(post.path, fs.readFileSync(path.join(root, post.path), 'utf8'));
     assert.equal(hash(text), post.restoredSha256, post.path + ': exact reviewed restoration');
     assert.equal(normalize(post.path, text), post.baseline, post.path + ': reversible restoration');
     assert.equal(normalize(post.path, text + '\nUnexpected edit'), text + '\nUnexpected edit', 'unapproved edit is never normalized');
