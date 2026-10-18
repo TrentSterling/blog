@@ -2,6 +2,8 @@
 title: "About Trent Sterling (Tront)"
 icon: fas fa-info-circle
 order: 4
+seo:
+  type: ProfilePage
 ---
 
 > Trent Sterling, or Tront, is a game developer with a decade of experience in the industry. He specializes in Unity, C#, and VR development.

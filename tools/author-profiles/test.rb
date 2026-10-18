@@ -75,4 +75,62 @@ class AuthorProfilesTest < Minitest::Test
       FileUtils.cp_r(File.join(source, '_site'), ENV['AUTHOR_FIXTURE_OUTPUT']) if ENV['AUTHOR_FIXTURE_OUTPUT']
     end
   end
+
+  def test_actual_about_tab_is_the_only_identity_and_date_opt_in
+    original = File.read(File.join(ROOT, '_tabs/about.md'))
+    front, body = original.split(/^---\s*$\n?/, 3).drop(1)
+    defaults = YAML.safe_load(front).merge('layout' => 'page', 'permalink' => '/about/')
+    fixtures = {
+      'actual-about' => ['_tabs/about.md', {}],
+      'unopted-about' => ['_tabs/about.md', { 'seo' => {} }],
+      'other-tab' => ['_tabs/other.md', {}],
+      'other-collection' => ['_people/about.md', {}],
+      'other-layout' => ['_tabs/about.md', { 'layout' => 'default' }],
+      'other-url' => ['_tabs/about.md', { 'permalink' => '/other/' }],
+      'ordinary-page' => ['about.html', {}]
+    }
+    fixtures.each do |label, (relative, overrides)|
+      Dir.mktmpdir('about-profile') do |source|
+        %w[_tabs _people _layouts _plugins].each { |dir| FileUtils.mkdir_p(File.join(source, dir)) }
+        FileUtils.cp(File.join(ROOT, '_plugins/author_profiles.rb'), File.join(source, '_plugins/author_profiles.rb'))
+        File.write(File.join(source, '_layouts/default.html'), '<!doctype html><html><head>{% seo %}</head><body>{{ content }}</body></html>')
+        File.write(File.join(source, '_layouts/page.html'), "---\nlayout: default\n---\n{{ content }}")
+        data = defaults.merge(overrides)
+        data['date'] = '2001-02-03' unless label == 'actual-about'
+        File.write(File.join(source, relative), "#{data.to_yaml}---\n#{body}")
+        config = Jekyll.configuration('source' => source, 'destination' => File.join(source, '_site'), 'config' => [], 'quiet' => true,
+          'plugins' => ['jekyll-seo-tag'], 'url' => 'https://tront.xyz', 'baseurl' => '/blog', 'timezone' => 'UTC',
+          'collections' => { 'tabs' => { 'output' => true }, 'people' => { 'output' => true } },
+          'author' => { 'name' => 'Trent Sterling (Tront)', 'url' => 'https://tront.xyz/', '@id' => ID },
+          'social' => { 'name' => 'Trent Sterling' })
+        Jekyll::Site.new(config).process
+        route = data.fetch('permalink').delete_prefix('/')
+        doc = Nokogiri::HTML(File.read(File.join(source, '_site', route, 'index.html')))
+        scripts = doc.css('script[type="application/ld+json"]')
+        assert_equal 1, scripts.length, label
+        schema = JSON.parse(scripts.first.content)
+        assert_equal "https://tront.xyz/blog#{data.fetch('permalink')}", doc.at_css('link[rel="canonical"]')['href'], label
+        if label == 'actual-about'
+          person = { '@type' => 'Person', 'name' => 'Trent Sterling (Tront)', 'url' => 'https://tront.xyz/', '@id' => ID }
+          assert_equal 'ProfilePage', schema['@type']
+          assert_equal 'https://tront.xyz/blog/about/#profile-page', schema['@id']
+          assert_equal person, schema['mainEntity']
+          assert_equal person, schema['author']
+          %w[dateCreated datePublished dateModified mainEntityOfPage].each { |key| refute schema.key?(key), key }
+          assert_empty doc.css('meta[property^="article:"]')
+          assert_equal 'website', doc.at_css('meta[property="og:type"]')['content']
+          assert_includes doc.at_css('body').text, 'contract Network Programmer and Unity Generalist'
+        else
+          # Upstream seo.type remains supported, but the identity/date exception
+          # requires every guard, not merely an About title, URL, or type marker.
+          assert_nil schema['@id'], label
+          assert_nil schema['mainEntity'], label
+          assert_nil schema['author']['@id'], label
+          assert_equal '2001-02-03T00:00:00+00:00', schema['datePublished'], label
+          assert_equal 'article', doc.at_css('meta[property="og:type"]')['content'], label
+          assert_equal '2001-02-03T00:00:00+00:00', doc.at_css('meta[property="article:published_time"]')['content'], label
+        end
+      end
+    end
+  end
 end

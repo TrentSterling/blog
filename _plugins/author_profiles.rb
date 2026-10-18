@@ -1,5 +1,5 @@
 # Keep visible post credits and the existing SEO tag's author field in agreement.
-# Other SEO fields and non-post pages remain owned by jekyll-seo-tag.
+# The actual About tab opts into a profile through the same SEO tag owner.
 require 'jekyll-seo-tag'
 require 'uri'
 
@@ -43,6 +43,25 @@ module Tront
     end
 
     module SeoAuthors
+      def about_profile?
+        page['collection'] == 'tabs' && page['path'] == '_tabs/about.md' &&
+          page['layout'] == 'page' && page['url'] == '/about/' && page_seo['type'] == 'ProfilePage'
+      end
+
+      def about_author_profiles
+        Tront::AuthorProfiles.resolve({}, site) if about_profile?
+      end
+
+      # Tabs receive a build-time date from Jekyll. It is not a profile edit date.
+      # Suppress it at the SEO owner so neither JSON-LD nor Open Graph invent dates.
+      def date_published
+        super unless about_profile?
+      end
+
+      def date_modified
+        super unless about_profile?
+      end
+
       def post_author_profiles
         return unless page['collection'] == 'posts' && page['layout'] == 'post'
 
@@ -51,8 +70,16 @@ module Tront
     end
 
     module StructuredAuthors
+      define_method(:'@id') do
+        "#{page_drop.canonical_url}#profile-page" if page_drop.about_profile?
+      end
+
+      def mainEntity
+        author if page_drop.about_profile?
+      end
+
       def author
-        authors = page_drop.post_author_profiles
+        authors = page_drop.post_author_profiles || page_drop.about_author_profiles
         return super unless authors
 
         nodes = authors.filter_map do |author|
