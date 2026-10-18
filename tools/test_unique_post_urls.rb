@@ -53,3 +53,5 @@ class UniquePostUrlsTest < Minitest::Test
 end
 
 require_relative 'game-posts/chronology.test'
+
+require_relative 'seo/breadcrumbs.test'

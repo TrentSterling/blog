@@ -1,1 +1,34 @@
-<!-- A placeholder to allow defining custom metadata -->
+{%- comment -%}
+  Match the post trail in topbar.html: the blog's Home, then the post title.
+  jekyll-seo-tag already owns Article metadata; only add the missing breadcrumb.
+  Keep redirects, non-indexable posts, and all non-post pages out of this scope.
+{%- endcomment -%}
+{%- if page.collection == 'posts' and page.layout == 'post' -%}
+  {%- unless page.redirect_to or page.sitemap == false or page.noindex == true -%}
+    {%- assign breadcrumb_home = site.data.locales[lang].tabs.home | capitalize -%}
+    {%- assign breadcrumb_url = page.url | absolute_url -%}
+    {%- assign breadcrumb_canonical = page.canonical_url | default: breadcrumb_url -%}
+    {%- if breadcrumb_canonical == breadcrumb_url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": {{ breadcrumb_home | strip_html | jsonify | replace: '<', '\u003c' }},
+      "item": {{ '/' | absolute_url | jsonify | replace: '<', '\u003c' }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.title | strip_html | jsonify | replace: '<', '\u003c' }},
+      "item": {{ breadcrumb_url | jsonify | replace: '<', '\u003c' }}
+    }
+  ]
+}
+</script>
+    {%- endif -%}
+  {%- endunless -%}
+{%- endif -%}
