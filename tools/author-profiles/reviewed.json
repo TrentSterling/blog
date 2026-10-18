@@ -8,11 +8,23 @@
     "after": "5c3c0801c3ef9b9e5982c4d0205c6a2ca6b9da4117f80d84a7eb261e968bd1ad"
   },
   "_plugins/author_profiles.rb": {
-    "before": "f7eca005340f3d8c3dfe314c34a5b4063d6645447a608eae7f3985431bd4d2d0",
-    "after": "d454c71c3d6b3a775224f6deced12d7bf6a0048a76e3928b3bfaf1a026fab23f"
+    "before": "d454c71c3d6b3a775224f6deced12d7bf6a0048a76e3928b3bfaf1a026fab23f",
+    "after": "4cee930a5abb5b471f10465037f00b45fd45932920d3a7fc237cab3c50104507"
   },
   "_tabs/about.md": {
     "before": "506a07c144187c8dd2d598e4ac40a92fc9791bde44a18aa94879c6c7e10ee427",
     "after": "5281a9e4bcdefc926e4e3c1ad165ce8e5fb5a53066cf73b49b2c25170e8099cf"
+  },
+  "_tabs/archives.md": {
+    "before": "57115bc5940a38cca43ddcc19e34cb3a6ed857252e44d248af33863a1f00b40e",
+    "after": "ea094c80084d9d120f03008167da57861f3c3e50133d2ae02c921f891c101f6a"
+  },
+  "_tabs/tags.md": {
+    "before": "51d852c50def5443291f071e54e44e112857fa36467d5794edcee4604ce1a3e3",
+    "after": "00e232f09bc66ce1d0801b5163472018efcf7aa1da8ea154766b5fa930b52ecf"
+  },
+  "_tabs/discord.md": {
+    "before": "066b33ce63270f6fb8856b456376c2d6bbfee78c489fcc113a3d8f2d2fbd3427",
+    "after": "0efb62f4591fb8bb865d4ffa81f3c4fb28628f69a6bb26988d5864b0ef19737c"
   }
 }

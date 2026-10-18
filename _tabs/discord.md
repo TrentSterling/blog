@@ -2,6 +2,8 @@
 title: "Discord"
 icon: fab fa-discord
 order: 5
+seo:
+  type: WebPage
 ---
 
 > Trent's Cool Developer Spot is one of the smartest game dev communities on Discord. Expect high-level discussions, collaboration, and technical deep dives.

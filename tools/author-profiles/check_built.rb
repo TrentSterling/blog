@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'json'
 require 'pathname'
+require 'time'
 
 root = File.expand_path(ARGV.fetch(0))
 baseline = ARGV[1] && File.expand_path(ARGV[1])
@@ -8,6 +9,10 @@ files = Dir.glob(File.join(root, '**/*.html')).map { |file| file.delete_prefix(r
 abort 'Generated HTML route inventory changed' if baseline && files != Dir.glob(File.join(baseline, '**/*.html')).map { |file| file.delete_prefix(baseline + '/') }.sort
 posts = 0
 profiles = 0
+navigation_tabs = 0
+tab_types = { 'archives/index.html' => 'CollectionPage', 'tags/index.html' => 'CollectionPage', 'discord/index.html' => 'WebPage' }
+generated_dates = %w[datePublished dateModified]
+article_dates = %w[article:published_time article:modified_time]
 person = { '@type' => 'Person', 'name' => 'Trent Sterling (Tront)', 'url' => 'https://tront.xyz/', '@id' => 'https://tront.xyz/#trent-sterling' }
 files.each do |relative|
   doc = Nokogiri::HTML(File.read(File.join(root, relative)))
@@ -26,6 +31,17 @@ files.each do |relative|
     abort 'About Open Graph type differs' unless doc.at_css('meta[property="og:type"]')&.[]('content') == 'website'
   else
     abort "Unexpected ProfilePage: #{relative}" unless profile_nodes.empty?
+  end
+  if tab_types.key?(relative)
+    navigation_tabs += 1
+    abort "Expected one SEO-owned navigation schema: #{relative}" unless schemas.length == 1 && schemas.first['@type'] == tab_types.fetch(relative)
+    tab = schemas.first
+    canonical = "https://tront.xyz/blog/#{relative.delete_suffix('index.html')}"
+    abort "Navigation canonical differs: #{relative}" unless tab['url'] == canonical && doc.at_css('link[rel="canonical"]')&.[]('href') == canonical
+    abort "Navigation tab contains dates or invented identity: #{relative}" if %w[dateCreated datePublished dateModified mainEntityOfPage @id mainEntity].any? { |key| tab.key?(key) }
+    abort "Navigation author gained an identity: #{relative}" if tab.fetch('author').key?('@id')
+    abort "Navigation retains article Open Graph metadata: #{relative}" unless doc.css('meta[property^="article:"]').empty?
+    abort "Navigation Open Graph type differs: #{relative}" unless doc.at_css('meta[property="og:type"]')&.[]('content') == 'website'
   end
   if relative.start_with?('posts/') && doc.at_css('article .post-authors')
     posts += 1
@@ -47,29 +63,64 @@ files.each do |relative|
   next unless baseline
 
   original = Nokogiri::HTML(File.read(File.join(baseline, relative)))
-  # Exclude only the intended byline markup; all other body elements/text survive.
+  # Historical pre-author baselines may differ only in their reviewed bylines.
+  # Released/current baselines already have those bylines, which must match too.
+  legacy_byline = !original.at_css('article .post-authors') && doc.at_css('article .post-authors')
   [original, doc].each do |page|
-    page.css('article > header .post-meta > .d-flex > span').remove
+    page.css('article > header .post-meta > .d-flex > span').remove if legacy_byline
     page.at_css('body')&.traverse { |node| node.remove if node.text? && node.text.strip.empty? }
   end
   abort "Body changed outside byline: #{relative}" unless original.at_css('body')&.to_html == doc.at_css('body')&.to_html
+  # These tabs are the only additional routes allowed to lose article timestamps.
+  if tab_types.key?(relative)
+    original.css('meta').each { |node| node.remove if article_dates.include?(node['property']) }
+    node = original.at_css('meta[property="og:type"]')
+    abort "Unknown navigation Open Graph baseline: #{relative}" unless node && %w[article website].include?(node['content'])
+    node['content'] = 'website'
+  end
   %w[link meta].each do |tag|
+    # Other non-post dates can change between builds, but date presence, tag
+    # attributes and every unrelated article property must remain unchanged.
+    if !relative.start_with?('posts/') && !tab_types.key?(relative) && relative != 'about/index.html'
+      article_dates.each do |property|
+        old_nodes = original.css("meta[property='#{property}']")
+        new_nodes = doc.css("meta[property='#{property}']")
+        abort "Generated timestamp presence changed: #{relative}" unless old_nodes.length == new_nodes.length
+        old_nodes.zip(new_nodes).each do |old_node, new_node|
+          [old_node, new_node].each { |node| Time.iso8601(node['content']) }
+          old_node['content'] = new_node['content']
+        end
+      end
+    elsif relative == 'about/index.html'
+      original.css('meta').each { |node| node.remove if article_dates.include?(node['property']) }
+    end
     old = original.css("head #{tag}").map(&:to_html)
     new = doc.css("head #{tag}").map(&:to_html)
-    # Jekyll assigns a build-time date to tabs, independent of this change.
-    unless relative.start_with?('posts/')
-      old.reject! { |value| value.include?('property="article:') }
-      new.reject! { |value| value.include?('property="article:') }
-    end
     if relative == 'about/index.html' && tag == 'meta'
       old.map! { |value| value.sub('property="og:type" content="article"', 'property="og:type" content="website"') }
     end
     abort "Unrelated head #{tag} changed: #{relative}" unless old == new
   end
+  other_head = lambda do |page|
+    page.at_css('head').children.reject do |node|
+      %w[link meta].include?(node.name) || (node.name == 'script' && node['type'] == 'application/ld+json') || (node.text? && node.text.strip.empty?)
+    end.map(&:to_html)
+  end
+  abort "Unrelated head content changed: #{relative}" unless other_head.call(original) == other_head.call(doc)
   before = original.css('script[type="application/ld+json"]').map { |script| JSON.parse(script.content) }
   abort "Schema count changed: #{relative}" unless before.length == schemas.length
   before.zip(schemas).each do |old, current|
-    if relative == 'about/index.html'
+    if tab_types.key?(relative)
+      expected = Marshal.load(Marshal.dump(old))
+      abort "Unknown navigation schema baseline: #{relative}" unless ['BlogPosting', tab_types.fetch(relative)].include?(expected['@type'])
+      if expected['@type'] == 'BlogPosting'
+        canonical = "https://tront.xyz/blog/#{relative.delete_suffix('index.html')}"
+        abort "Unexpected navigation Article identity: #{relative}" unless expected['mainEntityOfPage'] == { '@type' => 'WebPage', '@id' => canonical }
+      end
+      expected['@type'] = tab_types.fetch(relative)
+      (generated_dates + ['mainEntityOfPage']).each { |key| expected.delete(key) }
+      abort "Navigation schema changed outside exact type/date/article fields: #{relative}" unless expected == current
+    elsif relative == 'about/index.html'
       expected = Marshal.load(Marshal.dump(old))
       abort 'Unknown About schema baseline' unless %w[WebSite ProfilePage].include?(expected['@type'])
       expected['@type'] = 'ProfilePage'
@@ -85,11 +136,18 @@ files.each do |relative|
       end
       abort "Article field changed outside author ID: #{relative}" unless expected == current
     else
-      [old, current].each { |node| %w[datePublished dateModified].each { |key| node.delete(key) } }
+      generated_dates.each do |key|
+        abort "Generated date presence changed: #{relative}" unless old.key?(key) == current.key?(key)
+        next unless old.key?(key)
+
+        [old, current].each { |node| Time.iso8601(node.fetch(key)) }
+        old[key] = current[key]
+      end
       abort "Non-post schema changed: #{relative}" unless old == current
     end
   end
 end
 abort 'No built author bylines checked' if posts.zero?
 abort 'Expected exactly one About profile route' unless profiles == 1
-puts "PASS: #{posts} author bylines/schema; #{profiles} About profile; #{files.length} HTML pages#{baseline ? ', bodies and metadata preserved outside byline, post author ID, and exact About profile fields (other non-post generated build dates ignored)' : ''}."
+abort 'Expected exactly three undated navigation tabs' unless navigation_tabs == tab_types.length
+puts "PASS: #{posts} author bylines/schema; #{profiles} About profile; #{navigation_tabs} undated navigation tabs; #{files.length} HTML pages#{baseline ? ', bodies and metadata preserved outside reviewed historical author/About changes and exact navigation type/date/article fields (other non-post generated date values normalized)' : ''}."

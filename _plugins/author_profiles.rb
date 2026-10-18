@@ -52,14 +52,25 @@ module Tront
         Tront::AuthorProfiles.resolve({}, site) if about_profile?
       end
 
-      # Tabs receive a build-time date from Jekyll. It is not a profile edit date.
+      def undated_navigation_tab?
+        return false unless page['collection'] == 'tabs'
+
+        expected = {
+          '_tabs/archives.md' => ['archives', '/archives/', 'CollectionPage'],
+          '_tabs/tags.md' => ['tags', '/tags/', 'CollectionPage'],
+          '_tabs/discord.md' => ['page', '/discord/', 'WebPage']
+        }[page['path']]
+        expected && [page['layout'], page['url'], page_seo['type']] == expected
+      end
+
+      # Tabs receive a build-time date from Jekyll, not a proven publication date.
       # Suppress it at the SEO owner so neither JSON-LD nor Open Graph invent dates.
       def date_published
-        super unless about_profile?
+        super unless about_profile? || undated_navigation_tab?
       end
 
       def date_modified
-        super unless about_profile?
+        super unless about_profile? || undated_navigation_tab?
       end
 
       def post_author_profiles
