@@ -7,9 +7,26 @@ baseline = ARGV[1] && File.expand_path(ARGV[1])
 files = Dir.glob(File.join(root, '**/*.html')).map { |file| file.delete_prefix(root + '/') }.sort
 abort 'Generated HTML route inventory changed' if baseline && files != Dir.glob(File.join(baseline, '**/*.html')).map { |file| file.delete_prefix(baseline + '/') }.sort
 posts = 0
+profiles = 0
+person = { '@type' => 'Person', 'name' => 'Trent Sterling (Tront)', 'url' => 'https://tront.xyz/', '@id' => 'https://tront.xyz/#trent-sterling' }
 files.each do |relative|
   doc = Nokogiri::HTML(File.read(File.join(root, relative)))
   schemas = doc.css('script[type="application/ld+json"]').map { |script| JSON.parse(script.content) }
+  profile_nodes = schemas.select { |node| node['@type'] == 'ProfilePage' }
+  if relative == 'about/index.html'
+    profiles += 1
+    abort 'About must have one SEO-owned ProfilePage' unless schemas.length == 1 && profile_nodes.length == 1
+    profile = profile_nodes.first
+    abort 'About profile ID differs' unless profile['@id'] == 'https://tront.xyz/blog/about/#profile-page'
+    abort 'About canonical differs' unless profile['url'] == 'https://tront.xyz/blog/about/' && doc.at_css('link[rel="canonical"]')&.[]('href') == profile['url']
+    abort 'About Person identity differs' unless profile['mainEntity'] == person && profile['author'] == person
+    abort 'About contains unproven dates' if %w[dateCreated datePublished dateModified].any? { |key| profile.key?(key) }
+    abort 'About retains Article page identity' if profile.key?('mainEntityOfPage')
+    abort 'About retains article Open Graph metadata' unless doc.css('meta[property^="article:"]').empty?
+    abort 'About Open Graph type differs' unless doc.at_css('meta[property="og:type"]')&.[]('content') == 'website'
+  else
+    abort "Unexpected ProfilePage: #{relative}" unless profile_nodes.empty?
+  end
   if relative.start_with?('posts/') && doc.at_css('article .post-authors')
     posts += 1
     byline = doc.at_css('article .post-authors')
@@ -44,12 +61,24 @@ files.each do |relative|
       old.reject! { |value| value.include?('property="article:') }
       new.reject! { |value| value.include?('property="article:') }
     end
+    if relative == 'about/index.html' && tag == 'meta'
+      old.map! { |value| value.sub('property="og:type" content="article"', 'property="og:type" content="website"') }
+    end
     abort "Unrelated head #{tag} changed: #{relative}" unless old == new
   end
   before = original.css('script[type="application/ld+json"]').map { |script| JSON.parse(script.content) }
   abort "Schema count changed: #{relative}" unless before.length == schemas.length
   before.zip(schemas).each do |old, current|
-    if relative.start_with?('posts/') && doc.at_css('article')
+    if relative == 'about/index.html'
+      expected = Marshal.load(Marshal.dump(old))
+      abort 'Unknown About schema baseline' unless %w[WebSite ProfilePage].include?(expected['@type'])
+      expected['@type'] = 'ProfilePage'
+      expected['@id'] = 'https://tront.xyz/blog/about/#profile-page'
+      expected['author'] = person
+      expected['mainEntity'] = person
+      %w[datePublished dateModified].each { |key| expected.delete(key) }
+      abort 'About schema changed outside the reviewed identity and date fields' unless expected == current
+    elsif relative.start_with?('posts/') && doc.at_css('article')
       expected = Marshal.load(Marshal.dump(old))
       if expected['@type'] == 'BlogPosting'
         expected.fetch('author')['@id'] = 'https://tront.xyz/#trent-sterling'
@@ -62,4 +91,5 @@ files.each do |relative|
   end
 end
 abort 'No built author bylines checked' if posts.zero?
-puts "PASS: #{posts} author bylines/schema; #{files.length} HTML pages#{baseline ? ', bodies and metadata preserved outside byline and post author ID (non-post generated build dates ignored)' : ''}."
+abort 'Expected exactly one About profile route' unless profiles == 1
+puts "PASS: #{posts} author bylines/schema; #{profiles} About profile; #{files.length} HTML pages#{baseline ? ', bodies and metadata preserved outside byline, post author ID, and exact About profile fields (other non-post generated build dates ignored)' : ''}."

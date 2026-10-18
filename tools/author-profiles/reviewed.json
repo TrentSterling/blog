@@ -8,7 +8,11 @@
     "after": "5c3c0801c3ef9b9e5982c4d0205c6a2ca6b9da4117f80d84a7eb261e968bd1ad"
   },
   "_plugins/author_profiles.rb": {
-    "before": null,
-    "after": "f7eca005340f3d8c3dfe314c34a5b4063d6645447a608eae7f3985431bd4d2d0"
+    "before": "f7eca005340f3d8c3dfe314c34a5b4063d6645447a608eae7f3985431bd4d2d0",
+    "after": "d454c71c3d6b3a775224f6deced12d7bf6a0048a76e3928b3bfaf1a026fab23f"
+  },
+  "_tabs/about.md": {
+    "before": "506a07c144187c8dd2d598e4ac40a92fc9791bde44a18aa94879c6c7e10ee427",
+    "after": "5281a9e4bcdefc926e4e3c1ad165ce8e5fb5a53066cf73b49b2c25170e8099cf"
   }
 }
