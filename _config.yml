@@ -29,6 +29,7 @@ url: "https://tront.xyz"
 author:
   name: Trent Sterling (Tront)
   url: https://tront.xyz/
+  '@id': https://tront.xyz/#trent-sterling
 
 github:
   username: TrentSterling # change to your GitHub username

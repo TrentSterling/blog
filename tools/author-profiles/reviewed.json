@@ -1,0 +1,14 @@
+{
+  "_config.yml": {
+    "before": "65dcb8d325a6bb1ecee31b5889d30a51b8d06a08dbbf7e3f3baf67dad287958b",
+    "after": "313a67f2c8c64a4c3217e150b710db425c2f43b658409fd44cccf1e335c0f5da"
+  },
+  "_layouts/post.html": {
+    "before": "c410b448d04d1ab8ebb8e68b38df264fe18c290aba5c957078b362d67bf007b7",
+    "after": "5c3c0801c3ef9b9e5982c4d0205c6a2ca6b9da4117f80d84a7eb261e968bd1ad"
+  },
+  "_plugins/author_profiles.rb": {
+    "before": null,
+    "after": "f7eca005340f3d8c3dfe314c34a5b4063d6645447a608eae7f3985431bd4d2d0"
+  }
+}

@@ -141,6 +141,17 @@ html[data-tront-theme-surface="blog"] .post-navigation .btn.disabled { color: va
 /* Chirpy's prose-link hover uses fixed orange; keep its underline with safe ink. */
 html[data-tront-theme-surface="blog"] :is(.content, .post-meta, .post-tags, footer, #access-lastmod, #page-tag, #page-category) a:hover { color: var(--te-accent) !important; border-bottom-color: var(--te-accent); }
 
+/* Author links remain identifiable without color, with a visible keyboard ring. */
+html[data-tront-theme-surface="blog"] .post-authors a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+html[data-tront-theme-surface="blog"] .post-authors a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
 /* The inherited blog 404 keeps its composition and readable action labels. */
 html[data-tront-theme-surface="blog"] .error-actions a.primary { background: var(--te-button); color: var(--te-ink); }
 html[data-tront-theme-surface="blog"] .error-glitch { color: var(--te-muted); opacity: 1; }
