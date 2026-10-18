@@ -76,7 +76,7 @@ jobs:
           node-version: '24'
           package-manager-cache: false
       - name: Check theme bridge and protected content
-        run: node --test tools/theme-review/test.cjs tools/theme-review/heading.test.cjs
+        run: node --test tools/theme-review/test.cjs tools/theme-review/heading.test.cjs tools/theme-review/sidebar-focus.test.cjs
       - name: Build and validate existing post metadata
         run: |
           bundle exec ruby tools/test_unique_post_urls.rb
@@ -96,13 +96,13 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/blog-tests" --no-save --package-lock=false --ignore-scripts playwright@1.62.0 pngjs@7.0.0
           node "$RUNNER_TEMP/blog-tests/node_modules/playwright/cli.js" install --with-deps chrome
           echo "NODE_PATH=$RUNNER_TEMP/blog-tests/node_modules" >> "$GITHUB_ENV"
-      - name: Test the built blog in Chrome
-        if: ${{ !cancelled() && steps.browser-tools.outcome == 'success' }}
-        run: timeout 600s node tools/theme-review/browser.cjs
       - name: Check mobile sidebar keyboard focus in Chrome
         run: timeout 180s node tools/theme-review/sidebar-focus.cjs
         env:
           BLOG_SCREENSHOTS: .local/sidebar-review
+      - name: Test the built blog in Chrome
+        if: ${{ !cancelled() && steps.browser-tools.outcome == 'success' }}
+        run: timeout 600s node tools/theme-review/browser.cjs
       - name: Check cold video posters and footer layout in Chrome
         run: timeout 300s node tools/game-posts/presentation-browser.cjs
         env:

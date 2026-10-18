@@ -121,6 +121,16 @@ module.exports = async function checkSidebarFocus(browser, base, out, configure)
         assert.equal((await state(page)).inert, false, 'expanding rescues focus from the now-hidden mobile trigger');
         evidence.checks.push('849/850 closed boundary; desktop tab order; focused-sidebar and focused-trigger resize');
 
+        // An intentional blur while mobile must never become stale resize state.
+        await page.setViewportSize({ width: 849, height: 844 }); await closed(page);
+        await page.locator('#sidebar-trigger').focus();
+        await page.locator('#sidebar-trigger').evaluate(el => el.blur());
+        assert.equal(await page.evaluate(() => document.activeElement === document.body), true);
+        await page.setViewportSize({ width: 850, height: 844 });
+        await page.waitForFunction(() => !document.getElementById('sidebar').inert);
+        assert.equal(await page.evaluate(() => document.activeElement === document.body), true, 'earlier intentional blur must not steal focus on resize');
+        evidence.checks.push('intentional mobile blur to body remains undisturbed on desktop resize');
+
         await page.setViewportSize({ width: 849, height: 844 }); await closed(page); await open(page);
         await page.keyboard.press('Tab');
         const focusedLink = await page.evaluate(() => document.activeElement.outerHTML);

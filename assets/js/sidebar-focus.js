@@ -45,6 +45,16 @@
     if (desktop.matches && document.activeElement === trigger) focusSidebar();
   }
 
+  trigger.addEventListener('blur', event => {
+    // Chrome can blur a newly display:none Menu before the media-query change
+    // event. Rescue that exact transition, never a remembered earlier focus.
+    if (desktop.matches && !trigger.getClientRects().length &&
+        !event.relatedTarget && document.activeElement === document.body) {
+      sync();
+      focusSidebar();
+    }
+  });
+
   new MutationObserver(sync).observe(document.body, {
     attributes: true,
     attributeFilter: ['sidebar-display']
