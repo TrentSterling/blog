@@ -16,3 +16,37 @@ CI uses read-only access and no deployment. Shared main-site assets are checked 
 ## Visible control regression coverage
 
 `control-effects.cjs` tests the actual editor against page screenshots with the dialog closed, at desktop/mobile widths in dark/light mode. Every color, position, angle, intensity and frost control must change intended blog pixels and computed paint properties without moving content. Palette, appearance, ColorMagic, Undo/Reset, persistence and navigation are also exercised. Baseline screenshots document the former disconnected effects; pixel metrics and individual before/after screenshots are saved with CI artifacts. The existing first-paint, accessibility, contrast, geometry and content-preservation checks still run.
+
+## Mobile sidebar focus
+
+`node tools/theme-review/sidebar-focus.cjs` runs a separate focused browser check
+against `_site/blog` (override `BLOG_SITE_ROOT`, `BLOG_SCREENSHOTS`, and
+`THEME_BROWSER_EXECUTABLE` as needed). CI gives it its own 180-second budget;
+the existing full theme suite keeps its original 600-second budget. The focused
+sidebar check runs first so browser-specific failures are reported promptly.
+
+The adapter in `assets/js/sidebar-focus.js` follows Chirpy's existing
+`body[sidebar-display]` state and 850px breakpoint. It marks only the closed
+mobile sidebar inert. Keyboard opening enters its first link; closing returns
+focus to Menu. Escape uses Chirpy's existing toggle handler, so its private
+state and mask remain synchronized. An open theme dialog retains Escape.
+Desktop resizing preserves a focused sidebar link and clears the mobile mask;
+focus only moves on resize when the currently focused sidebar/control becomes
+hidden. A guarded Menu blur handler covers Chrome hiding the button before its
+media-query change event; intentional mobile blur is never remembered for later
+focus restoration. No sidebar links, CSS, article content, theme controls or desktop tab
+order are replaced.
+
+The browser regression covers home, a real post and Tags in normal/reduced
+motion: initial forward/reverse Tab order, all open-sidebar links, programmatic
+focus exclusion while inert, repeated trigger/mask/Escape closure, modal Escape
+priority, 849/850px boundary changes with focus inside/outside, and
+320/390/768/849/850/1440px states. JSON results and screenshots are retained in
+`.local/sidebar-review` by CI. Pointer opening does not explicitly move focus;
+browsers that focus a clicked button use the same entry point as keyboard
+activation, while Safari/WebKit's non-focusing pointer behavior is preserved.
+
+`node --test tools/theme-review/sidebar-focus.test.cjs` checks both browser event
+orders and rejects restoration after an intentional blur, an unrelated focus
+transfer, or a blur while Menu is still rendered. The real browser suite also
+verifies that intentional mobile blur to body remains undisturbed on resize.
