@@ -99,6 +99,10 @@ jobs:
       - name: Test the built blog in Chrome
         if: ${{ !cancelled() && steps.browser-tools.outcome == 'success' }}
         run: timeout 600s node tools/theme-review/browser.cjs
+      - name: Check mobile sidebar keyboard focus in Chrome
+        run: timeout 180s node tools/theme-review/sidebar-focus.cjs
+        env:
+          BLOG_SCREENSHOTS: .local/sidebar-review
       - name: Check cold video posters and footer layout in Chrome
         run: timeout 300s node tools/game-posts/presentation-browser.cjs
         env:
@@ -124,6 +128,7 @@ jobs:
             .local/theme-review/controls/1440-*-frost-after-surface.png
             .local/presentation-review/
             .local/zoom-review/
+            .local/sidebar-review/
           include-hidden-files: true
           if-no-files-found: warn
           retention-days: 7
