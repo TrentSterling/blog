@@ -14,6 +14,7 @@ const publication = require('../game-posts/manifest.json');
 const posters = require('../game-posts/video-posters.cjs');
 const thumbnails = require('../article-thumbnails/verify.cjs');
 const presentation = require('../game-posts/presentation.json');
+const authorProfiles = require('../author-profiles/preservation.cjs');
 const descriptions = require('../description-rendering/manifest.json');
 const publishedFiles = new Map([...publication.posts, ...publication.assets, ...posters.manifest.assets, ...thumbnails.manifest.assets, ...descriptions.assets].map(file => [file.path, file.sha256]));
 const { approved: historicalDates, normalizeDateMetadata } = require('../game-posts/dates.cjs');
@@ -89,14 +90,20 @@ test('reviewed additions are exact and all existing protected working-tree bytes
     publishedFiles.has(relative) && !baselineFiles.includes(relative)));
   const chronologyAdditions = new Set(currentFiles.filter(relative =>
     precision.reviewed.has(relative) && precision.reviewed.get(relative).before === null && !baselineFiles.includes(relative)));
+  const authorAdditions = new Set(currentFiles.filter(relative =>
+    authorProfiles.reviewed.get(relative)?.before === null && !baselineFiles.includes(relative)));
   assert.equal(publication.posts.length, 35, 'the reviewed publication contains 35 posts');
-  assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative) && !publicationAdditions.has(relative) && !chronologyAdditions.has(relative)), baselineFiles,
+  assert.deepEqual(currentFiles.filter(relative => !recoveredAdditions.has(relative) && !publicationAdditions.has(relative) && !chronologyAdditions.has(relative) && !authorAdditions.has(relative)), baselineFiles,
     'protected files are neither added nor removed except the exact reviewed additions');
   verifySources(root);
   posters.verify(root);
   for (const relative of currentFiles) {
     const originalCurrent = fs.readFileSync(path.join(root, relative));
     const current = archive.entries.has(relative) ? Buffer.from(archive.normalize(relative, originalCurrent.toString('utf8'))) : originalCurrent;
+    if (authorAdditions.has(relative)) {
+      authorProfiles.verify(relative, current);
+      continue;
+    }
     if (chronologyAdditions.has(relative)) {
       precision.verifyReviewed(relative, current.toString('utf8'));
       continue;
@@ -112,6 +119,10 @@ test('reviewed additions are exact and all existing protected working-tree bytes
     }
     const originalBytes = fs.readFileSync(path.join(baseline, relative));
     const original = archive.entries.has(relative) ? Buffer.from(archive.normalize(relative, originalBytes.toString('utf8'))) : originalBytes;
+    if (authorProfiles.reviewed.has(relative)) {
+      authorProfiles.verify(relative, current, original);
+      continue;
+    }
     if (precision.reviewed.has(relative) && !current.equals(original)) {
       precision.verifyReviewed(relative, current.toString('utf8'), original.toString('utf8'));
       continue;

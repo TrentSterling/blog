@@ -1,0 +1,7 @@
+{%- assign post_authors = page | post_authors -%}
+<span class="post-authors">
+  {{ site.data.locales[lang].post.written_by }}
+  {% for author in post_authors -%}
+    <em>{% if author.url %}<a href="{{ author.url | escape }}" rel="author">{{ author.label | escape }}</a>{% else %}{{ author.label | escape }}{% endif %}</em>{% unless forloop.last %}, {% endunless %}
+  {%- endfor %}
+</span>
