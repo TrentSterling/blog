@@ -133,4 +133,90 @@ class AuthorProfilesTest < Minitest::Test
       end
     end
   end
+
+  def test_actual_navigation_tabs_require_every_date_opt_in_guard
+    { 'archives' => ['archives', 'CollectionPage'], 'tags' => ['tags', 'CollectionPage'], 'discord' => ['page', 'WebPage'] }.each do |slug, (layout, type)|
+      original = File.read(File.join(ROOT, "_tabs/#{slug}.md"))
+      front, body = original.split(/^---\s*$\n?/, 3).drop(1)
+      defaults = { 'layout' => layout, 'permalink' => "/#{slug}/" }.merge(YAML.safe_load(front))
+      fixtures = {
+        'actual-tab' => ["_tabs/#{slug}.md", {}],
+        'missing-opt-in' => ["_tabs/#{slug}.md", { 'seo' => {} }],
+        'wrong-path' => ['_tabs/other.md', {}],
+        'wrong-collection' => ["_people/#{slug}.md", {}],
+        'wrong-layout' => ["_tabs/#{slug}.md", { 'layout' => 'default' }],
+        'wrong-url' => ["_tabs/#{slug}.md", { 'permalink' => '/other/' }],
+        'wrong-type' => ["_tabs/#{slug}.md", { 'seo' => { 'type' => 'ProfilePage' } }],
+        'ordinary-page' => ["#{slug}.html", {}],
+        'ordinary-post' => ["_posts/2001-02-03-#{slug}.md", { 'layout' => 'post', 'seo' => {} }]
+      }
+      fixtures.each do |label, (relative, overrides)|
+        context = "#{slug}: #{label}"
+        Dir.mktmpdir('navigation-tab') do |source|
+          %w[_tabs _people _posts _layouts _plugins].each { |dir| FileUtils.mkdir_p(File.join(source, dir)) }
+          FileUtils.cp(File.join(ROOT, '_plugins/author_profiles.rb'), File.join(source, '_plugins/author_profiles.rb'))
+          File.write(File.join(source, '_layouts/default.html'), '<!doctype html><html><head>{% seo %}</head><body>{{ content }}</body></html>')
+          %w[archives tags page post].each { |name| File.write(File.join(source, "_layouts/#{name}.html"), "---\nlayout: default\n---\n{{ content }}") }
+          data = defaults.merge(overrides)
+          unless label == 'actual-tab'
+            data['date'] = '2001-02-03'
+            data['last_modified_at'] = '2002-03-04'
+          end
+          File.write(File.join(source, relative), "#{data.to_yaml}---\n#{body}")
+          config = Jekyll.configuration('source' => source, 'destination' => File.join(source, '_site'), 'config' => [], 'quiet' => true,
+            'plugins' => ['jekyll-seo-tag'], 'url' => 'https://tront.xyz', 'baseurl' => '/blog', 'timezone' => 'UTC',
+            'collections' => { 'tabs' => { 'output' => true }, 'people' => { 'output' => true } },
+            'author' => { 'name' => 'Trent Sterling (Tront)', 'url' => 'https://tront.xyz/', '@id' => ID },
+            'social' => { 'name' => 'Trent Sterling' })
+          Jekyll::Site.new(config).process
+          route = data.fetch('permalink').delete_prefix('/')
+          doc = Nokogiri::HTML(File.read(File.join(source, '_site', route, 'index.html')))
+          scripts = doc.css('script[type="application/ld+json"]')
+          assert_equal 1, scripts.length, context
+          schema = JSON.parse(scripts.first.content)
+          assert_equal "https://tront.xyz/blog#{data.fetch('permalink')}", doc.at_css('link[rel="canonical"]')['href'], context
+          assert_nil schema['@id'], context
+          assert_nil schema['mainEntity'], context
+          assert_nil schema['dateCreated'], context
+          if label == 'ordinary-post'
+            assert_equal ID, schema['author']['@id'], context
+          else
+            assert_nil schema['author']['@id'], context
+          end
+          if label == 'actual-tab'
+            assert_equal type, schema['@type'], context
+            %w[datePublished dateModified mainEntityOfPage].each { |key| refute schema.key?(key), "#{context}: #{key}" }
+            assert_empty doc.css('meta[property^="article:"]'), context
+            assert_equal 'website', doc.at_css('meta[property="og:type"]')['content'], context
+          else
+            assert_equal '2001-02-03T00:00:00+00:00', schema['datePublished'], context
+            assert_equal '2002-03-04T00:00:00+00:00', schema['dateModified'], context
+            assert_equal 'article', doc.at_css('meta[property="og:type"]')['content'], context
+            assert_equal '2001-02-03T00:00:00+00:00', doc.at_css('meta[property="article:published_time"]')['content'], context
+            assert_equal '2002-03-04T00:00:00+00:00', doc.at_css('meta[property="article:modified_time"]')['content'], context
+          end
+        end
+      end
+
+      # Isolate each guard as well: moving a real document to another collection
+      # necessarily changes its path too, so integration fixtures alone cannot
+      # prove that the collection check itself is required.
+      probe = Object.new.extend(Tront::AuthorProfiles::SeoAuthors)
+      page = { 'collection' => 'tabs', 'path' => "_tabs/#{slug}.md", 'layout' => layout, 'url' => "/#{slug}/" }
+      seo = { 'type' => type }
+      probe.define_singleton_method(:page) { page }
+      probe.define_singleton_method(:page_seo) { seo }
+      assert probe.undated_navigation_tab?, slug
+      { 'collection' => 'people', 'path' => '_tabs/other.md', 'layout' => 'default', 'url' => '/other/' }.each do |key, wrong|
+        original_value = page[key]
+        page[key] = wrong
+        refute probe.undated_navigation_tab?, "#{slug}: isolated #{key} guard"
+        page[key] = original_value
+      end
+      [nil, 'ProfilePage'].each do |wrong|
+        seo['type'] = wrong
+        refute probe.undated_navigation_tab?, "#{slug}: isolated type guard"
+      end
+    end
+  end
 end
