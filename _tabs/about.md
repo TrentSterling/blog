@@ -1,68 +1,42 @@
 ---
 title: "About Trent Sterling (Tront)"
+description: "I'm Trent Sterling (Tront). I make games, work on Unity multiplayer and VR, and write about the systems, experiments, and tools behind them."
 icon: fas fa-info-circle
 order: 4
 seo:
   type: ProfilePage
 ---
 
-> Trent Sterling, or Tront, is a game developer with a decade of experience in the industry. He specializes in Unity, C#, and VR development.
-{: .prompt-tip }
+I'm **Trent Sterling**, usually **Tront** online. I've been making games since 2009. These days I work mostly in Unity and C#, with a lot of time spent on multiplayer networking, VR performance, shaders, and procedural generation. Since 2025 I've been the contract Network Programmer and Unity Generalist on [Project Demigod](https://store.steampowered.com/app/1646580/Project_Demigod/).
 
-Welcome! I’m **Trent Sterling**, known online as **Tront**, and I've made games since 2009. Since 2025 I've been the contract Network Programmer and Unity Generalist on [Project Demigod](https://store.steampowered.com/app/1646580/Project_Demigod/). I specialize in Unity, C#, multiplayer networking, VR optimization, and procedural generation.
-
-My current [games and project portfolio](https://tront.xyz/games/) and [public code](https://github.com/TrentSterling) cover multiplayer frameworks, VR, GPU experiments, browser games, and developer tools. On this blog, I've written about [my FishNet EOS transport](/blog/posts/fishnet-eos-native-released/) and [the EOS-Native framework](/blog/posts/eos-native/).
+My [games and project portfolio](https://tront.xyz/games/) includes production work, browser games, GPU experiments, and developer tools. You can find my [public code on GitHub](https://github.com/TrentSterling). For the networking side, I've written about [my FishNet EOS transport](/blog/posts/fishnet-eos-native-released/) and [the EOS-Native framework](/blog/posts/eos-native/).
 
 ## My Focus Areas
 
-- **Unity & C#** - Creating high-performance systems for gameplay, AI, and multiplayer.
-- **Shaders & Procedural Generation** - Designing dynamic worlds and custom shaders, particularly for VR.
-- **VR Optimization** - Ensuring smooth, immersive VR experiences at 120Hz+.
-- **Multiplayer Systems** - Building scalable cross-platform multiplayer with optimized network traffic, including crossplay between PC, Android, and Oculus Quest.
-- **NodeJS & Web Development** - Back into web dev with a focus on NodeJS, Phaser, and IoT integration.
+- **Unity & C#**: gameplay, AI, and multiplayer systems.
+- **Shaders & Procedural Generation**: custom shaders and dynamic worlds, often for VR.
+- **VR Optimization**: Quest and PC VR, including work toward 120Hz+ performance targets.
+- **Multiplayer Systems**: network traffic optimization and crossplay between PC, Android, and Quest.
+- **NodeJS & Web Development**: browser games with Phaser, web tools, and IoT integration.
 
 ## My Background
 
-I started with **Halo CE/2** modding and later worked on **Minecraft** mods and **Garry’s Mod** gamemodes. These early experiences taught me game mechanics, scripting, and community-driven development.
+I started with **Halo CE/2** modding, then worked on **Minecraft** mods and **Garry's Mod** gamemodes. That was my way into scripting, game mechanics, and building things for a community. I moved into indie games and multiplayer development, and later VR.
 
-I’ve since focused on **indie game development** and **multiplayer games**, especially **VR performance optimization** and **network traffic optimization** for smoother gameplay.
-
-I’ve also explored **machine learning**, **IoT**, and **home automation**, constantly expanding my skill set.
+I've also explored **machine learning**, **IoT**, and **home automation**.
 
 ## Random Skills
 
-While my main focus is game development, I’ve had my hands in many other areas over the years, including:
-
-- **Videography** - Creating devlogs, tutorials, and trailers.
-- **Web Design** - Building minimalist, user-friendly sites.
-- **3D Modeling** - Asset creation and optimization using Blender.
-- **Photoshop** - Graphics, textures, and visual assets for games.
+I make devlogs, tutorials, and trailers, build websites, model in **Blender**, and use **Photoshop** for graphics, textures, and game assets.
 
 ## Why This Blog?
 
-This blog is a way for me to share everything I’m working on, my thoughts on game development, tutorials, and behind-the-scenes looks at the projects I’m developing. It's a place to document my journey, share knowledge, and hopefully help others in the game development community.
+This is where I keep development notes, tutorials, and the details behind my projects. I write about what I built, how it works, and what went wrong along the way.
 
-I also use this blog to backport content from my old blog (originally at trentsterling.com, now archived) and share insights that are useful for indie developers, especially those working with **multiplayer networking**, **VR**, and **game optimization**. Expect deep dives, tips, and advice based on my decade of experience.
+I'm also bringing over posts from my old blog at trentsterling.com. The archive keeps those earlier experiments alongside my current work, including the projects that never made it to release.
 
-Feel free to reach out or join my **[Discord](https://tront.xyz/discord/){:target="_blank"}** community to chat about anything from coding to game design!
+## Trent's Cool Developer Spot
 
----
-👾 **COOL DEVS ONLY: Join Trent's Cool Developer Spot!** 🎮🥽
+My [Discord community](https://tront.xyz/discord/){:target="_blank"} has been going since **2015**. We talk about multiplayer, VR, Unity, game mechanics, AI art, LLMs, and hardware such as **ESP8266/32** and **Arduino**. It's a place to show work in progress, trade feedback, test games, and find people to build things with.
 
-Want to collaborate with **top-tier game devs**? This is your spot. We've been going strong since **2015**, and we’re a community of **seriously skilled devs**, including **successful studios**, indie creators, and professionals **making bank**.
-
-We cover everything from **multiplayer**, **VR**, **Unity**, and **game mechanics** to **AI art** and **LLM discussions**-and we’ve got **hardware** talk like **ESP8266/32**, **Arduino**, and more.
-
-💥 **Exclusive perks:**
-- 🔥 Connect with **industry pros** and learn from the best
-- 🤖 Deep dives into **AI** and **game tech**
-- 🎮 **Game dev collaboration**, feedback, and **early testing**
-- 🦾 **Hardware enthusiasts** welcome!
-
-Level up your game dev skills, get inspired, and share your progress with like-minded creators.
-
-👉 **Join us:** [Discord Invite](https://tront.xyz/discord/){:target="_blank"}
-
----
-
-🔗 **[Check out my Linktree](https://tront.xyz/){:target="_blank"}** for all my projects, social links, and more!
+My [homepage](https://tront.xyz/){:target="_blank"} has the rest of my projects and social links.

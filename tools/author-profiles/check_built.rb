@@ -2,6 +2,7 @@ require 'nokogiri'
 require 'json'
 require 'pathname'
 require 'time'
+require_relative '../copy-review/built'
 
 root = File.expand_path(ARGV.fetch(0))
 baseline = ARGV[1] && File.expand_path(ARGV[1])
@@ -63,6 +64,7 @@ files.each do |relative|
   next unless baseline
 
   original = Nokogiri::HTML(File.read(File.join(baseline, relative)))
+  AboutCopyReview.normalize_pair(original, doc) if relative == 'about/index.html'
   # Historical pre-author baselines may differ only in their reviewed bylines.
   # Released/current baselines already have those bylines, which must match too.
   legacy_byline = !original.at_css('article .post-authors') && doc.at_css('article .post-authors')
@@ -127,6 +129,8 @@ files.each do |relative|
       expected['@id'] = 'https://tront.xyz/blog/about/#profile-page'
       expected['author'] = person
       expected['mainEntity'] = person
+      abort 'Unexpected About description' unless %w[before after].map { |side| AboutCopyReview.description(side) }.include?(expected['description']) && current['description'] == AboutCopyReview.description('after')
+      expected['description'] = current['description']
       %w[datePublished dateModified].each { |key| expected.delete(key) }
       abort 'About schema changed outside the reviewed identity and date fields' unless expected == current
     elsif relative.start_with?('posts/') && doc.at_css('article')

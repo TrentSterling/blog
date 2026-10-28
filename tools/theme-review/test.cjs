@@ -15,6 +15,7 @@ const posters = require('../game-posts/video-posters.cjs');
 const thumbnails = require('../article-thumbnails/verify.cjs');
 const presentation = require('../game-posts/presentation.json');
 const authorProfiles = require('../author-profiles/preservation.cjs');
+const copyReview = require('../copy-review/check.cjs');
 const descriptions = require('../description-rendering/manifest.json');
 const publishedFiles = new Map([...publication.posts, ...publication.assets, ...posters.manifest.assets, ...thumbnails.manifest.assets, ...descriptions.assets].map(file => [file.path, file.sha256]));
 const { approved: historicalDates, normalizeDateMetadata } = require('../game-posts/dates.cjs');
@@ -119,6 +120,10 @@ test('reviewed additions are exact and all existing protected working-tree bytes
     }
     const originalBytes = fs.readFileSync(path.join(baseline, relative));
     const original = archive.entries.has(relative) ? Buffer.from(archive.normalize(relative, originalBytes.toString('utf8'))) : originalBytes;
+    if (relative === copyReview.reviewed.path) {
+      copyReview.verify(current, original);
+      continue;
+    }
     if (authorProfiles.reviewed.has(relative)) {
       authorProfiles.verify(relative, current, original);
       continue;
